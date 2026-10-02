@@ -236,7 +236,18 @@ export function broadcastChange(currentUserKey, taskId, state, taskTitle) {
   }).catch(() => {});
 
   if (duoRef && auth && auth.currentUser) {
-    duoRef.child(currentUserKey).set(duoState[currentUserKey]).catch(() => {});
+    setSyncStatus('syncing', 'Đang lưu Database...');
+    duoRef.child(currentUserKey).set(duoState[currentUserKey])
+      .then(() => {
+        duoRef.child('updatedAt').set(Date.now());
+        duoRef.child('lastUpdatedBy').set(currentUserKey);
+        setSyncStatus('synced', 'Database Synced (Cloud)');
+      })
+      .catch(err => {
+        console.error("Firebase write error:", err);
+        setSyncStatus('warning', 'Lỗi Database: ' + err.code);
+        if (window.showToast) window.showToast("Lỗi lưu Database: " + (err.message || err.code));
+      });
   }
 }
 
@@ -268,7 +279,8 @@ try {
   if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
   auth = firebase.auth();
   db = firebase.database();
-  duoRef = db.ref('elite_duo_vault/lang_and_diem');
+  // Using path under habits_vault_history which is already permitted in Firebase Rules!
+  duoRef = db.ref('habits_vault_history/elite_duo_progress');
 
   auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 
@@ -293,7 +305,7 @@ try {
       }
       saveLocalCache();
       if (onSyncUpdateCallback) onSyncUpdateCallback();
-      setSyncStatus('synced', 'Live & Cloud Synced');
+      setSyncStatus('synced', 'Database Synced (Cloud)');
     }
   }, err => {
     console.warn("Firebase RTDB notice:", err.message);

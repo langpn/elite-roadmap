@@ -5,7 +5,9 @@
 import { ACCOUNTS } from './curriculum.js';
 import {
   auth,
+  duoRef,
   duoState,
+  saveLocalCache,
   broadcastChange,
   startPresenceLoop,
   stopPresenceLoop,
@@ -36,6 +38,19 @@ export function initAuth() {
 
         // Start Live Presence Heartbeat
         startPresenceLoop(currentUserKey);
+
+        // Fetch full snapshot from Firebase Cloud Database
+        if (duoRef) {
+          duoRef.once('value').then(snapshot => {
+            const val = snapshot.val();
+            if (val) {
+              if (val.lang) duoState.lang = val.lang;
+              if (val.diem) duoState.diem = val.diem;
+              saveLocalCache();
+              if (onAuthChangedCallback) onAuthChangedCallback(currentUserKey);
+            }
+          }).catch(err => console.warn("Firebase fetch notice:", err));
+        }
       } else {
         if (currentUserKey) {
           sendPresenceHeartbeat(currentUserKey, 'offline');
