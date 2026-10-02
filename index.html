@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Elite Duo Roadmap | Lộ Trình Video Editing Thực Chiến Trước Tết 2027</title>
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Elite Duo">
+  <meta name="theme-color" content="#090c12">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Firebase SDKs for Realtime Duo Synchronization -->
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+
+  <style>
+    :root {
+      --bg-dark: #090c12;
+      --card-bg: rgba(16, 22, 34, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent-lang: #38bdf8;
+      --accent-lang-glow: rgba(56, 189, 248, 0.25);
+      --accent-partner: #f472b6;
+      --accent-partner-glow: rgba(244, 114, 182, 0.25);
+      --accent-amber: #f59e0b;
+      --accent-green: #10b981;
+      --accent-purple: #c084fc;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 45%),
+        radial-gradient(at 100% 0%, rgba(244, 114, 182, 0.1) 0px, transparent 45%),
+        radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.08) 0px, transparent 50%);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: env(safe-area-inset-top, 24px) 16px env(safe-area-inset-bottom, 36px) 16px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 960px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* Top Nav */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 12px 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 15.5px;
+      letter-spacing: -0.3px;
+    }
+
+    .nav-brand span {
+      background: linear-gradient(135deg, #38bdf8 0%, #f472b6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .profile-switch-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .profile-switch-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-1px);
+    }
+
+    .profile-switch-btn.active-lang {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: rgba(56, 189, 248, 0.4);
+      color: #38bdf8;
+      box-shadow: 0 0 15px var(--accent-lang-glow);
+    }
+
+    .profile-switch-btn.active-partner {
+      background: rgba(244, 114, 182, 0.15);
+      border-color: rgba(244, 114, 182, 0.4);
+      color: #f472b6;
+      box-shadow: 0 0 15px var(--accent-partner-glow);
+    }
+
+    .sync-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--card-border);
+    }
+
+    .sync-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    .sync-dot.offline {
+      background: #64748b;
+      box-shadow: none;
+    }
+
+    /* Hero Header */
+    .hero-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      padding: 24px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-title h1 {
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-title p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.45;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-target {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #f87171;
+    }
+
+    /* DUO COMPARISON DASHBOARD */
+    .duo-comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 16px 20px;
+    }
+
+    @media (max-width: 640px) {
+      .duo-comparison {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .user-stat-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 6px 0;
+    }
+
+    .user-stat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .user-name-tag {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .user-name-tag:hover {
+      text-decoration: underline;
+    }
+
+    .stat-badge {
+      font-size: 11.5px;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill-lang {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #38bdf8 0%, #10b981 100%);
+      border-radius: 999px;
+      transition: width 0.4s ease;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    }
+
+    .progress-fill-partner {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #f472b6 0%, #c084fc 100%);
+      border-radius: 999px;
+      transition: width 0.4s ease;
+      box-shadow: 0 0 10px rgba(244, 114, 182, 0.5);
+    }
+
+    /* Sprint Filter Bar */
+    .sprint-nav {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .sprint-tab {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .sprint-tab:hover {
+      color: var(--text-main);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .sprint-tab.active {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--accent-lang);
+      color: #38bdf8;
+    }
+
+    .sprint-tab.focus-tab.active {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: #10b981;
+      color: #10b981;
+    }
+
+    /* Sprint Section Cards */
+    .sprint-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .sprint-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sprint-header {
+      padding: 16px 22px;
+      background: rgba(255, 255, 255, 0.02);
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s;
+    }
+
+    .sprint-header:hover {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .sprint-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sprint-pill {
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .sprint-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .sprint-desc {
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+
+    .sprint-body {
+      padding: 14px 18px 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Task Item with Duo Indicators */
+    .task-item {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all 0.2s;
+    }
+
+    .task-item:hover {
+      background: rgba(0, 0, 0, 0.38);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .task-item.my-done {
+      border-color: rgba(16, 185, 129, 0.25);
+      background: rgba(16, 185, 129, 0.04);
+    }
+
+    .task-item.is-deliverable {
+      border-left: 3px solid #10b981;
+    }
+
+    .task-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .task-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      flex: 1;
+      cursor: pointer;
+    }
+
+    .checkbox {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+
+    .task-item.my-done .checkbox {
+      background: #10b981;
+      border-color: #10b981;
+    }
+
+    .checkbox svg {
+      width: 12px;
+      height: 12px;
+      stroke: #fff;
+      stroke-width: 3;
+      fill: none;
+      display: none;
+    }
+
+    .task-item.my-done .checkbox svg {
+      display: block;
+    }
+
+    .task-details {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .task-header-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .task-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .task-item.my-done .task-title {
+      color: var(--text-dim);
+      text-decoration: line-through;
+    }
+
+    .duration-tag {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--text-dim);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 1px 7px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .output-pill {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 1px 7px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+    }
+
+    .output-text {
+      font-size: 12px;
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    /* Partner Status Indicator */
+    .duo-status-badges {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .user-pill {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+
+    .user-pill.lang-done { background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; }
+    .user-pill.lang-pending { background: rgba(255, 255, 255, 0.04); color: #64748b; }
+
+    .user-pill.partner-done { background: rgba(244, 114, 182, 0.15); border: 1px solid rgba(244, 114, 182, 0.35); color: #f472b6; }
+    .user-pill.partner-pending { background: rgba(255, 255, 255, 0.04); color: #64748b; }
+
+    /* SMART MAPPING TRIAD (3 TẦNG TRA CỨU & TIẾN XA) */
+    .mapping-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .map-box {
+      font-size: 11.5px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      line-height: 1.4;
+    }
+
+    .map-box.troubleshoot {
+      background: rgba(56, 189, 248, 0.05);
+      border-left: 3px solid var(--accent-lang);
+      color: #cbd5e1;
+    }
+    .map-box.troubleshoot strong { color: #38bdf8; font-family: 'JetBrains Mono', monospace; }
+
+    .map-box.level-up {
+      background: rgba(192, 132, 252, 0.05);
+      border-left: 3px solid var(--accent-purple);
+      color: #cbd5e1;
+    }
+    .map-box.level-up strong { color: #c084fc; font-family: 'JetBrains Mono', monospace; }
+
+    .map-box.monetize {
+      background: rgba(245, 158, 11, 0.05);
+      border-left: 3px solid var(--accent-amber);
+      color: #cbd5e1;
+    }
+    .map-box.monetize strong { color: #f59e0b; font-family: 'JetBrains Mono', monospace; }
+
+    /* Sync Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 16px;
+    }
+
+    .modal-box {
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      max-width: 480px;
+      width: 100%;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-box h3 { font-size: 17px; font-weight: 800; }
+    .modal-box p { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+    .modal-input {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--card-border);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      width: 100%;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary { background: #38bdf8; color: #000; }
+    .btn-secondary { background: rgba(255, 255, 255, 0.08); color: #fff; }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Top Nav -->
+    <nav class="top-nav">
+      <div class="nav-brand">
+        ⚡ <span>ELITE DUO ROADMAP</span>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Active User Toggle -->
+        <button class="profile-switch-btn active-lang" id="profileToggleBtn" onclick="toggleActiveProfile()">
+          <span id="profileAvatar">🔵</span>
+          <span>Đang là: <strong id="currentProfileName">Lang</strong></span>
+        </button>
+
+        <!-- Cloud Sync Badge -->
+        <div class="sync-status" onclick="openSyncModal()" style="cursor: pointer;" title="Đồng bộ tiến độ 2 người qua Cloud">
+          <span class="sync-dot" id="syncDot"></span>
+          <span id="syncText">Live Cloud Sync</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Hero -->
+    <header class="hero-card">
+      <div class="hero-top">
+        <div class="hero-title">
+          <h1>🎯 Chiến Dịch Đồng Hành: Video Editor Trước Tết 2027</h1>
+          <p>Lộ trình tối ưu hóa từ Sean Kang • Học để kiếm việc làm ngay • Theo dõi song song tiến độ 2 người</p>
+        </div>
+        <div class="hero-badges">
+          <div class="badge badge-target">🔥 Đích Đến: Tết Nguyên Đán 2027</div>
+        </div>
+      </div>
+
+      <!-- DUO PROGRESS BAR COMPARISON -->
+      <div class="duo-comparison">
+        <!-- Lang Stat -->
+        <div class="user-stat-card">
+          <div class="user-stat-header">
+            <span class="user-name-tag" onclick="editUserName('lang')" style="color: #38bdf8;">
+              🔵 <span id="displayNameLang">Lang</span> ✏️
+            </span>
+            <span class="stat-badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;" id="badgeLang">
+              0% • 0 Video
+            </span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill-lang" id="barLang"></div>
+          </div>
+        </div>
+
+        <!-- Partner Stat -->
+        <div class="user-stat-card">
+          <div class="user-stat-header">
+            <span class="user-name-tag" onclick="editUserName('partner')" style="color: #f472b6;">
+              🌸 <span id="displayNamePartner">Bạn Gái</span> ✏️
+            </span>
+            <span class="stat-badge" style="background: rgba(244, 114, 182, 0.15); color: #f472b6;" id="badgePartner">
+              0% • 0 Video
+            </span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill-partner" id="barPartner"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sprint Navigation Filter -->
+    <div class="sprint-nav">
+      <button class="sprint-tab focus-tab active" onclick="filterSprint('s1')">🔥 SPRINT 1: Dây Chuyền 4 REEL (Hiện Tại)</button>
+      <button class="sprint-tab" onclick="filterSprint('all')">Tất cả Sprint</button>
+      <button class="sprint-tab" onclick="filterSprint('s0')">Sprint 0: Vũ Khí & RAW</button>
+      <button class="sprint-tab" onclick="filterSprint('s2')">Sprint 2: Triệu View Case Study</button>
+      <button class="sprint-tab" onclick="filterSprint('s3')">Sprint 3: Săn Job Upwork/Fiverr</button>
+      <button class="sprint-tab" onclick="filterSprint('s4')">Sprint 4: Retainer $1,000/tháng</button>
+    </div>
+
+    <!-- Sprint Content Container -->
+    <div class="sprint-container" id="sprintContainer">
+      <!-- Injected by JavaScript -->
+    </div>
+
+    <div class="footer">
+      Elite Duo Engine • Thiết kế cho Lang & Bạn gái • Cùng nhau bứt phá trước Tết 2027
+    </div>
+
+  </div>
+
+  <!-- Sync Modal -->
+  <div class="modal-overlay" id="syncModal">
+    <div class="modal-box">
+      <h3>☁️ Đồng Bộ Tiến Độ Trực Tiếp 2 Người</h3>
+      <p>Hệ thống tự động đồng bộ qua Firebase Realtime Database. Cả hai bạn chỉ cần mở link trên máy tính hoặc điện thoại là thấy nhau tick bài!</p>
+      
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <label style="font-size: 12px; color: var(--text-muted);">Mã phòng học chung (Duo Room ID):</label>
+        <input type="text" id="roomIdInput" class="modal-input" value="lang_duo_room_2027" placeholder="Nhập Room ID...">
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-secondary" onclick="closeSyncModal()">Đóng</button>
+        <button class="btn btn-primary" onclick="saveRoomId()">Lưu & Kết Nối</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 1. DATA STRUCTURE: OPTIMIZED 4 SPRINTS MAPPED 1:1 WITH ALL SEAN KANG COURSES
+    // =========================================================================
+    const ROADMAP_SPRINTS = [
+      {
+        id: "s0",
+        title: "SPRINT 0: THU NẠP VŨ KHÍ & QUẢN TRỊ NGUYÊN LIỆU (30 PHÚT)",
+        desc: "Lấy tài nguyên từ kho có sẵn, tối ưu máy Mac và cài đặt phím tắt",
+        pill: "Khởi Động",
+        color: "#38bdf8",
+        tasks: [
+          {
+            id: "s0_t1",
+            title: "Trích xuất RAW bài tập & Kho Sound Effects chung",
+            duration: "Bài đọc",
+            output: "Giải nén file RAW (Matthiew Adams 50MB) vào ~/studio",
+            isOutput: false,
+            mapping: {
+              troubleshoot: "Kẹt giải nén/tổ chức? Xem: <strong>Baby Resolve C2-B01 (Database) & C3-B06 (Lưu Power Bins)</strong>",
+              levelUp: "Muốn kho xịn hơn? Lấy trong: <strong>~/Documents/edit-courses/resources/ (SFX, Font, Emojis)</strong>",
+              monetize: "Tư duy: Người thợ giỏi không tìm đồ mỗi ngày, hãy gom sẵn thư viện dùng chung!"
+            }
+          },
+          {
+            id: "s0_t2",
+            title: "Cài đặt Phím tắt Sean Kang 2025 & Kích hoạt Live Save",
+            duration: "5 phút",
+            output: "Cụm tay trái Q-W-E-S-D phản xạ không độ trễ, chống mất file",
+            isOutput: false,
+            mapping: {
+              troubleshoot: "Kẹt import phím tắt? Xem: <strong>Baby Resolve C1-B4.2 (Phím tắt) & C2-B02 (Live Save)</strong>",
+              levelUp: "Nâng cao thao tác: Xem <strong>Elite Chương 5 (Tip tạo phím tắt Keyboard Maestro)</strong>",
+              monetize: "Tốc độ cắt gọt nhanh gấp 3 lần = Nhận được nhiều job hơn trong cùng 1 ngày."
+            }
+          },
+          {
+            id: "s0_t3",
+            title: "Tư duy cốt lõi trước khi thực hành (Chương 0)",
+            duration: "4 phút",
+            output: "Thuộc lòng: Edit đẹp < View & Doanh thu; 3-5 giây đầu là sinh tử",
+            isOutput: false,
+            mapping: {
+              troubleshoot: "Ôn lại Zettel: <strong>tu-duy-retention-va-co-che-hook-trong-video-short-form</strong>",
+              levelUp: "Xem cách bốc RAW: <strong>Elite Khởi đầu Bài 01-03 (Bốc video creator lớn)</strong>",
+              monetize: "Tư duy đối tác tăng trưởng: Giúp khách ra đơn thì khách trả giá cao."
+            }
+          }
+        ]
+      },
+      {
+        id: "s1",
+        title: "SPRINT 1: DÂY CHUYỀN 6 BƯỚC & XUẤT XƯỞNG 4 REEL (CORE TRỌNG TÂM)",
+        desc: "Thực chiến Chương 1.2 mới nhất: Hoàn thiện 4 sản phẩm cầm tay để sẵn sàng nhận việc",
+        pill: "Trọng Tâm Số 1",
+        color: "#10b981",
+        tasks: [
+          {
+            id: "s1_t1",
+            title: "Chương 1.2 - Phần 3 & 4: Timeline 9:16 & Cắt thô A-Roll",
+            duration: "26 phút",
+            output: "Timeline 1080x1920 sạch bóng câu vấp & khoảng lặng bằng phím Q-W-E-S-D",
+            isOutput: false,
+            mapping: {
+              troubleshoot: "Kẹt cắt nhịp? Xem: <strong>Baby Resolve C6-B01 (Giao diện Edit) & Phím Q-W-E-S-D</strong>",
+              levelUp: "Xem thêm bản gốc: <strong>Elite Chương 1.1 Bài 03 (Marcus) & Bài 06 (Khách Úc)</strong>",
+              monetize: "Kỹ năng Rough Cut sắc bén là nền tảng số 1 của mọi video ngắn triệu view."
+            }
+          },
+          {
+            id: "s1_t2",
+            title: "Chương 1.2 - Phần 5: Lọc ồn & Cân bằng âm thanh (Audio Leveling)",
+            duration: "8 phút",
+            output: "Giọng nói nét căng, không tiếng quạt ồn, mức chuẩn -6dB",
+            isOutput: false,
+            mapping: {
+              troubleshoot: "Kẹt lọc ồn? Xem: <strong>Baby Resolve C9-B03 (Voice Isolation) & C9-B05 (Normalize)</strong>",
+              levelUp: "Xem cách rải âm thanh: <strong>Baby Resolve C14-B03 (LIVE thêm Sound Effect)</strong>",
+              monetize: "Âm thanh dở người xem tắt video ngay giây đầu tiên dù hình có đẹp đến mấy."
+            }
+          },
+          {
+            id: "s1_t3",
+            title: "Chương 1.2 - Phần 6 & 7: Phụ đề & Style chữ Alex Hormozi",
+            duration: "1h 33p",
+            output: "Subtitles nhảy từng từ, font dày, đổi màu vàng/xanh ở từ khóa chính",
+            isOutput: false,
+            mapping: {
+              troubleshoot: "Kẹt làm sub? Xem: <strong>Baby Resolve C12-B07 (AI Subtitle) & C6-B14 (Text Inspector)</strong>",
+              levelUp: "Dùng Preset có sẵn: <strong>resources/Snap Captions Template_V1.02.zip</strong>",
+              monetize: "70% người dùng lướt video tắt tiếng. Phụ đề bắt mắt giữ chân 80% người xem."
+            }
+          },
+          {
+            id: "s1_t4",
+            title: "Chương 1.2 - Phần 8.1: 🎯 XUẤT XƯỞNG REEL 1 (Cơ bản nhất)",
+            duration: "25 phút",
+            output: "XUẤT XƯỞNG FILE MP4 REEL 1 CẦM TAY TRONG MÁY",
+            isOutput: true,
+            mapping: {
+              troubleshoot: "Kẹt render? Xem: <strong>Baby Resolve C10-B01 & B02 (Deliver MP4 chuẩn)</strong>",
+              levelUp: "Xem phân tích lỗi: <strong>Elite Chương 1.1 (Những lỗi thường gặp và lời khuyên)</strong>",
+              monetize: "🎯 Đây là video đầu tiên bỏ vào Portfolio để gửi chào hàng!"
+            }
+          },
+          {
+            id: "s1_t5",
+            title: "Chương 1.2 - Phần 8.2: 🎯 XUẤT XƯỞNG REEL 2 (Bố cục & Sắp xếp chữ)",
+            duration: "31 phút",
+            output: "XUẤT XƯỞNG FILE MP4 REEL 2 DẪN MẮT NGƯỜI XEM",
+            isOutput: true,
+            mapping: {
+              troubleshoot: "Kẹt căn chỉnh chữ? Xem: <strong>Baby Resolve C6-B14 (Text Formatting)</strong>",
+              levelUp: "Nâng cao: <strong>Elite Pro Phần 2 (Neo Caption Pack V1 Text Animation)</strong>",
+              monetize: "Bố cục chữ chỉn chu chứng minh bạn là editor có gu thẩm mỹ cao."
+            }
+          },
+          {
+            id: "s1_t6",
+            title: "Chương 1.2 - Phần 8.3: 🎯 XUẤT XƯỞNG REEL 3 (Animation chữ & Zoom)",
+            duration: "44 phút",
+            output: "XUẤT XƯỞNG FILE MP4 REEL 3 CÓ CHUYỂN ĐỘNG NẢY",
+            isOutput: true,
+            mapping: {
+              troubleshoot: "Kẹt zoom? Xem: <strong>Baby Resolve C6-B09 (Dynamic Zoom) & C11-B05 (Animation Chữ)</strong>",
+              levelUp: "Bản chất chuyển động: Xem <strong>~/Documents/edit-courses/keyframe-animation/</strong>",
+              monetize: "Mỗi cú zoom cut chuyển ý giúp xóa bỏ cảm giác nhàm chán của video 1 góc máy."
+            }
+          },
+          {
+            id: "s1_t7",
+            title: "Chương 1.2 - Phần 8.4: 🎯 XUẤT XƯỞNG REEL 4 (Mức độ 1.5 nâng cao)",
+            duration: "1h 21p",
+            output: "XUẤT XƯỞNG FILE MP4 REEL 4 ĐẠT CHUẨN THƯƠNG MẠI",
+            isOutput: true,
+            mapping: {
+              troubleshoot: "Kẹt hòa trộn B-Roll? Xem: <strong>Baby Resolve C6-B10 (Composite Blend) & C9-B04 (Ducker)</strong>",
+              levelUp: "Xem thêm: <strong>Elite Chương 1.1 Bài 04 (Thực hành video Style Alex Hormozi)</strong>",
+              monetize: "Reel 4 là tấm danh thiếp hoàn hảo để chốt các hợp đồng $30 - $50/video!"
+            }
+          }
+        ]
+      },
+      {
+        id: "s2",
+        title: "SPRINT 2: CHỮ KÝ TRIỆU VIEW (DAVID GOGGINS, DANIEL ILES & PRO BREAKDOWN)",
+        desc: "Thực hành Chương 2: Làm chủ Hook Intro 3s, B-Roll chuyển động, Animation tài chính",
+        pill: "Nâng Tầm",
+        color: "#f59e0b",
+        tasks: [
+          {
+            id: "s2_t1",
+            title: "Case Study 1: David Goggins (P1 - P3) - Cắt thô & Hook Intro 3 giây",
+            duration: "37 phút",
+            output: "Hook 3 giây đầu giật gân, nhịp dồn dập đập vào mắt người xem",
+            isOutput: false,
+            mapping: {
+              troubleshoot: "Kẹt làm chậm/nhanh? Xem: <strong>Baby Resolve C6-B06 (Speed Ramp kịch tính)</strong>",
+              levelUp: "Chuyên sâu speed ramp: Xem <strong>~/Documents/edit-courses/speed-ramp/</strong>",
+              monetize: "Hook 3s quyết định 80% việc video có được thuật toán đẩy lên triệu view hay không."
+            }
+          },
+          {
+            id: "s2_t2",
+            title: "Case Study 1: David Goggins (P4 - P8) - 🎯 REEL DAVID GOGGINS HOÀN CHỈNH",
+            duration: "40 phút",
+            output: "XUẤT XƯỞNG FILE MP4 REEL DAVID GOGGINS CỰC CHÁY",
+            isOutput: true,
+            mapping: {
+              troubleshoot: "Kẹt nhạc đè giọng? Xem: <strong>Baby Resolve C9-B04 (Ducker Audio)</strong>",
+              levelUp: "Hiệu ứng chữ xé đôi: Xem bài 06 (Hiệu ứng cắt đôi chữ Refuse)",
+              monetize: "Thể loại động lực/thể hình có lượng khách hàng cực kỳ dồi dào trên Upwork."
+            }
+          },
+          {
+            id: "s2_t3",
+            title: "Case Study 2: Daniel Iles (Bài 14 - 20) - 🎯 REEL TÀI CHÍNH DANIEL ILES",
+            duration: "1h 17p",
+            output: "XUẤT XƯỞNG FILE MP4 REEL TÀI CHÍNH (LOGO AMAZON & BEVEL CHỮ)",
+            isOutput: true,
+            mapping: {
+              troubleshoot: "Kẹt Node Fusion? Xem: <strong>fusion-101/ (Tip 1-5: Merge Node, Resize, Select Tool)</strong>",
+              levelUp: "Học hiệu ứng Kallaway: Xem <strong>Elite Pro Phần 3 Video 6 & 7 (Phân tích Kallaway)</strong>",
+              monetize: "Niche Tài chính / Công nghệ trả mức thù lao cao gấp đôi so với các ngách thông thường."
+            }
+          },
+          {
+            id: "s2_t4",
+            title: "Case Study 3: Jvevermind & Khoai Lang Thang - 🎯 REEL KỂ CHUYỆN XẾP CHỮ",
+            duration: "1h 53p",
+            output: "XUẤT XƯỞNG FILE MP4 PHONG CÁCH CINEMATIC STORYTELLING",
+            isOutput: true,
+            mapping: {
+              troubleshoot: "Kẹt chỉnh màu? Xem: <strong>Baby Resolve C8-B15 (Node Tree Workflow chuẩn)</strong>",
+              levelUp: "Hiệu ứng Iman Gadzhi: Xem <strong>Elite Pro Phần 3 Video 19 (Animation Iman Gadzhi 1h04p)</strong>",
+              monetize: "Phong cách Cinematic giúp bạn tiếp cận các kênh YouTube lớn làm video dài chất lượng."
+            }
+          }
+        ]
+      },
+      {
+        id: "s3",
+        title: "SPRINT 3: TỔNG TẤN CÔNG THỊ TRƯỜNG & SĂN JOB (FREELANCE & UPWORK MVP)",
+        desc: "Đóng gói Portfolio chuẩn quốc tế, lập Gig Fiverr, gửi Proposal Upwork có khách ngay",
+        pill: "Kiếm Tiền",
+        color: "#c084fc",
+        tasks: [
+          {
+            id: "s3_t1",
+            title: "Đóng gói Portfolio 4 REEL vào Google Drive / Trang Web cá nhân",
+            duration: "1 buổi",
+            output: "Link Portfolio chuyên nghiệp có 4-5 video hoàn chỉnh đỉnh nhất",
+            isOutput: false,
+            mapping: {
+              troubleshoot: "Tối ưu Profile: Xem <strong>Elite Pro Phần 5 (Review Profile/Tối ưu Portfolio thành viên)</strong>",
+              levelUp: "Vibe Code trang web cá nhân: Dùng OpenCode build 1 trang web dark mode gắn link video!",
+              monetize: "Portfolio đẹp + xem nhanh trên điện thoại = 90% cơ hội được khách bấm rep tin nhắn."
+            }
+          },
+          {
+            id: "s3_t2",
+            title: "Lập Gig Fiverr theo chuẩn SEO (Freelance MVP Chương 1)",
+            duration: "Phần 1 - 5",
+            output: "Gig Fiverr 'High Retention TikTok/Reels Video Editor' lên sóng",
+            isOutput: false,
+            mapping: {
+              troubleshoot: "Xem chi tiết: <strong>freelance-mvp/curriculum.md (Chương 1: Fiverr từ A-Z)</strong>",
+              levelUp: "Mẹo lên Top: Phần 4 (Cách để được thuật toán Fiverr đánh giá cao)",
+              monetize: "Fiverr là nguồn kéo khách inbound thụ động cực tốt khi gig đã lên rank."
+            }
+          },
+          {
+            id: "s3_t3",
+            title: "Tạo Profile Upwork & Viết Proposal 'đánh trúng tim đen' khách",
+            duration: "Chương 2",
+            output: "Gửi 10 - 20 Proposal đầu tiên đến các Job Short Form trên Upwork",
+            isOutput: false,
+            mapping: {
+              troubleshoot: "Xem chi tiết: <strong>upwork-mvp/curriculum.md (Chương 2: Thử thách kiếm tiền tài khoản mới)</strong>",
+              levelUp: "Công thức viết Proposal Sean Kang: Nhấn mạnh vào Retention Rate & Tăng view cho kênh.",
+              monetize: "Chỉ cần 1 hợp đồng đầu tiên 5 sao, cánh cửa Upwork sẽ mở toang cho bạn!"
+            }
+          },
+          {
+            id: "s3_t4",
+            title: "🎯 CHỐT ĐƯỢC HỢP ĐỒNG / KHÁCH HÀNG TRẢ TIỀN ĐẦU TIÊN",
+            duration: "Cột mốc",
+            output: "Nhận thanh toán đầu tiên qua Upwork / Fiverr / Ngân hàng",
+            isOutput: true,
+            mapping: {
+              troubleshoot: "Cách đàm phán & tính giá: Xem <strong>Elite Chương 2.1 (Tổng kết Phần 3: Cách tính giá video)</strong>",
+              levelUp: "Học cách làm bài test: <strong>Elite Pro Phần 2 (Quá trình mình làm test Job thật 1h46p)</strong>",
+              monetize: "🎉 Xin chúc mừng! Bạn chính thức bước vào hàng ngũ Editor kiếm tiền độc lập!"
+            }
+          }
+        ]
+      },
+      {
+        id: "s4",
+        title: "SPRINT 4: CHỐT MONTHLY RETAINER & TỐT NGHIỆP AN TOÀN (TẾT 2027)",
+        desc: "Chuyển khách lẻ thành khách ký hợp đồng tháng $500 - $1,000, hoàn tất nghĩa vụ học tập",
+        pill: "Về Đích",
+        color: "#f43f5e",
+        tasks: [
+          {
+            id: "s4_t1",
+            title: "Chuyển khách hàng thành Monthly Retainer ($500 - $1,000/tháng)",
+            duration: "Chiến lược",
+            output: "Có 1 - 2 khách ruột đặt hàng cố định hàng tuần (12-20 video/tháng)",
+            isOutput: false,
+            mapping: {
+              troubleshoot: "Học kinh nghiệm xử lý khách: <strong>Elite Pro Phần 4 (Ghi lại Meeting hàng tuần)</strong>",
+              levelUp: "Học cách quản lý nhiều dự án: Áp dụng triệt để GTD trong Doom Emacs / Obsidian.",
+              monetize: "Monthly Retainer mang lại dòng tiền ổn định, xóa tan nỗi lo bấp bênh của Freelancer."
+            }
+          },
+          {
+            id: "s4_t2",
+            title: "Hoàn thành đồ án & Tốt nghiệp trường Đại học đúng hạn",
+            duration: "Học vấn",
+            output: "Bảo vệ thành công đồ án, giải phóng 100% nghĩa vụ học hành",
+            isOutput: false,
+            mapping: {
+              troubleshoot: "Khung giờ vàng: 13:30 - 15:30 mỗi ngày (theo La Bàn Sinh Tồn 2027)",
+              levelUp: "Tận dụng AI giải phóng thời gian viết lách tài liệu học tập.",
+              monetize: "Cầm tấm bằng tốt nghiệp trong tay ➔ Hoàn toàn tự do bước ra biển lớn!"
+            }
+          },
+          {
+            id: "s4_t3",
+            title: "🎯 ĂN TẾT NGUYÊN ĐÁN 2027 VỚI VỊ THẾ CHIẾN THẮNG",
+            duration: "Vinh quang",
+            output: "Độc lập tài chính, có nghề kiếm tiền bền vững, tương lai rộng mở",
+            isOutput: true,
+            mapping: {
+              troubleshoot: "Nhìn lại hành trình: Mở la bàn <strong>the-personal-compass-of-lang.md</strong>",
+              levelUp: "Chuẩn bị cho năm 2027: Mở rộng sang Long Form YouTube & Vibe Coding Tech Creator!",
+              monetize: "Bạn đã vượt qua bài test sinh tồn khắc nghiệt nhất một cách xuất sắc!"
+            }
+          }
+        ]
+      }
+    ];
+
+    // =========================================================================
+    // 2. DUO STATE MANAGEMENT & FIREBASE REALTIME SYNC
+    // =========================================================================
+    const LOCAL_STORAGE_KEY = "elite_duo_progress_v4";
+    let activeProfile = localStorage.getItem("elite_active_profile") || "lang"; // 'lang' or 'partner'
+    let duoRoomId = localStorage.getItem("elite_duo_room_id") || "lang_duo_room_2027";
+
+    let userNames = {
+      lang: localStorage.getItem("elite_name_lang") || "Lang",
+      partner: localStorage.getItem("elite_name_partner") || "Bạn Gái"
+    };
+
+    let duoState = {
+      lang: {},
+      partner: {}
+    };
+
+    // Load Local Cache
+    try {
+      const cached = localStorage.getItem(LOCAL_STORAGE_KEY);
+      if (cached) {
+        duoState = JSON.parse(cached);
+        if (!duoState.lang) duoState.lang = {};
+        if (!duoState.partner) duoState.partner = {};
+      }
+    } catch (e) {
+      console.warn("Storage parse error:", e);
+    }
+
+    // Initialize Firebase RTDB
+    const firebaseConfig = {
+      apiKey: "AIzaSyBfj1pBg6Px0pUhERNuRxzPJCqwL9h0G1k",
+      authDomain: "my-habits-bbe5b.firebaseapp.com",
+      databaseURL: "https://my-habits-bbe5b-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "my-habits-bbe5b",
+      storageBucket: "my-habits-bbe5b.firebasestorage.app",
+      messagingSenderId: "46496314879",
+      appId: "1:46496314879:web:0011dad743b74200f423ca"
+    };
+
+    let fbDatabase = null;
+    let duoRef = null;
+
+    try {
+      firebase.initializeApp(firebaseConfig);
+      fbDatabase = firebase.database();
+      duoRef = fbDatabase.ref('elite_duo_rooms/' + duoRoomId);
+
+      // Listen for Live Realtime Updates from Partner!
+      duoRef.on('value', snapshot => {
+        const val = snapshot.val();
+        if (val) {
+          if (val.lang) duoState.lang = val.lang;
+          if (val.partner) duoState.partner = val.partner;
+          if (val.userNames) {
+            userNames = { ...userNames, ...val.userNames };
+          }
+          saveLocalCache();
+          renderUI();
+          document.getElementById("syncDot").classList.remove("offline");
+          document.getElementById("syncText").innerText = "Cloud Synced";
+        }
+      });
+    } catch (err) {
+      console.warn("Firebase offline or notice:", err);
+      document.getElementById("syncDot").classList.add("offline");
+      document.getElementById("syncText").innerText = "Local Only";
+    }
+
+    function saveLocalCache() {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(duoState));
+      localStorage.setItem("elite_name_lang", userNames.lang);
+      localStorage.setItem("elite_name_partner", userNames.partner);
+    }
+
+    function pushToCloud() {
+      saveLocalCache();
+      if (duoRef) {
+        duoRef.set({
+          lang: duoState.lang,
+          partner: duoState.partner,
+          userNames: userNames,
+          updatedAt: Date.now()
+        }).catch(e => console.warn("Cloud sync error:", e));
+      }
+    }
+
+    // Toggle Active Profile (Switch between Lang and Girlfriend)
+    function toggleActiveProfile() {
+      activeProfile = activeProfile === "lang" ? "partner" : "lang";
+      localStorage.setItem("elite_active_profile", activeProfile);
+      updateProfileButton();
+      renderUI();
+    }
+
+    function updateProfileButton() {
+      const btn = document.getElementById("profileToggleBtn");
+      const avatar = document.getElementById("profileAvatar");
+      const nameEl = document.getElementById("currentProfileName");
+
+      if (activeProfile === "lang") {
+        btn.className = "profile-switch-btn active-lang";
+        avatar.innerText = "🔵";
+        nameEl.innerText = userNames.lang;
+      } else {
+        btn.className = "profile-switch-btn active-partner";
+        avatar.innerText = "🌸";
+        nameEl.innerText = userNames.partner;
+      }
+    }
+
+    function editUserName(userKey) {
+      const current = userNames[userKey];
+      const newName = prompt(`Nhập tên hiển thị cho ${userKey === 'lang' ? 'Lang' : 'Bạn gái'}:`, current);
+      if (newName && newName.trim()) {
+        userNames[userKey] = newName.trim();
+        pushToCloud();
+        updateProfileButton();
+        renderUI();
+      }
+    }
+
+    // Toggle Task completion for the currently active profile
+    function toggleTaskForActiveUser(taskId) {
+      if (!duoState[activeProfile]) duoState[activeProfile] = {};
+      duoState[activeProfile][taskId] = !duoState[activeProfile][taskId];
+      pushToCloud();
+      renderUI();
+    }
+
+    // =========================================================================
+    // 3. UI RENDERING & STATS CALCULATION
+    // =========================================================================
+    let currentSprintFilter = 's1'; // Mặc định mở SPRINT 1 (Chương 1.2 core)
+
+    function filterSprint(sprintId) {
+      currentSprintFilter = sprintId;
+      document.querySelectorAll(".sprint-tab").forEach(tab => {
+        tab.classList.toggle("active", tab.getAttribute("onclick").includes(sprintId));
+      });
+      renderUI();
+    }
+
+    function calculateStats(userKey) {
+      let totalTasks = 0;
+      let completedTasks = 0;
+      let completedVideos = 0;
+
+      ROADMAP_SPRINTS.forEach(sprint => {
+        sprint.tasks.forEach(t => {
+          totalTasks++;
+          if (duoState[userKey] && duoState[userKey][t.id]) {
+            completedTasks++;
+            if (t.isOutput) completedVideos++;
+          }
+        });
+      });
+
+      const pct = totalTasks === 0 ? 0 : Math.round((completedTasks / totalTasks) * 100);
+      return { pct, completedTasks, totalTasks, completedVideos };
+    }
+
+    function renderUI() {
+      // Calculate Stats
+      const langStat = calculateStats('lang');
+      const partnerStat = calculateStats('partner');
+
+      document.getElementById("displayNameLang").innerText = userNames.lang;
+      document.getElementById("displayNamePartner").innerText = userNames.partner;
+
+      document.getElementById("barLang").style.width = langStat.pct + "%";
+      document.getElementById("badgeLang").innerText = `${langStat.pct}% • ${langStat.completedVideos} Video`;
+
+      document.getElementById("barPartner").style.width = partnerStat.pct + "%";
+      document.getElementById("badgePartner").innerText = `${partnerStat.pct}% • ${partnerStat.completedVideos} Video`;
+
+      updateProfileButton();
+
+      // Render Sprints
+      const container = document.getElementById("sprintContainer");
+      container.innerHTML = "";
+
+      ROADMAP_SPRINTS.forEach(sprint => {
+        if (currentSprintFilter !== 'all' && sprint.id !== currentSprintFilter) return;
+
+        const card = document.createElement("div");
+        card.className = "sprint-card";
+
+        card.innerHTML = `
+          <div class="sprint-header" onclick="toggleSprintBody(this)">
+            <div class="sprint-title-wrap">
+              <span class="sprint-pill" style="background: ${sprint.color}15; color: ${sprint.color}; border: 1px solid ${sprint.color}35;">
+                ${sprint.pill}
+              </span>
+              <div>
+                <div class="sprint-title">${sprint.title}</div>
+                <div class="sprint-desc">${sprint.desc}</div>
+              </div>
+            </div>
+            <div style="font-size: 18px; color: var(--text-dim);">▼</div>
+          </div>
+          <div class="sprint-body">
+            ${sprint.tasks.map(task => {
+              const langDone = !!(duoState.lang && duoState.lang[task.id]);
+              const partnerDone = !!(duoState.partner && duoState.partner[task.id]);
+              const myDone = activeProfile === 'lang' ? langDone : partnerDone;
+
+              return `
+                <div class="task-item ${myDone ? 'my-done' : ''} ${task.isOutput ? 'is-deliverable' : ''}" id="task-${task.id}">
+                  <div class="task-main">
+                    <div class="task-left" onclick="toggleTaskForActiveUser('${task.id}')">
+                      <div class="checkbox">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </div>
+                      <div class="task-details">
+                        <div class="task-header-row">
+                          <span class="task-title">${task.title}</span>
+                          <span class="duration-tag">⏱️ ${task.duration}</span>
+                          ${task.isOutput ? `<span class="output-pill">🎯 SẢN PHẨM CẦM TAY</span>` : ''}
+                        </div>
+                        <div class="output-text">🚀 Đích đến: ${task.output}</div>
+                      </div>
+                    </div>
+
+                    <!-- Duo Live Status Badges -->
+                    <div class="duo-status-badges">
+                      <span class="user-pill ${langDone ? 'lang-done' : 'lang-pending'}" title="${userNames.lang}: ${langDone ? 'Đã hoàn thành' : 'Chưa xong'}">
+                        🔵 ${userNames.lang} ${langDone ? '✓' : '...'}
+                      </span>
+                      <span class="user-pill ${partnerDone ? 'partner-done' : 'partner-pending'}" title="${userNames.partner}: ${partnerDone ? 'Đã hoàn thành' : 'Chưa xong'}">
+                        🌸 ${userNames.partner} ${partnerDone ? '✓' : '...'}
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Smart Mapping Triad -->
+                  <div class="mapping-grid">
+                    <div class="map-box troubleshoot">
+                      <span>💡 <strong>Khúc mắc kỹ thuật:</strong> ${task.mapping.troubleshoot}</span>
+                    </div>
+                    <div class="map-box level-up">
+                      <span>🚀 <strong>Gợi ý tiến xa hơn:</strong> ${task.mapping.levelUp}</span>
+                    </div>
+                    <div class="map-box monetize">
+                      <span>💰 <strong>Tư duy kiếm tiền:</strong> ${task.mapping.monetize}</span>
+                    </div>
+                  </div>
+                </div>
+              `;
+            }).join("")}
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function toggleSprintBody(headerEl) {
+      const body = headerEl.nextElementSibling;
+      body.style.display = body.style.display === "none" ? "flex" : "none";
+    }
+
+    // Modal Handlers
+    function openSyncModal() {
+      document.getElementById("roomIdInput").value = duoRoomId;
+      document.getElementById("syncModal").style.display = "flex";
+    }
+
+    function closeSyncModal() {
+      document.getElementById("syncModal").style.display = "none";
+    }
+
+    function saveRoomId() {
+      const val = document.getElementById("roomIdInput").value.trim();
+      if (val) {
+        duoRoomId = val;
+        localStorage.setItem("elite_duo_room_id", duoRoomId);
+        location.reload();
+      }
+    }
+
+    // Init
+    updateProfileButton();
+    renderUI();
+  </script>
+</body>
+</html>
