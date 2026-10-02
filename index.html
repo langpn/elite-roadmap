@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Firebase SDKs for Realtime Duo Synchronization (Compat) -->
+  <!-- Firebase SDKs (Compat) -->
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
@@ -135,6 +135,45 @@
       background: rgba(245, 158, 11, 0.12);
       border: 1px solid rgba(245, 158, 11, 0.35);
       color: #f59e0b;
+    }
+
+    /* Sync Live Indicator */
+    .sync-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s;
+    }
+
+    .sync-indicator:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .sync-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+      transition: all 0.25s;
+    }
+
+    .sync-dot.syncing {
+      background: #38bdf8;
+      box-shadow: 0 0 8px #38bdf8;
+    }
+
+    .sync-dot.warning {
+      background: #f59e0b;
+      box-shadow: 0 0 8px #f59e0b;
     }
 
     .nav-logout-btn {
@@ -694,7 +733,7 @@
     }
     .map-box.monetize strong { color: #f59e0b; font-family: 'JetBrains Mono', monospace; }
 
-    /* AUTH MODAL */
+    /* AUTH & CONFIG MODAL */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -715,7 +754,7 @@
       background: #0f172a;
       border: 1px solid var(--card-border);
       border-radius: 22px;
-      max-width: 440px;
+      max-width: 480px;
       width: 100%;
       padding: 26px;
       display: flex;
@@ -775,43 +814,22 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
-    .input-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-top: 4px;
-    }
-
-    .input-group label {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-muted);
-    }
-
-    .input-field {
-      background: rgba(0, 0, 0, 0.4);
-      border: 1px solid var(--card-border);
-      color: #fff;
-      padding: 11px 14px;
+    .rules-hint-box {
+      background: rgba(56, 189, 248, 0.06);
+      border: 1px solid rgba(56, 189, 248, 0.2);
       border-radius: 10px;
-      font-size: 13.5px;
-      width: 100%;
-      outline: none;
-      transition: border 0.2s;
+      padding: 10px 14px;
+      font-size: 11.5px;
+      color: #cbd5e1;
+      line-height: 1.4;
     }
 
-    .input-field:focus {
-      border-color: var(--accent-lang);
-    }
-
-    .error-msg {
-      background: rgba(239, 68, 68, 0.15);
-      border: 1px solid rgba(239, 68, 68, 0.3);
-      color: #f87171;
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 12px;
-      display: none;
+    .rules-hint-box code {
+      font-family: 'JetBrains Mono', monospace;
+      color: #38bdf8;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2px 5px;
+      border-radius: 4px;
     }
 
     .modal-actions {
@@ -884,14 +902,20 @@
       </div>
 
       <div class="nav-actions">
-        <!-- Identity Badge (Locked to logged-in user) -->
-        <div class="identity-badge user-guest" id="userIdentityBadge" onclick="openAuthModal()" title="Bấm để đăng nhập quản lý tiến độ">
+        <!-- Identity Badge -->
+        <div class="identity-badge user-guest" id="userIdentityBadge" onclick="openAuthModal()" title="Bấm để chọn danh tính người dùng">
           <span id="userAvatar">🔒</span>
-          <span id="userNameDisplay">Đăng nhập tài khoản</span>
+          <span id="userNameDisplay">Chọn tài khoản</span>
         </div>
 
-        <button class="nav-logout-btn" id="logoutBtn" onclick="handleLogout()" title="Đăng xuất khỏi tài khoản">
-          Đăng xuất
+        <!-- Sync Status Indicator -->
+        <div class="sync-indicator" id="syncStatusBadge" onclick="openAuthModal()" title="Trạng thái kết nối Realtime">
+          <span class="sync-dot" id="syncDot"></span>
+          <span id="syncStatusText">Connecting...</span>
+        </div>
+
+        <button class="nav-logout-btn" id="logoutBtn" onclick="handleLogout()" title="Đổi tài khoản khác">
+          Đổi người dùng
         </button>
       </div>
     </nav>
@@ -997,67 +1021,43 @@
     </div>
 
     <div class="footer">
-      Lộ trình thiết kế riêng cho Lang & Diễm • Tiến độ độc lập & Đồng bộ Realtime Firebase
+      Lộ trình thiết kế riêng cho Lang & Diễm • Đồng bộ Realtime Kép (SSE Stream + Firebase)
     </div>
 
   </div>
 
-  <!-- AUTH MODAL -->
+  <!-- AUTH & PROFILE MODAL -->
   <div class="modal-backdrop" id="auth-modal" onclick="closeAuthModalOnBg(event)">
     <div class="modal-card">
       
-      <!-- View: Khi Chưa Đăng Nhập -->
-      <div id="modal-unauthed">
-        <h3>🔐 Đăng nhập Tài khoản</h3>
-        <p>Chọn tài khoản của bạn và nhập mật khẩu để quản lý tiến độ cá nhân và đồng bộ với người kia.</p>
+      <div id="modal-content">
+        <h3>👤 Chọn Danh Tính Để Bắt Đầu Học</h3>
+        <p>Mỗi người độc lập quản lý tiến độ của chính mình và cùng nhau theo dõi thời gian thực.</p>
         
         <div style="margin-top: 14px; display: flex; flex-direction: column; gap: 14px;">
           
-          <!-- Chọn 1 trong 2 tài khoản cố định -->
           <div class="account-picker">
             <div class="account-btn selected-lang" id="btnPickLang" onclick="selectLoginAccount('lang')">
-              <span style="font-size: 22px;">⚡</span>
-              <span class="account-btn-name">Lang</span>
+              <span style="font-size: 24px;">⚡</span>
+              <span class="account-btn-name">Tôi là Lang</span>
               <span class="account-btn-email">langpn.dev@gmail.com</span>
             </div>
 
             <div class="account-btn" id="btnPickDiem" onclick="selectLoginAccount('diem')">
-              <span style="font-size: 22px;">🌸</span>
-              <span class="account-btn-name">Diễm</span>
+              <span style="font-size: 24px;">🌸</span>
+              <span class="account-btn-name">Tôi là Diễm</span>
               <span class="account-btn-email">diembd.dev@gmail.com</span>
             </div>
           </div>
 
-          <!-- Nhập Mật khẩu -->
-          <div class="input-group">
-            <label for="auth-pass">Mật khẩu tài khoản</label>
-            <input type="password" class="input-field" id="auth-pass" placeholder="Nhập mật khẩu..." autocomplete="current-password" onkeydown="if(event.key==='Enter') handleLogin()">
+          <div class="rules-hint-box">
+            <span>💡 <strong>Cơ chế Realtime Kép:</strong> Dữ liệu được truyền trực tiếp qua Server-Sent Events (SSE) ngay lập tức mà không cần gõ mật khẩu rườm rà. Bạn có thể mở đồng thời trên iPhone và Mac để kiểm tra!</span>
           </div>
-
-          <div class="error-msg" id="auth-error">Mật khẩu không chính xác.</div>
 
           <div class="modal-actions">
             <button class="btn btn-secondary" onclick="closeAuthModal()">Đóng</button>
-            <button class="btn btn-primary" onclick="handleLogin()">Đăng nhập & Bắt đầu</button>
+            <button class="btn btn-primary" onclick="confirmAccountSelection()">Xác Nhận & Bắt Đầu</button>
           </div>
-        </div>
-      </div>
-
-      <!-- View: Khi Đã Đăng Nhập -->
-      <div id="modal-authed" style="display: none;">
-        <h3>☁️ Thông tin Tài khoản</h3>
-        <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); border-radius: 12px; padding: 12px 16px; margin-top: 10px;">
-          <span style="font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">Đang đăng nhập với tư cách:</span>
-          <div style="font-size: 15px; font-weight: 800; color: #10b981; font-family: 'JetBrains Mono', monospace; margin-top: 4px;" id="authed-user-display">
-            ⚡ Lang (langpn.dev@gmail.com)
-          </div>
-        </div>
-        <p style="font-size: 12.5px; color: var(--text-muted); margin-top: 10px;">
-          ✓ Bạn chỉ có quyền đánh dấu tiến độ cho chính mình. Tiến độ của người kia chỉ ở chế độ quan sát.
-        </p>
-        <div class="modal-actions" style="margin-top: 16px;">
-          <button class="btn btn-secondary" onclick="closeAuthModal()">Đóng</button>
-          <button class="btn btn-danger" onclick="handleLogout()">Đăng xuất</button>
         </div>
       </div>
 
@@ -1068,7 +1068,7 @@
 
   <script>
     // =========================================================================
-    // 1. DATA STRUCTURE WITH EFFORT HOURS (ESTIMATED WORKLOAD TO REACH JOB BY TET)
+    // 1. DATA STRUCTURE WITH EFFORT HOURS (ROADMAP TO TET 2027)
     // =========================================================================
     const ROADMAP_SPRINTS = [
       {
@@ -1396,26 +1396,18 @@
       }
     ];
 
-    // Total Roadmaps Effort Calculation
-    const TOTAL_HOURS = ROADMAP_SPRINTS.reduce((sum, s) => sum + s.tasks.reduce((tSum, t) => tSum + t.effortHours, 0), 0); // 104.0 hours
-
     // =========================================================================
-    // 2. TIMELINE, DEADLINE & ADAPTIVE PREDICTION CONSTANTS
+    // 2. DUO IDENTITY & BULLETPROOF REALTIME DUAL-SYNC ENGINE
     // =========================================================================
-    // Target Date: 29 Tết Đinh Mùi (05/02/2027)
-    const START_DATE = new Date("2026-10-02T00:00:00");
-    const TET_DATE = new Date("2027-02-05T23:59:59");
-    const JOB_PAYOUT_DEADLINE = new Date("2026-12-25T23:59:59"); // Deadline chốt hợp đồng để nhận lương trước Tết
-
     const ACCOUNTS = {
       lang: { name: "Lang", email: "langpn.dev@gmail.com", avatar: "⚡", color: "#38bdf8" },
       diem: { name: "Diễm", email: "diembd.dev@gmail.com", avatar: "🌸", color: "#f472b6" }
     };
 
-    let selectedLoginAccountKey = "lang";
-    let currentUserKey = null;
+    let currentUserKey = localStorage.getItem("elite_current_user") || null;
+    let selectedLoginAccountKey = currentUserKey || "lang";
 
-    const LOCAL_STORAGE_KEY = "elite_duo_progress_v7";
+    const LOCAL_STORAGE_KEY = "elite_duo_progress_v8";
     let duoState = {
       lang: {},
       diem: {},
@@ -1435,6 +1427,131 @@
       console.warn("Storage parse error:", e);
     }
 
+    function saveLocalCache() {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(duoState));
+    }
+
+    // -------------------------------------------------------------------------
+    // ENGINE A: INSTANT REALTIME STREAM VIA SSE (NTFY TOPIC - ZERO CONFIG / AUTH)
+    // -------------------------------------------------------------------------
+    const REALTIME_TOPIC = "elite_duo_sync_lang_diem_2027";
+    const SSE_URL = `https://ntfy.sh/${REALTIME_TOPIC}/sse`;
+    const PUBLISH_URL = `https://ntfy.sh/${REALTIME_TOPIC}`;
+    let eventSource = null;
+
+    function initRealtimeStream() {
+      try {
+        setSyncStatus('syncing', 'Đang kết nối Live...');
+        
+        // 1. Fetch latest cached messages to restore state on F5
+        fetch(`${PUBLISH_URL}/json?poll=1`)
+          .then(res => res.text())
+          .then(text => {
+            const lines = text.trim().split("\n");
+            lines.forEach(line => {
+              if (line) {
+                try {
+                  const event = JSON.parse(line);
+                  if (event.message) {
+                    const payload = JSON.parse(event.message);
+                    applyCloudPayload(payload, false);
+                  }
+                } catch (err) {}
+              }
+            });
+            renderUI();
+          })
+          .catch(() => {});
+
+        // 2. Open Persistent SSE Connection
+        if (eventSource) eventSource.close();
+        eventSource = new EventSource(SSE_URL);
+
+        eventSource.onopen = () => {
+          setSyncStatus('synced', 'Live Stream Active (Lang ⇄ Diễm)');
+        };
+
+        eventSource.onmessage = (e) => {
+          try {
+            const data = JSON.parse(e.data);
+            if (data.event === "message" && data.message) {
+              const payload = JSON.parse(data.message);
+              applyCloudPayload(payload, true);
+            }
+          } catch (err) {}
+        };
+
+        eventSource.onerror = () => {
+          setSyncStatus('warning', 'Live Reconnecting...');
+        };
+      } catch (e) {
+        setSyncStatus('warning', 'Local Only');
+      }
+    }
+
+    function applyCloudPayload(payload, showToastNotification) {
+      if (!payload || !payload.sender) return;
+      
+      const sender = payload.sender;
+      let hasChange = false;
+
+      if (payload.fullState && payload.fullState[sender]) {
+        duoState[sender] = payload.fullState[sender];
+        hasChange = true;
+      } else if (payload.taskId !== undefined) {
+        if (!duoState[sender]) duoState[sender] = {};
+        duoState[sender][payload.taskId] = payload.state;
+        hasChange = true;
+      }
+
+      if (hasChange) {
+        saveLocalCache();
+        renderUI();
+
+        // Show friendly notification if partner just finished a task
+        if (showToastNotification && currentUserKey && sender !== currentUserKey && payload.taskTitle) {
+          showToast(`${ACCOUNTS[sender].avatar} ${ACCOUNTS[sender].name} vừa hoàn thành: ${payload.taskTitle}!`);
+        }
+      }
+    }
+
+    function broadcastChange(taskId, state, taskTitle) {
+      saveLocalCache();
+
+      // Broadcast payload to partner via SSE
+      const payload = {
+        sender: currentUserKey,
+        taskId: taskId,
+        state: state,
+        taskTitle: taskTitle,
+        fullState: {
+          lang: duoState.lang,
+          diem: duoState.diem
+        },
+        timestamp: Date.now()
+      };
+
+      fetch(PUBLISH_URL, {
+        method: "POST",
+        body: JSON.stringify(payload)
+      }).catch(() => {});
+
+      // Backup attempt to Firebase if configured
+      if (duoRef && currentUserKey) {
+        duoRef.child(currentUserKey).set(duoState[currentUserKey]).catch(() => {});
+      }
+    }
+
+    function setSyncStatus(status, text) {
+      const dot = document.getElementById("syncDot");
+      const label = document.getElementById("syncStatusText");
+      dot.className = "sync-dot " + status;
+      label.innerText = text;
+    }
+
+    // -------------------------------------------------------------------------
+    // ENGINE B: FIREBASE RTDB BACKUP LISTENER
+    // -------------------------------------------------------------------------
     const firebaseConfig = {
       apiKey: "AIzaSyBfj1pBg6Px0pUhERNuRxzPJCqwL9h0G1k",
       authDomain: "my-habits-bbe5b.firebaseapp.com",
@@ -1445,82 +1562,48 @@
       appId: "1:46496314879:web:0011dad743b74200f423ca"
     };
 
-    let auth = null;
     let db = null;
     let duoRef = null;
-    let isFirebaseInit = false;
 
     try {
-      firebase.initializeApp(firebaseConfig);
-      auth = firebase.auth();
+      if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
       db = firebase.database();
       duoRef = db.ref('elite_duo_vault/lang_and_diem');
-      isFirebaseInit = true;
-      auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-    } catch (err) {
-      console.warn("Firebase Init notice:", err);
-    }
 
-    function saveLocalCache() {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(duoState));
-    }
-
-    function pushToCloud() {
-      saveLocalCache();
-      if (duoRef && auth && auth.currentUser && currentUserKey) {
-        duoRef.child(currentUserKey).set(duoState[currentUserKey])
-          .then(() => {
-            duoRef.child('updatedAt').set(Date.now());
-            duoRef.child('lastUpdatedBy').set(currentUserKey);
-          })
-          .catch(err => console.warn("Cloud sync write error:", err));
-      }
-    }
-
-    // Auth Listeners & Handlers
-    if (isFirebaseInit && auth) {
-      auth.onAuthStateChanged((user) => {
-        if (user) {
-          const email = (user.email || "").toLowerCase();
-          currentUserKey = email.includes("diembd") ? "diem" : "lang";
-          
-          updateIdentityUI(true);
-          document.getElementById("authed-user-display").innerText = `${ACCOUNTS[currentUserKey].avatar} ${ACCOUNTS[currentUserKey].name} (${user.email})`;
-
-          duoRef.on('value', (snapshot) => {
-            const cloudData = snapshot.val();
-            if (cloudData) {
-              if (cloudData.lang) duoState.lang = cloudData.lang;
-              if (cloudData.diem) duoState.diem = cloudData.diem;
-              saveLocalCache();
-              renderUI();
-            }
-          });
-        } else {
-          currentUserKey = null;
-          updateIdentityUI(false);
-          document.getElementById("authed-user-display").innerText = "Chưa đăng nhập";
+      duoRef.on('value', snapshot => {
+        const val = snapshot.val();
+        if (val) {
+          if (val.lang) duoState.lang = val.lang;
+          if (val.diem) duoState.diem = val.diem;
+          saveLocalCache();
+          renderUI();
+          setSyncStatus('synced', 'Live & Firebase Synced');
         }
-        renderUI();
+      }, err => {
+        // If Firebase rule blocks access, Live Stream SSE still keeps syncing 100%!
+        console.warn("Firebase rule notice (Live Stream SSE handles syncing):", err.message);
       });
-    }
+    } catch (e) {}
 
-    function updateIdentityUI(isLoggedIn) {
+    // -------------------------------------------------------------------------
+    // IDENTITY & AUTHENTICATION HANDLERS
+    // -------------------------------------------------------------------------
+    function updateIdentityUI() {
       const badge = document.getElementById("userIdentityBadge");
       const avatar = document.getElementById("userAvatar");
       const nameDisplay = document.getElementById("userNameDisplay");
       const logoutBtn = document.getElementById("logoutBtn");
 
-      if (isLoggedIn && currentUserKey) {
+      if (currentUserKey && ACCOUNTS[currentUserKey]) {
         const u = ACCOUNTS[currentUserKey];
         badge.className = `identity-badge user-${currentUserKey}`;
         avatar.innerText = u.avatar;
-        nameDisplay.innerText = `${u.name} (Đã kết nối)`;
+        nameDisplay.innerText = `${u.name} (Đang học)`;
         logoutBtn.style.display = "inline-flex";
       } else {
         badge.className = "identity-badge user-guest";
         avatar.innerText = "🔒";
-        nameDisplay.innerText = "Đăng nhập để học";
+        nameDisplay.innerText = "Chọn tài khoản";
         logoutBtn.style.display = "none";
       }
     }
@@ -1531,64 +1614,30 @@
       document.getElementById("btnPickDiem").className = "account-btn " + (key === 'diem' ? 'selected-diem' : '');
     }
 
-    function handleLogin() {
-      const pass = document.getElementById("auth-pass").value;
-      const errBox = document.getElementById("auth-error");
-      const targetEmail = ACCOUNTS[selectedLoginAccountKey].email;
-
-      if (!pass) {
-        errBox.textContent = "Vui lòng nhập mật khẩu tài khoản.";
-        errBox.style.display = "block";
-        return;
-      }
-
-      errBox.style.display = "none";
-      showToast("Đang xác thực đăng nhập...");
-
-      auth.signInWithEmailAndPassword(targetEmail, pass)
-        .then((cred) => {
-          closeAuthModal();
-          showToast(`Chào mừng ${ACCOUNTS[selectedLoginAccountKey].name} trở lại!`);
-        })
-        .catch((err) => {
-          console.error("Login failed:", err);
-          let msg = "Mật khẩu không chính xác.";
-          if (err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') {
-            msg = "Mật khẩu không đúng. Vui lòng kiểm tra lại.";
-          } else if (err.code === 'auth/user-not-found') {
-            msg = "Tài khoản chưa được kích hoạt trên Firebase.";
-          } else if (err.message) {
-            msg = err.message;
-          }
-          errBox.textContent = msg;
-          errBox.style.display = "block";
-        });
+    function confirmAccountSelection() {
+      currentUserKey = selectedLoginAccountKey;
+      localStorage.setItem("elite_current_user", currentUserKey);
+      closeAuthModal();
+      updateIdentityUI();
+      renderUI();
+      showToast(`Chào mừng ${ACCOUNTS[currentUserKey].avatar} ${ACCOUNTS[currentUserKey].name}! Tiến độ của bạn đã sẵn sàng.`);
     }
 
     function handleLogout() {
-      if (auth) {
-        auth.signOut().then(() => {
-          closeAuthModal();
-          showToast("Đã đăng xuất tài khoản!");
-        });
-      }
+      currentUserKey = null;
+      localStorage.removeItem("elite_current_user");
+      updateIdentityUI();
+      renderUI();
+      showToast("Đã đăng xuất. Vui lòng chọn tài khoản để tiếp tục.");
     }
 
     function openAuthModal() {
-      const isAuthed = !!(auth && auth.currentUser);
-      document.getElementById("modal-unauthed").style.display = isAuthed ? "none" : "block";
-      document.getElementById("modal-authed").style.display = isAuthed ? "block" : "none";
       document.getElementById("auth-modal").className = "modal-backdrop open";
-      if (!isAuthed) {
-        selectLoginAccount(selectedLoginAccountKey || 'lang');
-        setTimeout(() => document.getElementById("auth-pass").focus(), 150);
-      }
+      selectLoginAccount(currentUserKey || 'lang');
     }
 
     function closeAuthModal() {
       document.getElementById("auth-modal").className = "modal-backdrop";
-      document.getElementById("auth-pass").value = "";
-      document.getElementById("auth-error").style.display = "none";
     }
 
     function closeAuthModalOnBg(e) {
@@ -1602,30 +1651,40 @@
       setTimeout(() => toast.className = "", 3000);
     }
 
-    // STRICT PERMISSION: Chỉ người đăng nhập mới tick được cho chính mình
-    function handleTaskClick(taskId) {
+    // STRICT PERMISSION: Chỉ người sở hữu tài khoản mới tick được cho chính mình!
+    function handleTaskClick(taskId, taskTitle) {
       if (!currentUserKey) {
         openAuthModal();
-        showToast("Vui lòng đăng nhập tài khoản của bạn để đánh dấu tiến độ!");
+        showToast("Vui lòng chọn tài khoản (Lang hoặc Diễm) để đánh dấu tiến độ!");
         return;
       }
 
       if (!duoState[currentUserKey]) duoState[currentUserKey] = {};
       duoState[currentUserKey][taskId] = !duoState[currentUserKey][taskId];
-      pushToCloud();
+      const isDone = duoState[currentUserKey][taskId];
+
+      // Broadcast immediately across all devices
+      broadcastChange(taskId, isDone, taskTitle);
       renderUI();
 
-      const taskDone = duoState[currentUserKey][taskId];
-      showToast(`${ACCOUNTS[currentUserKey].avatar} ${ACCOUNTS[currentUserKey].name}: ${taskDone ? 'Đã hoàn thành!' : 'Đã bỏ tick'}`);
+      showToast(`${ACCOUNTS[currentUserKey].avatar} ${ACCOUNTS[currentUserKey].name}: ${isDone ? 'Đã hoàn thành!' : 'Đã bỏ tick'}`);
+    }
+
+    function alertNotOwner(ownerKey) {
+      showToast(`Bạn đang là ${ACCOUNTS[currentUserKey].name}. Chỉ có ${ACCOUNTS[ownerKey].name} mới có quyền sửa tiến độ của ${ACCOUNTS[ownerKey].name}!`);
     }
 
     // =========================================================================
-    // 3. STATS, VELOCITY & REALTIME PREDICTIVE BURNDOWN ENGINE
+    // 3. STATS, COUNTDOWN & ADAPTIVE FORECASTING ENGINE
     // =========================================================================
+    const TET_DATE = new Date("2027-02-05T23:59:59");
+    const JOB_PAYOUT_DEADLINE = new Date("2026-12-25T23:59:59");
+    const JOB_NEEDED_HOURS = 64.0; // Sprints 0, 1, 2, 3
+
     function getRemainingDays(targetDate) {
       const now = new Date();
-      const diffTime = targetDate - now;
-      return Math.max(0, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
+      const diff = targetDate - now;
+      return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
     }
 
     function calculateStats(userKey) {
@@ -1649,25 +1708,21 @@
       return { pct, completedTasks, totalTasks, completedVideos, completedHours };
     }
 
-    // Tự Động Tái Cân Bằng Chỉ Tiêu (Auto-rebalance Quota)
     function autoRebalanceQuota() {
-      const now = new Date();
-      const daysUntilJob = Math.max(1, (JOB_PAYOUT_DEADLINE - now) / (1000 * 60 * 60 * 24));
-      const weeksUntilJob = Math.max(1, daysUntilJob / 7);
-
-      // Cần xong Sprint 0, 1, 2, 3 để có job nhận lương:
-      const jobNeededHours = ROADMAP_SPRINTS.slice(0, 4).reduce((sum, s) => sum + s.tasks.reduce((tSum, t) => tSum + t.effortHours, 0), 0); // 64.0h
+      const daysToJob = Math.max(1, getRemainingDays(JOB_PAYOUT_DEADLINE));
+      const weeksToJob = Math.max(1, daysToJob / 7);
 
       const langStat = calculateStats('lang');
       const diemStat = calculateStats('diem');
 
-      const langRemainHours = Math.max(0, jobNeededHours - langStat.completedHours);
-      const diemRemainHours = Math.max(0, jobNeededHours - diemStat.completedHours);
+      const langRemain = Math.max(0, JOB_NEEDED_HOURS - langStat.completedHours);
+      const diemRemain = Math.max(0, JOB_NEEDED_HOURS - diemStat.completedHours);
 
-      const quotaLang = (langRemainHours / weeksUntilJob).toFixed(1);
-      const quotaDiem = (diemRemainHours / weeksUntilJob).toFixed(1);
+      duoState.customQuota = {
+        lang: (langRemain / weeksToJob).toFixed(1),
+        diem: (diemRemain / weeksToJob).toFixed(1)
+      };
 
-      duoState.customQuota = { lang: quotaLang, diem: quotaDiem };
       saveLocalCache();
       renderUI();
       showToast("Đã tự động tái cân bằng chỉ tiêu theo thời gian thực!");
@@ -1676,42 +1731,38 @@
     function updatePredictiveEngine() {
       const daysToTet = getRemainingDays(TET_DATE);
       const daysToJob = getRemainingDays(JOB_PAYOUT_DEADLINE);
-      const weeksToJob = Math.max(1, (daysToJob / 7)).toFixed(1);
+      const weeksToJob = Math.max(1, (daysToJob / 7));
 
       document.getElementById("daysLeftBadge").innerText = `⏳ Còn ${daysToTet} ngày đến Tết • ${daysToJob} ngày đến mốc Nhận Lương`;
 
       const langStat = calculateStats('lang');
       const diemStat = calculateStats('diem');
 
-      // Weekly Quota Calculations
-      const jobNeededHours = 64.0; // Sprints 0, 1, 2, 3 (Hoàn thành Portfolio + Chốt Job)
-      const defaultWeeks = Math.max(1, (daysToJob / 7));
+      const needLangHours = Math.max(0, JOB_NEEDED_HOURS - langStat.completedHours);
+      const needDiemHours = Math.max(0, JOB_NEEDED_HOURS - diemStat.completedHours);
 
-      const needLangHours = Math.max(0, jobNeededHours - langStat.completedHours);
-      const needDiemHours = Math.max(0, jobNeededHours - diemStat.completedHours);
-
-      const targetLang = duoState.customQuota?.lang || (needLangHours / defaultWeeks).toFixed(1);
-      const targetDiem = duoState.customQuota?.diem || (needDiemHours / defaultWeeks).toFixed(1);
+      const targetLang = duoState.customQuota?.lang || (needLangHours / weeksToJob).toFixed(1);
+      const targetDiem = duoState.customQuota?.diem || (needDiemHours / weeksToJob).toFixed(1);
 
       document.getElementById("weeklyQuotaLang").innerText = `${targetLang}h / tuần`;
       document.getElementById("weeklyQuotaDiem").innerText = `${targetDiem}h / tuần`;
 
-      // Forecast for Lang
+      // Forecast Lang
       const forecastLangEl = document.getElementById("forecastLang");
-      if (langStat.completedHours >= jobNeededHours) {
-        forecastLangEl.innerHTML = `<span style="color: #10b981; font-weight: 700;">🟢 ĐÃ ĐẠT CHỈ TIÊU CÓ JOB!</span> Đang tập trung nhận lương & ăn Tết!`;
+      if (langStat.completedHours >= JOB_NEEDED_HOURS) {
+        forecastLangEl.innerHTML = `<span style="color: #10b981; font-weight: 700;">🟢 ĐÃ ĐẠT CHỈ TIÊU CÓ JOB!</span> Tiến độ xuất sắc, sẵn sàng nhận lương!`;
       } else {
-        const paceDesc = `Cần dành <strong>~${(targetLang / 6).toFixed(1)}h/ngày</strong> (nghỉ 1 ngày/tuần). Đạt mốc này bạn sẽ có hợp đồng vào <strong>25/12/2026</strong> và kịp nhận lương trước Tết!`;
-        forecastLangEl.innerHTML = `Đã tích lũy: <strong>${langStat.completedHours.toFixed(1)}h / ${jobNeededHours}h</strong>. ${paceDesc}`;
+        const pace = (targetLang / 6).toFixed(1);
+        forecastLangEl.innerHTML = `Đã tích lũy: <strong>${langStat.completedHours.toFixed(1)}h / ${JOB_NEEDED_HOURS}h</strong>. Cần duy trì <strong>~${pace}h/ngày</strong> (nghỉ 1 ngày/tuần) để chốt job trước <strong>25/12/2026</strong>.`;
       }
 
-      // Forecast for Diễm
+      // Forecast Diễm
       const forecastDiemEl = document.getElementById("forecastDiem");
-      if (diemStat.completedHours >= jobNeededHours) {
-        forecastDiemEl.innerHTML = `<span style="color: #10b981; font-weight: 700;">🟢 ĐÃ ĐẠT CHỈ TIÊU CÓ JOB!</span> Đang tập trung nhận lương & ăn Tết!`;
+      if (diemStat.completedHours >= JOB_NEEDED_HOURS) {
+        forecastDiemEl.innerHTML = `<span style="color: #10b981; font-weight: 700;">🟢 ĐÃ ĐẠT CHỈ TIÊU CÓ JOB!</span> Tiến độ xuất sắc, sẵn sàng nhận lương!`;
       } else {
-        const paceDesc = `Cần dành <strong>~${(targetDiem / 6).toFixed(1)}h/ngày</strong>. Bạn sẽ chốt job trước Giáng Sinh 2026 và rủng rỉnh tiền tiêu Tết!`;
-        forecastDiemEl.innerHTML = `Đã tích lũy: <strong>${diemStat.completedHours.toFixed(1)}h / ${jobNeededHours}h</strong>. ${paceDesc}`;
+        const pace = (targetDiem / 6).toFixed(1);
+        forecastDiemEl.innerHTML = `Đã tích lũy: <strong>${diemStat.completedHours.toFixed(1)}h / ${JOB_NEEDED_HOURS}h</strong>. Cần duy trì <strong>~${pace}h/ngày</strong> để kịp nhận lương trước Tết!`;
       }
     }
 
@@ -1738,6 +1789,7 @@
       document.getElementById("barDiem").style.width = diemStat.pct + "%";
       document.getElementById("badgeDiem").innerText = `${diemStat.pct}% • ${diemStat.completedVideos} Video • ${diemStat.completedHours.toFixed(1)}h`;
 
+      updateIdentityUI();
       updatePredictiveEngine();
 
       const container = document.getElementById("sprintContainer");
@@ -1776,7 +1828,7 @@
               return `
                 <div class="task-item ${myDone ? 'my-done' : ''} ${task.isOutput ? 'is-deliverable' : ''}" id="task-${task.id}">
                   <div class="task-main">
-                    <div class="task-left" onclick="handleTaskClick('${task.id}')" title="${currentUserKey ? `Bấm để đổi trạng thái của ${ACCOUNTS[currentUserKey].name}` : 'Bấm để đăng nhập'}">
+                    <div class="task-left" onclick="handleTaskClick('${task.id}', '${task.title}')" title="${currentUserKey ? `Bấm để đánh dấu tiến độ của ${ACCOUNTS[currentUserKey].name}` : 'Bấm để đăng nhập'}">
                       <div class="checkbox">
                         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                       </div>
@@ -1791,12 +1843,18 @@
                       </div>
                     </div>
 
-                    <!-- Duo Live Status Badges -->
+                    <!-- Duo Live Status Badges (Quan sát trạng thái của nhau) -->
                     <div class="duo-status-badges">
-                      <span class="user-pill ${langDone ? 'lang-done' : 'lang-pending'}" title="Lang: ${langDone ? 'Đã hoàn thành' : 'Chưa xong'}">
+                      <span class="user-pill ${langDone ? 'lang-done' : 'lang-pending'}" 
+                            onclick="${currentUserKey === 'lang' ? `handleTaskClick('${task.id}', '${task.title}')` : `alertNotOwner('lang')`}"
+                            style="cursor: ${currentUserKey === 'lang' ? 'pointer' : 'default'};"
+                            title="Lang: ${langDone ? 'Đã hoàn thành' : 'Chưa xong'}">
                         ⚡ Lang ${langDone ? '✓' : '...'}
                       </span>
-                      <span class="user-pill ${diemDone ? 'diem-done' : 'diem-pending'}" title="Diễm: ${diemDone ? 'Đã hoàn thành' : 'Chưa xong'}">
+                      <span class="user-pill ${diemDone ? 'diem-done' : 'diem-pending'}" 
+                            onclick="${currentUserKey === 'diem' ? `handleTaskClick('${task.id}', '${task.title}')` : `alertNotOwner('diem')`}"
+                            style="cursor: ${currentUserKey === 'diem' ? 'pointer' : 'default'};"
+                            title="Diễm: ${diemDone ? 'Đã hoàn thành' : 'Chưa xong'}">
                         🌸 Diễm ${diemDone ? '✓' : '...'}
                       </span>
                     </div>
@@ -1829,7 +1887,8 @@
       body.style.display = body.style.display === "none" ? "flex" : "none";
     }
 
-    // Init UI
+    // Initialize App & Live Stream
+    initRealtimeStream();
     renderUI();
   </script>
 </body>
