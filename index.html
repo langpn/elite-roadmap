@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>Elite Duo Roadmap | Lang & Diễm — Video Editing Trước Tết 2027</title>
+  <title>Elite Duo Roadmap | Lang & Diễm — Kế Hoạch Nhận Lương Trước Tết 2027</title>
   
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -104,7 +104,7 @@
       flex-wrap: wrap;
     }
 
-    /* User Identity Indicator (Locked to logged-in account only) */
+    /* Identity Badge */
     .identity-badge {
       padding: 6px 14px;
       border-radius: 999px;
@@ -178,7 +178,7 @@
     }
 
     .hero-title h1 {
-      font-size: 23px;
+      font-size: 22px;
       font-weight: 800;
       letter-spacing: -0.5px;
       display: flex;
@@ -187,23 +187,39 @@
     }
 
     .hero-title p {
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--text-muted);
       margin-top: 4px;
       line-height: 1.45;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .badge-target {
       background: rgba(239, 68, 68, 0.15);
       border: 1px solid rgba(239, 68, 68, 0.3);
       color: #f87171;
-      padding: 5px 12px;
-      border-radius: 999px;
-      font-size: 11.5px;
-      font-weight: 700;
-      font-family: 'JetBrains Mono', monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+    }
+
+    .badge-countdown {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #f59e0b;
     }
 
     /* DUO COMPARISON DASHBOARD */
@@ -275,6 +291,101 @@
       border-radius: 999px;
       transition: width 0.4s ease;
       box-shadow: 0 0 10px rgba(244, 114, 182, 0.5);
+    }
+
+    /* SMART ADAPTIVE PLANNING & PREDICTION ENGINE WIDGET */
+    .planner-card {
+      background: linear-gradient(135deg, rgba(16, 22, 34, 0.9) 0%, rgba(30, 41, 59, 0.7) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 18px;
+      padding: 18px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .planner-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .planner-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .planner-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .rebalance-btn {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s;
+    }
+
+    .rebalance-btn:hover {
+      background: rgba(56, 189, 248, 0.22);
+      transform: translateY(-1px);
+    }
+
+    .quota-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .quota-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .quota-box {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .quota-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .prediction-text {
+      font-size: 11.5px;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    .prediction-highlight {
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
     }
 
     /* Sprint Navigation Filter */
@@ -479,6 +590,17 @@
       text-decoration: line-through;
     }
 
+    .effort-badge {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 1px 7px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
     .duration-tag {
       font-size: 10.5px;
       font-weight: 700;
@@ -605,7 +727,6 @@
     .modal-card h3 { font-size: 18px; font-weight: 800; color: #fff; }
     .modal-card p { font-size: 13px; color: var(--text-muted); line-height: 1.45; }
 
-    /* Account Selection Pills */
     .account-picker {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -775,15 +896,16 @@
       </div>
     </nav>
 
-    <!-- Header Hero -->
+    <!-- Header Hero with Countdown -->
     <header class="hero-card">
       <div class="hero-top">
         <div class="hero-title">
           <h1>🎯 Lộ Trình Đồng Hành: Video Editing Trước Tết 2027</h1>
-          <p>Tối ưu hóa từ khóa học Sean Kang • Cắt bỏ lý thuyết rườm rà • Mỗi người độc lập quản lý tiến độ của chính mình</p>
+          <p>Mục tiêu: Nhận Lương Đầu Tiên trước Tết • Phân bổ effort từng tuần • Dự đoán realtime tiến độ</p>
         </div>
-        <div class="badge-target">
-          🔥 Mục Tiêu: Có Job Trước Tết 2027
+        <div class="hero-badges">
+          <div class="badge badge-target">🔥 Tết 2027: 05/02/2027</div>
+          <div class="badge badge-countdown" id="daysLeftBadge">⏳ Đang tính toán...</div>
         </div>
       </div>
 
@@ -796,7 +918,7 @@
               ⚡ <strong>Lang</strong>
             </span>
             <span class="stat-badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;" id="badgeLang">
-              0% • 0 Video
+              0% • 0 Video • 0h
             </span>
           </div>
           <div class="progress-track">
@@ -811,11 +933,49 @@
               🌸 <strong>Diễm</strong>
             </span>
             <span class="stat-badge" style="background: rgba(244, 114, 182, 0.15); color: #f472b6;" id="badgeDiem">
-              0% • 0 Video
+              0% • 0 Video • 0h
             </span>
           </div>
           <div class="progress-track">
             <div class="progress-fill-diem" id="barDiem"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SMART PREDICTIVE PLANNER & REALTIME BURNDOWN WIDGET -->
+      <div class="planner-card">
+        <div class="planner-header">
+          <div class="planner-title">
+            <span>📊 Bộ Chỉ Tiêu Tuần & Dự Đoán Cán Đích Realtime</span>
+          </div>
+          <div class="planner-actions">
+            <button class="rebalance-btn" onclick="autoRebalanceQuota()" title="Tự động tính lại số giờ/tuần cần làm dựa trên tiến độ thực tế">
+              🔄 Tái Cân Bằng Chỉ Tiêu
+            </button>
+          </div>
+        </div>
+
+        <div class="quota-grid">
+          <!-- Lang Forecast -->
+          <div class="quota-box" style="border-left: 3px solid #38bdf8;">
+            <div class="quota-top">
+              <span style="color: #38bdf8;">⚡ Chỉ tiêu Lang tuần này:</span>
+              <span id="weeklyQuotaLang" class="prediction-highlight" style="color: #38bdf8;">--</span>
+            </div>
+            <div class="prediction-text" id="forecastLang">
+              Đang phân tích vận tốc làm việc của Lang...
+            </div>
+          </div>
+
+          <!-- Diễm Forecast -->
+          <div class="quota-box" style="border-left: 3px solid #f472b6;">
+            <div class="quota-top">
+              <span style="color: #f472b6;">🌸 Chỉ tiêu Diễm tuần này:</span>
+              <span id="weeklyQuotaDiem" class="prediction-highlight" style="color: #f472b6;">--</span>
+            </div>
+            <div class="prediction-text" id="forecastDiem">
+              Đang phân tích vận tốc làm việc của Diễm...
+            </div>
           </div>
         </div>
       </div>
@@ -825,10 +985,10 @@
     <div class="sprint-nav">
       <button class="sprint-tab focus-tab active" onclick="filterSprint('s1')">🔥 SPRINT 1: Dây Chuyền 4 REEL (Hiện Tại)</button>
       <button class="sprint-tab" onclick="filterSprint('all')">Tất cả Sprint</button>
-      <button class="sprint-tab" onclick="filterSprint('s0')">Sprint 0: Vũ Khí & RAW</button>
-      <button class="sprint-tab" onclick="filterSprint('s2')">Sprint 2: Triệu View Case Study</button>
-      <button class="sprint-tab" onclick="filterSprint('s3')">Sprint 3: Săn Job Upwork/Fiverr</button>
-      <button class="sprint-tab" onclick="filterSprint('s4')">Sprint 4: Retainer $1,000/tháng</button>
+      <button class="sprint-tab" onclick="filterSprint('s0')">Sprint 0: Vũ Khí & RAW (3.0h)</button>
+      <button class="sprint-tab" onclick="filterSprint('s2')">Sprint 2: Triệu View Case Study (19.0h)</button>
+      <button class="sprint-tab" onclick="filterSprint('s3')">Sprint 3: Săn Job Upwork/Fiverr (19.5h)</button>
+      <button class="sprint-tab" onclick="filterSprint('s4')">Sprint 4: Nhận Lương & Tết 2027 (40.0h)</button>
     </div>
 
     <!-- Sprint Content Container -->
@@ -908,20 +1068,22 @@
 
   <script>
     // =========================================================================
-    // 1. DATA STRUCTURE: 4 SPRINTS MAPPED WITH SEAN KANG CURRICULUM
+    // 1. DATA STRUCTURE WITH EFFORT HOURS (ESTIMATED WORKLOAD TO REACH JOB BY TET)
     // =========================================================================
     const ROADMAP_SPRINTS = [
       {
         id: "s0",
-        title: "SPRINT 0: THU NẠP VŨ KHÍ & QUẢN TRỊ NGUYÊN LIỆU (30 PHÚT)",
+        title: "SPRINT 0: THU NẠP VŨ KHÍ & QUẢN TRỊ NGUYÊN LIỆU",
         desc: "Lấy tài nguyên từ kho có sẵn, tối ưu máy Mac và cài đặt phím tắt",
         pill: "Khởi Động",
         color: "#38bdf8",
+        targetWeek: 1,
         tasks: [
           {
             id: "s0_t1",
             title: "Trích xuất RAW bài tập & Kho Sound Effects chung",
             duration: "Bài đọc",
+            effortHours: 1.5,
             output: "Giải nén file RAW (Matthiew Adams 50MB) vào ~/studio",
             isOutput: false,
             mapping: {
@@ -934,6 +1096,7 @@
             id: "s0_t2",
             title: "Cài đặt Phím tắt Sean Kang 2025 & Kích hoạt Live Save",
             duration: "5 phút",
+            effortHours: 0.5,
             output: "Cụm tay trái Q-W-E-S-D phản xạ không độ trễ, chống mất file",
             isOutput: false,
             mapping: {
@@ -946,6 +1109,7 @@
             id: "s0_t3",
             title: "Tư duy cốt lõi trước khi thực hành (Chương 0)",
             duration: "4 phút",
+            effortHours: 1.0,
             output: "Thuộc lòng: Edit đẹp < View & Doanh thu; 3-5 giây đầu là sinh tử",
             isOutput: false,
             mapping: {
@@ -962,11 +1126,13 @@
         desc: "Thực chiến Chương 1.2 mới nhất: Hoàn thiện 4 sản phẩm cầm tay để sẵn sàng nhận việc",
         pill: "Trọng Tâm Số 1",
         color: "#10b981",
+        targetWeek: 2,
         tasks: [
           {
             id: "s1_t1",
             title: "Chương 1.2 - Phần 3 & 4: Timeline 9:16 & Cắt thô A-Roll",
             duration: "26 phút",
+            effortHours: 2.5,
             output: "Timeline 1080x1920 sạch bóng câu vấp & khoảng lặng bằng phím Q-W-E-S-D",
             isOutput: false,
             mapping: {
@@ -979,6 +1145,7 @@
             id: "s1_t2",
             title: "Chương 1.2 - Phần 5: Lọc ồn & Cân bằng âm thanh (Audio Leveling)",
             duration: "8 phút",
+            effortHours: 1.5,
             output: "Giọng nói nét căng, không tiếng quạt ồn, mức chuẩn -6dB",
             isOutput: false,
             mapping: {
@@ -991,6 +1158,7 @@
             id: "s1_t3",
             title: "Chương 1.2 - Phần 6 & 7: Phụ đề & Style chữ Alex Hormozi",
             duration: "1h 33p",
+            effortHours: 3.5,
             output: "Subtitles nhảy từng từ, font dày, đổi màu vàng/xanh ở từ khóa chính",
             isOutput: false,
             mapping: {
@@ -1003,6 +1171,7 @@
             id: "s1_t4",
             title: "Chương 1.2 - Phần 8.1: 🎯 XUẤT XƯỞNG REEL 1 (Cơ bản nhất)",
             duration: "25 phút",
+            effortHours: 3.0,
             output: "XUẤT XƯỞNG FILE MP4 REEL 1 CẦM TAY TRONG MÁY",
             isOutput: true,
             mapping: {
@@ -1015,6 +1184,7 @@
             id: "s1_t5",
             title: "Chương 1.2 - Phần 8.2: 🎯 XUẤT XƯỞNG REEL 2 (Bố cục & Sắp xếp chữ)",
             duration: "31 phút",
+            effortHours: 3.0,
             output: "XUẤT XƯỞNG FILE MP4 REEL 2 DẪN MẮT NGƯỜI XEM",
             isOutput: true,
             mapping: {
@@ -1027,6 +1197,7 @@
             id: "s1_t6",
             title: "Chương 1.2 - Phần 8.3: 🎯 XUẤT XƯỞNG REEL 3 (Animation chữ & Zoom)",
             duration: "44 phút",
+            effortHours: 4.0,
             output: "XUẤT XƯỞNG FILE MP4 REEL 3 CÓ CHUYỂN ĐỘNG NẢY",
             isOutput: true,
             mapping: {
@@ -1039,6 +1210,7 @@
             id: "s1_t7",
             title: "Chương 1.2 - Phần 8.4: 🎯 XUẤT XƯỞNG REEL 4 (Mức độ 1.5 nâng cao)",
             duration: "1h 21p",
+            effortHours: 5.0,
             output: "XUẤT XƯỞNG FILE MP4 REEL 4 ĐẠT CHUẨN THƯƠNG MẠI",
             isOutput: true,
             mapping: {
@@ -1055,11 +1227,13 @@
         desc: "Thực hành Chương 2: Làm chủ Hook Intro 3s, B-Roll chuyển động, Animation tài chính",
         pill: "Nâng Tầm",
         color: "#f59e0b",
+        targetWeek: 5,
         tasks: [
           {
             id: "s2_t1",
             title: "Case Study 1: David Goggins (P1 - P3) - Cắt thô & Hook Intro 3 giây",
             duration: "37 phút",
+            effortHours: 3.5,
             output: "Hook 3 giây đầu giật gân, nhịp dồn dập đập vào mắt người xem",
             isOutput: false,
             mapping: {
@@ -1072,6 +1246,7 @@
             id: "s2_t2",
             title: "Case Study 1: David Goggins (P4 - P8) - 🎯 REEL DAVID GOGGINS HOÀN CHỈNH",
             duration: "40 phút",
+            effortHours: 4.5,
             output: "XUẤT XƯỞNG FILE MP4 REEL DAVID GOGGINS CỰC CHÁY",
             isOutput: true,
             mapping: {
@@ -1084,6 +1259,7 @@
             id: "s2_t3",
             title: "Case Study 2: Daniel Iles (Bài 14 - 20) - 🎯 REEL TÀI CHÍNH DANIEL ILES",
             duration: "1h 17p",
+            effortHours: 5.0,
             output: "XUẤT XƯỞNG FILE MP4 REEL TÀI CHÍNH (LOGO AMAZON & BEVEL CHỮ)",
             isOutput: true,
             mapping: {
@@ -1096,6 +1272,7 @@
             id: "s2_t4",
             title: "Case Study 3: Jvevermind & Khoai Lang Thang - 🎯 REEL KỂ CHUYỆN XẾP CHỮ",
             duration: "1h 53p",
+            effortHours: 6.0,
             output: "XUẤT XƯỞNG FILE MP4 PHONG CÁCH CINEMATIC STORYTELLING",
             isOutput: true,
             mapping: {
@@ -1112,11 +1289,13 @@
         desc: "Đóng gói Portfolio chuẩn quốc tế, lập Gig Fiverr, gửi Proposal Upwork có khách ngay",
         pill: "Kiếm Tiền",
         color: "#c084fc",
+        targetWeek: 8,
         tasks: [
           {
             id: "s3_t1",
             title: "Đóng gói Portfolio 4 REEL vào Google Drive / Trang Web cá nhân",
             duration: "1 buổi",
+            effortHours: 3.0,
             output: "Link Portfolio chuyên nghiệp có 4-5 video hoàn chỉnh đỉnh nhất",
             isOutput: false,
             mapping: {
@@ -1129,6 +1308,7 @@
             id: "s3_t2",
             title: "Lập Gig Fiverr theo chuẩn SEO (Freelance MVP Chương 1)",
             duration: "Phần 1 - 5",
+            effortHours: 2.5,
             output: "Gig Fiverr 'High Retention TikTok/Reels Video Editor' lên sóng",
             isOutput: false,
             mapping: {
@@ -1141,6 +1321,7 @@
             id: "s3_t3",
             title: "Tạo Profile Upwork & Viết Proposal 'đánh trúng tim đen' khách",
             duration: "Chương 2",
+            effortHours: 4.0,
             output: "Gửi 10 - 20 Proposal đầu tiên đến các Job Short Form trên Upwork",
             isOutput: false,
             mapping: {
@@ -1153,6 +1334,7 @@
             id: "s3_t4",
             title: "🎯 CHỐT ĐƯỢC HỢP ĐỒNG / KHÁCH HÀNG TRẢ TIỀN ĐẦU TIÊN",
             duration: "Cột mốc",
+            effortHours: 10.0,
             output: "Nhận thanh toán đầu tiên qua Upwork / Fiverr / Ngân hàng",
             isOutput: true,
             mapping: {
@@ -1169,11 +1351,13 @@
         desc: "Chuyển khách lẻ thành khách ký hợp đồng tháng $500 - $1,000, hoàn tất nghĩa vụ học tập",
         pill: "Về Đích",
         color: "#f43f5e",
+        targetWeek: 12,
         tasks: [
           {
             id: "s4_t1",
             title: "Chuyển khách hàng thành Monthly Retainer ($500 - $1,000/tháng)",
             duration: "Chiến lược",
+            effortHours: 15.0,
             output: "Có 1 - 2 khách ruột đặt hàng cố định hàng tuần (12-20 video/tháng)",
             isOutput: false,
             mapping: {
@@ -1186,6 +1370,7 @@
             id: "s4_t2",
             title: "Hoàn thành đồ án & Tốt nghiệp trường Đại học đúng hạn",
             duration: "Học vấn",
+            effortHours: 20.0,
             output: "Bảo vệ thành công đồ án, giải phóng 100% nghĩa vụ học hành",
             isOutput: false,
             mapping: {
@@ -1198,6 +1383,7 @@
             id: "s4_t3",
             title: "🎯 ĂN TẾT NGUYÊN ĐÁN 2027 VỚI VỊ THẾ CHIẾN THẮNG",
             duration: "Vinh quang",
+            effortHours: 5.0,
             output: "Độc lập tài chính, có nghề kiếm tiền bền vững, tương lai rộng mở",
             isOutput: true,
             mapping: {
@@ -1210,21 +1396,30 @@
       }
     ];
 
+    // Total Roadmaps Effort Calculation
+    const TOTAL_HOURS = ROADMAP_SPRINTS.reduce((sum, s) => sum + s.tasks.reduce((tSum, t) => tSum + t.effortHours, 0), 0); // 104.0 hours
+
     // =========================================================================
-    // 2. FIREBASE & AUTH CONFIG (STRICT SINGLE-ACCOUNT OWNERSHIP)
+    // 2. TIMELINE, DEADLINE & ADAPTIVE PREDICTION CONSTANTS
     // =========================================================================
+    // Target Date: 29 Tết Đinh Mùi (05/02/2027)
+    const START_DATE = new Date("2026-10-02T00:00:00");
+    const TET_DATE = new Date("2027-02-05T23:59:59");
+    const JOB_PAYOUT_DEADLINE = new Date("2026-12-25T23:59:59"); // Deadline chốt hợp đồng để nhận lương trước Tết
+
     const ACCOUNTS = {
       lang: { name: "Lang", email: "langpn.dev@gmail.com", avatar: "⚡", color: "#38bdf8" },
       diem: { name: "Diễm", email: "diembd.dev@gmail.com", avatar: "🌸", color: "#f472b6" }
     };
 
     let selectedLoginAccountKey = "lang";
-    let currentUserKey = null; // null nếu chưa login, 'lang' hoặc 'diem' nếu đã login
+    let currentUserKey = null;
 
-    const LOCAL_STORAGE_KEY = "elite_duo_progress_v6";
+    const LOCAL_STORAGE_KEY = "elite_duo_progress_v7";
     let duoState = {
       lang: {},
-      diem: {}
+      diem: {},
+      customQuota: { lang: null, diem: null }
     };
 
     // Load Local Cache
@@ -1234,6 +1429,7 @@
         duoState = JSON.parse(cached);
         if (!duoState.lang) duoState.lang = {};
         if (!duoState.diem) duoState.diem = {};
+        if (!duoState.customQuota) duoState.customQuota = { lang: null, diem: null };
       }
     } catch (e) {
       console.warn("Storage parse error:", e);
@@ -1265,7 +1461,6 @@
       console.warn("Firebase Init notice:", err);
     }
 
-    // Save & Push to Firebase (Chỉ ghi đè nhánh của user hiện tại)
     function saveLocalCache() {
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(duoState));
     }
@@ -1287,16 +1482,11 @@
       auth.onAuthStateChanged((user) => {
         if (user) {
           const email = (user.email || "").toLowerCase();
-          if (email.includes("diembd")) {
-            currentUserKey = "diem";
-          } else {
-            currentUserKey = "lang";
-          }
+          currentUserKey = email.includes("diembd") ? "diem" : "lang";
           
           updateIdentityUI(true);
           document.getElementById("authed-user-display").innerText = `${ACCOUNTS[currentUserKey].avatar} ${ACCOUNTS[currentUserKey].name} (${user.email})`;
 
-          // Realtime Listener
           duoRef.on('value', (snapshot) => {
             const cloudData = snapshot.val();
             if (cloudData) {
@@ -1384,7 +1574,6 @@
       }
     }
 
-    // Modal UI Handlers
     function openAuthModal() {
       const isAuthed = !!(auth && auth.currentUser);
       document.getElementById("modal-unauthed").style.display = isAuthed ? "none" : "block";
@@ -1413,7 +1602,7 @@
       setTimeout(() => toast.className = "", 3000);
     }
 
-    // STRICT PERMISSION: Chỉ người sở hữu tài khoản mới tick được cho chính mình!
+    // STRICT PERMISSION: Chỉ người đăng nhập mới tick được cho chính mình
     function handleTaskClick(taskId) {
       if (!currentUserKey) {
         openAuthModal();
@@ -1421,7 +1610,6 @@
         return;
       }
 
-      // Toggle checklist cho ĐÚNG user đang đăng nhập
       if (!duoState[currentUserKey]) duoState[currentUserKey] = {};
       duoState[currentUserKey][taskId] = !duoState[currentUserKey][taskId];
       pushToCloud();
@@ -1432,7 +1620,103 @@
     }
 
     // =========================================================================
-    // 3. UI RENDERING & STATS
+    // 3. STATS, VELOCITY & REALTIME PREDICTIVE BURNDOWN ENGINE
+    // =========================================================================
+    function getRemainingDays(targetDate) {
+      const now = new Date();
+      const diffTime = targetDate - now;
+      return Math.max(0, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
+    }
+
+    function calculateStats(userKey) {
+      let totalTasks = 0;
+      let completedTasks = 0;
+      let completedVideos = 0;
+      let completedHours = 0;
+
+      ROADMAP_SPRINTS.forEach(sprint => {
+        sprint.tasks.forEach(t => {
+          totalTasks++;
+          if (duoState[userKey] && duoState[userKey][t.id]) {
+            completedTasks++;
+            completedHours += t.effortHours;
+            if (t.isOutput) completedVideos++;
+          }
+        });
+      });
+
+      const pct = totalTasks === 0 ? 0 : Math.round((completedTasks / totalTasks) * 100);
+      return { pct, completedTasks, totalTasks, completedVideos, completedHours };
+    }
+
+    // Tự Động Tái Cân Bằng Chỉ Tiêu (Auto-rebalance Quota)
+    function autoRebalanceQuota() {
+      const now = new Date();
+      const daysUntilJob = Math.max(1, (JOB_PAYOUT_DEADLINE - now) / (1000 * 60 * 60 * 24));
+      const weeksUntilJob = Math.max(1, daysUntilJob / 7);
+
+      // Cần xong Sprint 0, 1, 2, 3 để có job nhận lương:
+      const jobNeededHours = ROADMAP_SPRINTS.slice(0, 4).reduce((sum, s) => sum + s.tasks.reduce((tSum, t) => tSum + t.effortHours, 0), 0); // 64.0h
+
+      const langStat = calculateStats('lang');
+      const diemStat = calculateStats('diem');
+
+      const langRemainHours = Math.max(0, jobNeededHours - langStat.completedHours);
+      const diemRemainHours = Math.max(0, jobNeededHours - diemStat.completedHours);
+
+      const quotaLang = (langRemainHours / weeksUntilJob).toFixed(1);
+      const quotaDiem = (diemRemainHours / weeksUntilJob).toFixed(1);
+
+      duoState.customQuota = { lang: quotaLang, diem: quotaDiem };
+      saveLocalCache();
+      renderUI();
+      showToast("Đã tự động tái cân bằng chỉ tiêu theo thời gian thực!");
+    }
+
+    function updatePredictiveEngine() {
+      const daysToTet = getRemainingDays(TET_DATE);
+      const daysToJob = getRemainingDays(JOB_PAYOUT_DEADLINE);
+      const weeksToJob = Math.max(1, (daysToJob / 7)).toFixed(1);
+
+      document.getElementById("daysLeftBadge").innerText = `⏳ Còn ${daysToTet} ngày đến Tết • ${daysToJob} ngày đến mốc Nhận Lương`;
+
+      const langStat = calculateStats('lang');
+      const diemStat = calculateStats('diem');
+
+      // Weekly Quota Calculations
+      const jobNeededHours = 64.0; // Sprints 0, 1, 2, 3 (Hoàn thành Portfolio + Chốt Job)
+      const defaultWeeks = Math.max(1, (daysToJob / 7));
+
+      const needLangHours = Math.max(0, jobNeededHours - langStat.completedHours);
+      const needDiemHours = Math.max(0, jobNeededHours - diemStat.completedHours);
+
+      const targetLang = duoState.customQuota?.lang || (needLangHours / defaultWeeks).toFixed(1);
+      const targetDiem = duoState.customQuota?.diem || (needDiemHours / defaultWeeks).toFixed(1);
+
+      document.getElementById("weeklyQuotaLang").innerText = `${targetLang}h / tuần`;
+      document.getElementById("weeklyQuotaDiem").innerText = `${targetDiem}h / tuần`;
+
+      // Forecast for Lang
+      const forecastLangEl = document.getElementById("forecastLang");
+      if (langStat.completedHours >= jobNeededHours) {
+        forecastLangEl.innerHTML = `<span style="color: #10b981; font-weight: 700;">🟢 ĐÃ ĐẠT CHỈ TIÊU CÓ JOB!</span> Đang tập trung nhận lương & ăn Tết!`;
+      } else {
+        const paceDesc = `Cần dành <strong>~${(targetLang / 6).toFixed(1)}h/ngày</strong> (nghỉ 1 ngày/tuần). Đạt mốc này bạn sẽ có hợp đồng vào <strong>25/12/2026</strong> và kịp nhận lương trước Tết!`;
+        forecastLangEl.innerHTML = `Đã tích lũy: <strong>${langStat.completedHours.toFixed(1)}h / ${jobNeededHours}h</strong>. ${paceDesc}`;
+      }
+
+      // Forecast for Diễm
+      const forecastDiemEl = document.getElementById("forecastDiem");
+      if (diemStat.completedHours >= jobNeededHours) {
+        forecastDiemEl.innerHTML = `<span style="color: #10b981; font-weight: 700;">🟢 ĐÃ ĐẠT CHỈ TIÊU CÓ JOB!</span> Đang tập trung nhận lương & ăn Tết!`;
+      } else {
+        const paceDesc = `Cần dành <strong>~${(targetDiem / 6).toFixed(1)}h/ngày</strong>. Bạn sẽ chốt job trước Giáng Sinh 2026 và rủng rỉnh tiền tiêu Tết!`;
+        forecastDiemEl.innerHTML = `Đã tích lũy: <strong>${diemStat.completedHours.toFixed(1)}h / ${jobNeededHours}h</strong>. ${paceDesc}`;
+      }
+    }
+
+    // =========================================================================
+    // 4. UI RENDERING
     // =========================================================================
     let currentSprintFilter = 's1';
 
@@ -1444,34 +1728,17 @@
       renderUI();
     }
 
-    function calculateStats(userKey) {
-      let totalTasks = 0;
-      let completedTasks = 0;
-      let completedVideos = 0;
-
-      ROADMAP_SPRINTS.forEach(sprint => {
-        sprint.tasks.forEach(t => {
-          totalTasks++;
-          if (duoState[userKey] && duoState[userKey][t.id]) {
-            completedTasks++;
-            if (t.isOutput) completedVideos++;
-          }
-        });
-      });
-
-      const pct = totalTasks === 0 ? 0 : Math.round((completedTasks / totalTasks) * 100);
-      return { pct, completedTasks, totalTasks, completedVideos };
-    }
-
     function renderUI() {
       const langStat = calculateStats('lang');
       const diemStat = calculateStats('diem');
 
       document.getElementById("barLang").style.width = langStat.pct + "%";
-      document.getElementById("badgeLang").innerText = `${langStat.pct}% • ${langStat.completedVideos} Video`;
+      document.getElementById("badgeLang").innerText = `${langStat.pct}% • ${langStat.completedVideos} Video • ${langStat.completedHours.toFixed(1)}h`;
 
       document.getElementById("barDiem").style.width = diemStat.pct + "%";
-      document.getElementById("badgeDiem").innerText = `${diemStat.pct}% • ${diemStat.completedVideos} Video`;
+      document.getElementById("badgeDiem").innerText = `${diemStat.pct}% • ${diemStat.completedVideos} Video • ${diemStat.completedHours.toFixed(1)}h`;
+
+      updatePredictiveEngine();
 
       const container = document.getElementById("sprintContainer");
       container.innerHTML = "";
@@ -1482,6 +1749,8 @@
         const card = document.createElement("div");
         card.className = "sprint-card";
 
+        const sprintTotalHours = sprint.tasks.reduce((s, t) => s + t.effortHours, 0);
+
         card.innerHTML = `
           <div class="sprint-header" onclick="toggleSprintBody(this)">
             <div class="sprint-title-wrap">
@@ -1490,7 +1759,7 @@
               </span>
               <div>
                 <div class="sprint-title">${sprint.title}</div>
-                <div class="sprint-desc">${sprint.desc}</div>
+                <div class="sprint-desc">${sprint.desc} • Tổng effort: <strong>${sprintTotalHours.toFixed(1)} giờ</strong></div>
               </div>
             </div>
             <div style="font-size: 18px; color: var(--text-dim);">▼</div>
@@ -1500,7 +1769,6 @@
               const langDone = !!(duoState.lang && duoState.lang[task.id]);
               const diemDone = !!(duoState.diem && duoState.diem[task.id]);
               
-              // Checkbox của chính người đang đăng nhập
               let myDone = false;
               if (currentUserKey === 'lang') myDone = langDone;
               else if (currentUserKey === 'diem') myDone = diemDone;
@@ -1515,6 +1783,7 @@
                       <div class="task-details">
                         <div class="task-header-row">
                           <span class="task-title">${task.title}</span>
+                          <span class="effort-badge">⚡ ${task.effortHours}h effort</span>
                           <span class="duration-tag">⏱️ ${task.duration}</span>
                           ${task.isOutput ? `<span class="output-pill">🎯 SẢN PHẨM CẦM TAY</span>` : ''}
                         </div>
@@ -1522,7 +1791,7 @@
                       </div>
                     </div>
 
-                    <!-- Duo Live Status Badges (Quan sát trạng thái của nhau) -->
+                    <!-- Duo Live Status Badges -->
                     <div class="duo-status-badges">
                       <span class="user-pill ${langDone ? 'lang-done' : 'lang-pending'}" title="Lang: ${langDone ? 'Đã hoàn thành' : 'Chưa xong'}">
                         ⚡ Lang ${langDone ? '✓' : '...'}
