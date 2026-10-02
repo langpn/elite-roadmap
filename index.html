@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>Elite Duo Roadmap | Lộ Trình Video Editing Thực Chiến Trước Tết 2027</title>
+  <title>Elite Duo Roadmap | Lang & Diễm — Video Editing Trước Tết 2027</title>
   
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Elite Duo">
+  <meta name="apple-mobile-web-app-title" content="Lang & Diễm">
   <meta name="theme-color" content="#090c12">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Firebase SDKs for Realtime Duo Synchronization -->
+  <!-- Firebase SDKs for Realtime Duo Synchronization (Compat) -->
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
@@ -27,11 +27,12 @@
       --card-border: rgba(255, 255, 255, 0.08);
       --accent-lang: #38bdf8;
       --accent-lang-glow: rgba(56, 189, 248, 0.25);
-      --accent-partner: #f472b6;
-      --accent-partner-glow: rgba(244, 114, 182, 0.25);
+      --accent-diem: #f472b6;
+      --accent-diem-glow: rgba(244, 114, 182, 0.25);
       --accent-amber: #f59e0b;
       --accent-green: #10b981;
       --accent-purple: #c084fc;
+      --accent-red: #ef4444;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
       --text-dim: #64748b;
@@ -103,6 +104,7 @@
       flex-wrap: wrap;
     }
 
+    /* Active User Toggle */
     .profile-switch-btn {
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid var(--card-border);
@@ -130,24 +132,45 @@
       box-shadow: 0 0 15px var(--accent-lang-glow);
     }
 
-    .profile-switch-btn.active-partner {
+    .profile-switch-btn.active-diem {
       background: rgba(244, 114, 182, 0.15);
       border-color: rgba(244, 114, 182, 0.4);
       color: #f472b6;
-      box-shadow: 0 0 15px var(--accent-partner-glow);
+      box-shadow: 0 0 15px var(--accent-diem-glow);
     }
 
-    .sync-status {
+    /* Cloud Sync Badge */
+    .badge-sync {
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 700;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 11.5px;
-      color: var(--text-dim);
       font-family: 'JetBrains Mono', monospace;
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid var(--card-border);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .badge-sync.synced {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.3);
+      color: #10b981;
+    }
+
+    .badge-sync.unauthed {
+      background: rgba(245, 158, 11, 0.12);
+      border-color: rgba(245, 158, 11, 0.3);
+      color: #f59e0b;
+    }
+
+    .badge-sync.syncing {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: rgba(56, 189, 248, 0.3);
+      color: #38bdf8;
     }
 
     .sync-dot {
@@ -158,9 +181,14 @@
       box-shadow: 0 0 8px #10b981;
     }
 
-    .sync-dot.offline {
-      background: #64748b;
+    .badge-sync.unauthed .sync-dot {
+      background: #f59e0b;
       box-shadow: none;
+    }
+
+    .badge-sync.syncing .sync-dot {
+      background: #38bdf8;
+      box-shadow: 0 0 8px #38bdf8;
     }
 
     /* Hero Header */
@@ -200,27 +228,17 @@
       line-height: 1.45;
     }
 
-    .hero-badges {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .badge {
+    .badge-target {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #f87171;
       padding: 5px 12px;
       border-radius: 999px;
       font-size: 11.5px;
       font-weight: 700;
       font-family: 'JetBrains Mono', monospace;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .badge-target {
-      background: rgba(239, 68, 68, 0.15);
-      border: 1px solid rgba(239, 68, 68, 0.3);
-      color: #f87171;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     /* DUO COMPARISON DASHBOARD */
@@ -259,11 +277,6 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      cursor: pointer;
-    }
-
-    .user-name-tag:hover {
-      text-decoration: underline;
     }
 
     .stat-badge {
@@ -290,7 +303,7 @@
       box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
     }
 
-    .progress-fill-partner {
+    .progress-fill-diem {
       height: 100%;
       width: 0%;
       background: linear-gradient(90deg, #f472b6 0%, #c084fc 100%);
@@ -299,7 +312,7 @@
       box-shadow: 0 0 10px rgba(244, 114, 182, 0.5);
     }
 
-    /* Sprint Filter Bar */
+    /* Sprint Navigation Filter */
     .sprint-nav {
       display: flex;
       gap: 8px;
@@ -529,7 +542,7 @@
       font-weight: 600;
     }
 
-    /* Partner Status Indicator */
+    /* Duo Status Indicators */
     .duo-status-badges {
       display: flex;
       align-items: center;
@@ -552,10 +565,10 @@
     .user-pill.lang-done { background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; }
     .user-pill.lang-pending { background: rgba(255, 255, 255, 0.04); color: #64748b; }
 
-    .user-pill.partner-done { background: rgba(244, 114, 182, 0.15); border: 1px solid rgba(244, 114, 182, 0.35); color: #f472b6; }
-    .user-pill.partner-pending { background: rgba(255, 255, 255, 0.04); color: #64748b; }
+    .user-pill.diem-done { background: rgba(244, 114, 182, 0.15); border: 1px solid rgba(244, 114, 182, 0.35); color: #f472b6; }
+    .user-pill.diem-pending { background: rgba(255, 255, 255, 0.04); color: #64748b; }
 
-    /* SMART MAPPING TRIAD (3 TẦNG TRA CỨU & TIẾN XA) */
+    /* SMART MAPPING TRIAD */
     .mapping-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -594,11 +607,11 @@
     }
     .map-box.monetize strong { color: #f59e0b; font-family: 'JetBrains Mono', monospace; }
 
-    /* Sync Modal */
-    .modal-overlay {
+    /* AUTH & SYNC MODAL */
+    .modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.75);
       backdrop-filter: blur(8px);
       display: none;
       align-items: center;
@@ -607,48 +620,164 @@
       padding: 16px;
     }
 
-    .modal-box {
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-card {
       background: #0f172a;
       border: 1px solid var(--card-border);
-      border-radius: 20px;
-      max-width: 480px;
+      border-radius: 22px;
+      max-width: 460px;
       width: 100%;
-      padding: 24px;
+      padding: 26px;
       display: flex;
       flex-direction: column;
       gap: 16px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
     }
 
-    .modal-box h3 { font-size: 17px; font-weight: 800; }
-    .modal-box p { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
-    .modal-input {
+    .modal-card h3 { font-size: 18px; font-weight: 800; color: #fff; }
+    .modal-card p { font-size: 13px; color: var(--text-muted); line-height: 1.45; }
+
+    /* Account Selection Pills */
+    .account-picker {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .account-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 12px 10px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+
+    .account-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .account-btn.selected-lang {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: #38bdf8;
+      box-shadow: 0 0 15px var(--accent-lang-glow);
+    }
+
+    .account-btn.selected-diem {
+      background: rgba(244, 114, 182, 0.15);
+      border-color: #f472b6;
+      box-shadow: 0 0 15px var(--accent-diem-glow);
+    }
+
+    .account-btn-name {
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .account-btn-email {
+      font-size: 10.5px;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .input-group label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .input-field {
       background: rgba(0, 0, 0, 0.4);
       border: 1px solid var(--card-border);
       color: #fff;
-      padding: 10px 14px;
+      padding: 11px 14px;
       border-radius: 10px;
-      font-size: 13px;
+      font-size: 13.5px;
       width: 100%;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    .input-field:focus {
+      border-color: var(--accent-lang);
+    }
+
+    .error-msg {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #f87171;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      display: none;
     }
 
     .modal-actions {
       display: flex;
       justify-content: flex-end;
       gap: 10px;
-      margin-top: 8px;
+      margin-top: 6px;
     }
 
     .btn {
-      padding: 8px 16px;
+      padding: 10px 18px;
       border-radius: 10px;
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 700;
       cursor: pointer;
       border: none;
+      transition: all 0.2s;
     }
+
     .btn-primary { background: #38bdf8; color: #000; }
+    .btn-primary:hover { opacity: 0.9; }
+
     .btn-secondary { background: rgba(255, 255, 255, 0.08); color: #fff; }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+
+    .btn-danger { background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.4); color: #f87171; }
+    .btn-danger:hover { background: rgba(239, 68, 68, 0.3); }
+
+    /* Toast Notification */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #1e293b;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      z-index: 2000;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    #toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
 
     .footer {
       text-align: center;
@@ -665,20 +794,20 @@
     <!-- Top Nav -->
     <nav class="top-nav">
       <div class="nav-brand">
-        ⚡ <span>ELITE DUO ROADMAP</span>
+        ⚡ <span>LANG & DIỄM — ELITE DUO</span>
       </div>
 
       <div class="nav-actions">
-        <!-- Active User Toggle -->
-        <button class="profile-switch-btn active-lang" id="profileToggleBtn" onclick="toggleActiveProfile()">
+        <!-- Active User Toggle Button -->
+        <button class="profile-switch-btn active-lang" id="profileToggleBtn" onclick="toggleActiveProfile()" title="Bấm để đổi người đang thao tác">
           <span id="profileAvatar">🔵</span>
           <span>Đang là: <strong id="currentProfileName">Lang</strong></span>
         </button>
 
-        <!-- Cloud Sync Badge -->
-        <div class="sync-status" onclick="openSyncModal()" style="cursor: pointer;" title="Đồng bộ tiến độ 2 người qua Cloud">
-          <span class="sync-dot" id="syncDot"></span>
-          <span id="syncText">Live Cloud Sync</span>
+        <!-- Cloud Sync Badge (Giống Project Habits) -->
+        <div class="badge-sync unauthed" id="syncStatusBadge" onclick="openAuthModal()" title="Bấm để đăng nhập đồng bộ Realtime">
+          <span class="sync-dot"></span>
+          <span id="syncStatusText">🔒 Đăng nhập Sync</span>
         </div>
       </div>
     </nav>
@@ -687,21 +816,21 @@
     <header class="hero-card">
       <div class="hero-top">
         <div class="hero-title">
-          <h1>🎯 Chiến Dịch Đồng Hành: Video Editor Trước Tết 2027</h1>
-          <p>Lộ trình tối ưu hóa từ Sean Kang • Học để kiếm việc làm ngay • Theo dõi song song tiến độ 2 người</p>
+          <h1>🎯 Lộ Trình Đồng Hành: Video Editing Trước Tết 2027</h1>
+          <p>Tối ưu hóa từ khóa học Sean Kang • Cắt bỏ lý thuyết rườm rà • Học để xuất xưởng sản phẩm kiếm tiền</p>
         </div>
-        <div class="hero-badges">
-          <div class="badge badge-target">🔥 Đích Đến: Tết Nguyên Đán 2027</div>
+        <div class="badge-target">
+          🔥 Mục Tiêu: Có Job Trước Tết 2027
         </div>
       </div>
 
-      <!-- DUO PROGRESS BAR COMPARISON -->
+      <!-- DUO COMPARISON DASHBOARD -->
       <div class="duo-comparison">
         <!-- Lang Stat -->
         <div class="user-stat-card">
           <div class="user-stat-header">
-            <span class="user-name-tag" onclick="editUserName('lang')" style="color: #38bdf8;">
-              🔵 <span id="displayNameLang">Lang</span> ✏️
+            <span class="user-name-tag" style="color: #38bdf8;">
+              🔵 <strong>Lang</strong>
             </span>
             <span class="stat-badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;" id="badgeLang">
               0% • 0 Video
@@ -712,18 +841,18 @@
           </div>
         </div>
 
-        <!-- Partner Stat -->
+        <!-- Diễm Stat -->
         <div class="user-stat-card">
           <div class="user-stat-header">
-            <span class="user-name-tag" onclick="editUserName('partner')" style="color: #f472b6;">
-              🌸 <span id="displayNamePartner">Bạn Gái</span> ✏️
+            <span class="user-name-tag" style="color: #f472b6;">
+              🌸 <strong>Diễm</strong>
             </span>
-            <span class="stat-badge" style="background: rgba(244, 114, 182, 0.15); color: #f472b6;" id="badgePartner">
+            <span class="stat-badge" style="background: rgba(244, 114, 182, 0.15); color: #f472b6;" id="badgeDiem">
               0% • 0 Video
             </span>
           </div>
           <div class="progress-track">
-            <div class="progress-fill-partner" id="barPartner"></div>
+            <div class="progress-fill-diem" id="barDiem"></div>
           </div>
         </div>
       </div>
@@ -745,32 +874,78 @@
     </div>
 
     <div class="footer">
-      Elite Duo Engine • Thiết kế cho Lang & Bạn gái • Cùng nhau bứt phá trước Tết 2027
+      Lộ trình thiết kế riêng cho Lang & Diễm • Đồng bộ Realtime Firebase & LocalStorage
     </div>
 
   </div>
 
-  <!-- Sync Modal -->
-  <div class="modal-overlay" id="syncModal">
-    <div class="modal-box">
-      <h3>☁️ Đồng Bộ Tiến Độ Trực Tiếp 2 Người</h3>
-      <p>Hệ thống tự động đồng bộ qua Firebase Realtime Database. Cả hai bạn chỉ cần mở link trên máy tính hoặc điện thoại là thấy nhau tick bài!</p>
+  <!-- AUTH MODAL (GIỐNG PROJECT HABITS) -->
+  <div class="modal-backdrop" id="auth-modal" onclick="closeAuthModalOnBg(event)">
+    <div class="modal-card">
       
-      <div style="display: flex; flex-direction: column; gap: 8px;">
-        <label style="font-size: 12px; color: var(--text-muted);">Mã phòng học chung (Duo Room ID):</label>
-        <input type="text" id="roomIdInput" class="modal-input" value="lang_duo_room_2027" placeholder="Nhập Room ID...">
+      <!-- View: Khi Chưa Đăng Nhập -->
+      <div id="modal-unauthed">
+        <h3>🔐 Đăng nhập Đồng bộ Cloud</h3>
+        <p>Chọn tài khoản cố định và nhập mật khẩu để kích hoạt đồng bộ Realtime giữa Lang & Diễm.</p>
+        
+        <div style="margin-top: 14px; display: flex; flex-direction: column; gap: 14px;">
+          
+          <!-- Chọn 1 trong 2 tài khoản cố định -->
+          <div class="account-picker">
+            <div class="account-btn selected-lang" id="btnPickLang" onclick="selectLoginAccount('lang')">
+              <span style="font-size: 20px;">🔵</span>
+              <span class="account-btn-name">Lang</span>
+              <span class="account-btn-email">langpn.dev@gmail.com</span>
+            </div>
+
+            <div class="account-btn" id="btnPickDiem" onclick="selectLoginAccount('diem')">
+              <span style="font-size: 20px;">🌸</span>
+              <span class="account-btn-name">Diễm</span>
+              <span class="account-btn-email">diembd.dev@gmail.com</span>
+            </div>
+          </div>
+
+          <!-- Nhập Mật khẩu -->
+          <div class="input-group">
+            <label for="auth-pass">Mật khẩu tài khoản</label>
+            <input type="password" class="input-field" id="auth-pass" placeholder="Nhập mật khẩu..." autocomplete="current-password" onkeydown="if(event.key==='Enter') handleLogin()">
+          </div>
+
+          <div class="error-msg" id="auth-error">Mật khẩu không chính xác.</div>
+
+          <div class="modal-actions">
+            <button class="btn btn-secondary" onclick="closeAuthModal()">Đóng</button>
+            <button class="btn btn-primary" onclick="handleLogin()">Đăng nhập & Bắt đầu Sync</button>
+          </div>
+        </div>
       </div>
 
-      <div class="modal-actions">
-        <button class="btn btn-secondary" onclick="closeSyncModal()">Đóng</button>
-        <button class="btn btn-primary" onclick="saveRoomId()">Lưu & Kết Nối</button>
+      <!-- View: Khi Đã Đăng Nhập -->
+      <div id="modal-authed" style="display: none;">
+        <h3>☁️ Trạng thái Đồng bộ</h3>
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); border-radius: 12px; padding: 12px 16px; margin-top: 10px;">
+          <span style="font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">Đang kết nối tài khoản</span>
+          <div style="font-size: 14.5px; font-weight: 700; color: #10b981; font-family: 'JetBrains Mono', monospace; margin-top: 4px;" id="authed-user-display">
+            👤 langpn.dev@gmail.com (Lang)
+          </div>
+        </div>
+        <p style="font-size: 12.5px; color: #10b981; margin-top: 10px;">
+          ✓ Dữ liệu tiến độ của Lang & Diễm được tự động cập nhật Realtime 2 chiều.
+        </p>
+        <div class="modal-actions" style="margin-top: 16px;">
+          <button class="btn btn-secondary" onclick="closeAuthModal()">Đóng</button>
+          <button class="btn btn-danger" onclick="handleLogout()">Đăng xuất</button>
+        </div>
       </div>
+
     </div>
   </div>
+
+  <div id="toast">Thông báo</div>
 
   <script>
     // =========================================================================
-    // 1. DATA STRUCTURE: OPTIMIZED 4 SPRINTS MAPPED 1:1 WITH ALL SEAN KANG COURSES
+    // 1. DATA STRUCTURE: 4 SPRINTS MAPPED WITH SEAN KANG CURRICULUM
     // =========================================================================
     const ROADMAP_SPRINTS = [
       {
@@ -1073,20 +1248,20 @@
     ];
 
     // =========================================================================
-    // 2. DUO STATE MANAGEMENT & FIREBASE REALTIME SYNC
+    // 2. FIREBASE & AUTH CONFIG (CHÍNH XÁC NHƯ PROJECT HABITS)
     // =========================================================================
-    const LOCAL_STORAGE_KEY = "elite_duo_progress_v4";
-    let activeProfile = localStorage.getItem("elite_active_profile") || "lang"; // 'lang' or 'partner'
-    let duoRoomId = localStorage.getItem("elite_duo_room_id") || "lang_duo_room_2027";
-
-    let userNames = {
-      lang: localStorage.getItem("elite_name_lang") || "Lang",
-      partner: localStorage.getItem("elite_name_partner") || "Bạn Gái"
+    const ACCOUNTS = {
+      lang: { name: "Lang", email: "langpn.dev@gmail.com", avatar: "🔵" },
+      diem: { name: "Diễm", email: "diembd.dev@gmail.com", avatar: "🌸" }
     };
 
+    let selectedLoginAccountKey = "lang";
+    let activeProfile = localStorage.getItem("elite_active_profile") || "lang";
+
+    const LOCAL_STORAGE_KEY = "elite_duo_progress_v5";
     let duoState = {
       lang: {},
-      partner: {}
+      diem: {}
     };
 
     // Load Local Cache
@@ -1095,13 +1270,12 @@
       if (cached) {
         duoState = JSON.parse(cached);
         if (!duoState.lang) duoState.lang = {};
-        if (!duoState.partner) duoState.partner = {};
+        if (!duoState.diem) duoState.diem = {};
       }
     } catch (e) {
       console.warn("Storage parse error:", e);
     }
 
-    // Initialize Firebase RTDB
     const firebaseConfig = {
       apiKey: "AIzaSyBfj1pBg6Px0pUhERNuRxzPJCqwL9h0G1k",
       authDomain: "my-habits-bbe5b.firebaseapp.com",
@@ -1112,59 +1286,168 @@
       appId: "1:46496314879:web:0011dad743b74200f423ca"
     };
 
-    let fbDatabase = null;
+    let auth = null;
+    let db = null;
     let duoRef = null;
+    let isFirebaseInit = false;
 
     try {
       firebase.initializeApp(firebaseConfig);
-      fbDatabase = firebase.database();
-      duoRef = fbDatabase.ref('elite_duo_rooms/' + duoRoomId);
-
-      // Listen for Live Realtime Updates from Partner!
-      duoRef.on('value', snapshot => {
-        const val = snapshot.val();
-        if (val) {
-          if (val.lang) duoState.lang = val.lang;
-          if (val.partner) duoState.partner = val.partner;
-          if (val.userNames) {
-            userNames = { ...userNames, ...val.userNames };
-          }
-          saveLocalCache();
-          renderUI();
-          document.getElementById("syncDot").classList.remove("offline");
-          document.getElementById("syncText").innerText = "Cloud Synced";
-        }
-      });
+      auth = firebase.auth();
+      db = firebase.database();
+      duoRef = db.ref('elite_duo_vault/lang_and_diem');
+      isFirebaseInit = true;
+      auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
     } catch (err) {
-      console.warn("Firebase offline or notice:", err);
-      document.getElementById("syncDot").classList.add("offline");
-      document.getElementById("syncText").innerText = "Local Only";
+      console.warn("Firebase Init notice:", err);
     }
 
+    // Save & Push
     function saveLocalCache() {
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(duoState));
-      localStorage.setItem("elite_name_lang", userNames.lang);
-      localStorage.setItem("elite_name_partner", userNames.partner);
     }
 
     function pushToCloud() {
       saveLocalCache();
-      if (duoRef) {
+      if (duoRef && auth && auth.currentUser) {
         duoRef.set({
           lang: duoState.lang,
-          partner: duoState.partner,
-          userNames: userNames,
-          updatedAt: Date.now()
-        }).catch(e => console.warn("Cloud sync error:", e));
+          diem: duoState.diem,
+          updatedAt: Date.now(),
+          updatedBy: activeProfile
+        }).catch(err => console.warn("Cloud sync write error:", err));
       }
     }
 
-    // Toggle Active Profile (Switch between Lang and Girlfriend)
+    // Auth Listeners & Handlers
+    if (isFirebaseInit && auth) {
+      auth.onAuthStateChanged((user) => {
+        if (user) {
+          // Identify user
+          const email = (user.email || "").toLowerCase();
+          if (email.includes("diembd")) {
+            activeProfile = "diem";
+          } else {
+            activeProfile = "lang";
+          }
+          localStorage.setItem("elite_active_profile", activeProfile);
+          
+          setSyncBadge('synced', `Đã Sync (${ACCOUNTS[activeProfile].name})`);
+          document.getElementById("authed-user-display").innerText = `👤 ${user.email} (${ACCOUNTS[activeProfile].name})`;
+
+          // Attach Realtime Listener
+          duoRef.on('value', (snapshot) => {
+            const cloudData = snapshot.val();
+            if (cloudData) {
+              if (cloudData.lang) duoState.lang = cloudData.lang;
+              if (cloudData.diem) duoState.diem = cloudData.diem;
+              saveLocalCache();
+              renderUI();
+            }
+          });
+        } else {
+          setSyncBadge('unauthed', '🔒 Đăng nhập Sync');
+          document.getElementById("authed-user-display").innerText = "Chưa kết nối";
+        }
+        updateProfileButton();
+        renderUI();
+      });
+    }
+
+    function setSyncBadge(status, text) {
+      const badge = document.getElementById("syncStatusBadge");
+      const label = document.getElementById("syncStatusText");
+      badge.className = "badge-sync " + status;
+      label.innerText = text;
+    }
+
+    function selectLoginAccount(key) {
+      selectedLoginAccountKey = key;
+      document.getElementById("btnPickLang").className = "account-btn " + (key === 'lang' ? 'selected-lang' : '');
+      document.getElementById("btnPickDiem").className = "account-btn " + (key === 'diem' ? 'selected-diem' : '');
+    }
+
+    function handleLogin() {
+      const pass = document.getElementById("auth-pass").value;
+      const errBox = document.getElementById("auth-error");
+      const targetEmail = ACCOUNTS[selectedLoginAccountKey].email;
+
+      if (!pass) {
+        errBox.textContent = "Vui lòng nhập mật khẩu tài khoản.";
+        errBox.style.display = "block";
+        return;
+      }
+
+      errBox.style.display = "none";
+      setSyncBadge('syncing', 'Đang kết nối...');
+
+      auth.signInWithEmailAndPassword(targetEmail, pass)
+        .then((cred) => {
+          closeAuthModal();
+          showToast(`Đăng nhập thành công: ${ACCOUNTS[selectedLoginAccountKey].name}!`);
+        })
+        .catch((err) => {
+          console.error("Login failed:", err);
+          let msg = "Mật khẩu không chính xác.";
+          if (err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') {
+            msg = "Mật khẩu không đúng. Vui lòng kiểm tra lại.";
+          } else if (err.code === 'auth/user-not-found') {
+            msg = "Tài khoản chưa được tạo trên Firebase Console.";
+          } else if (err.message) {
+            msg = err.message;
+          }
+          errBox.textContent = msg;
+          errBox.style.display = "block";
+          setSyncBadge('unauthed', '🔒 Đăng nhập Sync');
+        });
+    }
+
+    function handleLogout() {
+      if (auth) {
+        auth.signOut().then(() => {
+          closeAuthModal();
+          setSyncBadge('unauthed', '🔒 Đăng nhập Sync');
+          showToast("Đã đăng xuất Cloud Sync!");
+        });
+      }
+    }
+
+    // Modal UI Handlers
+    function openAuthModal() {
+      const isAuthed = !!(auth && auth.currentUser);
+      document.getElementById("modal-unauthed").style.display = isAuthed ? "none" : "block";
+      document.getElementById("modal-authed").style.display = isAuthed ? "block" : "none";
+      document.getElementById("auth-modal").className = "modal-backdrop open";
+      if (!isAuthed) {
+        selectLoginAccount(activeProfile);
+        setTimeout(() => document.getElementById("auth-pass").focus(), 150);
+      }
+    }
+
+    function closeAuthModal() {
+      document.getElementById("auth-modal").className = "modal-backdrop";
+      document.getElementById("auth-pass").value = "";
+      document.getElementById("auth-error").style.display = "none";
+    }
+
+    function closeAuthModalOnBg(e) {
+      if (e.target.id === "auth-modal") closeAuthModal();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      toast.innerText = msg;
+      toast.className = "show";
+      setTimeout(() => toast.className = "", 3000);
+    }
+
+    // Switch Active Profile (Dù đăng nhập hay offline đều đổi được)
     function toggleActiveProfile() {
-      activeProfile = activeProfile === "lang" ? "partner" : "lang";
+      activeProfile = activeProfile === "lang" ? "diem" : "lang";
       localStorage.setItem("elite_active_profile", activeProfile);
       updateProfileButton();
       renderUI();
+      showToast(`Đã chuyển sang thao tác cho: ${ACCOUNTS[activeProfile].name}`);
     }
 
     function updateProfileButton() {
@@ -1175,26 +1458,15 @@
       if (activeProfile === "lang") {
         btn.className = "profile-switch-btn active-lang";
         avatar.innerText = "🔵";
-        nameEl.innerText = userNames.lang;
+        nameEl.innerText = "Lang";
       } else {
-        btn.className = "profile-switch-btn active-partner";
+        btn.className = "profile-switch-btn active-diem";
         avatar.innerText = "🌸";
-        nameEl.innerText = userNames.partner;
+        nameEl.innerText = "Diễm";
       }
     }
 
-    function editUserName(userKey) {
-      const current = userNames[userKey];
-      const newName = prompt(`Nhập tên hiển thị cho ${userKey === 'lang' ? 'Lang' : 'Bạn gái'}:`, current);
-      if (newName && newName.trim()) {
-        userNames[userKey] = newName.trim();
-        pushToCloud();
-        updateProfileButton();
-        renderUI();
-      }
-    }
-
-    // Toggle Task completion for the currently active profile
+    // Toggle Task For Active Profile
     function toggleTaskForActiveUser(taskId) {
       if (!duoState[activeProfile]) duoState[activeProfile] = {};
       duoState[activeProfile][taskId] = !duoState[activeProfile][taskId];
@@ -1203,9 +1475,9 @@
     }
 
     // =========================================================================
-    // 3. UI RENDERING & STATS CALCULATION
+    // 3. UI RENDERING & STATS
     // =========================================================================
-    let currentSprintFilter = 's1'; // Mặc định mở SPRINT 1 (Chương 1.2 core)
+    let currentSprintFilter = 's1';
 
     function filterSprint(sprintId) {
       currentSprintFilter = sprintId;
@@ -1235,22 +1507,15 @@
     }
 
     function renderUI() {
-      // Calculate Stats
       const langStat = calculateStats('lang');
-      const partnerStat = calculateStats('partner');
-
-      document.getElementById("displayNameLang").innerText = userNames.lang;
-      document.getElementById("displayNamePartner").innerText = userNames.partner;
+      const diemStat = calculateStats('diem');
 
       document.getElementById("barLang").style.width = langStat.pct + "%";
       document.getElementById("badgeLang").innerText = `${langStat.pct}% • ${langStat.completedVideos} Video`;
 
-      document.getElementById("barPartner").style.width = partnerStat.pct + "%";
-      document.getElementById("badgePartner").innerText = `${partnerStat.pct}% • ${partnerStat.completedVideos} Video`;
+      document.getElementById("barDiem").style.width = diemStat.pct + "%";
+      document.getElementById("badgeDiem").innerText = `${diemStat.pct}% • ${diemStat.completedVideos} Video`;
 
-      updateProfileButton();
-
-      // Render Sprints
       const container = document.getElementById("sprintContainer");
       container.innerHTML = "";
 
@@ -1276,8 +1541,8 @@
           <div class="sprint-body">
             ${sprint.tasks.map(task => {
               const langDone = !!(duoState.lang && duoState.lang[task.id]);
-              const partnerDone = !!(duoState.partner && duoState.partner[task.id]);
-              const myDone = activeProfile === 'lang' ? langDone : partnerDone;
+              const diemDone = !!(duoState.diem && duoState.diem[task.id]);
+              const myDone = activeProfile === 'lang' ? langDone : diemDone;
 
               return `
                 <div class="task-item ${myDone ? 'my-done' : ''} ${task.isOutput ? 'is-deliverable' : ''}" id="task-${task.id}">
@@ -1298,11 +1563,11 @@
 
                     <!-- Duo Live Status Badges -->
                     <div class="duo-status-badges">
-                      <span class="user-pill ${langDone ? 'lang-done' : 'lang-pending'}" title="${userNames.lang}: ${langDone ? 'Đã hoàn thành' : 'Chưa xong'}">
-                        🔵 ${userNames.lang} ${langDone ? '✓' : '...'}
+                      <span class="user-pill ${langDone ? 'lang-done' : 'lang-pending'}" title="Lang: ${langDone ? 'Đã hoàn thành' : 'Chưa xong'}">
+                        🔵 Lang ${langDone ? '✓' : '...'}
                       </span>
-                      <span class="user-pill ${partnerDone ? 'partner-done' : 'partner-pending'}" title="${userNames.partner}: ${partnerDone ? 'Đã hoàn thành' : 'Chưa xong'}">
-                        🌸 ${userNames.partner} ${partnerDone ? '✓' : '...'}
+                      <span class="user-pill ${diemDone ? 'diem-done' : 'diem-pending'}" title="Diễm: ${diemDone ? 'Đã hoàn thành' : 'Chưa xong'}">
+                        🌸 Diễm ${diemDone ? '✓' : '...'}
                       </span>
                     </div>
                   </div>
@@ -1332,25 +1597,6 @@
     function toggleSprintBody(headerEl) {
       const body = headerEl.nextElementSibling;
       body.style.display = body.style.display === "none" ? "flex" : "none";
-    }
-
-    // Modal Handlers
-    function openSyncModal() {
-      document.getElementById("roomIdInput").value = duoRoomId;
-      document.getElementById("syncModal").style.display = "flex";
-    }
-
-    function closeSyncModal() {
-      document.getElementById("syncModal").style.display = "none";
-    }
-
-    function saveRoomId() {
-      const val = document.getElementById("roomIdInput").value.trim();
-      if (val) {
-        duoRoomId = val;
-        localStorage.setItem("elite_duo_room_id", duoRoomId);
-        location.reload();
-      }
     }
 
     // Init
