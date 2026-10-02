@@ -3,7 +3,14 @@
 // =========================================================================
 
 import { ACCOUNTS } from './curriculum.js';
-import { auth, duoState, broadcastChange } from './sync.js';
+import {
+  auth,
+  duoState,
+  broadcastChange,
+  startPresenceLoop,
+  stopPresenceLoop,
+  sendPresenceHeartbeat
+} from './sync.js';
 
 export let currentUserKey = null; // 'lang', 'diem', or null
 export let selectedLoginAccountKey = "lang";
@@ -26,7 +33,15 @@ export function initAuth() {
         if (authedDisplay) {
           authedDisplay.innerText = `${ACCOUNTS[currentUserKey].avatar} ${ACCOUNTS[currentUserKey].name} (${user.email})`;
         }
+
+        // Start Live Presence Heartbeat
+        startPresenceLoop(currentUserKey);
       } else {
+        if (currentUserKey) {
+          sendPresenceHeartbeat(currentUserKey, 'offline');
+        }
+        stopPresenceLoop();
+
         currentUserKey = null;
         localStorage.removeItem("elite_current_user");
         updateIdentityUI(false);
@@ -112,6 +127,11 @@ export function handleLogin() {
 
 export function handleLogout() {
   if (auth) {
+    if (currentUserKey) {
+      sendPresenceHeartbeat(currentUserKey, 'offline');
+    }
+    stopPresenceLoop();
+
     auth.signOut().then(() => {
       closeAuthModal();
       if (window.showToast) {

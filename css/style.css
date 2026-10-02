@@ -273,7 +273,58 @@ body {
 .user-name-tag {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Live Presence Badges (Đang học / Đang off) */
+.presence-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.presence-pill.online {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #10b981;
+}
+
+.presence-pill.offline {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-dim);
+}
+
+.presence-dot {
+  width: 6.5px;
+  height: 6.5px;
+  border-radius: 50%;
+  transition: all 0.25s ease;
+}
+
+.presence-pill.online .presence-dot {
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-presence 2s infinite ease-in-out;
+}
+
+.presence-pill.offline .presence-dot {
+  background: #64748b;
+  box-shadow: none;
+}
+
+@keyframes pulse-presence {
+  0% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 4px #10b981; }
+  50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 10px #10b981; }
+  100% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 4px #10b981; }
 }
 
 .stat-badge {

@@ -1,9 +1,9 @@
 // =========================================================================
-// MAIN APP ORCHESTRATOR, PREDICTIVE UI & DYNAMIC SPRINT PINNING ENGINE
+// MAIN APP ORCHESTRATOR, PREDICTIVE UI & LIVE PRESENCE ENGINE
 // =========================================================================
 
 import { ROADMAP_SPRINTS, TET_DATE, JOB_PAYOUT_DEADLINE, JOB_NEEDED_HOURS, ACCOUNTS } from './curriculum.js';
-import { duoState, initRealtimeStream, setSyncUpdateCallback, saveLocalCache } from './sync.js';
+import { duoState, presenceState, initRealtimeStream, setSyncUpdateCallback, saveLocalCache } from './sync.js';
 import {
   initAuth,
   currentUserKey,
@@ -45,6 +45,52 @@ window.filterSprint = filterSprint;
 window.autoRebalanceQuota = autoRebalanceQuota;
 window.toggleSprintBody = toggleSprintBody;
 window.togglePinSprint = togglePinSprint;
+
+// -------------------------------------------------------------------------
+// RELATIVE TIME HELPER & PRESENCE DISPLAY
+// -------------------------------------------------------------------------
+function formatRelativeTime(diffMs) {
+  const diffSec = Math.floor(diffMs / 1000);
+  if (diffSec < 60) return "vừa xong";
+  const diffMin = Math.floor(diffSec / 60);
+  if (diffMin < 60) return `${diffMin}p trước`;
+  const diffHr = Math.floor(diffMin / 60);
+  if (diffHr < 24) return `${diffHr}h trước`;
+  const diffDay = Math.floor(diffHr / 24);
+  return `${diffDay}d trước`;
+}
+
+function renderPresenceIndicators() {
+  const now = Date.now();
+  const presenceLangEl = document.getElementById("presenceLang");
+  const presenceDiemEl = document.getElementById("presenceDiem");
+
+  // Lang Presence (online if active within 45s)
+  if (presenceLangEl) {
+    const isLangOnline = presenceState.lang.online && (now - presenceState.lang.lastSeen < 45000);
+    if (isLangOnline) {
+      presenceLangEl.className = "presence-pill online";
+      presenceLangEl.innerHTML = `<span class="presence-dot"></span>Đang học`;
+    } else {
+      presenceLangEl.className = "presence-pill offline";
+      const relTime = presenceState.lang.lastSeen ? `Off ${formatRelativeTime(now - presenceState.lang.lastSeen)}` : "Đang off";
+      presenceLangEl.innerHTML = `<span class="presence-dot"></span>${relTime}`;
+    }
+  }
+
+  // Diễm Presence (online if active within 45s)
+  if (presenceDiemEl) {
+    const isDiemOnline = presenceState.diem.online && (now - presenceState.diem.lastSeen < 45000);
+    if (isDiemOnline) {
+      presenceDiemEl.className = "presence-pill online";
+      presenceDiemEl.innerHTML = `<span class="presence-dot"></span>Đang học`;
+    } else {
+      presenceDiemEl.className = "presence-pill offline";
+      const relTime = presenceState.diem.lastSeen ? `Off ${formatRelativeTime(now - presenceState.diem.lastSeen)}` : "Đang off";
+      presenceDiemEl.innerHTML = `<span class="presence-dot"></span>${relTime}`;
+    }
+  }
+}
 
 // -------------------------------------------------------------------------
 // DYNAMIC ACTIVE SPRINT & PIN ENGINE
@@ -248,6 +294,7 @@ export function renderUI() {
   if (badgeDiem) badgeDiem.innerText = `${diemStat.pct}% • ${diemStat.completedVideos} Video • ${diemStat.completedHours.toFixed(1)}h`;
 
   updatePredictiveEngine();
+  renderPresenceIndicators();
   renderSprintNavTabs(effectiveFilter, activeSprintId);
 
   const container = document.getElementById("sprintContainer");
@@ -308,10 +355,10 @@ export function renderUI() {
                   </div>
                   <div class="task-details">
                     <div class="task-header-row">
-                      <span class="task-title">${task.title}</span>
-                      <span class="effort-badge">⚡ ${task.effortHours}h effort</span>
-                      <span class="duration-tag">⏱️ ${task.duration}</span>
-                      ${task.isOutput ? `<span class="output-pill">🎯 SẢN PHẨM CẦM TAY</span>` : ''}
+                          <span class="task-title">${task.title}</span>
+                          <span class="effort-badge">⚡ ${task.effortHours}h effort</span>
+                          <span class="duration-tag">⏱️ ${task.duration}</span>
+                          ${task.isOutput ? `<span class="output-pill">🎯 SẢN PHẨM CẦM TAY</span>` : ''}
                     </div>
                     <div class="output-text">🚀 Đích đến: ${task.output}</div>
                   </div>
@@ -365,4 +412,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initAuth();
   initRealtimeStream();
   renderUI();
+
+  // Keep presence status refreshed smoothly every 5 seconds
+  setInterval(() => {
+    renderPresenceIndicators();
+  }, 5000);
 });

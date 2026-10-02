@@ -1,5 +1,5 @@
 // =========================================================================
-// REALTIME DUAL-SYNC ENGINE (SSE STREAM + FIREBASE RTDB + LOCALSTORAGE)
+// REALTIME DUAL-SYNC & LIVE PRESENCE ENGINE (SSE STREAM + FIREBASE RTDB)
 // =========================================================================
 
 import { ACCOUNTS } from './curriculum.js';
@@ -10,6 +10,12 @@ export let duoState = {
   lang: {},
   diem: {},
   customQuota: { lang: null, diem: null }
+};
+
+// Presence state for both users
+export let presenceState = {
+  lang: { online: false, lastSeen: 0 },
+  diem: { online: false, lastSeen: 0 }
 };
 
 // Load Local Cache
@@ -30,13 +36,14 @@ export function saveLocalCache() {
 }
 
 // -------------------------------------------------------------------------
-// REALTIME STREAM VIA SSE (NTFY)
+// REALTIME STREAM VIA SSE (NTFY) + PRESENCE DETECTION
 // -------------------------------------------------------------------------
 const REALTIME_TOPIC = "elite_duo_sync_lang_diem_2027";
 const SSE_URL = `https://ntfy.sh/${REALTIME_TOPIC}/sse`;
 const PUBLISH_URL = `https://ntfy.sh/${REALTIME_TOPIC}`;
 let eventSource = null;
 let onSyncUpdateCallback = null;
+let presenceTimer = null;
 
 export function setSyncUpdateCallback(cb) {
   onSyncUpdateCallback = cb;
@@ -90,12 +97,47 @@ export function initRealtimeStream() {
   } catch (e) {
     setSyncStatus('warning', 'Local Only');
   }
+
+  // Setup presence event listeners
+  window.addEventListener('beforeunload', () => {
+    const user = localStorage.getItem("elite_current_user");
+    if (user) {
+      const payload = JSON.stringify({
+        sender: user,
+        type: "presence",
+        status: "offline",
+        timestamp: Date.now()
+      });
+      navigator.sendBeacon(PUBLISH_URL, payload);
+    }
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    const user = localStorage.getItem("elite_current_user");
+    if (user) {
+      if (document.visibilityState === 'visible') {
+        sendPresenceHeartbeat(user, 'online');
+      }
+    }
+  });
 }
 
 function applyCloudPayload(payload, showToastNotification) {
   if (!payload || !payload.sender) return;
 
   const sender = payload.sender;
+
+  // Handle Presence Heartbeat Event
+  if (payload.type === "presence") {
+    presenceState[sender] = {
+      online: payload.status === "online",
+      lastSeen: payload.timestamp || Date.now()
+    };
+    if (onSyncUpdateCallback) onSyncUpdateCallback();
+    return;
+  }
+
+  // Handle Task State Event
   let hasChange = false;
 
   if (payload.fullState && payload.fullState[sender]) {
@@ -108,6 +150,12 @@ function applyCloudPayload(payload, showToastNotification) {
   }
 
   if (hasChange) {
+    // If user made a change, they are obviously online!
+    presenceState[sender] = {
+      online: true,
+      lastSeen: Date.now()
+    };
+
     saveLocalCache();
     if (onSyncUpdateCallback) onSyncUpdateCallback();
 
@@ -118,6 +166,51 @@ function applyCloudPayload(payload, showToastNotification) {
         window.showToast(`${ACCOUNTS[sender].avatar} ${ACCOUNTS[sender].name} vừa hoàn thành: ${payload.taskTitle}!`);
       }
     }
+  }
+}
+
+export function sendPresenceHeartbeat(currentUserKey, status = 'online') {
+  if (!currentUserKey) return;
+
+  const payload = {
+    sender: currentUserKey,
+    type: "presence",
+    status: status,
+    timestamp: Date.now()
+  };
+
+  fetch(PUBLISH_URL, {
+    method: "POST",
+    body: JSON.stringify(payload)
+  }).catch(() => {});
+
+  if (duoRef && auth && auth.currentUser) {
+    duoRef.child('presence').child(currentUserKey).set({
+      status: status,
+      timestamp: Date.now()
+    }).catch(() => {});
+  }
+}
+
+export function startPresenceLoop(userKey) {
+  stopPresenceLoop();
+  if (!userKey) return;
+
+  // Mark online immediately
+  sendPresenceHeartbeat(userKey, 'online');
+  presenceState[userKey] = { online: true, lastSeen: Date.now() };
+
+  // Heartbeat every 20 seconds
+  presenceTimer = setInterval(() => {
+    sendPresenceHeartbeat(userKey, 'online');
+    presenceState[userKey] = { online: true, lastSeen: Date.now() };
+  }, 20000);
+}
+
+export function stopPresenceLoop() {
+  if (presenceTimer) {
+    clearInterval(presenceTimer);
+    presenceTimer = null;
   }
 }
 
@@ -184,6 +277,20 @@ try {
     if (val) {
       if (val.lang) duoState.lang = val.lang;
       if (val.diem) duoState.diem = val.diem;
+      if (val.presence) {
+        if (val.presence.lang) {
+          presenceState.lang = {
+            online: val.presence.lang.status === "online",
+            lastSeen: val.presence.lang.timestamp || 0
+          };
+        }
+        if (val.presence.diem) {
+          presenceState.diem = {
+            online: val.presence.diem.status === "online",
+            lastSeen: val.presence.diem.timestamp || 0
+          };
+        }
+      }
       saveLocalCache();
       if (onSyncUpdateCallback) onSyncUpdateCallback();
       setSyncStatus('synced', 'Live & Cloud Synced');
