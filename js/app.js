@@ -1,5 +1,5 @@
 // =========================================================================
-// MAIN APP ORCHESTRATOR & PREDICTIVE UI ENGINE
+// MAIN APP ORCHESTRATOR, PREDICTIVE UI & DYNAMIC SPRINT PINNING ENGINE
 // =========================================================================
 
 import { ROADMAP_SPRINTS, TET_DATE, JOB_PAYOUT_DEADLINE, JOB_NEEDED_HOURS, ACCOUNTS } from './curriculum.js';
@@ -18,7 +18,8 @@ import {
   handleLogout
 } from './auth.js';
 
-let currentSprintFilter = 's1';
+let pinnedSprintId = localStorage.getItem("elite_pinned_sprint") || null;
+let currentSprintFilter = null; // null = use effective sprint (pinned or active)
 
 // Global toast helper
 export function showToast(msg) {
@@ -43,6 +44,45 @@ window.alertNotOwner = alertNotOwner;
 window.filterSprint = filterSprint;
 window.autoRebalanceQuota = autoRebalanceQuota;
 window.toggleSprintBody = toggleSprintBody;
+window.togglePinSprint = togglePinSprint;
+
+// -------------------------------------------------------------------------
+// DYNAMIC ACTIVE SPRINT & PIN ENGINE
+// -------------------------------------------------------------------------
+export function getActiveSprintId() {
+  const user = currentUserKey || 'lang';
+  for (const sprint of ROADMAP_SPRINTS) {
+    const isSprintFinished = sprint.tasks.every(t => duoState[user] && duoState[user][t.id]);
+    if (!isSprintFinished) {
+      return sprint.id;
+    }
+  }
+  return 's1';
+}
+
+export function getEffectiveSprintFilter() {
+  if (pinnedSprintId) return pinnedSprintId;
+  return getActiveSprintId();
+}
+
+export function togglePinSprint(sprintId, e) {
+  if (e) e.stopPropagation();
+
+  if (pinnedSprintId === sprintId) {
+    pinnedSprintId = null;
+    localStorage.removeItem("elite_pinned_sprint");
+    currentSprintFilter = getActiveSprintId();
+    showToast("Đã bỏ ghim! Hệ thống sẽ tự động mở Sprint bạn đang làm.");
+  } else {
+    pinnedSprintId = sprintId;
+    localStorage.setItem("elite_pinned_sprint", pinnedSprintId);
+    currentSprintFilter = sprintId;
+    const sprintObj = ROADMAP_SPRINTS.find(s => s.id === sprintId);
+    showToast(`📌 Đã ghim: ${sprintObj ? sprintObj.pill : sprintId} làm trọng tâm hàng đầu!`);
+  }
+
+  renderUI();
+}
 
 // -------------------------------------------------------------------------
 // STATS, COUNTDOWN & ADAPTIVE FORECASTING
@@ -146,9 +186,6 @@ function updatePredictiveEngine() {
 // -------------------------------------------------------------------------
 export function filterSprint(sprintId) {
   currentSprintFilter = sprintId;
-  document.querySelectorAll(".sprint-tab").forEach(tab => {
-    tab.classList.toggle("active", tab.getAttribute("onclick").includes(sprintId));
-  });
   renderUI();
 }
 
@@ -159,7 +196,44 @@ export function toggleSprintBody(headerEl) {
   }
 }
 
+function renderSprintNavTabs(effectiveFilter, activeSprintId) {
+  const navContainer = document.querySelector(".sprint-nav");
+  if (!navContainer) return;
+
+  const tabs = [
+    { id: "all", label: "Tất cả Sprint" },
+    { id: "s0", label: "Sprint 0: Vũ Khí (3.0h)" },
+    { id: "s1", label: "Sprint 1: 4 REEL (22.5h)" },
+    { id: "s2", label: "Sprint 2: Triệu View (19.0h)" },
+    { id: "s3", label: "Sprint 3: Săn Job (19.5h)" },
+    { id: "s4", label: "Sprint 4: Nhận Lương (40.0h)" }
+  ];
+
+  navContainer.innerHTML = tabs.map(tab => {
+    const isSelected = effectiveFilter === tab.id;
+    const isPinned = pinnedSprintId === tab.id;
+    const isActiveCurrent = !pinnedSprintId && activeSprintId === tab.id;
+
+    let badgeIcon = "";
+    if (isPinned) badgeIcon = "📌 ";
+    else if (isActiveCurrent) badgeIcon = "🔥 ";
+
+    let extraClass = "";
+    if (isSelected) extraClass += " active";
+    if (isPinned || isActiveCurrent) extraClass += " focus-tab";
+
+    return `
+      <button class="sprint-tab ${extraClass}" onclick="filterSprint('${tab.id}')">
+        ${badgeIcon}${tab.label}
+      </button>
+    `;
+  }).join("");
+}
+
 export function renderUI() {
+  const activeSprintId = getActiveSprintId();
+  const effectiveFilter = currentSprintFilter || getEffectiveSprintFilter();
+
   const langStat = calculateStats('lang');
   const diemStat = calculateStats('diem');
 
@@ -174,16 +248,20 @@ export function renderUI() {
   if (badgeDiem) badgeDiem.innerText = `${diemStat.pct}% • ${diemStat.completedVideos} Video • ${diemStat.completedHours.toFixed(1)}h`;
 
   updatePredictiveEngine();
+  renderSprintNavTabs(effectiveFilter, activeSprintId);
 
   const container = document.getElementById("sprintContainer");
   if (!container) return;
   container.innerHTML = "";
 
   ROADMAP_SPRINTS.forEach(sprint => {
-    if (currentSprintFilter !== 'all' && sprint.id !== currentSprintFilter) return;
+    if (effectiveFilter !== 'all' && sprint.id !== effectiveFilter) return;
+
+    const isPinned = pinnedSprintId === sprint.id;
+    const isActiveRunning = !pinnedSprintId && activeSprintId === sprint.id;
 
     const card = document.createElement("div");
-    card.className = "sprint-card";
+    card.className = `sprint-card ${isPinned ? 'is-pinned' : ''}`;
 
     const sprintTotalHours = sprint.tasks.reduce((s, t) => s + t.effortHours, 0);
 
@@ -194,12 +272,24 @@ export function renderUI() {
             ${sprint.pill}
           </span>
           <div>
-            <div class="sprint-title">${sprint.title}</div>
+            <div class="sprint-title" style="display: flex; align-items: center; gap: 8px;">
+              <span>${sprint.title}</span>
+              ${isPinned ? `<span style="font-size: 11px; color: #f59e0b; background: rgba(245, 158, 11, 0.15); padding: 1px 7px; border-radius: 4px; font-weight: 800;">📌 ĐANG GHIM</span>` : ''}
+              ${isActiveRunning ? `<span style="font-size: 11px; color: #10b981; background: rgba(16, 185, 129, 0.15); padding: 1px 7px; border-radius: 4px; font-weight: 800;">🔥 ĐANG LÀM</span>` : ''}
+            </div>
             <div class="sprint-desc">${sprint.desc} • Tổng effort: <strong>${sprintTotalHours.toFixed(1)} giờ</strong></div>
           </div>
         </div>
-        <div style="font-size: 18px; color: var(--text-dim);">▼</div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <!-- Pin Sprint Button -->
+          <button class="pin-btn ${isPinned ? 'is-pinned' : ''}" onclick="togglePinSprint('${sprint.id}', event)" title="${isPinned ? 'Bỏ ghim Sprint' : 'Ghim Sprint này làm trọng tâm hàng đầu'}">
+            📌 ${isPinned ? 'Đang Ghim' : 'Ghim'}
+          </button>
+          <div style="font-size: 18px; color: var(--text-dim);">▼</div>
+        </div>
       </div>
+
       <div class="sprint-body">
         ${sprint.tasks.map(task => {
           const langDone = !!(duoState.lang && duoState.lang[task.id]);
