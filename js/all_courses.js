@@ -1,5 +1,5 @@
 // =========================================================================
-// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (100% ACCURATE)
+// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (100% VERIFIED)
 // =========================================================================
 
 export const ALL_COURSES_DATA = [
@@ -795,814 +795,734 @@ export const ALL_COURSES_DATA = [
     "name": "Khóa Học Baby Resolve (Nhập Môn)",
     "color": "#38bdf8",
     "icon": "👶",
-    "totalLessons": 144,
+    "totalLessons": 128,
     "chapters": [
       {
-        "id": "baby_resolve_ch_1",
-        "title": "Nội Dung Cơ Bản",
+        "id": "baby_ch_0",
+        "title": "Mở đầu - Bạn cần làm gì?",
         "lessons": [
           {
-            "id": "baby_resolve_l_1",
-            "title": "Mở đầu - Bạn cần làm gì?",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_2",
+            "id": "baby_l_0_1",
             "title": "Cộng đồng Discord - Support (Bài đọc)",
-            "duration": "Video"
+            "duration": "Bài đọc"
           },
           {
-            "id": "baby_resolve_l_3",
+            "id": "baby_l_0_2",
             "title": "Trường hợp không thấy hiển thị Video bài giảng (Bài đọc)",
-            "duration": "Video"
+            "duration": "Bài đọc"
           },
           {
-            "id": "baby_resolve_l_4",
-            "title": "/Gợi ý thứ tự xem bài giảng",
+            "id": "baby_l_0_3",
+            "title": "🔵 Hướng dẫn/Gợi ý thứ tự xem bài giảng",
             "duration": "3 phút"
           },
           {
-            "id": "baby_resolve_l_5",
-            "title": "Tư vấn về lộ trình Video Editing",
+            "id": "baby_l_0_4",
+            "title": "🔵 Tư vấn về lộ trình Freelance Video Editing",
             "duration": "5 phút"
           },
           {
-            "id": "baby_resolve_l_6",
+            "id": "baby_l_0_5",
             "title": "Giới thiệu về Baby Resolve (Old Vers)",
             "duration": "2 phút"
           }
         ]
       },
       {
-        "id": "baby_resolve_ch_2",
+        "id": "baby_ch_1",
         "title": "Chương 1 - Khởi đầu (6 bài học)",
         "lessons": [
           {
-            "id": "baby_resolve_l_7",
+            "id": "baby_l_1_1",
             "title": "Trợ giúp cài đặt phần mềm DaVinci Resolve",
-            "duration": "Video"
+            "duration": "Bài đọc"
           },
           {
-            "id": "baby_resolve_l_8",
-            "title": "Bài 01 - Những nguồn phục vụ cho Edit Video",
+            "id": "baby_l_1_2",
+            "title": "Bài 01 – Những nguồn tài nguyên phục vụ cho Edit Video",
             "duration": "9 phút"
           },
           {
-            "id": "baby_resolve_l_9",
-            "title": "Bài 02 - Sắp xếp dữ liệu - Cải thiện quy trình làm việc",
+            "id": "baby_l_1_3",
+            "title": "Bài 02 – Sắp xếp dữ liệu – Cải thiện quy trình làm việc",
             "duration": "6 phút"
           },
           {
-            "id": "baby_resolve_l_10",
-            "title": "Bài 03 - Sơ lược về phím tắt",
+            "id": "baby_l_1_4",
+            "title": "Bài 03 – Sơ lược về phím tắt",
             "duration": "1 phút"
           },
           {
-            "id": "baby_resolve_l_11",
-            "title": "Bài 4.1 - Cap nhat phím tắt ở DaVinci Resolve phiên bản 20 trở lên",
+            "id": "baby_l_1_5",
+            "title": "Bài 4.1 – Cập nhật phím tắt ở DaVinci Resolve phiên bản 20 trở lên",
             "duration": "6 phút"
           },
           {
-            "id": "baby_resolve_l_12",
-            "title": "Bài 4.2 - Chi tiết phím tắt thường dùng",
+            "id": "baby_l_1_6",
+            "title": "Bài 4.2 – Chi tiết phím tắt thường dùng",
             "duration": "20 phút"
           }
         ]
       },
       {
-        "id": "baby_resolve_ch_3",
-        "title": "Chương 2 - Sao lưu và quan lý dữ liều (6 bài học)",
+        "id": "baby_ch_2",
+        "title": "Chương 2 - Sao lưu và quản lý dữ liệu (6 bài học)",
         "lessons": [
           {
-            "id": "baby_resolve_l_13",
-            "title": "Bài 01 - Database và Project (Quản lý dự án)",
+            "id": "baby_l_2_1",
+            "title": "Bài 01 – Database và Project (Quản lý dự án)",
             "duration": "5 phút"
           },
           {
-            "id": "baby_resolve_l_14",
-            "title": "Bài 02 - Live Save & Backup (Chế độ tự động lưu dự án & dự phòng)",
+            "id": "baby_l_2_2",
+            "title": "Bài 02 – Live Save & Backup (Chế độ tự động lưu dự án & dự phòng)",
             "duration": "4 phút"
           },
           {
-            "id": "baby_resolve_l_15",
-            "title": "QUÁN LÝ DỮ LIỆU",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_16",
-            "title": "Bài 03 - Chia sẻ dự án",
+            "id": "baby_l_2_3",
+            "title": "Bài 03 – Chia sẻ dự án",
             "duration": "3 phút"
           },
           {
-            "id": "baby_resolve_l_17",
-            "title": "Bài 04 - Han chê cuả hể điêu hành Windows",
+            "id": "baby_l_2_4",
+            "title": "Bài 04 – Hạn chế của hệ điều hành Windows",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_18",
-            "title": "QUÂN LÝ DỮ LIỆU",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_19",
-            "title": "Bài 05 - Thay đôi ngôn ngữ phần mêm",
+            "id": "baby_l_2_5",
+            "title": "Bài 05 – Thay đổi ngôn ngữ phần mềm",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_20",
-            "title": "Bài 06 - Cách khôi phuc Database/Project khi đôi thiết bi.",
+            "id": "baby_l_2_6",
+            "title": "Bài 06 - Cách khôi phục Database/Project khi đổi thiết bị",
             "duration": "3 phút"
           }
         ]
       },
       {
-        "id": "baby_resolve_ch_4",
+        "id": "baby_ch_3",
         "title": "Chương 3 - Media Page (Media Tab) (6 bài học)",
         "lessons": [
           {
-            "id": "baby_resolve_l_21",
-            "title": "PAGE (TAB MEDIA)",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_22",
-            "title": "Bài 01 - Giao dien chung và tính nang có trong Media Page",
+            "id": "baby_l_3_1",
+            "title": "Bài 01 - Giao diện chung và tính năng có trong Media Page",
             "duration": "14 phút"
           },
           {
-            "id": "baby_resolve_l_23",
-            "title": "Bài 02 - Scene cut detection (Tự đồng nhán diền cat canh)",
+            "id": "baby_l_3_2",
+            "title": "Bài 02 - Scene cut detection (Tự động nhận diện cắt cảnh)",
             "duration": "4 phút"
           },
           {
-            "id": "baby_resolve_l_24",
+            "id": "baby_l_3_3",
             "title": "Bài 03 - Proxies (Edit với phiên bản nhẹ hơn, mượt hơn)",
             "duration": "6 phút"
           },
           {
-            "id": "baby_resolve_l_25",
+            "id": "baby_l_3_4",
             "title": "Bài 04 - Smart Bins - Tự động sắp xếp media thông minh",
             "duration": "4 phút"
           },
           {
-            "id": "baby_resolve_l_26",
+            "id": "baby_l_3_5",
             "title": "Bài 05 - Annotation (Ghi chú vào video)",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_27",
+            "id": "baby_l_3_6",
             "title": "Bài 06 - Power Bins (Tính năng quan trọng)",
             "duration": "6 phút"
           }
         ]
       },
       {
-        "id": "baby_resolve_ch_5",
+        "id": "baby_ch_4",
         "title": "Chương 4 - Photo Page (Chỉnh ảnh với DaVinci Resolve 21 - Tháng 9/2026) (14 bài học)",
         "lessons": [
           {
-            "id": "baby_resolve_l_28",
-            "title": "PHOTO PAGE",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_29",
-            "title": "Bài 1 - Giới thiệu chung về Photo Page • DaVinci Resolve 21:",
+            "id": "baby_l_4_1",
+            "title": "Bài 1 - Giới thiệu chung về Photo Page 🔵 DaVinci Resolve 21:",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_30",
+            "id": "baby_l_4_2",
             "title": "Bài 2 - Tổng quan về Photo Page - Thay thế Lightroom?",
             "duration": "5 phút"
           },
           {
-            "id": "baby_resolve_l_31",
-            "title": "Bài 3 - Inspector (Tối ưu hóa Photo Page và phần biệt tab với tab Photo)",
+            "id": "baby_l_4_3",
+            "title": "Bài 3 - Inspector (Tối ưu hóa Photo Page và phân biệt tab RAW với tab Photo)",
             "duration": "6 phút"
           },
           {
-            "id": "baby_resolve_l_32",
+            "id": "baby_l_4_4",
             "title": "Bài 4 - Quản lý và chỉnh sửa Photo Album hiệu quả",
             "duration": "9 phút"
           },
           {
-            "id": "baby_resolve_l_33",
-            "title": "Bài 5 - Tab và các thông số quan trọng",
+            "id": "baby_l_4_5",
+            "title": "Bài 5 - Tab RAW và các thông số quan trọng",
             "duration": "14 phút"
           },
           {
-            "id": "baby_resolve_l_34",
+            "id": "baby_l_4_6",
             "title": "Bài 6 - Tab Photo và các thông số quan trọng",
             "duration": "13 phút"
           },
           {
-            "id": "baby_resolve_l_35",
+            "id": "baby_l_4_7",
             "title": "Bài 7 - Tab Effect (Hiệu ứng cho ảnh)",
             "duration": "5 phút"
           },
           {
-            "id": "baby_resolve_l_36",
+            "id": "baby_l_4_8",
             "title": "Bài 8 - Cách sao chép màu sang nhiều ảnh",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_37",
+            "id": "baby_l_4_9",
             "title": "Bài 9 - Kết hợp Photo với Color Page",
             "duration": "16 phút"
           },
           {
-            "id": "baby_resolve_l_38",
+            "id": "baby_l_4_10",
             "title": "Bài 10 - Kết hợp Photo với Fusion",
             "duration": "6 phút"
           },
           {
-            "id": "baby_resolve_l_39",
+            "id": "baby_l_4_11",
             "title": "Bài 11 - Kết hợp Photo với Edit Page",
             "duration": "4 phút"
           },
           {
-            "id": "baby_resolve_l_40",
+            "id": "baby_l_4_12",
             "title": "Bài 12 - Cách xuất file ảnh - photo trong phần mềm",
             "duration": "6 phút"
           },
           {
-            "id": "baby_resolve_l_41",
-            "title": "Bài 13 - Intellisearch Al trong Photo Page",
+            "id": "baby_l_4_13",
+            "title": "Bài 13 - Intellisearch AI trong Photo Page",
             "duration": "3 phút"
           },
           {
-            "id": "baby_resolve_l_42",
+            "id": "baby_l_4_14",
             "title": "Bài 14 - Tổng kết Photo Page",
             "duration": "1 phút"
           }
         ]
       },
       {
-        "id": "baby_resolve_ch_6",
+        "id": "baby_ch_5",
         "title": "Chương 5 - Cut Page (Cut Tab) (3 bài học)",
         "lessons": [
           {
-            "id": "baby_resolve_l_43",
-            "title": "CHƯƠNG 5 CUT PAGE",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_44",
-            "title": "Bài 01 - Giao diền chung và tính năng có trong Cut Page",
+            "id": "baby_l_5_1",
+            "title": "Bài 01 - Giao diện chung và tính năng có trong Cut Page",
             "duration": "11 phút"
           },
           {
-            "id": "baby_resolve_l_45",
+            "id": "baby_l_5_2",
             "title": "Bài 02 - Source tape - Duyệt clip nhanh & mượt hơn",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_46",
-            "title": "Bài 03 - Tools (Thanh công cu),",
+            "id": "baby_l_5_3",
+            "title": "Bài 03 - Tools (Thanh công cụ)",
             "duration": "2 phút"
           }
         ]
       },
       {
-        "id": "baby_resolve_ch_7",
+        "id": "baby_ch_6",
         "title": "Chương 6 - Edit Page (Edit Tab) (17 bài học)",
         "lessons": [
           {
-            "id": "baby_resolve_l_47",
-            "title": "CHƯƠNG 6",
+            "id": "baby_l_6_1",
+            "title": "Bài 01 – Giao diện chung và tính năng hay sử dụng trong Edit page",
             "duration": "35 phút"
           },
           {
-            "id": "baby_resolve_l_48",
-            "title": "Bài 01 - Giao diền chung và tính năng hay sử dụng trong Edit page CHƯƠNG 6",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_49",
-            "title": "Bài 02 - Chông rung (Stabilization) - Làm mượt cảnh quay bị rung",
+            "id": "baby_l_6_2",
+            "title": "Bài 02 - Chống rung (Stabilization) – Làm mượt cảnh quay bị rung",
             "duration": "7 phút"
           },
           {
-            "id": "baby_resolve_l_50",
+            "id": "baby_l_6_3",
             "title": "Bài 03 - Speed Change (Thay đổi tốc độ Clip)",
             "duration": "9 phút"
           },
           {
-            "id": "baby_resolve_l_51",
-            "title": "CHƯƠNG 6 CHƯƠNG 6",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_52",
+            "id": "baby_l_6_4",
             "title": "Bài 04 - Optical Flow & Speed Warp (Hỗ trợ chuyển động chậm mượt)",
             "duration": "3 phút"
           },
           {
-            "id": "baby_resolve_l_53",
+            "id": "baby_l_6_5",
             "title": "Bài 05 - Compound Clips (Gộp clip)",
             "duration": "7 phút"
           },
           {
-            "id": "baby_resolve_l_54",
+            "id": "baby_l_6_6",
             "title": "Bài 06 - Speed Ramp (Thực hành 1 Video Bất động sản đơn giản)",
             "duration": "33 phút"
           },
           {
-            "id": "baby_resolve_l_55",
+            "id": "baby_l_6_7",
             "title": "Bài 6.1 (DR20 Update) - Thay đổi giao diện Speed Ramp Keyframe",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_56",
-            "title": "Bài 07 - Smart Reframe (cần chỉnh khung hình thông minh)",
+            "id": "baby_l_6_8",
+            "title": "Bài 07 - Smart Reframe (Căn chỉnh khung hình thông minh)",
             "duration": "5 phút"
           },
           {
-            "id": "baby_resolve_l_57",
-            "title": "Bài 08 - Lens Correction - Sửa méo ống kính",
+            "id": "baby_l_6_9",
+            "title": "Bài 08 - Lens Correction – Sửa méo ống kính",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_58",
+            "id": "baby_l_6_10",
             "title": "Bài 09 - Dynamic Zoom (Tính năng quan trọng)",
             "duration": "4 phút"
           },
           {
-            "id": "baby_resolve_l_59",
+            "id": "baby_l_6_11",
             "title": "Bài 10 - Composite Mode (Chế độ hoà trộn)",
             "duration": "3 phút"
           },
           {
-            "id": "baby_resolve_l_60",
-            "title": "Bài 11 - Keyframe - Điều khiển chuyển động và hiệu ứng",
+            "id": "baby_l_6_12",
+            "title": "Bài 11 - Keyframe – Điều khiển chuyển động và hiệu ứng",
             "duration": "12 phút"
           },
           {
-            "id": "baby_resolve_l_61",
+            "id": "baby_l_6_13",
             "title": "Bài 12 - Cropping (Cắt xén)",
             "duration": "5 phút"
           },
           {
-            "id": "baby_resolve_l_62",
-            "title": "Bài 13 - AI Super Scale (Làm tăng độ phần giải gốc của hình/video)",
+            "id": "baby_l_6_14",
+            "title": "Bài 13 - AI Super Scale (Làm tăng độ phân giải gốc của hình/video)",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_63",
+            "id": "baby_l_6_15",
             "title": "Bài 14 - Text (Sử dụng chữ trong DaVinci Resolve)",
             "duration": "7 phút"
           },
           {
-            "id": "baby_resolve_l_64",
-            "title": "Bài 15 - Những thứ các ban se hay sử dung trong Edit Page",
+            "id": "baby_l_6_16",
+            "title": "Bài 15 - Những thứ các bạn sẽ hay sử dụng trong Edit Page",
             "duration": "14 phút"
           },
           {
-            "id": "baby_resolve_l_65",
-            "title": "Bài 16 - Những lôĩ thương gap trong Edit Page",
+            "id": "baby_l_6_17",
+            "title": "Bài 16 - Những lỗi thường gặp trong Edit Page",
             "duration": "12 phút"
           }
         ]
       },
       {
-        "id": "baby_resolve_ch_8",
+        "id": "baby_ch_7",
         "title": "Chương 7 - Fusion Page (Hiệu ứng) (12 bài học)",
         "lessons": [
           {
-            "id": "baby_resolve_l_66",
-            "title": "CHƯƠNG 7",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_67",
+            "id": "baby_l_7_1",
             "title": "Bài 01 - Cách đưa Media vào Fusion Page",
             "duration": "16 phút"
           },
           {
-            "id": "baby_resolve_l_68",
-            "title": "Bài 02 - Lân đâù vào Fusion Page",
+            "id": "baby_l_7_2",
+            "title": "Bài 02 - Lần đầu vào Fusion Page",
             "duration": "1 phút"
           },
           {
-            "id": "baby_resolve_l_69",
-            "title": "Bài 03 - Giao diền chung Fusion Page",
+            "id": "baby_l_7_3",
+            "title": "Bài 03 - Giao diện chung Fusion Page",
             "duration": "11 phút"
           },
           {
-            "id": "baby_resolve_l_70",
-            "title": "Bài 04 - Màu đâù vào cuả Node",
+            "id": "baby_l_7_4",
+            "title": "Bài 04 - Màu đầu vào của Node",
             "duration": "3 phút"
           },
           {
-            "id": "baby_resolve_l_71",
-            "title": "Bài 05 - Cách hoat đóng Node",
+            "id": "baby_l_7_5",
+            "title": "Bài 05 - Cách hoạt động Node",
             "duration": "8 phút"
           },
           {
-            "id": "baby_resolve_l_72",
-            "title": "Bài 06 - phần loại Node Fusion",
+            "id": "baby_l_7_6",
+            "title": "Bài 06 - Phân loại Node Fusion",
             "duration": "10 phút"
           },
           {
-            "id": "baby_resolve_l_73",
+            "id": "baby_l_7_7",
             "title": "Bài 07 - Keyframe trong Fusion",
             "duration": "11 phút"
           },
           {
-            "id": "baby_resolve_l_74",
-            "title": "Bài 08 - Keyframe trong Fusion (Bố sung)",
+            "id": "baby_l_7_8",
+            "title": "Bài 08 - Keyframe trong Fusion (Bổ sung)",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_75",
+            "id": "baby_l_7_9",
             "title": "Bài 09 - 3D Cơ bản",
             "duration": "4 phút"
           },
           {
-            "id": "baby_resolve_l_76",
+            "id": "baby_l_7_10",
             "title": "Bài 10 - Camera 3D",
             "duration": "7 phút"
           },
           {
-            "id": "baby_resolve_l_77",
-            "title": "Bài 11 - Nhưng Node thưởng dùng trong Fusion Page",
+            "id": "baby_l_7_11",
+            "title": "Bài 11 - Những Node thường dùng trong Fusion Page",
             "duration": "10 phút"
           },
           {
-            "id": "baby_resolve_l_78",
+            "id": "baby_l_7_12",
             "title": "Bài 12 - Những vấn đề thường gặp & Tip/Trick khi sử dụng Fusion",
             "duration": "5 phút"
           }
         ]
       },
       {
-        "id": "baby_resolve_ch_9",
+        "id": "baby_ch_8",
         "title": "Chương 8 - Color Page (Chỉnh màu) (19 bài học)",
         "lessons": [
           {
-            "id": "baby_resolve_l_79",
-            "title": "CHƯƠNG 8",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_80",
-            "title": "Bài 01 - Giao diền chung và tính năng có trong Color Page",
+            "id": "baby_l_8_1",
+            "title": "Bài 01 - Giao diện chung và tính năng có trong Color Page",
             "duration": "21 phút"
           },
           {
-            "id": "baby_resolve_l_81",
+            "id": "baby_l_8_2",
             "title": "Bài 02 - Color Node Workflow (Quy trình làm việc với Node Color)",
             "duration": "6 phút"
           },
           {
-            "id": "baby_resolve_l_82",
+            "id": "baby_l_8_3",
             "title": "Bài 03 - Primaries (Công cụ điều chỉnh màu cơ bản)",
             "duration": "7 phút"
           },
           {
-            "id": "baby_resolve_l_83",
+            "id": "baby_l_8_4",
             "title": "Bài 04 - Curve (Đồ thị cong chỉnh màu)",
             "duration": "11 phút"
           },
           {
-            "id": "baby_resolve_l_84",
+            "id": "baby_l_8_5",
             "title": "Bài 08 - Layer Mixer/Parallel Mixed Node",
             "duration": "6 phút"
           },
           {
-            "id": "baby_resolve_l_85",
+            "id": "baby_l_8_6",
             "title": "Bài 09 - Outside Node",
             "duration": "1 phút"
           },
           {
-            "id": "baby_resolve_l_86",
-            "title": "CHƯƠNG 8 CHƯƠNG 8",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_87",
+            "id": "baby_l_8_7",
             "title": "Bài 10 - Key mixer Node",
             "duration": "1 phút"
           },
           {
-            "id": "baby_resolve_l_88",
+            "id": "baby_l_8_8",
             "title": "Bài 11 - Shared Node",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_89",
+            "id": "baby_l_8_9",
             "title": "Bài 12 - Timeline Node",
             "duration": "1 phút"
           },
           {
-            "id": "baby_resolve_l_90",
+            "id": "baby_l_8_10",
             "title": "Bài 13 - Keyframe trong Color Page",
             "duration": "7 phút"
           },
           {
-            "id": "baby_resolve_l_91",
+            "id": "baby_l_8_11",
             "title": "Bài 14 - Stills và PowerGrades (Tính năng quan trọng)",
             "duration": "5 phút"
           },
           {
-            "id": "baby_resolve_l_92",
+            "id": "baby_l_8_12",
             "title": "Bài 15 - Node Tree Workflow (Cây Node mình dùng)",
             "duration": "11 phút"
           },
           {
-            "id": "baby_resolve_l_93",
+            "id": "baby_l_8_13",
             "title": "Bài 16 - Memories (Ghi nhớ Node)",
             "duration": "4 phút"
           },
           {
-            "id": "baby_resolve_l_94",
-            "title": "Bài 17 - Versions (Tạo nhiều phiên ban màu để so sánh)",
+            "id": "baby_l_8_14",
+            "title": "Bài 17 - Versions (Tạo nhiều phiên bản màu để so sánh)",
             "duration": "4 phút"
           },
           {
-            "id": "baby_resolve_l_95",
+            "id": "baby_l_8_15",
             "title": "Bài 18 - Group Clips & Remote Grades",
             "duration": "3 phút"
           },
           {
-            "id": "baby_resolve_l_96",
-            "title": "Bài 19 - Cách thêm LUTs tai từ ngoài",
+            "id": "baby_l_8_16",
+            "title": "Bài 19 - Cách thêm LUTs tải từ ngoài",
             "duration": "1 phút"
           }
         ]
       },
       {
-        "id": "baby_resolve_ch_10",
+        "id": "baby_ch_9",
         "title": "Chương 9 - Fairlight Page (Thiết kế âm thanh) (8 bài học)",
         "lessons": [
           {
-            "id": "baby_resolve_l_97",
-            "title": "CHƯƠNG 9",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_98",
-            "title": "Bài 01 - Giao dien Fairlight Page",
+            "id": "baby_l_9_1",
+            "title": "Bài 01 - Giao diện Fairlight Page",
             "duration": "9 phút"
           },
           {
-            "id": "baby_resolve_l_99",
+            "id": "baby_l_9_2",
             "title": "Bài 02 - Sound Library (Tính năng quan trọng)",
             "duration": "8 phút"
           },
           {
-            "id": "baby_resolve_l_100",
-            "title": "Bài 03 - Voice Isolation (Tách biệt và làm nỗi bật giọng nói)",
+            "id": "baby_l_9_3",
+            "title": "Bài 03 - Voice Isolation (Tách biệt và làm nổi bật giọng nói)",
             "duration": "3 phút"
           },
           {
-            "id": "baby_resolve_l_101",
-            "title": "Bài 04 - Ducker Audio (Tự động giảm nhạc nên đỡ át giọng nói)",
+            "id": "baby_l_9_4",
+            "title": "Bài 04 - Ducker Audio (Tự động giảm nhạc nền đỡ át giọng nói)",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_102",
+            "id": "baby_l_9_5",
             "title": "Bài 05 - Normalize Audio (Đồng đều hoá âm lượng)",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_103",
-            "title": "Bài 06 - Auto align audio (Đồng bộ âm thanh của nhiêu clip)",
+            "id": "baby_l_9_6",
+            "title": "Bài 06 - Auto align audio (Đồng bộ âm thanh của nhiều clip)",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_104",
-            "title": "Bài 07 - Noise Reduction (Giảm ôn)",
+            "id": "baby_l_9_7",
+            "title": "Bài 07 - Noise Reduction (Giảm ồn)",
             "duration": "1 phút"
           },
           {
-            "id": "baby_resolve_l_105",
+            "id": "baby_l_9_8",
             "title": "Bài 08 - Elastic Wave",
             "duration": "2 phút"
           }
         ]
       },
       {
-        "id": "baby_resolve_ch_11",
-        "title": "Chương 10 - Deliver Page (Xuât Video) (3 bài học)",
+        "id": "baby_ch_10",
+        "title": "Chương 10 - Deliver Page (Xuất Video) (3 bài học)",
         "lessons": [
           {
-            "id": "baby_resolve_l_106",
-            "title": "CHƯƠNG 10",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_107",
+            "id": "baby_l_10_1",
             "title": "Bài 01 - Giao diện mục Deliver (Xuất file video)",
             "duration": "8 phút"
           },
           {
-            "id": "baby_resolve_l_108",
+            "id": "baby_l_10_2",
             "title": "Bài 02 - Custom Preset Exports (Lưu thiết lập thông số xuất video)",
             "duration": "1 phút"
           },
           {
-            "id": "baby_resolve_l_109",
-            "title": "Bài 03 - xuât file video voi phu để",
+            "id": "baby_l_10_3",
+            "title": "Bài 03 - Xuất file video với phụ đề",
             "duration": "1 phút"
           }
         ]
       },
       {
-        "id": "baby_resolve_ch_12",
+        "id": "baby_ch_11",
         "title": "Chương 11 - Hiệu ứng thường sử dụng (17 bài học)",
         "lessons": [
           {
-            "id": "baby_resolve_l_110",
-            "title": "CHUONU II Cách thêm hiệu ứng/Plugin từ bên ngoài vào",
+            "id": "baby_l_11_1",
+            "title": "Cách thêm hiệu ứng/Plugin từ bên ngoài vào",
             "duration": "6 phút"
           },
           {
-            "id": "baby_resolve_l_111",
-            "title": "CHƯƠNG 11 Hiệu ứng 1 - Flying Throught Text - Hiệu ứng bay xuyên qua chữ",
+            "id": "baby_l_11_2",
+            "title": "Hiệu ứng 1 - Flying Throught Text – Hiệu ứng bay xuyên qua chữ",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_112",
-            "title": "CHƯƠNG 11 Hiệu ứng 2 - Text 3D - Chữ nổi 3D sống động",
+            "id": "baby_l_11_3",
+            "title": "Hiệu ứng 2 - Text 3D – Chữ nổi 3D sống động",
             "duration": "5 phút"
           },
           {
-            "id": "baby_resolve_l_113",
-            "title": "CHƯƠNG 11 Hiệu ứng 3 - Particle Text (Animation chữ hạt)",
+            "id": "baby_l_11_4",
+            "title": "Hiệu ứng 3 - Particle Text (Animation chữ hạt)",
             "duration": "5 phút"
           },
           {
-            "id": "baby_resolve_l_114",
-            "title": "CHƯƠNG 11 Hiệu ứng 8 - Tracking bề mat (Planar Tracker)",
+            "id": "baby_l_11_5",
+            "title": "Hiệu ứng 8 - Tracking bề mặt (Planar Tracker)",
             "duration": "9 phút"
           },
           {
-            "id": "baby_resolve_l_115",
-            "title": "CHUONGTI Hiệu ứng 9 - Call out tracking (Dùng trong bất động sản)",
+            "id": "baby_l_11_6",
+            "title": "Hiệu ứng 9 - Call out tracking (Dùng trong bất động sản)",
             "duration": "4 phút"
           },
           {
-            "id": "baby_resolve_l_116",
-            "title": "CHƯƠNG 11 Hiệu ứng 10 - Magic Mask (Tính năng quan trọng)",
+            "id": "baby_l_11_7",
+            "title": "Hiệu ứng 10 – Magic Mask (Tính năng quan trọng)",
             "duration": "6 phút"
           },
           {
-            "id": "baby_resolve_l_117",
-            "title": "CHƯƠNG 11 Hiệu ứng 11 - Rainbow Text (Hiệu ứng chữ nhiều màu)",
+            "id": "baby_l_11_8",
+            "title": "Hiệu ứng 11 – Rainbow Text (Hiệu ứng chữ nhiều màu)",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_118",
-            "title": "CHUONG II Hiệu ứng 12 - Rotating effect (Vật thể xoay trục 3D)",
+            "id": "baby_l_11_9",
+            "title": "Hiệu ứng 12 – Rotating effect (Vật thể xoay trục 3D)",
             "duration": "4 phút"
           },
           {
-            "id": "baby_resolve_l_119",
-            "title": "CHƯƠNG 11 Hiệu ứng 13 - Light weep effect (Hiệu ứng ánh sáng quét qua vật thể)",
+            "id": "baby_l_11_10",
+            "title": "Hiệu ứng 13 – Light weep effect (Hiệu ứng ánh sáng quét qua vật thể)",
             "duration": "3 phút"
           },
           {
-            "id": "baby_resolve_l_120",
-            "title": "CHƯƠNG 11 Hiệu ứng 14 - Tracking bât đóng san",
+            "id": "baby_l_11_11",
+            "title": "Hiệu ứng 14 - Tracking bất động sản",
             "duration": "9 phút"
           },
           {
-            "id": "baby_resolve_l_121",
-            "title": "CHƯƠNG 11 Hiệu ứng 15 - Ve line cơ bản - Tạo đường nét sinh động cho video",
+            "id": "baby_l_11_12",
+            "title": "Hiệu ứng 15 – Vẽ line cơ bản – Tạo đường nét sinh động cho video",
             "duration": "10 phút"
           },
           {
-            "id": "baby_resolve_l_122",
-            "title": "SUONG HIỆU ỨNG THƯƠNG DÙNG Hiệu ứng 16 (Plugin) - Vẽ Line Plugin - Tạo đường kẻ chuyên nghiệp nhanh chóng",
+            "id": "baby_l_11_13",
+            "title": "Hiệu ứng 16 (Plugin) – Vẽ Line Plugin – Tạo đường kẻ chuyên nghiệp nhanh chóng",
             "duration": "2 phút"
           }
         ]
       },
       {
-        "id": "baby_resolve_ch_13",
-        "title": "Chương 12 - DaVinci Resolve 20 (Cập nhật) (7 bài học)",
+        "id": "baby_ch_12",
+        "title": "Chương 12 - Davinci Resolve 20 (Cập nhật) (7 bài học)",
         "lessons": [
           {
-            "id": "baby_resolve_l_123",
-            "title": "DaVinci RESOLVE",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_124",
-            "title": "Update 1 - Keyframe Edit Tab (DaVinci Resolve bản 20)",
+            "id": "baby_l_12_1",
+            "title": "Update 1 – Keyframe Edit Tab (DaVinci Resolve bản 20)",
             "duration": "4 phút"
           },
           {
-            "id": "baby_resolve_l_125",
-            "title": "Update 2 - Cap nhat giao dien không gian làm viec (DaVinci Resolve",
+            "id": "baby_l_12_2",
+            "title": "Update 2 – Cập nhật giao diện không gian làm việc (DaVinci Resolve 20)",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_126",
-            "title": "Update 3 - Multi Text và Wrap Text Box",
+            "id": "baby_l_12_3",
+            "title": "Update 3 – Multi Text và Wrap Text Box",
             "duration": "3 phút"
           },
           {
-            "id": "baby_resolve_l_127",
-            "title": "Update 4 - Hiều ung cho phu đề (DaVinci Resolve 20)",
+            "id": "baby_l_12_4",
+            "title": "Update 4 – Hiệu ứng cho phụ đề (DaVinci Resolve 20)",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_128",
-            "title": "Update 5 - Al music Editor",
+            "id": "baby_l_12_5",
+            "title": "Update 5 – AI music Editor",
             "duration": "2 phút"
           },
           {
-            "id": "baby_resolve_l_129",
-            "title": "Update 6 - Source Tape Trong Edit Tab",
+            "id": "baby_l_12_6",
+            "title": "Update 6 – Source Tape Trong Edit Tab",
             "duration": "1 phút"
           },
           {
-            "id": "baby_resolve_l_130",
+            "id": "baby_l_12_7",
             "title": "Update 7 - AI Tool Phụ đề Tiếng Việt và một số lưu ý",
             "duration": "2 phút"
           }
         ]
       },
       {
-        "id": "baby_resolve_ch_14",
-        "title": "Chương 13 - Cập nhật DaVinci Resolve 21 (Các tính năng nỗi bật)",
+        "id": "baby_ch_13",
+        "title": "Chương 13 - Cập nhật DaVinci Resolve 21 (Các tính năng nổi bật)",
         "lessons": [
           {
-            "id": "baby_resolve_l_131",
-            "title": "Updating tính năng nối bật DaVinci Resolve 21",
-            "duration": "Video"
+            "id": "baby_l_13_1",
+            "title": "Updating tính năng nổi bật DaVinci Resolve 21",
+            "duration": "Bài đọc"
           },
           {
-            "id": "baby_resolve_l_132",
-            "title": "Update 1 - Gioi thieu DaVinci Resolve 21 & Đi nhanh qua 1 vài cap nhat",
+            "id": "baby_l_13_2",
+            "title": "Update 1 - Giới thiệu DaVinci Resolve 21 & Đi nhanh qua 1 vài cập nhật",
             "duration": "4 phút"
           },
           {
-            "id": "baby_resolve_l_133",
-            "title": "Update 2 - Tính năng Al Analysis IntelliSearch",
+            "id": "baby_l_13_3",
+            "title": "Update 2 - Tính năng AI Analysis IntelliSearch",
             "duration": "7 phút"
           },
           {
-            "id": "baby_resolve_l_134",
-            "title": "Update 3 - Tính năng Render in background (Xuất video trong nên)",
+            "id": "baby_l_13_4",
+            "title": "Update 3 - Tính năng Render in background (Xuất video trong nền)",
             "duration": "3 phút"
           },
           {
-            "id": "baby_resolve_l_135",
+            "id": "baby_l_13_5",
             "title": "Update 4 - Thiết lập Preset trong Edit Page",
             "duration": "5 phút"
           },
           {
-            "id": "baby_resolve_l_136",
+            "id": "baby_l_13_6",
             "title": "Update 5 - Tính năng đổi Style Text hàng loạt (Từ bản 21.1)",
             "duration": "3 phút"
           },
           {
-            "id": "baby_resolve_l_137",
+            "id": "baby_l_13_7",
             "title": "Update 6 - Audio Folder",
             "duration": "3 phút"
           },
           {
-            "id": "baby_resolve_l_138",
+            "id": "baby_l_13_8",
             "title": "Update 7 - Tuỳ biến thêm cho Subtitle - Phụ đề",
             "duration": "3 phút"
           }
         ]
       },
       {
-        "id": "baby_resolve_ch_15",
-        "title": "Chương 14 - LIVE Quá Trình Mình Edit Video Vlog Của Mình (Watch Me Edit My Vlog) (4",
+        "id": "baby_ch_14",
+        "title": "Chương 14 - LIVE Quá Trình Mình Edit Video Vlog Của Mình (Watch Me Edit My Vlog) (4 bài học)",
         "lessons": [
           {
-            "id": "baby_resolve_l_139",
-            "title": "bài học) CHƯƠNG 14 LIVE VLOG EDIT",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_140",
-            "title": "Phần 1 - Cắt ghép và Chọn nhac",
+            "id": "baby_l_14_1",
+            "title": "Phần 1 - Cắt ghép và chọn nhạc",
             "duration": "14 phút"
           },
           {
-            "id": "baby_resolve_l_141",
-            "title": "CHƯƠNG 14 LIVE VLOG EDIT phần 2 - Cat ghép sâu 1 sô đoan Clips",
+            "id": "baby_l_14_2",
+            "title": "Phần 2 – Cắt ghép sâu 1 số đoạn Clips",
             "duration": "35 phút"
           },
           {
-            "id": "baby_resolve_l_142",
-            "title": "CHƯƠNG 14 LIVE VLOG EDIT",
-            "duration": "Video"
-          },
-          {
-            "id": "baby_resolve_l_143",
-            "title": "Phần 3 - Thêm Sound effect (hieu ung âm thanh)",
+            "id": "baby_l_14_3",
+            "title": "Phần 3 – Thêm Sound effect (hiệu ứng âm thanh)",
             "duration": "18 phút"
           },
           {
-            "id": "baby_resolve_l_144",
-            "title": "Phần 4 - Chinh màu và hoàn thiền Video",
+            "id": "baby_l_14_4",
+            "title": "Phần 4 – Chỉnh màu và hoàn thiện Video",
             "duration": "4 phút"
           }
         ]
