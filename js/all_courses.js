@@ -1,5 +1,5 @@
 // =========================================================================
-// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (SPEED RAMP VERIFIED)
+// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (100% VERIFIED)
 // =========================================================================
 
 export const ALL_COURSES_DATA = [
@@ -2453,47 +2453,47 @@ export const ALL_COURSES_DATA = [
     "chapters": [
       {
         "id": "upwork_ch_1",
-        "title": "Chương 1 - Khởi Đầu & Định Hướng",
+        "title": "Chương 1 - Khởi đầu (4 bài học)",
         "lessons": [
           {
             "id": "upwork_l_1_1",
-            "title": "Phần 1 - Giới thiệu chung về video",
+            "title": "Phần 1 – Giới thiệu chung về video",
             "duration": "Video"
           },
           {
             "id": "upwork_l_1_2",
-            "title": "Phần 2 - My story",
+            "title": "Phần 2 – My story",
             "duration": "Video"
           },
           {
             "id": "upwork_l_1_3",
-            "title": "Phần 3 - Tổng quan về ngành freelance",
+            "title": "Phần 3 – Tổng quan về ngành freelance",
             "duration": "Video"
           },
           {
             "id": "upwork_l_1_4",
-            "title": "Phần 4 - Tại Sao Lại Chọn Upwork?",
+            "title": "Phần 4 – Tại Sao Lại Chọn Upwork?",
             "duration": "Video"
           }
         ]
       },
       {
         "id": "upwork_ch_2",
-        "title": "Chương 2 - Thực Hành Từ A-Z + Thử Thách Kiếm Tiền Tài Khoản Mới",
+        "title": "Chương 2 - Thực hành từ A-Z + Thử thách kiếm tiền trên 1 tài khoản mới (20 bài học)",
         "lessons": [
           {
             "id": "upwork_l_2_1",
-            "title": "Phần 1 - Lập tài khoản Upwork",
+            "title": "Phần 1 – Lập tài khoản Upwork",
             "duration": "Video"
           },
           {
             "id": "upwork_l_2_2",
-            "title": "Phần 2 - Chọn ngành nghề",
+            "title": "Phần 2 – Chọn ngành nghề",
             "duration": "Video"
           },
           {
             "id": "upwork_l_2_3",
-            "title": "Phần 3 - Giao diện cơ bản của Upwork",
+            "title": "Phần 3 – Giao diện cơ bản của Upwork",
             "duration": "Video"
           },
           {
@@ -2568,7 +2568,7 @@ export const ALL_COURSES_DATA = [
           },
           {
             "id": "upwork_l_2_18",
-            "title": "Phần 18 - 'Đọc Khách Như Một Cuốn Sách'",
+            "title": "Phần 18 - \"Đọc Khách Như Một Cuốn Sách\"",
             "duration": "Video"
           },
           {
@@ -2585,7 +2585,7 @@ export const ALL_COURSES_DATA = [
       },
       {
         "id": "upwork_ch_3",
-        "title": "Chương 3 - Tổng Kết",
+        "title": "Chương 3 - Tổng kết (1 bài học)",
         "lessons": [
           {
             "id": "upwork_l_3_1",
