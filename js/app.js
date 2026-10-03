@@ -48,12 +48,15 @@ window.handleTaskClick = handleTaskClick;
 window.alertNotOwner = alertNotOwner;
 window.filterSprint = filterSprint;
 window.autoRebalanceQuota = autoRebalanceQuota;
-window.toggleSprintBody = toggleSprintBody;
+window.renderUI = renderUI;
+window.toggleSprintCollapse = toggleSprintCollapse;
+window.toggleSprintBody = toggleSprintCollapse;
+window.toggleChapterCollapse = toggleChapterCollapse;
+window.toggleChapterSyllabus = toggleChapterCollapse;
 window.togglePinSprint = togglePinSprint;
 window.switchMainMode = switchMainMode;
 window.selectCourse = selectCourse;
 window.handleSyllabusLessonToggle = handleSyllabusLessonToggle;
-window.toggleChapterSyllabus = toggleChapterSyllabus;
 
 // -------------------------------------------------------------------------
 // MODE SWITCHER (SPRINT ROADMAP vs FULL COURSE SYLLABUS)
