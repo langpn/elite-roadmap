@@ -660,6 +660,33 @@ export function renderUI() {
                 </div>
               </div>
 
+              <!-- Actionable Solution & Execution Guide -->
+              ${task.solution ? `
+                <div class="task-solution-box">
+                  <div class="solution-header-bar">
+                    <span style="display: flex; align-items: center; gap: 6px;">
+                      <span>💡</span> Gợi ý & Giải pháp thực thi
+                    </span>
+                    <span style="font-size: 10.5px; opacity: 0.85; font-family: 'JetBrains Mono', monospace; color: #38bdf8;">
+                      Actionable SOP
+                    </span>
+                  </div>
+                  <div class="solution-steps-list">
+                    ${task.solution.steps.map((st, sIdx) => `
+                      <div class="solution-step-item">
+                        <span class="solution-step-num">B${sIdx + 1}</span>
+                        <span>${st}</span>
+                      </div>
+                    `).join("")}
+                  </div>
+                  ${task.solution.tip ? `
+                    <div class="solution-tip-box">
+                      <strong>⚡ Mẹo thực chiến:</strong> ${task.solution.tip}
+                    </div>
+                  ` : ''}
+                </div>
+              ` : ''}
+
               <!-- Smart Mapping Triad -->
               <div class="mapping-grid">
                 <div class="map-box troubleshoot">
