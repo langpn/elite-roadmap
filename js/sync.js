@@ -18,6 +18,32 @@ export let presenceState = {
   diem: { online: false, lastSeen: 0 }
 };
 
+// Activity tracker for user idle detection (15 mins timeout)
+let lastUserActivity = Date.now();
+let isCurrentlyIdle = false;
+const IDLE_TIMEOUT_MS = 15 * 60 * 1000; // 15 phút không tương tác -> Coi như off/idle
+
+function registerActivityListeners() {
+  const onActivity = () => {
+    lastUserActivity = Date.now();
+    if (isCurrentlyIdle) {
+      isCurrentlyIdle = false;
+      const user = localStorage.getItem("elite_current_user");
+      if (user) {
+        sendPresenceHeartbeat(user, 'online');
+      }
+    }
+  };
+
+  ['mousemove', 'keydown', 'scroll', 'touchstart', 'click'].forEach(evt => {
+    window.addEventListener(evt, onActivity, { passive: true });
+  });
+}
+
+if (typeof window !== "undefined") {
+  registerActivityListeners();
+}
+
 // Load Local Cache
 try {
   const cached = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -198,12 +224,36 @@ export function startPresenceLoop(userKey) {
   stopPresenceLoop();
   if (!userKey) return;
 
-  // Mark online immediately
+  // Mark online immediately & reset activity timer
+  lastUserActivity = Date.now();
+  isCurrentlyIdle = false;
   sendPresenceHeartbeat(userKey, 'online');
   presenceState[userKey] = { online: true, lastSeen: Date.now() };
 
-  // Heartbeat every 20 seconds
+  // Setup Firebase RTDB onDisconnect to auto-mark offline if connection drops
+  if (duoRef && auth && auth.currentUser) {
+    try {
+      const presenceUserRef = duoRef.child('presence').child(userKey);
+      presenceUserRef.onDisconnect().set({
+        status: 'offline',
+        timestamp: Date.now()
+      }).catch(() => {});
+    } catch (e) {}
+  }
+
+  // Heartbeat every 20 seconds with idle detection
   presenceTimer = setInterval(() => {
+    const idleDuration = Date.now() - lastUserActivity;
+    if (idleDuration > IDLE_TIMEOUT_MS) {
+      if (!isCurrentlyIdle) {
+        isCurrentlyIdle = true;
+        sendPresenceHeartbeat(userKey, 'offline');
+        presenceState[userKey] = { online: false, lastSeen: lastUserActivity };
+        if (window.renderPresenceIndicators) window.renderPresenceIndicators();
+      }
+      return;
+    }
+
     sendPresenceHeartbeat(userKey, 'online');
     presenceState[userKey] = { online: true, lastSeen: Date.now() };
   }, 20000);
@@ -314,4 +364,22 @@ try {
   });
 } catch (e) {
   console.warn("Firebase init notice:", e);
+}
+
+// -------------------------------------------------------------------------
+// EXPOSE SYNC DEBUG TOOLS
+// -------------------------------------------------------------------------
+if (typeof window !== "undefined") {
+  window.__ELITE_DEBUG__ = window.__ELITE_DEBUG__ || {};
+  window.__ELITE_DEBUG__.getDuoState = () => duoState;
+  window.__ELITE_DEBUG__.getPresenceState = () => presenceState;
+  window.__ELITE_DEBUG__.simulatePresence = (user, status) => {
+    presenceState[user] = {
+      online: status === 'online',
+      lastSeen: Date.now()
+    };
+    if (window.renderPresenceIndicators) window.renderPresenceIndicators();
+    console.log(`[DEBUG] Simulated ${user} presence as: ${status}`);
+  };
+  window.__ELITE_DEBUG__.forceSaveLocal = () => saveLocalCache();
 }

@@ -7,8 +7,22 @@ export const JOB_PAYOUT_DEADLINE = new Date("2026-12-25T23:59:59"); // Deadline 
 export const JOB_NEEDED_HOURS = 64.0; // Sprints 0, 1, 2, 3
 
 export const ACCOUNTS = {
-  lang: { name: "Lang", email: "langpn.dev@gmail.com", avatar: "⚡", color: "#38bdf8" },
-  diem: { name: "Diễm", email: "diembd.dev@gmail.com", avatar: "🌸", color: "#f472b6" }
+  lang: { 
+    name: "Lang", 
+    email: "langpn.dev@gmail.com", 
+    avatar: "⚡", 
+    color: "#f97316", 
+    colorEnd: "#ef4444", 
+    gradient: "linear-gradient(135deg, #f97316 0%, #ef4444 100%)" 
+  },
+  diem: { 
+    name: "Diễm", 
+    email: "diembd.dev@gmail.com", 
+    avatar: "🌸", 
+    color: "#38bdf8", 
+    colorEnd: "#ffffff", 
+    gradient: "linear-gradient(135deg, #38bdf8 0%, #ffffff 100%)" 
+  }
 };
 
 // =========================================================================

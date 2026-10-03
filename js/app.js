@@ -5,6 +5,7 @@
 import { ROADMAP_SPRINTS, TET_DATE, JOB_PAYOUT_DEADLINE, JOB_NEEDED_HOURS, ACCOUNTS, LONG_TERM_TRACK } from './curriculum.js';
 import { ALL_COURSES_DATA } from './all_courses.js';
 import { duoState, presenceState, initRealtimeStream, setSyncUpdateCallback, saveLocalCache, broadcastChange } from './sync.js';
+import { uiStore } from './ui_store.js';
 import {
   initAuth,
   currentUserKey,
@@ -18,13 +19,6 @@ import {
   handleLogin,
   handleLogout
 } from './auth.js';
-
-let pinnedSprintId = localStorage.getItem("elite_pinned_sprint") || null;
-let currentSprintFilter = null; // null = use effective sprint (pinned or active)
-
-// Mode state: 'sprints' (Chiến dịch Tết) hoặc 'courses' (Toàn bộ khóa học)
-let activeMainMode = localStorage.getItem("elite_main_mode") || 'sprints';
-let selectedCourseKey = localStorage.getItem("elite_selected_course") || 'elite';
 
 // Global toast helper
 export function showToast(msg) {
@@ -53,7 +47,6 @@ window.toggleSprintCollapse = toggleSprintCollapse;
 window.toggleSprintBody = toggleSprintCollapse;
 window.toggleChapterCollapse = toggleChapterCollapse;
 window.toggleChapterSyllabus = toggleChapterCollapse;
-window.togglePinSprint = togglePinSprint;
 window.switchMainMode = switchMainMode;
 window.selectCourse = selectCourse;
 window.handleSyllabusLessonToggle = handleSyllabusLessonToggle;
@@ -62,9 +55,9 @@ window.handleSyllabusLessonToggle = handleSyllabusLessonToggle;
 // MODE SWITCHER (SPRINT ROADMAP vs FULL SYLLABUS vs CAREER TRACK)
 // -------------------------------------------------------------------------
 export function switchMainMode(mode) {
-  activeMainMode = mode;
-  localStorage.setItem("elite_main_mode", mode);
+  uiStore.setMainMode(mode);
 
+  const activeMainMode = uiStore.getMainMode();
   const btnSprints = document.getElementById("btnModeSprints");
   const btnCourses = document.getElementById("btnModeCourses");
   const btnCareer = document.getElementById("btnModeCareer");
@@ -72,20 +65,19 @@ export function switchMainMode(mode) {
   const courseSec = document.getElementById("courseModeSection");
   const careerSec = document.getElementById("careerModeSection");
 
-  if (btnSprints) btnSprints.className = mode === 'sprints' ? "view-mode-btn active" : "view-mode-btn";
-  if (btnCourses) btnCourses.className = mode === 'courses' ? "view-mode-btn active" : "view-mode-btn";
-  if (btnCareer) btnCareer.className = mode === 'career' ? "view-mode-btn active" : "view-mode-btn";
+  if (btnSprints) btnSprints.className = activeMainMode === 'sprints' ? "view-mode-btn active" : "view-mode-btn";
+  if (btnCourses) btnCourses.className = activeMainMode === 'courses' ? "view-mode-btn active" : "view-mode-btn";
+  if (btnCareer) btnCareer.className = activeMainMode === 'career' ? "view-mode-btn active" : "view-mode-btn";
 
-  if (sprintSec) sprintSec.style.display = mode === 'sprints' ? "block" : "none";
-  if (courseSec) courseSec.style.display = mode === 'courses' ? "flex" : "none";
-  if (careerSec) careerSec.style.display = mode === 'career' ? "flex" : "none";
+  if (sprintSec) sprintSec.style.display = activeMainMode === 'sprints' ? "block" : "none";
+  if (courseSec) courseSec.style.display = activeMainMode === 'courses' ? "flex" : "none";
+  if (careerSec) careerSec.style.display = activeMainMode === 'career' ? "flex" : "none";
 
   renderUI();
 }
 
 export function selectCourse(courseKey) {
-  selectedCourseKey = courseKey;
-  localStorage.setItem("elite_selected_course", courseKey);
+  uiStore.setSelectedCourse(courseKey);
   renderCourseSyllabusUI();
 }
 
@@ -123,11 +115,11 @@ function formatRelativeTime(diffMs) {
   const diffSec = Math.floor(diffMs / 1000);
   if (diffSec < 60) return "vừa xong";
   const diffMin = Math.floor(diffSec / 60);
-  if (diffMin < 60) return `${diffMin}p trước`;
+  if (diffMin < 60) return `${diffMin} phút trước`;
   const diffHr = Math.floor(diffMin / 60);
-  if (diffHr < 24) return `${diffHr}h trước`;
+  if (diffHr < 24) return `${diffHr} giờ trước`;
   const diffDay = Math.floor(diffHr / 24);
-  return `${diffDay}d trước`;
+  return `${diffDay} ngày trước`;
 }
 
 function renderPresenceIndicators() {
@@ -136,7 +128,7 @@ function renderPresenceIndicators() {
   const presenceDiemEl = document.getElementById("presenceDiem");
 
   if (presenceLangEl) {
-    const isLangOnline = presenceState.lang.online && (now - presenceState.lang.lastSeen < 45000);
+    const isLangOnline = presenceState.lang.online && (now - presenceState.lang.lastSeen < 60000);
     if (isLangOnline) {
       presenceLangEl.className = "presence-pill online";
       presenceLangEl.innerHTML = `<span class="presence-dot"></span>Đang học`;
@@ -148,7 +140,7 @@ function renderPresenceIndicators() {
   }
 
   if (presenceDiemEl) {
-    const isDiemOnline = presenceState.diem.online && (now - presenceState.diem.lastSeen < 45000);
+    const isDiemOnline = presenceState.diem.online && (now - presenceState.diem.lastSeen < 60000);
     if (isDiemOnline) {
       presenceDiemEl.className = "presence-pill online";
       presenceDiemEl.innerHTML = `<span class="presence-dot"></span>Đang học`;
@@ -161,7 +153,7 @@ function renderPresenceIndicators() {
 }
 
 // -------------------------------------------------------------------------
-// DYNAMIC ACTIVE SPRINT & PIN ENGINE
+// DYNAMIC ACTIVE SPRINT ENGINE (NO PIN - CLEAN WORKFLOW)
 // -------------------------------------------------------------------------
 export function getActiveSprintId() {
   const user = currentUserKey || 'lang';
@@ -172,30 +164,6 @@ export function getActiveSprintId() {
     }
   }
   return 's1';
-}
-
-export function getEffectiveSprintFilter() {
-  if (pinnedSprintId) return pinnedSprintId;
-  return getActiveSprintId();
-}
-
-export function togglePinSprint(sprintId, e) {
-  if (e) e.stopPropagation();
-
-  if (pinnedSprintId === sprintId) {
-    pinnedSprintId = null;
-    localStorage.removeItem("elite_pinned_sprint");
-    currentSprintFilter = getActiveSprintId();
-    showToast("Đã bỏ ghim! Hệ thống sẽ tự động mở Sprint bạn đang làm.");
-  } else {
-    pinnedSprintId = sprintId;
-    localStorage.setItem("elite_pinned_sprint", pinnedSprintId);
-    currentSprintFilter = sprintId;
-    const sprintObj = ROADMAP_SPRINTS.find(s => s.id === sprintId);
-    showToast(`📌 Đã ghim: ${sprintObj ? sprintObj.pill : sprintId} làm trọng tâm hàng đầu!`);
-  }
-
-  renderUI();
 }
 
 // -------------------------------------------------------------------------
@@ -319,25 +287,16 @@ function updatePredictiveEngine() {
 // SPRINT FILTERING & UI RENDERING
 // -------------------------------------------------------------------------
 // -------------------------------------------------------------------------
-// PERSISTENT ACCORDION COLLAPSE STATE (FIX LỖI TỰ MỞ KHI SYNC / HEARTBEAT)
+// PERSISTENT ACCORDION COLLAPSE STATE VIA UI STORE
 // -------------------------------------------------------------------------
-const COLLAPSE_KEY = "elite_collapse_state_map_v2";
-let collapseMap = {};
-try {
-  const s = localStorage.getItem(COLLAPSE_KEY);
-  if (s) collapseMap = JSON.parse(s);
-} catch (e) {}
-
 export function isCollapsed(id) {
-  return !!collapseMap[id];
+  return uiStore.isSprintCollapsed(id) || uiStore.isChapterCollapsed(id);
 }
 
 export function toggleSprintCollapse(sprintId, e) {
   if (e) e.stopPropagation();
-  collapseMap[sprintId] = !collapseMap[sprintId];
-  localStorage.setItem(COLLAPSE_KEY, JSON.stringify(collapseMap));
+  const isClosed = uiStore.toggleSprintCollapse(sprintId);
 
-  const isClosed = collapseMap[sprintId];
   const bodyEl = document.getElementById("body-" + sprintId);
   const arrowEl = document.getElementById("arrow-" + sprintId);
   if (bodyEl) {
@@ -351,10 +310,8 @@ window.toggleSprintCollapse = toggleSprintCollapse;
 
 export function toggleChapterCollapse(chapId, e) {
   if (e) e.stopPropagation();
-  collapseMap[chapId] = !collapseMap[chapId];
-  localStorage.setItem(COLLAPSE_KEY, JSON.stringify(collapseMap));
+  const isClosed = uiStore.toggleChapterCollapse(chapId);
 
-  const isClosed = collapseMap[chapId];
   const bodyEl = document.getElementById("body-" + chapId);
   const arrowEl = document.getElementById("arrow-" + chapId);
   if (bodyEl) {
@@ -367,7 +324,7 @@ export function toggleChapterCollapse(chapId, e) {
 window.toggleChapterCollapse = toggleChapterCollapse;
 
 export function filterSprint(sprintId) {
-  currentSprintFilter = sprintId;
+  uiStore.setSelectedSprint(sprintId);
   renderUI();
 }
 
@@ -386,16 +343,14 @@ function renderSprintNavTabs(effectiveFilter, activeSprintId) {
 
   navContainer.innerHTML = tabs.map(tab => {
     const isSelected = effectiveFilter === tab.id;
-    const isPinned = pinnedSprintId === tab.id;
-    const isActiveCurrent = !pinnedSprintId && activeSprintId === tab.id;
+    const isActiveCurrent = activeSprintId === tab.id;
 
     let badgeIcon = "";
-    if (isPinned) badgeIcon = "📌 ";
-    else if (isActiveCurrent) badgeIcon = "🔥 ";
+    if (isActiveCurrent) badgeIcon = "🔥 ";
 
     let extraClass = "";
     if (isSelected) extraClass += " active";
-    if (isPinned || isActiveCurrent) extraClass += " focus-tab";
+    if (isActiveCurrent) extraClass += " focus-tab";
 
     return `
       <button class="sprint-tab ${extraClass}" onclick="filterSprint('${tab.id}')">
@@ -414,6 +369,8 @@ export function renderCourseSyllabusUI() {
   const syllabusContainer = document.getElementById("syllabusContainer");
 
   if (!selectorBar || !overviewCard || !syllabusContainer) return;
+
+  const selectedCourseKey = uiStore.getSelectedCourse();
 
   // 1. Render Course Selection Tabs with Realtime Progress
   selectorBar.innerHTML = ALL_COURSES_DATA.map(course => {
@@ -444,8 +401,8 @@ export function renderCourseSyllabusUI() {
         <span>${activeCourse.name}</span>
       </div>
       <div class="course-stats-duo">
-        <span style="color: #38bdf8;">⚡ Lang: ${langCourseStat.done}/${langCourseStat.total} bài (${langCourseStat.pct}%)</span>
-        <span style="color: #f472b6;">🌸 Diễm: ${diemCourseStat.done}/${diemCourseStat.total} bài (${diemCourseStat.pct}%)</span>
+        <span style="color: #f97316;">⚡ Lang: ${langCourseStat.done}/${langCourseStat.total} bài (${langCourseStat.pct}%)</span>
+        <span style="color: #38bdf8;">🌸 Diễm: ${diemCourseStat.done}/${diemCourseStat.total} bài (${diemCourseStat.pct}%)</span>
       </div>
     </div>
     <div style="font-size: 12px; color: var(--text-dim);">
@@ -458,7 +415,7 @@ export function renderCourseSyllabusUI() {
     const chapLessons = chap.lessons;
     const langChapDone = chapLessons.filter(l => duoState.lang && duoState.lang[l.id]).length;
     const diemChapDone = chapLessons.filter(l => duoState.diem && duoState.diem[l.id]).length;
-    const isClosed = isCollapsed(chap.id);
+    const isClosed = uiStore.isChapterCollapsed(chap.id);
 
     return `
       <div class="syllabus-chapter-card">
@@ -595,7 +552,8 @@ export function renderCareerTrackUI() {
 // -------------------------------------------------------------------------
 export function renderUI() {
   const activeSprintId = getActiveSprintId();
-  const effectiveFilter = currentSprintFilter || getEffectiveSprintFilter();
+  const effectiveFilter = uiStore.getSelectedSprint();
+  const activeMainMode = uiStore.getMainMode();
 
   const langStat = calculateStats('lang');
   const diemStat = calculateStats('diem');
@@ -631,14 +589,11 @@ export function renderUI() {
   ROADMAP_SPRINTS.forEach(sprint => {
     if (effectiveFilter !== 'all' && sprint.id !== effectiveFilter) return;
 
-    const isPinned = pinnedSprintId === sprint.id;
-    const isActiveRunning = !pinnedSprintId && activeSprintId === sprint.id;
-
+    const isActiveRunning = activeSprintId === sprint.id;
     const card = document.createElement("div");
-    card.className = `sprint-card ${isPinned ? 'is-pinned' : ''}`;
+    card.className = "sprint-card";
 
     const sprintTotalHours = sprint.tasks.reduce((s, t) => s + t.effortHours, 0);
-
     const isClosed = isCollapsed(sprint.id);
 
     card.innerHTML = `
@@ -650,7 +605,6 @@ export function renderUI() {
           <div>
             <div class="sprint-title" style="display: flex; align-items: center; gap: 8px;">
               <span>${sprint.title}</span>
-              ${isPinned ? `<span style="font-size: 11px; color: #f59e0b; background: rgba(245, 158, 11, 0.15); padding: 1px 7px; border-radius: 4px; font-weight: 800;">📌 ĐANG GHIM</span>` : ''}
               ${isActiveRunning ? `<span style="font-size: 11px; color: #10b981; background: rgba(16, 185, 129, 0.15); padding: 1px 7px; border-radius: 4px; font-weight: 800;">🔥 ĐANG LÀM</span>` : ''}
             </div>
             <div class="sprint-desc">${sprint.desc} • Tổng effort: <strong>${sprintTotalHours.toFixed(1)} giờ</strong></div>
@@ -658,10 +612,6 @@ export function renderUI() {
         </div>
 
         <div style="display: flex; align-items: center; gap: 10px;">
-          <!-- Pin Sprint Button -->
-          <button class="pin-btn ${isPinned ? 'is-pinned' : ''}" onclick="togglePinSprint('${sprint.id}', event)" title="${isPinned ? 'Bỏ ghim Sprint' : 'Ghim Sprint này làm trọng tâm hàng đầu'}">
-            📌 ${isPinned ? 'Đang Ghim' : 'Ghim'}
-          </button>
           <div id="arrow-${sprint.id}" style="font-size: 16px; color: var(--text-dim); transition: transform 0.2s;">${isClosed ? '▶' : '▼'}</div>
         </div>
       </div>
@@ -741,8 +691,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initAuth();
   initRealtimeStream();
 
-  // Restore active view mode
-  switchMainMode(activeMainMode);
+  // Restore active view mode from UI store
+  switchMainMode(uiStore.getMainMode());
   renderUI();
 
   // Keep presence status refreshed smoothly every 5 seconds
