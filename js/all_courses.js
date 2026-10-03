@@ -1,5 +1,5 @@
 // =========================================================================
-// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (KEYFRAME VERIFIED)
+// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (SPEED RAMP VERIFIED)
 // =========================================================================
 
 export const ALL_COURSES_DATA = [
@@ -2700,7 +2700,7 @@ export const ALL_COURSES_DATA = [
     "chapters": [
       {
         "id": "sr_ch_1",
-        "title": "Phần 1 - Speed Ramp Bất Động Sản & Talking Head Reel",
+        "title": "Phần 1 - Speed Ramp Bất Động Sản & Talking Head Reel (17 bài học)",
         "lessons": [
           {
             "id": "sr_l_1_1",
@@ -2791,7 +2791,7 @@ export const ALL_COURSES_DATA = [
       },
       {
         "id": "sr_ch_2",
-        "title": "Phần 2 - Speed Ramp Xe Hơi",
+        "title": "Phần 2 - Speed Ramp Xe Hơi (15 bài học)",
         "lessons": [
           {
             "id": "sr_l_2_1",
@@ -2872,7 +2872,7 @@ export const ALL_COURSES_DATA = [
       },
       {
         "id": "sr_ch_3",
-        "title": "Phần 3 - SR Bất Động Sản (Funny - Có Plugin đi kèm)",
+        "title": "Phần 3 - SR Bất Động Sản (Funny - Có Plugin đi kèm) (9 bài học)",
         "lessons": [
           {
             "id": "sr_l_3_1",
@@ -2891,7 +2891,7 @@ export const ALL_COURSES_DATA = [
           },
           {
             "id": "sr_l_3_4",
-            "title": "Funny SR3 - Motion Blur (Có share Plugin)",
+            "title": "Funny SR3 - Motion Bluer (Có share Plugin)",
             "duration": "6 phút"
           },
           {
@@ -2923,7 +2923,7 @@ export const ALL_COURSES_DATA = [
       },
       {
         "id": "sr_ch_4",
-        "title": "Phần 4 - SR Xe Hơi (Funny) & Update RAW Footage",
+        "title": "Phần 4 - SR Xe Hơi (Funny) (6 bài học)",
         "lessons": [
           {
             "id": "sr_l_4_1",
@@ -2954,9 +2954,15 @@ export const ALL_COURSES_DATA = [
             "id": "sr_l_4_6",
             "title": "Funny SR6 - Motion Blur & Render Video",
             "duration": "4 phút"
-          },
+          }
+        ]
+      },
+      {
+        "id": "sr_ch_5",
+        "title": "Phần 5 - Update RAW Footage Đa Dạng",
+        "lessons": [
           {
-            "id": "sr_l_4_7",
+            "id": "sr_l_5_1",
             "title": "Update RAW Footages phục vụ luyện tập đa dạng",
             "duration": "Bài đọc"
           }
