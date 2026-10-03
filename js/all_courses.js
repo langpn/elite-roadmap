@@ -1,5 +1,5 @@
 // =========================================================================
-// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (100% COMPLETE & VERIFIED)
+// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (KEYFRAME VERIFIED)
 // =========================================================================
 
 export const ALL_COURSES_DATA = [
@@ -2973,22 +2973,22 @@ export const ALL_COURSES_DATA = [
     "chapters": [
       {
         "id": "kf_ch_1",
-        "title": "Khóa Học Keyframe Animation - Hiểu Bản Chất Chuyển Động",
+        "title": "Keyframe Animation Course - Hiểu Bản Chất Chuyển Động",
         "lessons": [
           {
             "id": "kf_l_1",
-            "title": "Volume 1 - Giới thiệu Khóa Học Animation - Hiểu Bản Chất Chuyển Động Trong Video",
-            "duration": "Video"
+            "title": "Volume 1 - Giới thiệu Khóa Học Animation – Hiểu Bản Chất Chuyển Động Trong Video",
+            "duration": "1 phút"
           },
           {
             "id": "kf_l_2",
             "title": "Volume 2.1 - Tài nguyên/Icon sử dụng trong khóa học",
-            "duration": "Video"
+            "duration": "1 phút"
           },
           {
             "id": "kf_l_3",
-            "title": "Volume 2.2 - Cách tải và sử dụng File Project",
-            "duration": "Video"
+            "title": "Volume 2.2 - Cách tải và sử dụng file Project",
+            "duration": "1 phút"
           },
           {
             "id": "kf_l_4",
@@ -2997,7 +2997,7 @@ export const ALL_COURSES_DATA = [
           },
           {
             "id": "kf_l_5",
-            "title": "Volume 4 - Nền tảng cơ bản - Keyframe Animation là gì?",
+            "title": "Volume 4 - Nền tảng cơ bản – Keyframe Animation là gì?",
             "duration": "3 phút"
           },
           {
@@ -3032,7 +3032,7 @@ export const ALL_COURSES_DATA = [
           },
           {
             "id": "kf_l_12",
-            "title": "Volume 11 - Cách Chuyển Động Trong Animation (Ease In - Ease Out)",
+            "title": "Volume 11 - Cách Chuyển Động Trong Animation (Ease In – Ease Out)",
             "duration": "9 phút"
           },
           {
@@ -3078,7 +3078,7 @@ export const ALL_COURSES_DATA = [
           {
             "id": "kf_l_21",
             "title": "Volume 20 - Animation Xích Đu",
-            "duration": "11 phút"
+            "duration": "1 phút"
           },
           {
             "id": "kf_l_22",
@@ -3088,12 +3088,12 @@ export const ALL_COURSES_DATA = [
           {
             "id": "kf_l_23",
             "title": "Volume 22 - Animation Bóng Nảy Loop Ping Pong Có Nén Méo Khi Chạm Đất",
-            "duration": "Video"
+            "duration": "5 phút"
           },
           {
             "id": "kf_l_24",
             "title": "Volume 23.1 - Animation Logo Trong Fusion",
-            "duration": "Video"
+            "duration": "14 phút"
           },
           {
             "id": "kf_l_25",
@@ -3103,16 +3103,16 @@ export const ALL_COURSES_DATA = [
           {
             "id": "kf_l_26",
             "title": "Volume 24 - Animation Ngày Sang Đêm",
-            "duration": "Video"
+            "duration": "44 phút"
           },
           {
             "id": "kf_l_27",
             "title": "Volume 25 - Animation Chiếc Xe Ôtô",
-            "duration": "Video"
+            "duration": "18 phút"
           },
           {
             "id": "kf_l_28",
-            "title": "Tuyệt vời - Chúng ta đã tốt nghiệp!",
+            "title": "Tuyệt vời – Chúng ta đã tốt nghiệp! 🎓",
             "duration": "2 phút"
           }
         ]
