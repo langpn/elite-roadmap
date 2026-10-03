@@ -1,5 +1,5 @@
 // =========================================================================
-// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (100% ACCURATE)
+// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (WITH CAPCUT)
 // =========================================================================
 
 export const ALL_COURSES_DATA = [
@@ -2946,6 +2946,216 @@ export const ALL_COURSES_DATA = [
             "id": "keyframe_animation_l_27",
             "title": "Volume 25 - Animation Chiêc Xe Otô Tuyệt vời - Chúng ta đã tốt nghiệp! * < pnut",
             "duration": "Video"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "capcut_a_z",
+    "name": "CapCut Pro Mastery A-Z",
+    "color": "#06b6d4",
+    "icon": "✂️",
+    "totalLessons": 33,
+    "chapters": [
+      {
+        "id": "capcut_ch_1",
+        "title": "Chương 1: Giới Thiệu & Cài Đặt Ban Đầu",
+        "lessons": [
+          {
+            "id": "capcut_l_1",
+            "title": "Phần 1 - Giới thiệu chung về video này",
+            "duration": "1 phút"
+          },
+          {
+            "id": "capcut_l_2",
+            "title": "Phần 2 - Giới thiệu chung về CapCut PC",
+            "duration": "15 phút"
+          },
+          {
+            "id": "capcut_l_3",
+            "title": "Phần 3 - Giao diện khi vào CapCut Pro (Global Setting)",
+            "duration": "14 phút"
+          }
+        ]
+      },
+      {
+        "id": "capcut_ch_2",
+        "title": "Chương 2: Chi Tiết Giao Diện & Tính Năng Bên Trong CapCut PC",
+        "lessons": [
+          {
+            "id": "capcut_l_4",
+            "title": "Phần 4.1 - Giao diện/Tính năng bên trong của CapCut PC Part 1",
+            "duration": "11 phút"
+          },
+          {
+            "id": "capcut_l_5",
+            "title": "Phần 4.2 - Giao diện/Tính năng bên trong của CapCut PC Part 2",
+            "duration": "10 phút"
+          },
+          {
+            "id": "capcut_l_6",
+            "title": "Phần 4.3 - Giao diện/Tính năng bên trong của CapCut PC Part 3",
+            "duration": "12 phút"
+          },
+          {
+            "id": "capcut_l_7",
+            "title": "Phần 4.4 - Giao diện/Tính năng bên trong của CapCut PC Part 4",
+            "duration": "13 phút"
+          },
+          {
+            "id": "capcut_l_8",
+            "title": "Phần 4.5 - Giao diện/Tính năng bên trong của CapCut PC Part 5",
+            "duration": "12 phút"
+          }
+        ]
+      },
+      {
+        "id": "capcut_ch_3",
+        "title": "Chương 3: Phím Tắt, Text, Compound Clip, Màu Sắc & Keyframe",
+        "lessons": [
+          {
+            "id": "capcut_l_9",
+            "title": "Phần 5 - Phím tắt",
+            "duration": "9 phút"
+          },
+          {
+            "id": "capcut_l_10",
+            "title": "Phần 6 - Text trong CapCut PC",
+            "duration": "13 phút"
+          },
+          {
+            "id": "capcut_l_11",
+            "title": "Phần 7 - Compound Clip (Gộp Clip)",
+            "duration": "2 phút"
+          },
+          {
+            "id": "capcut_l_12",
+            "title": "Phần 8.1 - Chỉnh màu cơ bản P1",
+            "duration": "3 phút"
+          },
+          {
+            "id": "capcut_l_13",
+            "title": "Phần 8.2 - Chỉnh màu cơ bản P2",
+            "duration": "12 phút"
+          },
+          {
+            "id": "capcut_l_14",
+            "title": "Phần 9 - Keyframe (Chuyển động)",
+            "duration": "5 phút"
+          }
+        ]
+      },
+      {
+        "id": "capcut_ch_4",
+        "title": "Chương 4: Thực Hành Case Studies & Dựng Video Ngắn",
+        "lessons": [
+          {
+            "id": "capcut_l_15",
+            "title": "Phần 10.1 - Thực hành 1 (Case study với khách hàng thật)",
+            "duration": "6 phút"
+          },
+          {
+            "id": "capcut_l_16",
+            "title": "Phần 10.2 - Thực hành 2 (Tự làm Video ngắn)",
+            "duration": "10 phút"
+          },
+          {
+            "id": "capcut_l_17",
+            "title": "Phần 10.3 - Thực hành 3 (Case Study với khách hàng thật)",
+            "duration": "18 phút"
+          },
+          {
+            "id": "capcut_l_18",
+            "title": "Phần 10.4 - Thực hành 4 (Tự làm video ngắn)",
+            "duration": "19 phút"
+          },
+          {
+            "id": "capcut_l_19",
+            "title": "Phần 10.5 - Thực hành 5 (Tự làm video ngắn)",
+            "duration": "16 phút"
+          },
+          {
+            "id": "capcut_l_20",
+            "title": "Phần 10.6 - Thực hành 6 (B-roll Film Reel Style)",
+            "duration": "22 phút"
+          },
+          {
+            "id": "capcut_l_21",
+            "title": "Phần 10.7 - Thực hành 7 (Chỉnh màu)",
+            "duration": "12 phút"
+          },
+          {
+            "id": "capcut_l_22",
+            "title": "Phần 10.8 - Thực hành 8 (Animation)",
+            "duration": "6 phút"
+          }
+        ]
+      },
+      {
+        "id": "capcut_ch_5",
+        "title": "Chương 5: Những Lỗi Thường Gặp Khi Edit Video",
+        "lessons": [
+          {
+            "id": "capcut_l_23",
+            "title": "Phần 11.1 - Lỗi thường gặp 1 (Tỷ lệ khung hình)",
+            "duration": "2 phút"
+          },
+          {
+            "id": "capcut_l_24",
+            "title": "Phần 11.2 - Lỗi thường gặp 2 (Giật/Lag khi edit video)",
+            "duration": "2 phút"
+          },
+          {
+            "id": "capcut_l_25",
+            "title": "Phần 11.3 - Lỗi thường gặp 3 (Timing không chính xác)",
+            "duration": "2 phút"
+          },
+          {
+            "id": "capcut_l_26",
+            "title": "Phần 11.4 - Lỗi thường gặp 4 (Lạm dụng hiệu ứng)",
+            "duration": "1 phút"
+          }
+        ]
+      },
+      {
+        "id": "capcut_ch_6",
+        "title": "Chương 6: Pro Tips Độc Quyền & Tổng Kết",
+        "lessons": [
+          {
+            "id": "capcut_l_27",
+            "title": "Phần 12.1 - Pro Tip #1 (Chạy ra Phụ đề song ngữ)",
+            "duration": "1 phút"
+          },
+          {
+            "id": "capcut_l_28",
+            "title": "Phần 12.2 - Pro Tip #2 (Long to short)",
+            "duration": "1 phút"
+          },
+          {
+            "id": "capcut_l_29",
+            "title": "Phần 12.3 - Pro Tip #3 (Đổ bóng)",
+            "duration": "1 phút"
+          },
+          {
+            "id": "capcut_l_30",
+            "title": "Phần 12.4 - Pro Tip #4 (Mục ưa thích và lưu trữ)",
+            "duration": "3 phút"
+          },
+          {
+            "id": "capcut_l_31",
+            "title": "Phần 12.5 - Pro Tip #5 (Sử dụng và luyện tập phím tắt)",
+            "duration": "1 phút"
+          },
+          {
+            "id": "capcut_l_32",
+            "title": "Phần 13 - Cài đặt bổ sung",
+            "duration": "4 phút"
+          },
+          {
+            "id": "capcut_l_33",
+            "title": "Ending - Kết thúc và cảm ơn mọi người",
+            "duration": "2 phút"
           }
         ]
       }
