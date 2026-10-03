@@ -1,9 +1,10 @@
 // =========================================================================
-// MAIN APP ORCHESTRATOR, PREDICTIVE UI & LIVE PRESENCE ENGINE
+// MAIN APP ORCHESTRATOR, PREDICTIVE UI, PRESENCE & FULL SYLLABUS ENGINE
 // =========================================================================
 
 import { ROADMAP_SPRINTS, TET_DATE, JOB_PAYOUT_DEADLINE, JOB_NEEDED_HOURS, ACCOUNTS } from './curriculum.js';
-import { duoState, presenceState, initRealtimeStream, setSyncUpdateCallback, saveLocalCache } from './sync.js';
+import { ALL_COURSES_DATA } from './all_courses.js';
+import { duoState, presenceState, initRealtimeStream, setSyncUpdateCallback, saveLocalCache, broadcastChange } from './sync.js';
 import {
   initAuth,
   currentUserKey,
@@ -20,6 +21,10 @@ import {
 
 let pinnedSprintId = localStorage.getItem("elite_pinned_sprint") || null;
 let currentSprintFilter = null; // null = use effective sprint (pinned or active)
+
+// Mode state: 'sprints' (Chiến dịch Tết) hoặc 'courses' (Toàn bộ khóa học)
+let activeMainMode = localStorage.getItem("elite_main_mode") || 'sprints';
+let selectedCourseKey = localStorage.getItem("elite_selected_course") || 'elite';
 
 // Global toast helper
 export function showToast(msg) {
@@ -45,6 +50,70 @@ window.filterSprint = filterSprint;
 window.autoRebalanceQuota = autoRebalanceQuota;
 window.toggleSprintBody = toggleSprintBody;
 window.togglePinSprint = togglePinSprint;
+window.switchMainMode = switchMainMode;
+window.selectCourse = selectCourse;
+window.handleSyllabusLessonToggle = handleSyllabusLessonToggle;
+window.toggleChapterSyllabus = toggleChapterSyllabus;
+
+// -------------------------------------------------------------------------
+// MODE SWITCHER (SPRINT ROADMAP vs FULL COURSE SYLLABUS)
+// -------------------------------------------------------------------------
+export function switchMainMode(mode) {
+  activeMainMode = mode;
+  localStorage.setItem("elite_main_mode", mode);
+
+  const btnSprints = document.getElementById("btnModeSprints");
+  const btnCourses = document.getElementById("btnModeCourses");
+  const sprintSec = document.getElementById("sprintModeSection");
+  const courseSec = document.getElementById("courseModeSection");
+
+  if (mode === 'sprints') {
+    if (btnSprints) btnSprints.className = "view-mode-btn active";
+    if (btnCourses) btnCourses.className = "view-mode-btn";
+    if (sprintSec) sprintSec.style.display = "block";
+    if (courseSec) courseSec.style.display = "none";
+  } else {
+    if (btnSprints) btnSprints.className = "view-mode-btn";
+    if (btnCourses) btnCourses.className = "view-mode-btn active";
+    if (sprintSec) sprintSec.style.display = "none";
+    if (courseSec) courseSec.style.display = "flex";
+  }
+
+  renderUI();
+}
+
+export function selectCourse(courseKey) {
+  selectedCourseKey = courseKey;
+  localStorage.setItem("elite_selected_course", courseKey);
+  renderCourseSyllabusUI();
+}
+
+export function toggleChapterSyllabus(headerEl) {
+  const body = headerEl.nextElementSibling;
+  if (body) {
+    body.style.display = body.style.display === "none" ? "flex" : "none";
+  }
+}
+
+// -------------------------------------------------------------------------
+// SYLLABUS LESSON CLICK HANDLER WITH DUO RULES
+// -------------------------------------------------------------------------
+export function handleSyllabusLessonToggle(lessonId, lessonTitle) {
+  if (!currentUserKey) {
+    openAuthModal();
+    showToast("Vui lòng nhập mật khẩu tài khoản để đánh dấu hoàn thành bài học!");
+    return;
+  }
+
+  if (!duoState[currentUserKey]) duoState[currentUserKey] = {};
+  duoState[currentUserKey][lessonId] = !duoState[currentUserKey][lessonId];
+  const isDone = duoState[currentUserKey][lessonId];
+
+  broadcastChange(currentUserKey, lessonId, isDone, lessonTitle);
+  renderUI();
+
+  showToast(`${ACCOUNTS[currentUserKey].avatar} ${ACCOUNTS[currentUserKey].name}: ${isDone ? 'Đã hoàn thành bài học!' : 'Đã bỏ hoàn thành'}`);
+}
 
 // -------------------------------------------------------------------------
 // RELATIVE TIME HELPER & PRESENCE DISPLAY
@@ -65,7 +134,6 @@ function renderPresenceIndicators() {
   const presenceLangEl = document.getElementById("presenceLang");
   const presenceDiemEl = document.getElementById("presenceDiem");
 
-  // Lang Presence (online if active within 45s)
   if (presenceLangEl) {
     const isLangOnline = presenceState.lang.online && (now - presenceState.lang.lastSeen < 45000);
     if (isLangOnline) {
@@ -78,7 +146,6 @@ function renderPresenceIndicators() {
     }
   }
 
-  // Diễm Presence (online if active within 45s)
   if (presenceDiemEl) {
     const isDiemOnline = presenceState.diem.online && (now - presenceState.diem.lastSeen < 45000);
     if (isDiemOnline) {
@@ -158,6 +225,26 @@ export function calculateStats(userKey) {
 
   const pct = totalTasks === 0 ? 0 : Math.round((completedTasks / totalTasks) * 100);
   return { pct, completedTasks, totalTasks, completedVideos, completedHours };
+}
+
+export function calculateCourseStats(courseKey, userKey) {
+  const course = ALL_COURSES_DATA.find(c => c.id === courseKey);
+  if (!course) return { total: 0, done: 0, pct: 0 };
+
+  let total = 0;
+  let done = 0;
+
+  course.chapters.forEach(chap => {
+    chap.lessons.forEach(l => {
+      total++;
+      if (duoState[userKey] && duoState[userKey][l.id]) {
+        done++;
+      }
+    });
+  });
+
+  const pct = total === 0 ? 0 : Math.round((done / total) * 100);
+  return { total, done, pct };
 }
 
 export function autoRebalanceQuota() {
@@ -276,6 +363,117 @@ function renderSprintNavTabs(effectiveFilter, activeSprintId) {
   }).join("");
 }
 
+// -------------------------------------------------------------------------
+// FULL COURSE SYLLABUS CHECKLIST UI RENDERING
+// -------------------------------------------------------------------------
+export function renderCourseSyllabusUI() {
+  const selectorBar = document.getElementById("courseSelectorBar");
+  const overviewCard = document.getElementById("courseOverviewCard");
+  const syllabusContainer = document.getElementById("syllabusContainer");
+
+  if (!selectorBar || !overviewCard || !syllabusContainer) return;
+
+  // 1. Render Course Selection Tabs with Realtime Progress
+  selectorBar.innerHTML = ALL_COURSES_DATA.map(course => {
+    const isSelected = course.id === selectedCourseKey;
+    const langCourseStat = calculateCourseStats(course.id, 'lang');
+    const diemCourseStat = calculateCourseStats(course.id, 'diem');
+
+    return `
+      <button class="course-btn ${isSelected ? 'active' : ''}" onclick="selectCourse('${course.id}')">
+        <span>${course.icon}</span>
+        <span>${course.name}</span>
+        <span style="font-size: 10px; font-family: 'JetBrains Mono', monospace; opacity: 0.8;">
+          (L:${langCourseStat.pct}% | D:${diemCourseStat.pct}%)
+        </span>
+      </button>
+    `;
+  }).join("");
+
+  // 2. Render Selected Course Overview & Stats
+  const activeCourse = ALL_COURSES_DATA.find(c => c.id === selectedCourseKey) || ALL_COURSES_DATA[0];
+  const langCourseStat = calculateCourseStats(activeCourse.id, 'lang');
+  const diemCourseStat = calculateCourseStats(activeCourse.id, 'diem');
+
+  overviewCard.innerHTML = `
+    <div class="course-overview-header">
+      <div class="course-title-main">
+        <span>${activeCourse.icon}</span>
+        <span>${activeCourse.name}</span>
+      </div>
+      <div class="course-stats-duo">
+        <span style="color: #38bdf8;">⚡ Lang: ${langCourseStat.done}/${langCourseStat.total} bài (${langCourseStat.pct}%)</span>
+        <span style="color: #f472b6;">🌸 Diễm: ${diemCourseStat.done}/${diemCourseStat.total} bài (${diemCourseStat.pct}%)</span>
+      </div>
+    </div>
+    <div style="font-size: 12px; color: var(--text-dim);">
+      Tất cả các bài học được trích xuất trực tiếp từ video của Sean Kang • Bấm để đánh dấu hoàn thành từng bài học
+    </div>
+  `;
+
+  // 3. Render Chapters and Lessons
+  syllabusContainer.innerHTML = activeCourse.chapters.map((chap, cIdx) => {
+    const chapLessons = chap.lessons;
+    const langChapDone = chapLessons.filter(l => duoState.lang && duoState.lang[l.id]).length;
+    const diemChapDone = chapLessons.filter(l => duoState.diem && duoState.diem[l.id]).length;
+
+    return `
+      <div class="syllabus-chapter-card">
+        <div class="syllabus-chapter-header" onclick="toggleChapterSyllabus(this)">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: ${activeCourse.color}; font-weight: 800;">Chương ${cIdx + 1}:</span>
+            <span>${chap.title}</span>
+          </div>
+          <div style="font-size: 11.5px; font-family: 'JetBrains Mono', monospace; color: var(--text-dim);">
+            L: ${langChapDone}/${chapLessons.length} • D: ${diemChapDone}/${chapLessons.length} ▼
+          </div>
+        </div>
+        <div class="syllabus-body">
+          ${chapLessons.map(lesson => {
+            const langDone = !!(duoState.lang && duoState.lang[lesson.id]);
+            const diemDone = !!(duoState.diem && duoState.diem[lesson.id]);
+
+            let myDone = false;
+            if (currentUserKey === 'lang') myDone = langDone;
+            else if (currentUserKey === 'diem') myDone = diemDone;
+
+            return `
+              <div class="syllabus-lesson-row ${myDone ? 'is-done' : ''}">
+                <div class="syllabus-left" onclick="handleSyllabusLessonToggle('${lesson.id}', '${lesson.title.replace(/'/g, "\\'")}')" title="${currentUserKey ? `Đánh dấu hoàn thành cho ${ACCOUNTS[currentUserKey].name}` : 'Bấm để đăng nhập'}">
+                  <div class="checkbox">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="syllabus-title">${lesson.title}</div>
+                  <span class="syllabus-duration">⏱️ ${lesson.duration}</span>
+                </div>
+
+                <!-- Duo Status Badges -->
+                <div class="duo-status-badges">
+                  <span class="user-pill ${langDone ? 'lang-done' : 'lang-pending'}"
+                        onclick="${currentUserKey === 'lang' ? `handleSyllabusLessonToggle('${lesson.id}', '${lesson.title.replace(/'/g, "\\'")}')` : `alertNotOwner('lang')`}"
+                        style="cursor: ${currentUserKey === 'lang' ? 'pointer' : 'default'}; font-size: 10px;"
+                        title="Lang: ${langDone ? 'Đã hoàn thành' : 'Chưa học'}">
+                    ⚡ Lang ${langDone ? '✓' : '...'}
+                  </span>
+                  <span class="user-pill ${diemDone ? 'diem-done' : 'diem-pending'}"
+                        onclick="${currentUserKey === 'diem' ? `handleSyllabusLessonToggle('${lesson.id}', '${lesson.title.replace(/'/g, "\\'")}')` : `alertNotOwner('diem')`}"
+                        style="cursor: ${currentUserKey === 'diem' ? 'pointer' : 'default'}; font-size: 10px;"
+                        title="Diễm: ${diemDone ? 'Đã hoàn thành' : 'Chưa học'}">
+                    🌸 Diễm ${diemDone ? '✓' : '...'}
+                  </span>
+                </div>
+              </div>
+            `;
+          }).join("")}
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+// -------------------------------------------------------------------------
+// RENDER MASTER UI
+// -------------------------------------------------------------------------
 export function renderUI() {
   const activeSprintId = getActiveSprintId();
   const effectiveFilter = currentSprintFilter || getEffectiveSprintFilter();
@@ -295,6 +493,12 @@ export function renderUI() {
 
   updatePredictiveEngine();
   renderPresenceIndicators();
+
+  if (activeMainMode === 'courses') {
+    renderCourseSyllabusUI();
+    return;
+  }
+
   renderSprintNavTabs(effectiveFilter, activeSprintId);
 
   const container = document.getElementById("sprintContainer");
@@ -341,7 +545,7 @@ export function renderUI() {
         ${sprint.tasks.map(task => {
           const langDone = !!(duoState.lang && duoState.lang[task.id]);
           const diemDone = !!(duoState.diem && duoState.diem[task.id]);
-          
+
           let myDone = false;
           if (currentUserKey === 'lang') myDone = langDone;
           else if (currentUserKey === 'diem') myDone = diemDone;
@@ -355,10 +559,10 @@ export function renderUI() {
                   </div>
                   <div class="task-details">
                     <div class="task-header-row">
-                          <span class="task-title">${task.title}</span>
-                          <span class="effort-badge">⚡ ${task.effortHours}h effort</span>
-                          <span class="duration-tag">⏱️ ${task.duration}</span>
-                          ${task.isOutput ? `<span class="output-pill">🎯 SẢN PHẨM CẦM TAY</span>` : ''}
+                      <span class="task-title">${task.title}</span>
+                      <span class="effort-badge">⚡ ${task.effortHours}h effort</span>
+                      <span class="duration-tag">⏱️ ${task.duration}</span>
+                      ${task.isOutput ? `<span class="output-pill">🎯 SẢN PHẨM CẦM TAY</span>` : ''}
                     </div>
                     <div class="output-text">🚀 Đích đến: ${task.output}</div>
                   </div>
@@ -411,6 +615,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setAuthChangedCallback(() => renderUI());
   initAuth();
   initRealtimeStream();
+
+  // Restore active view mode
+  switchMainMode(activeMainMode);
   renderUI();
 
   // Keep presence status refreshed smoothly every 5 seconds

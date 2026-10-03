@@ -138,19 +138,45 @@
       </div>
     </header>
 
-    <!-- Sprint Navigation Filter -->
-    <div class="sprint-nav">
-      <button class="sprint-tab focus-tab active" onclick="filterSprint('s1')">🔥 SPRINT 1: Dây Chuyền 4 REEL (Hiện Tại)</button>
-      <button class="sprint-tab" onclick="filterSprint('all')">Tất cả Sprint</button>
-      <button class="sprint-tab" onclick="filterSprint('s0')">Sprint 0: Vũ Khí & RAW (3.0h)</button>
-      <button class="sprint-tab" onclick="filterSprint('s2')">Sprint 2: Triệu View Case Study (19.0h)</button>
-      <button class="sprint-tab" onclick="filterSprint('s3')">Sprint 3: Săn Job Upwork/Fiverr (19.5h)</button>
-      <button class="sprint-tab" onclick="filterSprint('s4')">Sprint 4: Nhận Lương & Tết 2027 (40.0h)</button>
+    <!-- VIEW MODE SWITCHER BAR -->
+    <div class="view-mode-bar">
+      <button class="view-mode-btn active" id="btnModeSprints" onclick="switchMainMode('sprints')">
+        🎯 CHIẾN DỊCH TẾT 2027 (Sprint Roadmap)
+      </button>
+      <button class="view-mode-btn" id="btnModeCourses" onclick="switchMainMode('courses')">
+        📚 TOÀN BỘ KHÓA HỌC (Full Syllabus Checklist)
+      </button>
     </div>
 
-    <!-- Sprint Content Container -->
-    <div class="sprint-container" id="sprintContainer">
-      <!-- Injected dynamically by js/app.js -->
+    <!-- 1. SPRINT CAMPAIGN MODE SECTION -->
+    <div id="sprintModeSection">
+      <!-- Sprint Navigation Filter -->
+      <div class="sprint-nav">
+        <!-- Injected dynamically by js/app.js -->
+      </div>
+
+      <!-- Sprint Content Container -->
+      <div class="sprint-container" id="sprintContainer">
+        <!-- Injected dynamically by js/app.js -->
+      </div>
+    </div>
+
+    <!-- 2. FULL COURSE SYLLABUS CHECKLIST SECTION -->
+    <div id="courseModeSection" style="display: none; flex-direction: column; gap: 16px;">
+      <!-- Course Selector Bar -->
+      <div class="course-selector-bar" id="courseSelectorBar">
+        <!-- Injected dynamically by js/app.js -->
+      </div>
+
+      <!-- Selected Course Overview & Duo Stats -->
+      <div class="course-overview-card" id="courseOverviewCard">
+        <!-- Injected dynamically by js/app.js -->
+      </div>
+
+      <!-- Chapters & Lessons Syllabus Container -->
+      <div class="syllabus-container" id="syllabusContainer">
+        <!-- Injected dynamically by js/app.js -->
+      </div>
     </div>
 
     <div class="footer">
