@@ -1534,11 +1534,11 @@ export const ALL_COURSES_DATA = [
     "name": "Khóa Học Elite Pro (Breakdown Cao Cấp)",
     "color": "#f59e0b",
     "icon": "⭐",
-    "totalLessons": 133,
+    "totalLessons": 99,
     "chapters": [
       {
         "id": "ep_ch_0",
-        "title": "Bước Đầu Tiên? Hướng Dẫn Tổng Quan",
+        "title": "Bước đầu tiên? (3 bài học)",
         "lessons": [
           {
             "id": "ep_l_0_1",
@@ -1558,37 +1558,48 @@ export const ALL_COURSES_DATA = [
         ]
       },
       {
+        "id": "ep_ch_1",
+        "title": "Phần 1 - Feedback/Chữa bài thành viên cộng đồng Elite Pro",
+        "lessons": [
+          {
+            "id": "ep_l_1_1",
+            "title": "Feedback/Chữa bài thành viên cộng đồng Elite Pro (Cập nhật liên tục)",
+            "duration": "Kho tài nguyên"
+          }
+        ]
+      },
+      {
         "id": "ep_ch_2",
-        "title": "Phần 2 - Update Nâng Cao Cho Elite Pro (Templates, Pack & Job Test)",
+        "title": "Phần 2 - Update nâng cao cho Elite Pro (12 bài học)",
         "lessons": [
           {
             "id": "ep_l_2_1",
-            "title": "Pro Update - Neo Caption Pack V1 Text Animation Template",
+            "title": "💥 Pro Update - Neo Caption Pack V1 Text Animation Template",
             "duration": "5 phút"
           },
           {
             "id": "ep_l_2_2",
-            "title": "Pro Update - Neo Motion Essentials Pack",
+            "title": "💥 Pro Update - Neo Motion Essentials Pack",
             "duration": "4 phút"
           },
           {
             "id": "ep_l_2_3",
-            "title": "Pro Update - Animation Flaticon Shape",
+            "title": "💥 Pro Update - Animation Flaticon Shape",
             "duration": "10 phút"
           },
           {
             "id": "ep_l_2_4",
-            "title": "Pro Update - Amro's Custom text",
+            "title": "💥 Pro Update - Amro's Custom text",
             "duration": "1 phút"
           },
           {
             "id": "ep_l_2_5",
-            "title": "Pro Update - Animated Text Neo 2.0",
+            "title": "💥 Pro Update - Animated Text Neo 2.0",
             "duration": "20 phút"
           },
           {
             "id": "ep_l_2_6",
-            "title": "Pro Update - Ryan's Animated Texts",
+            "title": "💥 Pro Update - Ryan's Animated Texts",
             "duration": "5 phút"
           },
           {
@@ -1625,534 +1636,334 @@ export const ALL_COURSES_DATA = [
       },
       {
         "id": "ep_ch_3",
-        "title": "Phần 3 - Breakdown Animation Elite Pro (Kallaway, Iman Gadzhi, Ali Abdaal)",
+        "title": "Phần 3 - Breakdown Animation Elite Pro (61 bài học)",
         "lessons": [
           {
             "id": "ep_l_3_1",
-            "title": "Video 1 - (Danh Nguyên) Làm móc câu",
+            "title": "Video 1 - (Danh Nguyễn) Làm móc câu",
             "duration": "Video"
           },
           {
             "id": "ep_l_3_2",
-            "title": "Video 2 - (Danh Nguyến) Làm móc câu kết kết hợp với 3D composition",
+            "title": "Video 2 - (Danh Nguyễn) Làm móc câu kết hợp với 3D Composition",
             "duration": "Video"
           },
           {
             "id": "ep_l_3_3",
-            "title": "Video 3 - (Chiến Lẽ) Hiệu ứng Khối YouTube và Nháy Sáng - Phản 1",
+            "title": "Video 3 - (Chiến Lê) Hiệu ứng Khối YouTube và Nháy Sáng - Phần 1",
             "duration": "Video"
           },
           {
             "id": "ep_l_3_4",
-            "title": "Video 4 - (Chien Le) Hiệu ứng Khoi YouTube và Nháy Săng - Phăn 2",
+            "title": "Video 4 - (Chiến Lê) Hiệu ứng Khối YouTube và Nháy Sáng - Phần 2",
             "duration": "Video"
           },
           {
             "id": "ep_l_3_5",
-            "title": "Video 5 - (Chiên Le) Hiệu ứng Khoi YouTube và Nhày Sàng - Phăn 3",
+            "title": "Video 5 - (Chiến Lê) Hiệu ứng Khối YouTube và Nháy Sáng - Phần 3",
             "duration": "Video"
           },
           {
             "id": "ep_l_3_6",
-            "title": "Video 6 - (Danh Nguyễn) - Phân Tích/Hưỡng dăn hiệu ứng của Kallaway Phần 1",
+            "title": "Video 6 - (Danh Nguyễn) - Phân Tích/Hướng dẫn hiệu ứng của Kallaway Phần 1",
             "duration": "Video"
           },
           {
             "id": "ep_l_3_7",
-            "title": "Video 7 - (Danh Nquyễn) - Phän Tích/Hưỡng dăn Hiệu ứng của Kallaway Phan 2",
+            "title": "Video 7 - (Danh Nguyễn) - Phân Tích/Hướng dẫn hiệu ứng của Kallaway Phần 2",
             "duration": "Video"
           },
           {
             "id": "ep_l_3_8",
-            "title": "Video 8 - (Danh Nguyén) - Phãn Tich/Hướng dăn Hiệu ứng Line chay quanh vier",
+            "title": "Video 8 - (Danh Nguyễn) - Phân Tích/Hướng dẫn Hiệu ứng Line chạy quanh viền",
             "duration": "Video"
           },
           {
             "id": "ep_l_3_9",
-            "title": "Video 9 - (Chiến Lê) - Phân Tích/Hướng dẫn Intro Cho Video ace ess Find Haa and",
+            "title": "Video 9 - (Chiến Lê) - Phân Tích/Hướng dẫn Intro Cho Video Faceless Erling Haaland",
             "duration": "Video"
           },
           {
             "id": "ep_l_3_10",
-            "title": "Video 10 - (Danh Nquven) - Phăn Tich/Hưöng dăn Hiệu ứng Pie, Chart",
+            "title": "Video 10 - (Danh Nguyễn) - Phân Tích/Hướng dẫn Hiệu ứng Pie Chart",
             "duration": "Video"
           },
           {
             "id": "ep_l_3_11",
-            "title": "Video 11 - (Ăn Nauvễn) Phän Tích/Hướna dăn hiều ứna Liquid Glass. Apple",
-            "duration": "1 phut"
+            "title": "Video 11 - (An Nguyễn) Phân Tích/Hướng dẫn hiệu ứng Liquid Glass Apple",
+            "duration": "13 phút"
           },
           {
             "id": "ep_l_3_12",
-            "title": "Video 12 - (Nhất) - Phân Tích/Hướng dân Hiệu ứng Frame Crop - Làm Plugin săn 10 phu",
-            "duration": "Video"
+            "title": "Video 12 - (Nhất) - Phân Tích/Hướng dẫn Hiệu ứng Frame Crop - Làm Plugin sẵn",
+            "duration": "10 phút"
           },
           {
             "id": "ep_l_3_13",
-            "title": "Video 13 - (Chiến) - Phân Tích/Hướng dẫn Map Animation - Cách lấy Man chat lond cac",
-            "duration": "Video"
+            "title": "Video 13 - (Chiến) - Phân Tích/Hướng dẫn Map Animation - Cách lấy Map chất lượng cao",
+            "duration": "11 phút"
           },
           {
             "id": "ep_l_3_14",
-            "title": "Video 14.1 - (Truna) - Phăn Tich/Hương dăn xăv nha băna Davinci Resolve Part 1",
+            "title": "Video 14.1 - (Trung) - Phân Tích/Hướng dẫn xây nhà bằng Davinci Resolve Part 1",
             "duration": "27 phút"
           },
           {
             "id": "ep_l_3_15",
-            "title": "Video 14.2 - (Trung) - Phản Tích/Hương dẫn xảy nhà băna Davinci Reso ve Part 2",
+            "title": "Video 14.2 - (Trung) - Phân Tích/Hướng dẫn xây nhà bằng Davinci Resolve Part 2",
             "duration": "7 phút"
           },
           {
             "id": "ep_l_3_16",
-            "title": "Video 15 - (Thái Hưng) - Phần Tích/Hướng dẫn Hiệu ứng Pixel cho våt thöfovt icon 14 phu",
-            "duration": "Video"
+            "title": "Video 15 - (Thái Hưng) - Phân Tích/Hướng dẫn hiệu ứng Pixel cho vật thể/text/icon",
+            "duration": "14 phút"
           },
           {
             "id": "ep_l_3_17",
-            "title": "Video 16 - (Nhật) - Phân Tích/Hướng dẫn làm khung show sản phẩm đẻ đăt Portfolio ico Nhat Phan Tichưn can Trackind nha",
-            "duration": "Video"
+            "title": "Video 16 - (Nhật) - Phân Tích/Hướng dẫn làm khung show sản phẩm để đặt Portfolio",
+            "duration": "11 phút"
           },
           {
             "id": "ep_l_3_18",
-            "title": "Video 18 - (Danh Nquvễn) - Phân Tích/Hướng dẫn 3D Kallaway. 20 chút",
-            "duration": "Video"
+            "title": "Video 17 - (Nhật) - Phân Tích/Hướng dẫn Tracking nhà",
+            "duration": "5 phút"
+          },
+          {
+            "id": "ep_l_3_18_b",
+            "title": "Video 18 - (Danh Nguyễn) - Phân Tích/Hướng dẫn 3D Kallaway",
+            "duration": "20 phút"
           },
           {
             "id": "ep_l_3_19",
-            "title": "Video 19 - (Danh Nquvễn) - Phân Tích/Hướng dân Animation Iman Gadzhi",
+            "title": "Video 19 - (Danh Nguyễn) - Phân Tích/Hướng dẫn Animation Iman Gadzhi",
             "duration": "1 giờ 4 phút"
           },
           {
             "id": "ep_l_3_20",
-            "title": "Video 20 - (Danh Nguyễn) - Phần Tích/Hướng dân Lower 3rd Text Plugin",
+            "title": "Video 20 - (Danh Nguyễn) - Phân Tích/Hướng dẫn Lower 3rd Text Plugin",
             "duration": "15 phút"
           },
           {
             "id": "ep_l_3_21",
-            "title": "Video 21 - (Danh Nauvễn) - Phân Tích/Hưởng dăn Animation Xoav Trón",
-            "duration": "Video"
+            "title": "Video 21 - (Danh Nguyễn) - Phân Tích/Hướng dẫn Animation Xoay Tròn",
+            "duration": "26 phút"
           },
           {
-            "id": "ep_l_3_22",
-            "title": "Video 22.1 - (Danh Nquven) - Phân Tích/Hướng dăn Kallaway DVE Phần 1",
+            "id": "ep_l_3_22_1",
+            "title": "Video 22.1 - (Danh Nguyễn) - Phân Tích/Hướng dẫn Kallaway DVE Phần 1",
             "duration": "9 phút"
           },
           {
+            "id": "ep_l_3_22_2",
+            "title": "Video 22.2 - (Danh Nguyễn) - Phân Tích/Hướng dẫn Kallaway DVE Phần 2",
+            "duration": "33 phút"
+          },
+          {
+            "id": "ep_l_3_22_3",
+            "title": "Video 22.3 - (Danh Nguyễn) - Phân Tích/Hướng dẫn Kallaway DVE Phần 3",
+            "duration": "11 phút"
+          },
+          {
             "id": "ep_l_3_23",
-            "title": "Video 22.2 - (Danh Nquvễn) - Phân Tích/Hướng dân Kallaway DVE",
-            "duration": "Video"
+            "title": "Video 23 - (Long Nguyễn) - Phân Tích/Hướng dẫn Kallaway 5 STEP WORKFLOW",
+            "duration": "31 phút"
           },
           {
             "id": "ep_l_3_24",
-            "title": "Video 22.3 - (Danh Nguyễn) - Phân Tích/Hướng dẫn Kallaway DVE 11 hust",
-            "duration": "Video"
+            "title": "Video 24 - (Dương) - Phân Tích/Hướng dẫn 3 Yêu Cầu (Word by Word, Liquid Glass, Transition light)",
+            "duration": "9 phút"
           },
           {
             "id": "ep_l_3_25",
-            "title": "Video 23 - (Long Nauven) - Phăn Tich/Hương dân Kallaway 5 STEP WORKELOW 71 chút",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_26",
-            "title": "Video 24 - (Dươna) - Phân Tích/Hưởng dăn 3 Yêu Cầu (Word bv Word. Liduid Glass. Transition light) o nhut",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_27",
-            "title": "Video 25 - (Bảo) - Phân Tích/Hương dăn Vẽ Đố Thi Fusion",
+            "title": "Video 25 - (Bảo) - Phân Tích/Hướng dẫn Vẽ Đồ Thị Fusion",
             "duration": "8 phút"
           },
           {
+            "id": "ep_l_3_26",
+            "title": "Video 26 - (Tô Mì Ki) - Phân Tích/Hướng dẫn Minimalism Style (Vẽ shape đứt đoạn)",
+            "duration": "14 phút"
+          },
+          {
+            "id": "ep_l_3_27",
+            "title": "Video 27 - (Hưng) - Phân Tích/Hướng dẫn Ali Abdaal New Video Style",
+            "duration": "25 phút"
+          },
+          {
             "id": "ep_l_3_28",
-            "title": "Video 26 - (Tô Mì Ki) - Phân Tich/Hướng dẫn Minimalism Style (Vẽ shape dứt doan)",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_29",
-            "title": "Video 27 - (Hưng) - Phăn Tich/Hương dãn Ali Abdaal New Videc Style 25 nhứt",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_30",
-            "title": "Video 28 - (Lona) - Phân Tich/Hưởng dăn làm Manhwa Recap Video 10 phu",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_31",
-            "title": "Video 29 - (Thanh) - Phân Tích/Hương dăn làm Animation Chả biết goi ten la qi",
-            "duration": "21 phút"
-          },
-          {
-            "id": "ep_l_3_32",
-            "title": "Video 30 - (Chiến) - Phân Tích/Hướng dẫn làm Animation Shape Box icuic",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_33",
-            "title": "Video Dưon- Phän Tich Hưond dan kavframe a tai Dunlicate Icor",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_34",
-            "title": "Video 32 - (Cong Minh) - Phän Tich Shatter Fffec+ ival",
-            "duration": "7 phút"
-          },
-          {
-            "id": "ep_l_3_35",
-            "title": "Video 33.1 - (Anh Nam) - Phân Tích/Hưởng dăn animation 1l 14 phu",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_36",
-            "title": "Video 33.2 - (Anh Nam) - Phăn Tích/Hưảng dăn animation 2",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_37",
-            "title": "Video 33.3 - (Anh Nam) - Phần Tích/Hưỡng dẫn animation 3 8 nhi",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_38",
-            "title": "Video 34 - (Thảo) - Phăn Tích/Hướna dăn Text Follower và Waviness 4 nhút",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_39",
-            "title": "Video 35 - (Công Minh) - Phän Tích 3D cơ bản",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_40",
-            "title": "Video 36 - (Thèm bún bò) - Phân Tích/hướng dẫn Speed Ramp và 3D tracking Text",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_41",
-            "title": "Video 37 - (Thảo) - Phân Tích/hướng dẫn Hiệu ứng Thảo",
+            "title": "Video 28 - (Long) - Phân Tích/Hướng dẫn làm Manhwa Recap Video",
             "duration": "10 phút"
           },
           {
-            "id": "ep_l_3_42",
-            "title": "Video 38 - (Lona) - Phân Tích/hướng dẫn xử lý R-roll",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_43",
-            "title": "Video 39 - (Chiến) - Phân Tích/hướng dẫn Hook Animation)",
+            "id": "ep_l_3_29",
+            "title": "Video 29 - (Thạnh) - Phân Tích/Hướng dẫn làm Animation Chả biết gọi tên là gì",
             "duration": "21 phút"
           },
           {
-            "id": "ep_l_3_44",
-            "title": "Video 40 - (Tô mì ki) - Phân Tích/hướng dẫn Bounce Text)",
-            "duration": "Video"
+            "id": "ep_l_3_30",
+            "title": "Video 30 - (Chiến) - Phân Tích/Hướng dẫn làm Animation Shape Box Liquid",
+            "duration": "25 phút"
           },
           {
-            "id": "ep_l_3_45",
-            "title": "Video 41 - (Tuấn Phúc) - Phân Tích/hướng dẫn 3 điều Animation 15 nhút",
-            "duration": "Video"
+            "id": "ep_l_3_31",
+            "title": "Video 31 - (Dương) - Phân Tích/Hướng dẫn Keyframe đồ thị - Duplicate Icon",
+            "duration": "8 phút"
           },
           {
-            "id": "ep_l_3_46",
-            "title": "Video 42 - (Hải Lô) - Phân Tích Cache Clir o nhit",
-            "duration": "Video"
+            "id": "ep_l_3_32",
+            "title": "Video 32 - (Công Minh) - Phân Tích Shatter Effect/Vỡ",
+            "duration": "7 phút"
           },
           {
-            "id": "ep_l_3_47",
-            "title": "Video 43 - (Shark Bình) - Phân Tích/hướna dẫn Hook Devin Jatho",
+            "id": "ep_l_3_33_1",
+            "title": "Video 33.1 - (Anh Nam) - Phân Tích/Hướng dẫn animation 1",
+            "duration": "14 phút"
+          },
+          {
+            "id": "ep_l_3_33_2",
+            "title": "Video 33.2 - (Anh Nam) - Phân Tích/Hướng dẫn animation 2",
+            "duration": "13 phút"
+          },
+          {
+            "id": "ep_l_3_33_3",
+            "title": "Video 33.3 - (Anh Nam) - Phân Tích/Hướng dẫn animation 3",
+            "duration": "8 phút"
+          },
+          {
+            "id": "ep_l_3_34",
+            "title": "Video 34 - (Thảo) - Phân Tích/Hướng dẫn Text Follower và Waviness",
+            "duration": "4 phút"
+          },
+          {
+            "id": "ep_l_3_35",
+            "title": "Video 35 - (Công Minh) - Phân Tích 3D cơ bản",
+            "duration": "11 phút"
+          },
+          {
+            "id": "ep_l_3_36",
+            "title": "Video 36 - (Thèm bún bò) - Phân Tích/hướng dẫn Speed Ramp và 3D tracking Text",
+            "duration": "30 phút"
+          },
+          {
+            "id": "ep_l_3_37",
+            "title": "Video 37 - (Thảo) - Phân Tích/hướng dẫn hiệu ứng Thảo",
+            "duration": "12 phút"
+          },
+          {
+            "id": "ep_l_3_38",
+            "title": "Video 38 - (Long) - Phân Tích/hướng dẫn xử lý B-roll",
+            "duration": "20 phút"
+          },
+          {
+            "id": "ep_l_3_39",
+            "title": "Video 39 - (Chiến) - Phân Tích/hướng dẫn Hook Animation",
+            "duration": "21 phút"
+          },
+          {
+            "id": "ep_l_3_40",
+            "title": "Video 40 - (Tô mì ki) - Phân Tích/hướng dẫn Bounce Text",
+            "duration": "5 phút"
+          },
+          {
+            "id": "ep_l_3_41",
+            "title": "Video 41 - (Tuấn Phúc) - Phân Tích/hướng dẫn 3 điều Animation",
             "duration": "15 phút"
           },
           {
+            "id": "ep_l_3_42",
+            "title": "Video 42 - (Hải Lê) - Phân Tích Cache Clip",
+            "duration": "9 phút"
+          },
+          {
+            "id": "ep_l_3_43",
+            "title": "Video 43 - (Shark Bình) - Phân Tích/hướng dẫn Hook Devin Jatho",
+            "duration": "15 phút"
+          },
+          {
+            "id": "ep_l_3_44",
+            "title": "Video 44 - (Lưu Mạnh) - Phân Tích/hướng dẫn đổ bóng Mask Polygon lung tung",
+            "duration": "5 phút"
+          },
+          {
+            "id": "ep_l_3_45",
+            "title": "Video 45 - (Dương mì kì) - Phân bổ thời gian làm việc",
+            "duration": "18 phút"
+          },
+          {
+            "id": "ep_l_3_46",
+            "title": "Video 46 - (Ấn Độ xứ Quảng) - Chỉnh màu đồ ăn",
+            "duration": "17 phút"
+          },
+          {
+            "id": "ep_l_3_47",
+            "title": "Video 47 - (Nusyco) - Breakdown Video Typography Nhạc",
+            "duration": "8 phút"
+          },
+          {
             "id": "ep_l_3_48",
-            "title": "Video 44 - (Lưu Mạnh) - Phân Tích/hướng dẫn đổ bóng Mask Polvaon luna tuna 10 nh iF",
-            "duration": "Video"
+            "title": "Video 48 - (Ấn Độ xứ Quảng) - Chỉnh màu đồ ăn 2",
+            "duration": "7 phút"
           },
           {
             "id": "ep_l_3_49",
-            "title": "Video 46 - (ấn Đô xứ Ouảng) - Chỉnh màu đ6 ăn 17 nhút",
-            "duration": "Video"
+            "title": "Video 49 - (Dương Péo) - Chỉnh màu Shot quay Iphone bị bệch màu",
+            "duration": "8 phút"
           },
           {
             "id": "ep_l_3_50",
-            "title": "Video 47 - (Nusvco) - Breakdown Video Tvoographv Nhac 8 nhit",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_51",
-            "title": "Video 48 - (Ấn Đô xứ Quảng) - Chinh màu đồ ăn 2 T nhú e nhic",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_52",
-            "title": "Video 50 - (Anh Thoai) - Chỉnh lỗi mà chưa hiễu lõi ai =)))",
+            "title": "Video 50 - (Anh Thoại) - Chỉnh lỗi mà chưa hiểu lỗi gì =))",
             "duration": "2 phút"
           },
           {
-            "id": "ep_l_3_53",
+            "id": "ep_l_3_51",
             "title": "Video 51 - (Anh Thoại) - Chỉnh lỗi mà cũng không gọi tên được lỗi =))",
             "duration": "5 phút"
           },
           {
-            "id": "ep_l_3_54",
+            "id": "ep_l_3_52",
             "title": "Video 52 - (Thèm bún bò Huế) - Chỉnh màu Slog, CST, WB",
-            "duration": "Video"
+            "duration": "18 phút"
           },
           {
-            "id": "ep_l_3_55",
-            "title": "Video 53 - (01/06/2026 - Anh Nam) - Hướng dăn làm Real Shadow 3 chii",
-            "duration": "Video"
+            "id": "ep_l_3_53",
+            "title": "Video 53 - (01/06/2026 - Anh Nam) - Hướng dẫn làm Real Shadow",
+            "duration": "3 phút"
           },
           {
-            "id": "ep_l_3_56",
-            "title": "Video 54 - (12/06/2026 - Nusvco) - Hướng dăn làm Hologram Effect",
+            "id": "ep_l_3_54",
+            "title": "Video 54 - (12/06/2026 - Nusyco) - Hướng dẫn làm Hologram Effect",
             "duration": "7 phút"
           },
           {
+            "id": "ep_l_3_55",
+            "title": "Video 55 - (09/07/2026 - A Hiếu) - Chỉnh màu log cho ae mù màu",
+            "duration": "6 phút"
+          },
+          {
+            "id": "ep_l_3_56",
+            "title": "Video 56 - (10/07/2026 - D.Nguyễn) - Break down animation 3D tim ngắt chắc chắn của Kallaway",
+            "duration": "2 giờ 31 phút"
+          },
+          {
             "id": "ep_l_3_57",
-            "title": "Video 55 - (09/07/2026 - A Hiếu) - Chỉnh màu loa cho ae mù màu",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_58",
-            "title": "Video 56 - (10/07/2026 - D.Nauvěn) - Break down animation 3D tim ngất chấc chấn của Kallaway",
-            "duration": "Video"
-          },
-          {
-            "id": "ep_l_3_59",
-            "title": "Video 57 - (28/07/2026 - Đat) - Break down Hook Anim Effect ---",
-            "duration": "Video"
+            "title": "Video 57 - (28/07/2026 - Đạt) - Break down Hook Anim Effect",
+            "duration": "23 phút"
           }
         ]
       },
       {
         "id": "ep_ch_4",
-        "title": "Phần 4 - Ghi Lại Meeting Hàng Tuần (Q&A Thực Chiến)",
+        "title": "Phần 4 - Ghi lại Meeting hàng tuần",
         "lessons": [
           {
             "id": "ep_l_4_1",
-            "title": "Buối 1 - Record Meeting ngày 12/06/2025 (Mindset)",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_2",
-            "title": "Buối 2 - Record Meeting ngày 16/06/2025 (Kỹ thuật)",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_3",
-            "title": "Buoi 3 - Record Meeting ngày 19/06/2025 (Mindset)",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_4",
-            "title": "Buoi 4 - Record Meeting ngày 23/06/2025 (Ky thuặt) Buổi 5 - Record Meeting ngày 26/06/2025 (Mindset)",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_5",
-            "title": "Buoi 6 - Record Meeting ngay 30/06/2025 (Ky thuạt) |",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_6",
-            "title": "Buối 7 - Record Meeting ngày 03/07/2025 (Mindset) Buổi 8 - Record Meeting ngày 07/07/2025 (Kỹ thuật)",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_7",
-            "title": "Buối 9 - Record meeting ngày 21/07/2025 (Kỹ thuật)",
-            "duration": "20 phút"
-          },
-          {
-            "id": "ep_l_4_8",
-            "title": "Buoi 10 - Record meeting ngay 24/07/2025 (Mindset)",
-            "duration": "1 giờ 50 phút"
-          },
-          {
-            "id": "ep_l_4_9",
-            "title": "Buoi 11 - Record meeting ngay 28/07/2025 (Mindset)",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_10",
-            "title": "Buối 12 - Record meeting ngày 31/07/2025 (Kỹ thuật)",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_11",
-            "title": "Buoi 13 - Record meeting ngày 07/08/2025",
-            "duration": "14 phút"
-          },
-          {
-            "id": "ep_l_4_12",
-            "title": "Buối 14 - Record meeting ngày 14/08/2025",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_13",
-            "title": "Buoi 15 - Record meeting nqav 21/08/2025",
-            "duration": "1 giờ"
-          },
-          {
-            "id": "ep_l_4_14",
-            "title": "Buối 16 - Record meeting ngày 28/08/2025",
-            "duration": "3 phut"
-          },
-          {
-            "id": "ep_l_4_15",
-            "title": "Buối 17 - Record meeting ngày 04/09/2025 S PRE Buổi 18 - Record meeting ngày 11/09/2025 1 aiở 54 nhút",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_16",
-            "title": "Buoi 19 - Record meetina nqav 18/09/2025",
-            "duration": "27 phút"
-          },
-          {
-            "id": "ep_l_4_17",
-            "title": "Buoi 20 - Record meeting ngày 25/09/2025",
-            "duration": "26 phut"
-          },
-          {
-            "id": "ep_l_4_18",
-            "title": "Buối 23 - Record meeting ngày 16/10/2025",
-            "duration": "1 giờ 55 phút"
-          },
-          {
-            "id": "ep_l_4_19",
-            "title": "Buoi 24 - Record meeting nqav 23л0/2025",
-            "duration": "29 phut"
-          },
-          {
-            "id": "ep_l_4_20",
-            "title": "Buoi 26 - Record meeting ngày 13/11/2025",
-            "duration": "27 phút"
-          },
-          {
-            "id": "ep_l_4_21",
-            "title": "Buối 27 - Record meeting ngày 27/11/2025 1 gio 44 pnut Buổi 28 - Record meeting ngày 04/12/2025",
-            "duration": "40 phút"
-          },
-          {
-            "id": "ep_l_4_22",
-            "title": "Buối 29 - Record meeting ngày 18/12/2025 2 tiếng",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_23",
-            "title": "Buoi 30 - Record meeting ngày 25/12/2025",
-            "duration": "57 phút"
-          },
-          {
-            "id": "ep_l_4_24",
-            "title": "Buối 33 - Record meeting ngày 29/01/2026",
-            "duration": "1 giờ 22 phút"
-          },
-          {
-            "id": "ep_l_4_25",
-            "title": "Buoi 36 - Record meeting ngày 12/03/2026",
-            "duration": "2 giờ 3 phút"
-          },
-          {
-            "id": "ep_l_4_26",
-            "title": "Buoi 37 - Record meeting ngay 19/03/2026 2 tieng",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_27",
-            "title": "Buoi 58 - Record meeting ngay 26/05/2026 2 aiở 4 phứi",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_28",
-            "title": "Buối 39 (Khách mời Editor Pro) - Record meeting ngày 02/04/2026",
-            "duration": "31 phút"
-          },
-          {
-            "id": "ep_l_4_29",
-            "title": "Buối 40 - Record meeting ngày 09/04/2026",
-            "duration": "2 giờ 46 phút"
-          },
-          {
-            "id": "ep_l_4_30",
-            "title": "Buối 40.1 - (Cat ngàn phăn Kỳ thuật) Record meeting ngày 09/04/2026 Buõi 41 - (Podcast Show ft. Danh Nquyën) Record meeting ngayi 27/04/2026",
-            "duration": "24 phút"
-          },
-          {
-            "id": "ep_l_4_31",
-            "title": "Buoi 42 - Record meeting ngày 30/04/2026 2 giố 37 ph01",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_32",
-            "title": "Buối 43 - Record meeting ngày 07/05/2026 2 GI6 20 Dnu Buõi 44 - Record meeting ngày 21/05/2026",
-            "duration": "45 phut"
-          },
-          {
-            "id": "ep_l_4_33",
-            "title": "Buoi 45 - Record meeting ngày 28/05/2026",
-            "duration": "9 phút"
-          },
-          {
-            "id": "ep_l_4_34",
-            "title": "Buối 46 - (Podcast Show ft. William Nam) Record meeting ngày 11/06/2026",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_35",
-            "title": "Buoi 4/ - Record meeting ngay 18/06/2026 StoryBoard)",
-            "duration": "1 giờ 34 phut"
-          },
-          {
-            "id": "ep_l_4_36",
-            "title": "Buối 48 - Record meeting ngày 25/06/2026 2 010 28 phu1",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_37",
-            "title": "Buôi 49 - Record meeting ngày 09/07/2026 2 a1o 55 phu",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_38",
-            "title": "Buoi 50 - Record meetina ngav 16/07/2026.",
-            "duration": "40 phút"
-          },
-          {
-            "id": "ep_l_4_39",
-            "title": "Buối 52 - Record meeting ngày 06/08/2026",
-            "duration": "2 giờ 27 phút"
-          },
-          {
-            "id": "ep_l_4_40",
-            "title": "Buối 53 - Record meeting ngày 20/08/2026",
-            "duration": "35 phút"
-          },
-          {
-            "id": "ep_l_4_41",
-            "title": "Buối 54 - Record meeting ngày 27/08/2026",
-            "duration": "4 phút"
-          },
-          {
-            "id": "ep_l_4_42",
-            "title": "Buoi 55 - Record meeting ngày 03/09/2026",
-            "duration": "2 giờ 23 phút"
-          },
-          {
-            "id": "ep_l_4_43",
-            "title": "Buối 56 - Record meeting ngày 10/09/2026 2 gio si pnut",
-            "duration": "Record Meeting"
-          },
-          {
-            "id": "ep_l_4_44",
-            "title": "Buoi 57 - Record meeting ngay 24/09/2026",
-            "duration": "30 phút"
+            "title": "Record Meeting hàng tuần (Q&A Mindset & Kỹ Thuật - Cập nhật liên tục)",
+            "duration": "Kho tài nguyên"
           }
         ]
       },
       {
         "id": "ep_ch_5",
-        "title": "Phần 5 - Review Profile & Tối Ưu Portfolio Thành Viên",
+        "title": "Phần 5 - Review Profile/Tối ưu Portfolio thành viên (20 bài học)",
         "lessons": [
           {
             "id": "ep_l_5_1",
@@ -2228,6 +2039,31 @@ export const ALL_COURSES_DATA = [
             "id": "ep_l_5_15",
             "title": "P15 - Review Profile Upwork Long Sún & Tuấn Anh 01/05/2026",
             "duration": "12 phút"
+          },
+          {
+            "id": "ep_l_5_16",
+            "title": "P16 - Review Profile Upwork/Portfolio Instagram Anh Vương Thái 15/06/2026",
+            "duration": "5 phút"
+          },
+          {
+            "id": "ep_l_5_17",
+            "title": "P17 - Review Profile Upwork/Portfolio Trung 30/06/2026",
+            "duration": "12 phút"
+          },
+          {
+            "id": "ep_l_5_18",
+            "title": "P18 - Review Profile Upwork/Portfolio Hiệu Trần 10/07/2026",
+            "duration": "7 phút"
+          },
+          {
+            "id": "ep_l_5_19",
+            "title": "P19 - Review Profile Upwork/Portfolio DVHao 03/08/2026",
+            "duration": "6 phút"
+          },
+          {
+            "id": "ep_l_5_20",
+            "title": "P20 - Review Profile Upwork/Portfolio Lê Đức 20/08/2026",
+            "duration": "10 phút"
           }
         ]
       }
