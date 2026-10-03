@@ -141,10 +141,13 @@
     <!-- VIEW MODE SWITCHER BAR -->
     <div class="view-mode-bar">
       <button class="view-mode-btn active" id="btnModeSprints" onclick="switchMainMode('sprints')">
-        🎯 CHIẾN DỊCH TẾT 2027 (Sprint Roadmap)
+        🎯 CHIẾN DỊCH TẾT 2027 (Sprint)
       </button>
       <button class="view-mode-btn" id="btnModeCourses" onclick="switchMainMode('courses')">
-        📚 TOÀN BỘ KHÓA HỌC (Full Syllabus Checklist)
+        📚 TOÀN BỘ KHÓA HỌC (Syllabus)
+      </button>
+      <button class="view-mode-btn" id="btnModeCareer" onclick="switchMainMode('career')">
+        🚀 ĐƯỜNG DÀI (Career Track)
       </button>
     </div>
 
@@ -175,6 +178,13 @@
 
       <!-- Chapters & Lessons Syllabus Container -->
       <div class="syllabus-container" id="syllabusContainer">
+        <!-- Injected dynamically by js/app.js -->
+      </div>
+    </div>
+
+    <!-- 3. LONG-TERM CAREER MASTERY TRACK SECTION -->
+    <div id="careerModeSection" style="display: none; flex-direction: column; gap: 16px;">
+      <div class="career-container" id="careerContainer">
         <!-- Injected dynamically by js/app.js -->
       </div>
     </div>

@@ -2,7 +2,7 @@
 // MAIN APP ORCHESTRATOR, PREDICTIVE UI, PRESENCE & FULL SYLLABUS ENGINE
 // =========================================================================
 
-import { ROADMAP_SPRINTS, TET_DATE, JOB_PAYOUT_DEADLINE, JOB_NEEDED_HOURS, ACCOUNTS } from './curriculum.js';
+import { ROADMAP_SPRINTS, TET_DATE, JOB_PAYOUT_DEADLINE, JOB_NEEDED_HOURS, ACCOUNTS, LONG_TERM_TRACK } from './curriculum.js';
 import { ALL_COURSES_DATA } from './all_courses.js';
 import { duoState, presenceState, initRealtimeStream, setSyncUpdateCallback, saveLocalCache, broadcastChange } from './sync.js';
 import {
@@ -59,7 +59,7 @@ window.selectCourse = selectCourse;
 window.handleSyllabusLessonToggle = handleSyllabusLessonToggle;
 
 // -------------------------------------------------------------------------
-// MODE SWITCHER (SPRINT ROADMAP vs FULL COURSE SYLLABUS)
+// MODE SWITCHER (SPRINT ROADMAP vs FULL SYLLABUS vs CAREER TRACK)
 // -------------------------------------------------------------------------
 export function switchMainMode(mode) {
   activeMainMode = mode;
@@ -67,20 +67,18 @@ export function switchMainMode(mode) {
 
   const btnSprints = document.getElementById("btnModeSprints");
   const btnCourses = document.getElementById("btnModeCourses");
+  const btnCareer = document.getElementById("btnModeCareer");
   const sprintSec = document.getElementById("sprintModeSection");
   const courseSec = document.getElementById("courseModeSection");
+  const careerSec = document.getElementById("careerModeSection");
 
-  if (mode === 'sprints') {
-    if (btnSprints) btnSprints.className = "view-mode-btn active";
-    if (btnCourses) btnCourses.className = "view-mode-btn";
-    if (sprintSec) sprintSec.style.display = "block";
-    if (courseSec) courseSec.style.display = "none";
-  } else {
-    if (btnSprints) btnSprints.className = "view-mode-btn";
-    if (btnCourses) btnCourses.className = "view-mode-btn active";
-    if (sprintSec) sprintSec.style.display = "none";
-    if (courseSec) courseSec.style.display = "flex";
-  }
+  if (btnSprints) btnSprints.className = mode === 'sprints' ? "view-mode-btn active" : "view-mode-btn";
+  if (btnCourses) btnCourses.className = mode === 'courses' ? "view-mode-btn active" : "view-mode-btn";
+  if (btnCareer) btnCareer.className = mode === 'career' ? "view-mode-btn active" : "view-mode-btn";
+
+  if (sprintSec) sprintSec.style.display = mode === 'sprints' ? "block" : "none";
+  if (courseSec) courseSec.style.display = mode === 'courses' ? "flex" : "none";
+  if (careerSec) careerSec.style.display = mode === 'career' ? "flex" : "none";
 
   renderUI();
 }
@@ -521,6 +519,78 @@ export function renderCourseSyllabusUI() {
 }
 
 // -------------------------------------------------------------------------
+// RENDER CAREER MASTERY TRACK (LONGEVITY & SCALE UP)
+// -------------------------------------------------------------------------
+export function renderCareerTrackUI() {
+  const container = document.getElementById("careerContainer");
+  if (!container) return;
+
+  container.innerHTML = `
+    <div style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.8)); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 18px; padding: 20px 24px; margin-bottom: 8px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h2 style="font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 4px; display: flex; align-items: center; gap: 10px;">
+            <span>🚀</span> LỘ TRÌNH ĐƯỜNG DÀI (CAREER LONGEVITY ARCHITECTURE)
+          </h2>
+          <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">
+            Hành trình tiến hóa 4 giai đoạn từ <strong>Cắt thô cơ bản</strong> đến <strong>Creative Director & AI-Native Production Studio</strong>. Đảm bảo bạn không chỉ kiếm tiền trước Tết 2027 mà còn xây dựng sự nghiệp bền vững 5 - 10 năm tới.
+          </p>
+        </div>
+        <div style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 12px; padding: 10px 16px; text-align: right;">
+          <div style="font-size: 11px; color: #38bdf8; font-weight: 700; text-transform: uppercase;">Mục tiêu dài hạn</div>
+          <div style="font-size: 18px; font-weight: 900; color: #fff; font-family: 'JetBrains Mono', monospace;">$5,000+ / tháng</div>
+        </div>
+      </div>
+    </div>
+
+    ${LONG_TERM_TRACK.map((track, idx) => `
+      <div class="career-track-card" style="border-left: 4px solid ${track.color};">
+        <div class="career-header-top">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="career-level-badge" style="background: ${track.color}20; color: ${track.color}; border: 1px solid ${track.color}40;">
+              ${track.level}
+            </span>
+            <span style="font-size: 12px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace;">
+              ⏱️ ${track.timeframe}
+            </span>
+          </div>
+          <div class="career-income-badge">
+            <span>💰</span> ${track.incomeRange}
+          </div>
+        </div>
+
+        <div>
+          <div class="career-role-title">
+            <span>${track.icon}</span> ${track.role}
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
+            ${track.coreCourses.map(c => `
+              <span style="font-size: 11px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); color: #cbd5e1; padding: 3px 8px; border-radius: 6px;">
+                📖 ${c}
+              </span>
+            `).join("")}
+          </div>
+        </div>
+
+        <div class="career-skills-box">
+          <h4>Vũ khí & Kỹ năng làm chủ:</h4>
+          ${track.skills.map(sk => `
+            <div class="career-skill-item">
+              <span style="color: ${track.color};">✓</span>
+              <span>${sk}</span>
+            </div>
+          `).join("")}
+        </div>
+
+        <div class="career-deliverable-box" style="border-left-color: ${track.color};">
+          <strong>🎯 Sản phẩm & Cột mốc thương mại:</strong> ${track.deliverables}
+        </div>
+      </div>
+    `).join("")}
+  `;
+}
+
+// -------------------------------------------------------------------------
 // RENDER MASTER UI
 // -------------------------------------------------------------------------
 export function renderUI() {
@@ -545,6 +615,10 @@ export function renderUI() {
 
   if (activeMainMode === 'courses') {
     renderCourseSyllabusUI();
+    return;
+  }
+  if (activeMainMode === 'career') {
+    renderCareerTrackUI();
     return;
   }
 

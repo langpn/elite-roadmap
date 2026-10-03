@@ -1,5 +1,5 @@
 // =========================================================================
-// DATA STRUCTURE & TIMELINE CONSTANTS FOR ELITE ROADMAP
+// DATA STRUCTURE, TIMELINE CONSTANTS & CAREER MASTERY ROADMAP
 // =========================================================================
 
 export const TET_DATE = new Date("2027-02-05T23:59:59"); // 29 Tết Đinh Mùi
@@ -11,6 +11,9 @@ export const ACCOUNTS = {
   diem: { name: "Diễm", email: "diembd.dev@gmail.com", avatar: "🌸", color: "#f472b6" }
 };
 
+// =========================================================================
+// 1. FAST-TRACK SPRINTS TO LAND PAYING CLIENTS BEFORE TET 2027
+// =========================================================================
 export const ROADMAP_SPRINTS = [
   {
     id: "s0",
@@ -334,5 +337,75 @@ export const ROADMAP_SPRINTS = [
         }
       }
     ]
+  }
+];
+
+// =========================================================================
+// 2. LONG-TERM CAREER MASTERY & LONGEVITY TRACK (ĐƯỜNG DÀI SAU KHI CÓ JOB)
+// =========================================================================
+export const LONG_TERM_TRACK = [
+  {
+    level: "LEVEL 1: COMMERCIAL SHORT-FORM SPECIALIST",
+    incomeRange: "$500 – $1,500 / tháng",
+    timeframe: "Tháng 1 – 3",
+    role: "Chuyên Gia Video Ngắn Chuyển Đổi Cao (Talking Head & TikTok/Reels)",
+    color: "#10b981",
+    icon: "📱",
+    coreCourses: ["DaVinci Elite Chương 1.2", "Freelance MVP", "Upwork MVP"],
+    skills: [
+      "Rough Cut A-Roll tốc độ cao với cụm phím Q-W-E-S-D (30 phút/video)",
+      "Chuẩn hóa Audio Leveling (-6dB), khử ồn Voice Isolation & Auto Ducking",
+      "Kinetic Subtitles phong cách Alex Hormozi (nhảy từng từ bắt mắt)",
+      "Quy trình giao tiếp khách hàng quốc tế, viết Proposal đánh trúng pain point"
+    ],
+    deliverables: "Duy trì 4–6 video ngắn/tuần cho 1–2 khách hàng Retainer cố định."
+  },
+  {
+    level: "LEVEL 2: HIGH-RETENTION YOUTUBE LONG-FORM STORYTELLER",
+    incomeRange: "$1,500 – $3,000 / tháng",
+    timeframe: "Tháng 3 – 6",
+    role: "Nhà Kể Chuyện Video Dài (YouTube Documentary, Podcasts & Vlogs)",
+    color: "#38bdf8",
+    icon: "🖥️",
+    coreCourses: ["DaVinci Elite Chương 2 & 3.1", "Speed Ramp Bất Động Sản & Xe", "CapCut Pro Mastery"],
+    skills: [
+      "Cắt thô theo công thức Note Idea cho cấu trúc video dài 10–20 phút",
+      "Nghệ thuật Visual Pacing & B-Roll Storytelling giữ chân người xem liên tục",
+      "Thiết kế âm thanh đa tầng (Multi-layer Sound Design & SFX Risers)",
+      "Speed Ramp kịch tính kết hợp Masking xe cộ và bất động sản"
+    ],
+    deliverables: "Sản xuất 2–4 video YouTube dài/tháng ($300 – $600/video)."
+  },
+  {
+    level: "LEVEL 3: CREATIVE DIRECTOR & 3D MOTION GRAPHICS LEAD",
+    incomeRange: "$3,000 – $5,000 / tháng",
+    timeframe: "Tháng 6 – 12",
+    role: "Trưởng Nhóm Kỹ Xảo & Sáng Tạo Chữ Ký (Signature Motion & Branding)",
+    color: "#c084fc",
+    icon: "⭐",
+    coreCourses: ["Elite Pro Breakdown (57 Videos)", "Keyframe Animation", "Fusion 101"],
+    skills: [
+      "Làm chủ Fusion Node, Camera 3D, DVE 3D phong cách Kallaway",
+      "Kỹ xảo Line Neon Iman Gadzhi & Xé giấy Ali Abdaal",
+      "Đóng gói Macro / Template Fusion độc quyền bán cho Agency",
+      "Định hướng nghệ thuật (Art Direction) và Color Grading chuẩn Log/CST"
+    ],
+    deliverables: "Lead Editor cho các kênh lớn 100k - 1M sub hoặc Agency quốc tế."
+  },
+  {
+    level: "LEVEL 4: AI-NATIVE TECH CREATOR & PRODUCTION STUDIO",
+    incomeRange: "$5,000+ / tháng (Scale Up)",
+    timeframe: "Năm thứ 2 trở đi",
+    role: "Chủ Studio Sản Xuất Nội Dung Ứng Dụng AI & Tự Động Hóa",
+    color: "#f59e0b",
+    icon: "🚀",
+    coreCourses: ["Tư duy Dev (The Odin Project / Vibe Coding)", "FlowKit Automation", "Team Delegation"],
+    skills: [
+      "Tự động hóa quy trình Ingest & Render bằng Script (Python/ffmpeg)",
+      "Sử dụng AI Agent (OpenCode/FlowKit) sản xuất B-roll hàng loạt độc quyền",
+      "Sở hữu kênh Media Brand cá nhân kết hợp đào tạo hoặc nhận thầu dự án lớn",
+      "Quản lý đội ngũ junior editor cắt thô để giải phóng thời gian bản thân"
+    ],
+    deliverables: "Hệ thống truyền thông tự vận hành và Studio hậu kỳ chuyên nghiệp."
   }
 ];
