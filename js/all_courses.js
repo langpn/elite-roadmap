@@ -1,5 +1,5 @@
 // =========================================================================
-// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (100% VERIFIED)
+// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (100% ACCURATE)
 // =========================================================================
 
 export const ALL_COURSES_DATA = [
@@ -2082,178 +2082,207 @@ export const ALL_COURSES_DATA = [
     "name": "Khóa Học Freelance MVP (Fiverr & Kiếm Tiền)",
     "color": "#c084fc",
     "icon": "💼",
-    "totalLessons": 31,
+    "totalLessons": 32,
     "chapters": [
       {
-        "id": "freelance_mvp_ch_1",
-        "title": "Nội Dung Cơ Bản",
+        "id": "freelance_ch_1",
+        "title": "Chương 1 - Fiverr",
         "lessons": [
           {
-            "id": "freelance_mvp_l_2",
-            "title": "Phần 1 - Tổng quan",
+            "id": "freelance_l_1_1",
+            "title": "Phần 1 – Tổng quan",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_3",
+            "id": "freelance_l_1_2",
             "title": "Phần 2 - Lập Gigs và tối ưu Gigs",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_4",
-            "title": "Phần 3 - (Thực hành) lập gig thực tế",
+            "id": "freelance_l_1_3",
+            "title": "Phần 3 - (Thực hành) Lập gig thực tế",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_5",
-            "title": "Phần 4- Cách đề được Fiverr đánh giá cao hơn",
+            "id": "freelance_l_1_4",
+            "title": "Phần 4 - Cách để được Fiverr đánh giá cao hơn",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_6",
-            "title": "Phần 5 - Tổng Kết",
+            "id": "freelance_l_1_5",
+            "title": "Phần 5 - Tổng kết",
             "duration": "Video"
-          },
+          }
+        ]
+      },
+      {
+        "id": "freelance_ch_2",
+        "title": "Chương 2 - Upwork",
+        "lessons": [
           {
-            "id": "freelance_mvp_l_7",
+            "id": "freelance_l_2_1",
             "title": "Phần 1 - Tổng quan Upwork",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_8",
-            "title": "Phần 2 - Cách SEO Profile Upwork",
+            "id": "freelance_l_2_2",
+            "title": "Phần 2 – Cách SEO Profile Upwork",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_9",
-            "title": "Phần 3 - (Thực hành) SEO/Tối ưu Profile Upwork",
+            "id": "freelance_l_2_3",
+            "title": "Phần 3 – (Thực hành) SEO/Tối ưu Profile Upwork",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_10",
-            "title": "Phần 4 - Loc danh sách công viec",
+            "id": "freelance_l_2_4",
+            "title": "Phần 4 – Lọc danh sách công việc",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_11",
-            "title": "Phần 5 - Đánh giá công viếc",
+            "id": "freelance_l_2_5",
+            "title": "Phần 5 – Đánh giá công việc",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_12",
-            "title": "Phần 6 - Viêt Proposal FREFIANGE",
+            "id": "freelance_l_2_6",
+            "title": "Phần 6 – Viết Proposal",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_13",
-            "title": "Phần 7 - (Thực hành) Viêt Proposal thực tế '",
+            "id": "freelance_l_2_7",
+            "title": "Phần 7 – (Thực hành) Viết Proposal thực tế",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_14",
-            "title": "Phần 8 - Lưu ý khi viết Proposal FREDIANCE",
+            "id": "freelance_l_2_8",
+            "title": "Phần 8 – Lưu ý khi viết Proposal",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_15",
-            "title": "Phần 9 - Tổng kết",
+            "id": "freelance_l_2_9",
+            "title": "Phần 9 – Tổng kết",
             "duration": "Video"
           }
         ]
       },
       {
-        "id": "freelance_mvp_ch_2",
+        "id": "freelance_ch_3",
         "title": "Chương 3 - Social Media (Mạng Xã Hội)",
         "lessons": [
           {
-            "id": "freelance_mvp_l_16",
-            "title": "Phần 1 - Tổng quan về Mạng Xã Hội",
+            "id": "freelance_l_3_1",
+            "title": "Phần 1 – Tổng quan về Mạng Xã Hội",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_17",
-            "title": "Phần 2 - Cách van hành của Mạng Xã Hội",
+            "id": "freelance_l_3_2",
+            "title": "Phần 2 - Cách vận hành của Mạng Xã Hội",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_18",
-            "title": "Phần 3 - SEO Profile",
+            "id": "freelance_l_3_3",
+            "title": "Phần 3 – SEO Profile",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_19",
-            "title": "Phần 4 - Đang và tối ưu Video",
+            "id": "freelance_l_3_4",
+            "title": "Phần 4 - Đăng và tối ưu Video",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_20",
+            "id": "freelance_l_3_5",
             "title": "Phần 5 - SEO thêm nữa",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_21",
+            "id": "freelance_l_3_6",
             "title": "Phần 6 - Thiết lập Website Portfolio cho riêng bạn",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_22",
-            "title": "Phần 7 - Chu đóng tìm khách hàng FREDTANCE :",
+            "id": "freelance_l_3_7",
+            "title": "Phần 7 - Chủ động tìm khách hàng",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_23",
-            "title": "Phần 8 - Tổng Kết FREFIFANCE Thiết lập Portfolio đẹp - FREE",
+            "id": "freelance_l_3_8",
+            "title": "Phần 8 – Tổng Kết",
             "duration": "Video"
           }
         ]
       },
       {
-        "id": "freelance_mvp_ch_3",
+        "id": "freelance_ch_4",
+        "title": "Chương 4 - Mindset & Thiết lập Portfolio chung",
+        "lessons": [
+          {
+            "id": "freelance_l_4_1",
+            "title": "Thiết lập Portfolio đẹp - FREE",
+            "duration": "Bài đọc"
+          }
+        ]
+      },
+      {
+        "id": "freelance_ch_5",
         "title": "Chương 5 - Khách hàng/Giao tiếp/Tư duy khi làm việc",
         "lessons": [
           {
-            "id": "freelance_mvp_l_24",
-            "title": "Phần 1 - Các loại công viếc",
+            "id": "freelance_l_5_1",
+            "title": "Phần 1 – Các loại công việc",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_25",
-            "title": "Phần 2 - Job Ngon & Không Ngon",
+            "id": "freelance_l_5_2",
+            "title": "Phần 2 – Job Ngon & Không Ngon",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_26",
-            "title": "Phần 3 - Tránh job không ngon FREDFANCE",
+            "id": "freelance_l_5_3",
+            "title": "Phần 3 – Tránh job không ngon",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_27",
-            "title": "Phần 4 - Tính giá Công việc FRE FANCE",
+            "id": "freelance_l_5_4",
+            "title": "Phần 4 – Tính giá Công việc",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_28",
-            "title": "Phần 5 - Cách làm viếc/phản ứng với công việc FREEFANCE phần 6 - Giao tiêp hiếu qua '",
+            "id": "freelance_l_5_5",
+            "title": "Phần 5 – Cách làm việc/phản ứng với công việc",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_29",
-            "title": "Profile Nguyễn Thuận | Designer",
+            "id": "freelance_l_5_6",
+            "title": "Phần 6 – Giao tiếp hiệu quả",
+            "duration": "Video"
+          }
+        ]
+      },
+      {
+        "id": "freelance_ch_6",
+        "title": "Chương 6 - Review Trang Profile Upwork",
+        "lessons": [
+          {
+            "id": "freelance_l_6_1",
+            "title": "1 - Profile Nguyễn Thuận | Designer",
             "duration": "Video"
           },
           {
-            "id": "freelance_mvp_l_30",
-            "title": "Profile Hoàn Nguyễn | Editor",
+            "id": "freelance_l_6_2",
+            "title": "2 – Profile Hoàn Nguyễn | Editor",
             "duration": "17 phút"
-          },
+          }
+        ]
+      },
+      {
+        "id": "freelance_ch_7",
+        "title": "Updating - Cập nhật khoá học",
+        "lessons": [
           {
-            "id": "freelance_mvp_l_31",
-            "title": "Updating - Cập nhật khoá học",
-            "duration": "35 phút"
-          },
-          {
-            "id": "freelance_mvp_l_32",
+            "id": "freelance_l_7_1",
             "title": "Updated 1 - Nguyên tắc nộp Proposal Upwork",
-            "duration": "Video"
+            "duration": "35 phút"
           }
         ]
       }
