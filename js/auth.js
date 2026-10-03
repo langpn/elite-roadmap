@@ -3,6 +3,7 @@
 // =========================================================================
 
 import { ACCOUNTS } from './curriculum.js';
+import { uiStore } from './ui_store.js';
 import {
   auth,
   duoRef,
@@ -202,6 +203,10 @@ export function handleTaskClick(taskId, taskTitle) {
   if (!duoState[currentUserKey]) duoState[currentUserKey] = {};
   duoState[currentUserKey][taskId] = !duoState[currentUserKey][taskId];
   const isDone = duoState[currentUserKey][taskId];
+
+  // Khi thay đổi trạng thái hoàn thành -> Xóa override thủ công để áp dụng quy tắc:
+  // Chưa hoàn thành thì MỞ, Đã hoàn thành thì ĐÓNG tự động
+  uiStore.clearTaskCollapseOverride(taskId);
 
   broadcastChange(currentUserKey, taskId, isDone, taskTitle);
   if (onAuthChangedCallback) onAuthChangedCallback(currentUserKey);

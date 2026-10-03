@@ -47,9 +47,32 @@ window.toggleSprintCollapse = toggleSprintCollapse;
 window.toggleSprintBody = toggleSprintCollapse;
 window.toggleChapterCollapse = toggleChapterCollapse;
 window.toggleChapterSyllabus = toggleChapterCollapse;
+window.toggleTaskCollapse = toggleTaskCollapse;
 window.switchMainMode = switchMainMode;
 window.selectCourse = selectCourse;
 window.handleSyllabusLessonToggle = handleSyllabusLessonToggle;
+
+// -------------------------------------------------------------------------
+// TASK LEVEL COLLAPSE HANDLER
+// -------------------------------------------------------------------------
+export function toggleTaskCollapse(taskId, isDone, e) {
+  if (e) e.stopPropagation();
+  const isClosed = uiStore.toggleTaskCollapse(taskId, isDone);
+
+  const bodyEl = document.getElementById("task-body-" + taskId);
+  const arrowEl = document.getElementById("task-arrow-" + taskId);
+  const itemEl = document.getElementById("task-" + taskId);
+
+  if (bodyEl) {
+    bodyEl.style.display = isClosed ? "none" : "flex";
+  }
+  if (arrowEl) {
+    arrowEl.innerText = isClosed ? "▶" : "▼";
+  }
+  if (itemEl) {
+    itemEl.classList.toggle("is-task-closed", isClosed);
+  }
+}
 
 // -------------------------------------------------------------------------
 // MODE SWITCHER (SPRINT ROADMAP vs FULL SYLLABUS vs CAREER TRACK)
@@ -625,10 +648,12 @@ export function renderUI() {
           if (currentUserKey === 'lang') myDone = langDone;
           else if (currentUserKey === 'diem') myDone = diemDone;
 
+          const isTaskClosed = uiStore.isTaskCollapsed(task.id, myDone);
+
           return `
-            <div class="task-item ${myDone ? 'my-done' : ''} ${task.isOutput ? 'is-deliverable' : ''}" id="task-${task.id}">
-              <div class="task-main">
-                <div class="task-left" onclick="handleTaskClick('${task.id}', '${task.title}')" title="${currentUserKey ? `Bấm để đánh dấu tiến độ của ${ACCOUNTS[currentUserKey].name}` : 'Bấm để đăng nhập'}">
+            <div class="task-item ${myDone ? 'my-done' : ''} ${task.isOutput ? 'is-deliverable' : ''} ${isTaskClosed ? 'is-task-closed' : ''}" id="task-${task.id}">
+              <div class="task-main" onclick="toggleTaskCollapse('${task.id}', ${myDone}, event)">
+                <div class="task-left" onclick="event.stopPropagation(); handleTaskClick('${task.id}', '${task.title}')" title="${currentUserKey ? `Bấm để đánh dấu tiến độ của ${ACCOUNTS[currentUserKey].name}` : 'Bấm để đăng nhập'}">
                   <div class="checkbox">
                     <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   </div>
@@ -639,64 +664,75 @@ export function renderUI() {
                       <span class="duration-tag">⏱️ ${task.duration}</span>
                       ${task.isOutput ? `<span class="output-pill">🎯 SẢN PHẨM CẦM TAY</span>` : ''}
                     </div>
-                    <div class="output-text">🚀 Đích đến: ${task.output}</div>
                   </div>
                 </div>
 
-                <!-- Duo Live Status Badges -->
-                <div class="duo-status-badges">
-                  <span class="user-pill ${langDone ? 'lang-done' : 'lang-pending'}" 
-                        onclick="${currentUserKey === 'lang' ? `handleTaskClick('${task.id}', '${task.title}')` : `alertNotOwner('lang')`}"
-                        style="cursor: ${currentUserKey === 'lang' ? 'pointer' : 'default'};"
-                        title="Lang: ${langDone ? 'Đã hoàn thành' : 'Chưa xong'}">
-                    ⚡ Lang ${langDone ? '✓' : '...'}
-                  </span>
-                  <span class="user-pill ${diemDone ? 'diem-done' : 'diem-pending'}" 
-                        onclick="${currentUserKey === 'diem' ? `handleTaskClick('${task.id}', '${task.title}')` : `alertNotOwner('diem')`}"
-                        style="cursor: ${currentUserKey === 'diem' ? 'pointer' : 'default'};"
-                        title="Diễm: ${diemDone ? 'Đã hoàn thành' : 'Chưa xong'}">
-                    🌸 Diễm ${diemDone ? '✓' : '...'}
-                  </span>
+                <div class="task-right-actions" onclick="event.stopPropagation();">
+                  <!-- Duo Live Status Badges -->
+                  <div class="duo-status-badges">
+                    <span class="user-pill ${langDone ? 'lang-done' : 'lang-pending'}" 
+                          onclick="${currentUserKey === 'lang' ? `handleTaskClick('${task.id}', '${task.title}')` : `alertNotOwner('lang')`}"
+                          style="cursor: ${currentUserKey === 'lang' ? 'pointer' : 'default'};"
+                          title="Lang: ${langDone ? 'Đã hoàn thành' : 'Chưa xong'}">
+                      ⚡ Lang ${langDone ? '✓' : '...'}
+                    </span>
+                    <span class="user-pill ${diemDone ? 'diem-done' : 'diem-pending'}" 
+                          onclick="${currentUserKey === 'diem' ? `handleTaskClick('${task.id}', '${task.title}')` : `alertNotOwner('diem')`}"
+                          style="cursor: ${currentUserKey === 'diem' ? 'pointer' : 'default'};"
+                          title="Diễm: ${diemDone ? 'Đã hoàn thành' : 'Chưa xong'}">
+                      🌸 Diễm ${diemDone ? '✓' : '...'}
+                    </span>
+                  </div>
+
+                  <!-- Task Collapse Toggle Button -->
+                  <button class="task-toggle-btn" onclick="toggleTaskCollapse('${task.id}', ${myDone}, event)" title="${isTaskClosed ? 'Mở chi tiết' : 'Thu gọn'}">
+                    <span id="task-arrow-${task.id}" class="task-arrow-icon">${isTaskClosed ? '▶' : '▼'}</span>
+                  </button>
                 </div>
               </div>
 
-              <!-- Actionable Solution & Execution Guide -->
-              ${task.solution ? `
-                <div class="task-solution-box">
-                  <div class="solution-header-bar">
-                    <span style="display: flex; align-items: center; gap: 6px;">
-                      <span>💡</span> Gợi ý & Giải pháp thực thi
-                    </span>
-                    <span style="font-size: 10.5px; opacity: 0.85; font-family: 'JetBrains Mono', monospace; color: #38bdf8;">
-                      Actionable SOP
-                    </span>
-                  </div>
-                  <div class="solution-steps-list">
-                    ${task.solution.steps.map((st, sIdx) => `
-                      <div class="solution-step-item">
-                        <span class="solution-step-num">B${sIdx + 1}</span>
-                        <span>${st}</span>
-                      </div>
-                    `).join("")}
-                  </div>
-                  ${task.solution.tip ? `
-                    <div class="solution-tip-box">
-                      <strong>⚡ Mẹo thực chiến:</strong> ${task.solution.tip}
-                    </div>
-                  ` : ''}
-                </div>
-              ` : ''}
+              <!-- Expandable Task Details Body -->
+              <div class="task-expandable-body" id="task-body-${task.id}" style="${isTaskClosed ? 'display: none;' : ''}">
+                <div class="output-text">🚀 Đích đến: ${task.output}</div>
 
-              <!-- Smart Mapping Triad -->
-              <div class="mapping-grid">
-                <div class="map-box troubleshoot">
-                  <span>💡 <strong>Khúc mắc kỹ thuật:</strong> ${task.mapping.troubleshoot}</span>
-                </div>
-                <div class="map-box level-up">
-                  <span>🚀 <strong>Gợi ý tiến xa hơn:</strong> ${task.mapping.levelUp}</span>
-                </div>
-                <div class="map-box monetize">
-                  <span>💰 <strong>Tư duy kiếm tiền:</strong> ${task.mapping.monetize}</span>
+                <!-- Actionable Solution & Execution Guide -->
+                ${task.solution ? `
+                  <div class="task-solution-box">
+                    <div class="solution-header-bar">
+                      <span style="display: flex; align-items: center; gap: 6px;">
+                        <span>💡</span> Gợi ý & Giải pháp thực thi
+                      </span>
+                      <span style="font-size: 10.5px; opacity: 0.85; font-family: 'JetBrains Mono', monospace; color: #38bdf8;">
+                        Actionable SOP
+                      </span>
+                    </div>
+                    <div class="solution-steps-list">
+                      ${task.solution.steps.map((st, sIdx) => `
+                        <div class="solution-step-item">
+                          <span class="solution-step-num">B${sIdx + 1}</span>
+                          <span>${st}</span>
+                        </div>
+                      `).join("")}
+                    </div>
+                    ${task.solution.tip ? `
+                      <div class="solution-tip-box">
+                        <strong>⚡ Mẹo thực chiến:</strong> ${task.solution.tip}
+                      </div>
+                    ` : ''}
+                  </div>
+                ` : ''}
+
+                <!-- Smart Mapping Triad -->
+                <div class="mapping-grid">
+                  <div class="map-box troubleshoot">
+                    <span>💡 <strong>Khúc mắc kỹ thuật:</strong> ${task.mapping.troubleshoot}</span>
+                  </div>
+                  <div class="map-box level-up">
+                    <span>🚀 <strong>Gợi ý tiến xa hơn:</strong> ${task.mapping.levelUp}</span>
+                  </div>
+                  <div class="map-box monetize">
+                    <span>💰 <strong>Tư duy kiếm tiền:</strong> ${task.mapping.monetize}</span>
+                  </div>
                 </div>
               </div>
             </div>

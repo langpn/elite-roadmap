@@ -696,7 +696,68 @@ body {
   font-weight: 600;
 }
 
-/* Duo Status Indicators */
+/* Duo Status Indicators & Right Actions */
+.task-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.task-toggle-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-dim);
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.task-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.task-arrow-icon {
+  font-size: 11px;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.task-expandable-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.07);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.task-item.is-task-closed {
+  padding: 11px 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.04);
+}
+
+.task-item.is-task-closed:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.task-item.my-done.is-task-closed {
+  background: rgba(16, 185, 129, 0.03);
+  border-color: rgba(16, 185, 129, 0.15);
+}
+
 .duo-status-badges {
   display: flex;
   align-items: center;

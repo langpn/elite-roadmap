@@ -9,7 +9,8 @@ const DEFAULT_UI_STATE = {
   selectedSprintFilter: "all",   // 'all' | 's0' | 's1' | 's2' | 's3' | 's4'
   selectedCourseId: "baby-resolve", // 'baby-resolve' | 'elite' | ...
   collapsedSprints: {},          // { [sprintId]: boolean (true = closed) }
-  collapsedChapters: {}          // { [chapterId]: boolean (true = closed) }
+  collapsedChapters: {},         // { [chapterId]: boolean (true = closed) }
+  taskCollapseOverrides: {}      // { [taskId]: boolean (manual override) }
 };
 
 let uiState = { ...DEFAULT_UI_STATE };
@@ -23,7 +24,8 @@ try {
       ...DEFAULT_UI_STATE,
       ...parsed,
       collapsedSprints: { ...parsed.collapsedSprints },
-      collapsedChapters: { ...parsed.collapsedChapters }
+      collapsedChapters: { ...parsed.collapsedChapters },
+      taskCollapseOverrides: { ...parsed.taskCollapseOverrides }
     };
   }
 } catch (e) {
@@ -94,6 +96,29 @@ export const uiStore = {
   setChapterCollapse(chapterId, isCollapsed) {
     uiState.collapsedChapters[chapterId] = !!isCollapsed;
     persist();
+  },
+
+  // --- Task Level Collapse State (Default: Done = Closed, Undone = Open) ---
+  isTaskCollapsed(taskId, isDone) {
+    if (uiState.taskCollapseOverrides && uiState.taskCollapseOverrides[taskId] !== undefined) {
+      return !!uiState.taskCollapseOverrides[taskId];
+    }
+    // Quy tắc mặc định: Chưa hoàn thành thì MỞ (false), Đã hoàn thành thì ĐÓNG (true)
+    return !!isDone;
+  },
+  toggleTaskCollapse(taskId, isDone) {
+    const current = this.isTaskCollapsed(taskId, isDone);
+    const nextState = !current;
+    if (!uiState.taskCollapseOverrides) uiState.taskCollapseOverrides = {};
+    uiState.taskCollapseOverrides[taskId] = nextState;
+    persist();
+    return nextState;
+  },
+  clearTaskCollapseOverride(taskId) {
+    if (uiState.taskCollapseOverrides && uiState.taskCollapseOverrides[taskId] !== undefined) {
+      delete uiState.taskCollapseOverrides[taskId];
+      persist();
+    }
   },
 
   // --- Full State Operations ---
