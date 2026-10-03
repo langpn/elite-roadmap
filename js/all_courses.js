@@ -1,5 +1,5 @@
 // =========================================================================
-// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (100% PRISTINE)
+// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (100% ACCURATE)
 // =========================================================================
 
 export const ALL_COURSES_DATA = [
@@ -8,754 +8,783 @@ export const ALL_COURSES_DATA = [
     "name": "Khóa Học DaVinci Elite",
     "color": "#10b981",
     "icon": "🎬",
-    "totalLessons": 133,
+    "totalLessons": 140,
     "chapters": [
       {
-        "id": "elite_ch_1",
-        "title": "Hướng dẫn khi bắt đầu bước vào Elite",
+        "id": "elite_ch_0_1",
+        "title": "Chương 0.1: Hướng Dẫn Khi Bắt Đầu Bước Vào Elite",
         "lessons": [
           {
-            "id": "elite_l_1",
+            "id": "elite_l_0_1_1",
             "title": "Nhập môn Baby Resolve",
-            "duration": "Video"
+            "duration": "Bài đọc"
           },
           {
-            "id": "elite_l_2",
-            "title": "Tổng Quan Gói Elite",
+            "id": "elite_l_0_1_2",
+            "title": "Hướng Dẫn Tổng Quan Gói Elite",
             "duration": "2 phút"
           },
           {
-            "id": "elite_l_3",
+            "id": "elite_l_0_1_3",
             "title": "Tư vấn lộ trình",
             "duration": "5 phút"
           },
           {
-            "id": "elite_l_4",
+            "id": "elite_l_0_1_4",
             "title": "Giới thiệu về Elite (Old Vers)",
             "duration": "3 phút"
           }
         ]
       },
       {
-        "id": "elite_ch_2",
-        "title": "Khởi đầu, nguồn RAW thực hành",
+        "id": "elite_ch_0_2",
+        "title": "Chương 0.2: Khởi Đầu, Nguồn RAW Thực Hành",
         "lessons": [
           {
-            "id": "elite_l_5",
-            "title": "Bài 01 - nguồn tìm RAWs để thực hành",
+            "id": "elite_l_0_2_1",
+            "title": "Bài 01 - Nguồn tìm RAWs để thực hành",
             "duration": "3 phút"
           },
           {
-            "id": "elite_l_6",
-            "title": "Bài 02 - LIVE tìm phần 1",
+            "id": "elite_l_0_2_2",
+            "title": "Bài 02 - LIVE tìm RAW phần 1",
             "duration": "2 phút"
           },
           {
-            "id": "elite_l_7",
-            "title": "Bài 03 - LIVE tìm phần 2",
+            "id": "elite_l_0_2_3",
+            "title": "Bài 03 - LIVE tìm RAW phần 2",
             "duration": "12 phút"
           },
           {
-            "id": "elite_l_8",
+            "id": "elite_l_0_2_4",
             "title": "Trước khi thực hành cần lưu ý",
             "duration": "4 phút"
           },
           {
-            "id": "elite_l_9",
-            "title": "Nguồn chung - Link tải bộ chung",
-            "duration": "Video"
+            "id": "elite_l_0_2_5",
+            "title": "Nguồn tài nguyên chung - Link tải bộ tài nguyên chung",
+            "duration": "Bài đọc"
           }
         ]
       },
       {
-        "id": "elite_ch_3",
-        "title": "Chương 5 - Hiệu ứng thường sử dụng (41 bài học)",
-        "lessons": [
-          {
-            "id": "elite_l_10",
-            "title": "Effect 01 - Text 3D",
-            "duration": "4 phút"
-          },
-          {
-            "id": "elite_l_11",
-            "title": "Effect 02 - 3D Tracking",
-            "duration": "8 phút"
-          },
-          {
-            "id": "elite_l_12",
-            "title": "Effect 03 - Light 3D/Anh sáng trong 3D",
-            "duration": "5 phút"
-          },
-          {
-            "id": "elite_l_13",
-            "title": "Effect 04 - Light Weep/Ánh sáng lướt qua",
-            "duration": "4 phút"
-          },
-          {
-            "id": "elite_l_14",
-            "title": "Effect 05 - 3D Tracking Shadow/Tạo bóng cho vật thể 3D",
-            "duration": "13 phút"
-          },
-          {
-            "id": "elite_l_15",
-            "title": "Effect 06 - Background Making/Tạo Background",
-            "duration": "4 phút"
-          },
-          {
-            "id": "elite_l_16",
-            "title": "Effect 07 - Line Animated/Làm hiệu ứng theo phong cách Iman Gadzhi",
-            "duration": "18 phút"
-          },
-          {
-            "id": "elite_l_17",
-            "title": "Eirect o8 - Line acvanced nana cao non chuti",
-            "duration": "2 phút"
-          },
-          {
-            "id": "elite_l_18",
-            "title": "Effect 09 - hiệu ứng Sét cho chữ 7 phût",
-            "duration": "Video"
-          },
-          {
-            "id": "elite_l_19",
-            "title": "Effect 10 - hiệu ứng lửa cho chữ",
-            "duration": "8 phút"
-          },
-          {
-            "id": "elite_l_20",
-            "title": "Effect 11 - hiệu ứng theo phong cách Iman Gadzhi 2 (Tư Video VouTube cüa minbi",
-            "duration": "13 phút"
-          },
-          {
-            "id": "elite_l_21",
-            "title": "Effect 12 - Hiệu ứng theo phong cách Iman Gadzhi 3",
-            "duration": "17 phút"
-          },
-          {
-            "id": "elite_l_22",
-            "title": "Effect 13 - Su duna Fastnoise Nodel",
-            "duration": "2 phút"
-          },
-          {
-            "id": "elite_l_23",
-            "title": "Effect 14 - Animation 20/04/1975",
-            "duration": "18 phút"
-          },
-          {
-            "id": "elite_l_24",
-            "title": "Effect 15 - Animation Xé/Gâp giâý của Ali Abdaal q nhút",
-            "duration": "Video"
-          },
-          {
-            "id": "elite_l_25",
-            "title": "Effect 16 - Cách cài đat tài nquvên tai tư ngoài vào",
-            "duration": "11 phút"
-          },
-          {
-            "id": "elite_l_26",
-            "title": "Effect 17 - Cách cài Motion Graphics NC (Niklas Christl)",
-            "duration": "4 phút"
-          },
-          {
-            "id": "elite_l_27",
-            "title": "Effect 18 - Bo Neo Core Pack New & Căch căi dat template candl Fuse",
-            "duration": "3 phút"
-          },
-          {
-            "id": "elite_l_28",
-            "title": "Effect 19 - Trick Lo - Biêń File Template thành dang Fusion",
-            "duration": "2 phút"
-          },
-          {
-            "id": "elite_l_29",
-            "title": "Cách lưu Pluoin - Macros 14 nhứi Cách xoá plugin đã cài vào DaVinci Resolve",
-            "duration": "1 phút"
-          },
-          {
-            "id": "elite_l_30",
-            "title": "(dụng cụ/đồ dùng nên có) - Màn hình lớn 2 naut (dụng cụ/đồ dùng nên có) - ổ cứng di động",
-            "duration": "5 phút"
-          },
-          {
-            "id": "elite_l_31",
-            "title": "Tov] Tov đi lân thon thứ",
-            "duration": "3 phút"
-          },
-          {
-            "id": "elite_l_32",
-            "title": "(Animation Plugin) - Chia sẻ và tính năng của Plugin JW (Jake Wipp) a nhiit (Color) - Chia sẻ về chỉnh màu cơ bản",
-            "duration": "10 phút"
-          },
-          {
-            "id": "elite_l_33",
-            "title": "(Animation) - Liquid Effect/Hiệu ứng giọt nước",
-            "duration": "13 phút"
-          },
-          {
-            "id": "elite_l_34",
-            "title": "(Preset Icon) - Giới thiêu về Gói Icon đôna > nhút (Animation) - hiệu ứng pin sac",
-            "duration": "4 phút"
-          },
-          {
-            "id": "elite_l_35",
-            "title": "(Effect) - Hiêu ứna Holoaram E nbiit (Text Animation) - Hiệu ứng chữ giao thoa màu cực cuốn!",
-            "duration": "4 phút"
-          },
-          {
-            "id": "elite_l_36",
-            "title": "(Tutorial) - Cách làm video dang hưởng dâñ/khoá học 7 ohút (Tip/trick) - Tạo phím tắt tiện lợi bằng Keyboard Maestro a nit (Feedback video) - Bắt lỗi và sửa bài video của Ấn Nauvễn",
-            "duration": "55 phút"
-          },
-          {
-            "id": "elite_l_37",
-            "title": "(Tip/trick) - Cách sử dụng Keyer sạch hơn trong DaVinci Resolve",
-            "duration": "5 phút"
-          },
-          {
-            "id": "elite_l_38",
-            "title": "(Template) - Template Điện Thoại 3D (Effect) - Frame Drop và Halo Glow",
-            "duration": "2 phút"
-          },
-          {
-            "id": "elite_l_39",
-            "title": "(Tip/trick) - Tải Video từ YouTube bằng Jdownloader 1 nhuit (Tio/trick) - Lỗi có thể hav dăp về việc mất hình video E nhiit (Tip/trick) - Cài SFX bằna Kevboard Maestro và Touch Portal",
-            "duration": "11 phút"
-          },
-          {
-            "id": "elite_l_40",
-            "title": "(Animation Text) - Text Hay/Dễ làm để sử dung cho video ngắn/dài T nhiit NEW) Updating - Cập nhật liên tục...",
-            "duration": "4 phút"
-          },
-          {
-            "id": "elite_l_41",
-            "title": "New Video Update (Text Effect) - Cách làm chu'viêt tay * New Video Update (Tip/trick) - Cách xoá nên trắng hoac nên đen",
-            "duration": "4 phút"
-          },
-          {
-            "id": "elite_l_42",
-            "title": "New Video Update (SK Template) - SK Shape Box Vol 1",
-            "duration": "9 phút"
-          },
-          {
-            "id": "elite_l_43",
-            "title": "New Video Update (Plugin) - EsplineV2 - Làm animation dễ hơn",
-            "duration": "21 phút"
-          },
-          {
-            "id": "elite_l_44",
-            "title": "New Video Update (Plugin) - ClipBoom - Tối ưu thao tác Copy & Paste",
-            "duration": "3 phút"
-          }
-        ]
-      },
-      {
-        "id": "elite_ch_4",
+        "id": "elite_ch_1_1",
         "title": "Chương 1.1 - Level 1 | Mức Độ Cơ Bản - Tháng 5/2025 (10 bài học)",
         "lessons": [
           {
-            "id": "elite_l_45",
+            "id": "elite_l_1_1_1",
             "title": "Bài 01 - Mở đầu Level 1",
             "duration": "3 phút"
           },
           {
-            "id": "elite_l_46",
-            "title": "Bài 02 - cài và sử dụng Snap Caption",
+            "id": "elite_l_1_1_2",
+            "title": "Bài 02 - Hướng dẫn cài và sử dụng Snap Caption",
             "duration": "2 phút"
           },
           {
-            "id": "elite_l_47",
+            "id": "elite_l_1_1_3",
             "title": "Bài 2.1 - Lỗi thường gặp với Snap Caption",
             "duration": "1 phút"
           },
           {
-            "id": "elite_l_48",
+            "id": "elite_l_1_1_4",
             "title": "Bài 03 - Thực hành video cho khách hàng Marcus",
             "duration": "48 phút"
           },
           {
-            "id": "elite_l_49",
+            "id": "elite_l_1_1_5",
             "title": "Bài 04 - Thực hành video Style Alex Hormozi",
             "duration": "45 phút"
           },
           {
-            "id": "elite_l_50",
+            "id": "elite_l_1_1_6",
             "title": "Bài 05 - LIVE thực tế làm việc với Khách hàng ở Úc",
             "duration": "17 phút"
           },
           {
-            "id": "elite_l_51",
-            "title": "LEVEL1",
-            "duration": "Video"
-          },
-          {
-            "id": "elite_l_52",
+            "id": "elite_l_1_1_7",
             "title": "Bài 06 - Thực hành Video TikTok khách Úc",
             "duration": "18 phút"
           },
           {
-            "id": "elite_l_53",
+            "id": "elite_l_1_1_8",
             "title": "Bài 07 - Bản chất các loại Text, Subtitles",
             "duration": "10 phút"
           },
           {
-            "id": "elite_l_54",
-            "title": "Những lỗi thương gap và loi khuyên",
+            "id": "elite_l_1_1_9",
+            "title": "Những lỗi thường gặp và lời khuyên",
             "duration": "9 phút"
           },
           {
-            "id": "elite_l_55",
-            "title": "Bonus I1 phut",
-            "duration": "Video"
+            "id": "elite_l_1_1_10",
+            "title": "Bonus",
+            "duration": "11 phút"
           }
         ]
       },
       {
-        "id": "elite_ch_5",
+        "id": "elite_ch_1_2",
         "title": "Chương 1.2 - Level 1 | Mức Độ Cơ Bản - Cập nhật mới 30/09/2026 (11 bài học)",
         "lessons": [
           {
-            "id": "elite_l_56",
+            "id": "elite_l_1_2_1",
             "title": "Kết quả kỳ vọng",
             "duration": "3 phút"
           },
           {
-            "id": "elite_l_57",
-            "title": "LEVEL1",
-            "duration": "Video"
-          }
-        ]
-      },
-      {
-        "id": "elite_ch_6",
-        "title": "Phần 1 - Tổng quan Mức độ cơ bản trên thị trường",
-        "lessons": [
-          {
-            "id": "elite_l_58",
-            "title": "LEVEL1",
+            "id": "elite_l_1_2_2",
+            "title": "Phần 1 - Tổng quan Mức độ cơ bản trên thị trường",
             "duration": "31 phút"
           },
           {
-            "id": "elite_l_59",
-            "title": "Phần 2 - Vì sao phải chọn đúng file để luyện tập?",
+            "id": "elite_l_1_2_3",
+            "title": "Phần 2 - Vì sao phải chọn đúng file RAW để luyện tập?",
             "duration": "4 phút"
           },
           {
-            "id": "elite_l_60",
+            "id": "elite_l_1_2_4",
             "title": "Phần 3 - Kiểm soát thông số đầu vào của Timeline",
             "duration": "12 phút"
           },
           {
-            "id": "elite_l_61",
-            "title": "LEVELT",
-            "duration": "Video"
-          },
-          {
-            "id": "elite_l_62",
-            "title": "Phần 4 - Cắt và lưu ý khi cắt",
+            "id": "elite_l_1_2_5",
+            "title": "Phần 4 - Cắt RAW và lưu ý khi cắt",
             "duration": "14 phút"
           },
           {
-            "id": "elite_l_63",
-            "title": "Phần 5 - Bố cục và cần bằng âm thanh",
+            "id": "elite_l_1_2_6",
+            "title": "Phần 5 - Bố cục và Cân bằng âm thanh",
             "duration": "8 phút"
           },
           {
-            "id": "elite_l_64",
+            "id": "elite_l_1_2_7",
             "title": "Phần 6 - Phụ đề & Căn chỉnh & Ngắt câu",
             "duration": "32 phút"
           },
           {
-            "id": "elite_l_65",
+            "id": "elite_l_1_2_8",
             "title": "Phần 7 - Thiết kế Style và Hiệu Ứng Chữ (Subtitles)",
             "duration": "1 giờ 1 phút"
           },
           {
-            "id": "elite_l_66",
-            "title": "Phần 8.1 - Hoàn thiện xong Reel 1 (Cơ bản nhât)",
+            "id": "elite_l_1_2_9",
+            "title": "Phần 8.1 - Hoàn thiện xong Reel 1 (Cơ bản nhất)",
             "duration": "25 phút"
           },
           {
-            "id": "elite_l_67",
+            "id": "elite_l_1_2_10",
             "title": "Phần 8.2 - Hoàn thiện xong Reel 2 (Cơ bản & sắp xếp chữ)",
             "duration": "31 phút"
           },
           {
-            "id": "elite_l_68",
+            "id": "elite_l_1_2_11",
             "title": "Phần 8.3 - Hoàn thiện xong Reel 3 (Có animation cho chữ)",
             "duration": "44 phút"
           },
           {
-            "id": "elite_l_69",
+            "id": "elite_l_1_2_12",
             "title": "Phần 8.4 - Hoàn thiện xong Reel 4 (Mức độ 1,5)",
             "duration": "1 giờ 21 phút"
           }
         ]
       },
       {
-        "id": "elite_ch_7",
+        "id": "elite_ch_2_1",
         "title": "Chương 2.1 - Level 2 | Mức Độ Trung Cấp - Tháng 5/2025 (28 bài học)",
         "lessons": [
           {
-            "id": "elite_l_70",
-            "title": "Bài 01 - David Goggins P1 - Chọn và Cắt thô",
+            "id": "elite_l_2_1_1",
+            "title": "Bài 01 - David Goggins P1 - Chọn RAW và Cắt thô",
             "duration": "6 phút"
           },
           {
-            "id": "elite_l_71",
-            "title": "LEVEL2",
-            "duration": "Video"
-          },
-          {
-            "id": "elite_l_72",
+            "id": "elite_l_2_1_2",
             "title": "Bài 02 - David Goggins P2 - Tìm ý tưởng Edit",
             "duration": "3 phút"
           },
           {
-            "id": "elite_l_73",
+            "id": "elite_l_2_1_3",
             "title": "Bài 03 - David Goggins P3 - Làm Hook Intro",
             "duration": "28 phút"
           },
           {
-            "id": "elite_l_74",
+            "id": "elite_l_2_1_4",
             "title": "Bài 04 - David Goggins P4 - Animation & Broll P1",
             "duration": "18 phút"
           },
           {
-            "id": "elite_l_75",
+            "id": "elite_l_2_1_5",
             "title": "Bài 05 - David Goggins P5 - Animation P2",
             "duration": "6 phút"
           },
           {
-            "id": "elite_l_76",
-            "title": "Bài 06 - David Goggins P6 - Làm hiệu ứng Cất đôi chữ Refuse",
+            "id": "elite_l_2_1_6",
+            "title": "Bài 06 - David Goggins P6 - Làm hiệu ứng Cắt đôi chữ Refuse",
             "duration": "7 phút"
           },
           {
-            "id": "elite_l_77",
+            "id": "elite_l_2_1_7",
             "title": "Bài 07 - David Goggins P7 - Animation & Broll P3",
             "duration": "3 phút"
           },
           {
-            "id": "elite_l_78",
+            "id": "elite_l_2_1_8",
             "title": "Bài 08 - David Goggins P8 - Thêm SFX và nhạc nền",
             "duration": "6 phút"
           },
           {
-            "id": "elite_l_79",
-            "title": "Bài 09 - Jvevermind Video P1 - Chọn và cắt thô",
+            "id": "elite_l_2_1_9",
+            "title": "Bài 09 - Jvevermind Video P1 - Chọn RAW và cắt thô",
             "duration": "6 phút"
           },
           {
-            "id": "elite_l_80",
-            "title": "Bài 10 - Jvevermind Video P2 - Chay sub và tìm ý tưởng cho Video",
+            "id": "elite_l_2_1_10",
+            "title": "Bài 10 - Jvevermind Video P2 - Chạy sub và tìm ý tưởng cho Video",
             "duration": "7 phút"
           },
           {
-            "id": "elite_l_81",
+            "id": "elite_l_2_1_11",
             "title": "Bài 11 - Jvevermind Video P3 - Chọn Broll",
-            "duration": "Video"
+            "duration": "6 phút"
           },
           {
-            "id": "elite_l_82",
-            "title": "Bài 12 - Jvevermind Video P4 - Animation Chữ'",
+            "id": "elite_l_2_1_12",
+            "title": "Bài 12 - Jvevermind Video P4 - Animation Chữ",
             "duration": "8 phút"
           },
           {
-            "id": "elite_l_83",
+            "id": "elite_l_2_1_13",
             "title": "Bài 13 - Jvevermind Video P5 - Xử lý intro Video & Tracking chữ",
             "duration": "3 phút"
           },
           {
-            "id": "elite_l_84",
+            "id": "elite_l_2_1_14",
             "title": "Bài 14 - Daniel Iles P1 - Làm chữ Hook Logo Amazon",
             "duration": "23 phút"
           },
           {
-            "id": "elite_l_85",
+            "id": "elite_l_2_1_15",
             "title": "Bài 15 - Daniel Iles P2 - Làm Animation icon",
             "duration": "13 phút"
           },
           {
-            "id": "elite_l_86",
-            "title": "Bài 16 - Daniel Iles P3 - Làm Animation Icon Prime a nhit",
-            "duration": "Video"
+            "id": "elite_l_2_1_16",
+            "title": "Bài 16 - Daniel Iles P3 - Làm Animation Icon Prime",
+            "duration": "9 phút"
           },
           {
-            "id": "elite_l_87",
+            "id": "elite_l_2_1_17",
             "title": "Bài 17 - Daniel Iles P4 - Làm Animation cho Logo Amazon",
             "duration": "8 phút"
           },
           {
-            "id": "elite_l_88",
-            "title": "Bài 18 - Daniel Iles P5 - Làm hiếu ứng Bevel chữ Alcoholics (Viền chữ đẹp)",
+            "id": "elite_l_2_1_18",
+            "title": "Bài 18 - Daniel Iles P5 - Làm hiệu ứng Bevel chữ Alcoholics (Viền chữ đẹp)",
             "duration": "15 phút"
           },
           {
-            "id": "elite_l_89",
+            "id": "elite_l_2_1_19",
             "title": "Bài 19 - Daniel Iles P6 - Làm hiệu ứng cho khung media",
             "duration": "5 phút"
           },
           {
-            "id": "elite_l_90",
+            "id": "elite_l_2_1_20",
             "title": "Bài 20 - Daniel Iles P7 - Làm Câu Hook Harvard",
             "duration": "4 phút"
           },
           {
-            "id": "elite_l_91",
+            "id": "elite_l_2_1_21",
             "title": "Bài 21 - Sean Kang Video P1 - Cắt thô",
             "duration": "13 phút"
           },
           {
-            "id": "elite_l_92",
-            "title": "Bài 22 - Sean Kang Video P2 - Tư duy Flow chung & Thêm B-roll a nhiit",
-            "duration": "Video"
+            "id": "elite_l_2_1_22",
+            "title": "Bài 22 - Sean Kang Video P2 - Tư duy Flow chung & Thêm B-roll",
+            "duration": "9 phút"
           },
           {
-            "id": "elite_l_93",
+            "id": "elite_l_2_1_23",
             "title": "Bài 23 - Sean Kang Video P3 - Tìm và thêm B-roll",
             "duration": "5 phút"
           },
           {
-            "id": "elite_l_94",
-            "title": "Bài 24 - Sean Kang Video P4 - Hoàn thiến O nhit",
-            "duration": "Video"
+            "id": "elite_l_2_1_24",
+            "title": "Bài 24 - Sean Kang Video P4 - Hoàn thiện",
+            "duration": "9 phút"
           },
           {
-            "id": "elite_l_95",
+            "id": "elite_l_2_1_25",
             "title": "Bài 25 - Khoai Lang Thang Video Xếp Chữ",
             "duration": "1 giờ 23 phút"
           },
           {
-            "id": "elite_l_96",
-            "title": "Tổng Kết Phần 1 - Đánh giá chung về các mức đó level",
+            "id": "elite_l_2_1_26",
+            "title": "Tổng Kết Phần 1 - Đánh giá chung về các mức độ level",
             "duration": "2 phút"
           },
           {
-            "id": "elite_l_97",
-            "title": "Tổng Kết Phần 2 - Cách tìm ý tưởng Edit cho moi công viếc",
+            "id": "elite_l_2_1_27",
+            "title": "Tổng kết Phần 2 - Cách tìm ý tưởng Edit cho mọi công việc",
             "duration": "3 phút"
           },
           {
-            "id": "elite_l_98",
-            "title": "Tổng Kết Phần 3 - Cách tính giá video",
+            "id": "elite_l_2_1_28",
+            "title": "Tổng kết Phần 3 - Cách tính giá video",
             "duration": "4 phút"
           }
         ]
       },
       {
-        "id": "elite_ch_8",
+        "id": "elite_ch_2_2",
         "title": "Chương 2.2 - Level 2 | Mức Độ Trung Cấp - Cập nhật 14/04/2026 (11 bài học)",
         "lessons": [
           {
-            "id": "elite_l_99",
+            "id": "elite_l_2_2_1",
             "title": "Kết quả kỳ vọng",
             "duration": "1 phút"
           },
           {
-            "id": "elite_l_100",
-            "title": "Bước 1 - cắt thô và chay Sub/Text",
+            "id": "elite_l_2_2_2",
+            "title": "Bước 1 - Cắt Thô RAW và chạy Sub/Text",
             "duration": "6 phút"
           },
           {
-            "id": "elite_l_101",
-            "title": "Bước 2.1 - (TEXT) Lựa Chọn và đông bố Style Text",
+            "id": "elite_l_2_2_3",
+            "title": "Bước 2.1 - (TEXT) Lựa chọn và đồng bộ Style Text",
             "duration": "13 phút"
           },
           {
-            "id": "elite_l_102",
+            "id": "elite_l_2_2_4",
             "title": "Bước 2.2 - (TEXT) Lưu ý về Text",
             "duration": "5 phút"
           },
           {
-            "id": "elite_l_103",
+            "id": "elite_l_2_2_5",
             "title": "Bước 3.1 - (HOOK) Tạo câu Hook bằng AI",
             "duration": "10 phút"
           },
           {
-            "id": "elite_l_104",
-            "title": "Bước 3.2 - (HOOK) Tao animation Hook (Main Point)",
+            "id": "elite_l_2_2_6",
+            "title": "Bước 3.2 - (HOOK) Tạo animation Hook (Main Point)",
             "duration": "50 phút"
           },
           {
-            "id": "elite_l_105",
+            "id": "elite_l_2_2_7",
             "title": "Bước 4.1 - (KEYPOINT) Ý tưởng cho animation 3D",
             "duration": "18 phút"
           },
           {
-            "id": "elite_l_106",
+            "id": "elite_l_2_2_8",
             "title": "Bước 4.2 - (KEYPOINT) Ý tưởng cho khung tăng lương",
             "duration": "24 phút"
           },
           {
-            "id": "elite_l_107",
+            "id": "elite_l_2_2_9",
             "title": "Bước 4.3 - (KEYPOINT) Ý tưởng cho việc thêm B-roll",
             "duration": "16 phút"
           },
           {
-            "id": "elite_l_108",
-            "title": "Bước 4.4- (KEYPOINT) Ý tưởng cho animation logo",
+            "id": "elite_l_2_2_10",
+            "title": "Bước 4.4 - (KEYPOINT) Ý tưởng cho animation logo",
             "duration": "6 phút"
           },
           {
-            "id": "elite_l_109",
+            "id": "elite_l_2_2_11",
             "title": "Bước 5 - Chọn nhạc nền và chau chuốt lại Timeline",
             "duration": "9 phút"
           }
         ]
       },
       {
-        "id": "elite_ch_9",
+        "id": "elite_ch_2_3",
         "title": "Chương 2.3 - Level 2 (Đang cập nhật thêm)",
         "lessons": [
           {
-            "id": "elite_l_110",
+            "id": "elite_l_2_3_1",
             "title": "Bài 1 - Đang cập nhật Level 2 mới",
-            "duration": "Video"
+            "duration": "Bài đọc"
           }
         ]
       },
       {
-        "id": "elite_ch_10",
+        "id": "elite_ch_3_1",
         "title": "Chương 3.1 - Level 3 (Khó hơn - Dạng ngang/Long Form) (11 bài học)",
         "lessons": [
           {
-            "id": "elite_l_111",
+            "id": "elite_l_3_1_1",
             "title": "Phần 1 - Thực hiện cắt thô và ghi chú ý tưởng (Note Idea theo công thức)",
             "duration": "57 phút"
           },
           {
-            "id": "elite_l_112",
-            "title": "Phần 2.1 - làm hiệu ứng 1",
+            "id": "elite_l_3_1_2",
+            "title": "Phần 2.1 - Hướng dẫn làm hiệu ứng 1",
             "duration": "13 phút"
           },
           {
-            "id": "elite_l_113",
-            "title": "Phần 2.2 - làm hiệu ứng 2",
+            "id": "elite_l_3_1_3",
+            "title": "Phần 2.2 - Hướng dẫn làm hiệu ứng 2",
             "duration": "18 phút"
           },
           {
-            "id": "elite_l_114",
-            "title": "Phần 2.3 - làm hiệu ứng 3",
+            "id": "elite_l_3_1_4",
+            "title": "Phần 2.3 - Hướng dẫn làm hiệu ứng 3",
             "duration": "23 phút"
           },
           {
-            "id": "elite_l_115",
-            "title": "Phần 2.4 - làm hiệu ứng 4",
+            "id": "elite_l_3_1_5",
+            "title": "Phần 2.4 - Hướng dẫn làm hiệu ứng 4",
             "duration": "27 phút"
           },
           {
-            "id": "elite_l_116",
-            "title": "Phần 2.5 - làm hiệu ứng 5",
+            "id": "elite_l_3_1_6",
+            "title": "Phần 2.5 - Hướng dẫn làm hiệu ứng 5",
             "duration": "32 phút"
           },
           {
-            "id": "elite_l_117",
-            "title": "Phần 2.6 - làm hiệu ứng 6",
+            "id": "elite_l_3_1_7",
+            "title": "Phần 2.6 - Hướng dẫn làm hiệu ứng 6",
             "duration": "23 phút"
           },
           {
-            "id": "elite_l_118",
-            "title": "Phần 2.7 - làm hiệu ứng 7",
+            "id": "elite_l_3_1_8",
+            "title": "Phần 2.7 - Hướng dẫn làm hiệu ứng 7",
             "duration": "3 phút"
           },
           {
-            "id": "elite_l_119",
-            "title": "Phần 2.8 - làm hiệu ứng 8",
+            "id": "elite_l_3_1_9",
+            "title": "Phần 2.8 - Hướng dẫn làm hiệu ứng 8",
             "duration": "7 phút"
           },
           {
-            "id": "elite_l_120",
-            "title": "Phần 2.9 - làm hiệu ứng 9",
+            "id": "elite_l_3_1_10",
+            "title": "Phần 2.9 - Hướng dẫn làm hiệu ứng 9",
             "duration": "5 phút"
           },
           {
-            "id": "elite_l_121",
+            "id": "elite_l_3_1_11",
             "title": "Phần 3 - SFX, âm thanh và chau chuốt lại",
             "duration": "25 phút"
           }
         ]
       },
       {
-        "id": "elite_ch_11",
+        "id": "elite_ch_3_2",
         "title": "Chương 3.2 - Level 3 (Khó hơn - Dạng dọc/Short Form)",
         "lessons": [
           {
-            "id": "elite_l_122",
+            "id": "elite_l_3_2_1",
             "title": "Bài 1 - Đang cập nhật Level 3 mới",
-            "duration": "Video"
+            "duration": "Bài đọc"
           }
         ]
       },
       {
-        "id": "elite_ch_12",
+        "id": "elite_ch_4_1",
         "title": "Chương 4.1 - Level 4 Viral Reels (Faceless Animation Reel) (10 bài học)",
         "lessons": [
           {
-            "id": "elite_l_123",
+            "id": "elite_l_4_1_1",
             "title": "Phần 1 - Làm phần vòng tròn - chữ/logo connect theo đường tròn",
             "duration": "17 phút"
           },
           {
-            "id": "elite_l_124",
+            "id": "elite_l_4_1_2",
             "title": "Phần 2 - Làm phần vòng tròn - chữ/logo connect theo đường tròn Part 2",
             "duration": "4 phút"
           },
           {
-            "id": "elite_l_125",
+            "id": "elite_l_4_1_3",
             "title": "Phần 3 - Làm phần vòng tròn - chữ/logo connect theo đường tròn Part 3",
             "duration": "7 phút"
           },
           {
-            "id": "elite_l_126",
+            "id": "elite_l_4_1_4",
             "title": "Phần 4 - Hoàn thiện Connect theo đường tròn + sửa lỗi mất connect",
             "duration": "10 phút"
           },
           {
-            "id": "elite_l_127",
+            "id": "elite_l_4_1_5",
             "title": "Phần 5 - Làm Text Followers",
             "duration": "7 phút"
           },
           {
-            "id": "elite_l_128",
+            "id": "elite_l_4_1_6",
             "title": "Phần 6 - Transition và làm những cột đồ thị",
             "duration": "22 phút"
           },
           {
-            "id": "elite_l_129",
+            "id": "elite_l_4_1_7",
             "title": "Phần 7 - Hoàn thành cột đồ thị animation",
             "duration": "8 phút"
           },
           {
-            "id": "elite_l_130",
+            "id": "elite_l_4_1_8",
             "title": "Phần 8 - Hoàn thành Text animation ở cuối video",
             "duration": "14 phút"
           },
           {
-            "id": "elite_l_131",
+            "id": "elite_l_4_1_9",
             "title": "Phần 9 - Hoàn thành Phần đầu video",
             "duration": "19 phút"
           }
         ]
       },
       {
-        "id": "elite_ch_13",
-        "title": "Chương 4.2 - Level 4 Reels (Đang cập nhật thêm)",
+        "id": "elite_ch_4_2",
+        "title": "Chương 4.2 - Level 4 Reels & Chương 4.3 - Long Form (Devin Jatho's Style)",
         "lessons": [
           {
-            "id": "elite_l_132",
+            "id": "elite_l_4_2_1",
             "title": "Bài 1 - Đang cập nhật Level 4",
-            "duration": "Video"
+            "duration": "Bài đọc"
+          },
+          {
+            "id": "elite_l_4_2_2",
+            "title": "Updating Long Form Level 4 (Devin Jatho's Style)",
+            "duration": "Bài đọc"
           }
         ]
       },
       {
-        "id": "elite_ch_14",
-        "title": "Chương 4.3 - Long Form Level 4 (Devin Jatho's Style)",
+        "id": "elite_ch_5",
+        "title": "Chương 5 - Hiệu ứng thường sử dụng (41 bài học)",
         "lessons": [
           {
-            "id": "elite_l_133",
-            "title": "Updating Long Form Level 4",
-            "duration": "Video"
+            "id": "elite_l_5_1",
+            "title": "Effect 01 - Text 3D",
+            "duration": "4 phút"
+          },
+          {
+            "id": "elite_l_5_2",
+            "title": "Effect 02 - 3D Tracking",
+            "duration": "8 phút"
+          },
+          {
+            "id": "elite_l_5_3",
+            "title": "Effect 03 - Light 3D/Ánh sáng trong 3D",
+            "duration": "5 phút"
+          },
+          {
+            "id": "elite_l_5_4",
+            "title": "Effect 04 - Light Weep/Ánh sáng lướt qua",
+            "duration": "4 phút"
+          },
+          {
+            "id": "elite_l_5_5",
+            "title": "Effect 05 - 3D Tracking Shadow/Tạo bóng cho vật thể 3D",
+            "duration": "13 phút"
+          },
+          {
+            "id": "elite_l_5_6",
+            "title": "Effect 06 - Background Making/Tạo Background",
+            "duration": "4 phút"
+          },
+          {
+            "id": "elite_l_5_7",
+            "title": "Effect 07 - Line Animated/Làm hiệu ứng theo phong cách Iman Gadzhi",
+            "duration": "18 phút"
+          },
+          {
+            "id": "elite_l_5_8",
+            "title": "Effect 08 - Line advanced/Nâng cao hơn chút",
+            "duration": "2 phút"
+          },
+          {
+            "id": "elite_l_5_9",
+            "title": "Effect 09 - Hiệu ứng Sét cho chữ",
+            "duration": "7 phút"
+          },
+          {
+            "id": "elite_l_5_10",
+            "title": "Effect 10 - Hiệu ứng lửa cho chữ",
+            "duration": "8 phút"
+          },
+          {
+            "id": "elite_l_5_11",
+            "title": "Effect 11 - Hiệu ứng theo phong cách Iman Gadzhi 2 (Từ Video YouTube của mình)",
+            "duration": "13 phút"
+          },
+          {
+            "id": "elite_l_5_12",
+            "title": "Effect 12 - Hiệu ứng theo phong cách Iman Gadzhi 3",
+            "duration": "17 phút"
+          },
+          {
+            "id": "elite_l_5_13",
+            "title": "Effect 13 - Sử dụng Fastnoise Node",
+            "duration": "2 phút"
+          },
+          {
+            "id": "elite_l_5_14",
+            "title": "Effect 14 - Animation 30/04/1975",
+            "duration": "18 phút"
+          },
+          {
+            "id": "elite_l_5_15",
+            "title": "Effect 15 - Animation Xé/Gập giấy của Ali Abdaal",
+            "duration": "9 phút"
+          },
+          {
+            "id": "elite_l_5_16",
+            "title": "Effect 16 - Cách cài đặt tài nguyên tải từ ngoài vào",
+            "duration": "11 phút"
+          },
+          {
+            "id": "elite_l_5_17",
+            "title": "Effect 17 - Cách cài Motion Graphics NC (Niklas Christl)",
+            "duration": "4 phút"
+          },
+          {
+            "id": "elite_l_5_18",
+            "title": "Effect 18 - Bộ Neo Core Pack New & Cách cài đặt template dạng Fuse",
+            "duration": "3 phút"
+          },
+          {
+            "id": "elite_l_5_19",
+            "title": "Effect 19 - Trick Lỏ - Biến File Template thành dạng Fusion",
+            "duration": "2 phút"
+          },
+          {
+            "id": "elite_l_5_20",
+            "title": "Cách lưu Plugin - Macros",
+            "duration": "14 phút"
+          },
+          {
+            "id": "elite_l_5_21",
+            "title": "Cách xoá plugin đã cài vào DaVinci Resolve",
+            "duration": "1 phút"
+          },
+          {
+            "id": "elite_l_5_22",
+            "title": "(Dụng cụ/đồ dùng nên có) - Màn hình lớn",
+            "duration": "2 phút"
+          },
+          {
+            "id": "elite_l_5_23",
+            "title": "(Dụng cụ/đồ dùng nên có) - Ổ cứng di động",
+            "duration": "5 phút"
+          },
+          {
+            "id": "elite_l_5_24",
+            "title": "(Animation Text) - Text đi lên theo thứ tự",
+            "duration": "3 phút"
+          },
+          {
+            "id": "elite_l_5_25",
+            "title": "(Animation Plugin) - Chia sẻ và tính năng của Plugin JW (Jake Wipp)",
+            "duration": "9 phút"
+          },
+          {
+            "id": "elite_l_5_26",
+            "title": "(Color) - Chia sẻ về chỉnh màu cơ bản",
+            "duration": "10 phút"
+          },
+          {
+            "id": "elite_l_5_27",
+            "title": "(Animation) - Liquid Effect/Hiệu ứng giọt nước",
+            "duration": "13 phút"
+          },
+          {
+            "id": "elite_l_5_28",
+            "title": "(Preset Icon) - Giới thiệu về Gói Icon động",
+            "duration": "2 phút"
+          },
+          {
+            "id": "elite_l_5_29",
+            "title": "(Animation) - Hiệu ứng pin sạc",
+            "duration": "4 phút"
+          },
+          {
+            "id": "elite_l_5_30",
+            "title": "(Effect) - Hiệu ứng Hologram",
+            "duration": "6 phút"
+          },
+          {
+            "id": "elite_l_5_31",
+            "title": "(Text Animation) - Hiệu ứng chữ giao thoa màu cực cuốn!",
+            "duration": "4 phút"
+          },
+          {
+            "id": "elite_l_5_32",
+            "title": "(Tutorial) - Cách làm video dạng hướng dẫn/khoá học",
+            "duration": "7 phút"
+          },
+          {
+            "id": "elite_l_5_33",
+            "title": "(Tip/trick) - Tạo phím tắt tiện lợi bằng Keyboard Maestro",
+            "duration": "9 phút"
+          },
+          {
+            "id": "elite_l_5_34",
+            "title": "(Feedback video) - Bắt lỗi và sửa bài video của Ấn Nguyễn",
+            "duration": "55 phút"
+          },
+          {
+            "id": "elite_l_5_35",
+            "title": "(Tip/trick) - Cách sử dụng Keyer sạch hơn trong DaVinci Resolve",
+            "duration": "5 phút"
+          },
+          {
+            "id": "elite_l_5_36",
+            "title": "(Template) - Template Điện Thoại 3D",
+            "duration": "3 phút"
+          },
+          {
+            "id": "elite_l_5_37",
+            "title": "(Effect) - Frame Drop và Halo Glow",
+            "duration": "2 phút"
+          },
+          {
+            "id": "elite_l_5_38",
+            "title": "(Tip/trick) - Tải Video từ YouTube bằng Jdownloader",
+            "duration": "1 phút"
+          },
+          {
+            "id": "elite_l_5_39",
+            "title": "(Tip/trick) - Lỗi có thể hay gặp về việc mất hình video",
+            "duration": "6 phút"
+          },
+          {
+            "id": "elite_l_5_40",
+            "title": "(Tip/trick) - Cài SFX bằng Keyboard Maestro và Touch Portal",
+            "duration": "11 phút"
+          },
+          {
+            "id": "elite_l_5_41",
+            "title": "(Animation Text) - Text Hay/Dễ làm để sử dụng cho video ngắn/dài",
+            "duration": "7 phút"
+          }
+        ]
+      },
+      {
+        "id": "elite_ch_6",
+        "title": "Chương 6: Updating - Cập Nhật Liên Tục (Text Effect, Template, Plugins)",
+        "lessons": [
+          {
+            "id": "elite_l_6_1",
+            "title": "New Video Update (Text Effect) - Cách làm chữ viết tay",
+            "duration": "4 phút"
+          },
+          {
+            "id": "elite_l_6_2",
+            "title": "New Video Update (Tip/trick) - Cách xoá nền trắng hoặc nền đen",
+            "duration": "4 phút"
+          },
+          {
+            "id": "elite_l_6_3",
+            "title": "New Video Update (SK Template) - SK Shape Box Vol 1",
+            "duration": "9 phút"
+          },
+          {
+            "id": "elite_l_6_4",
+            "title": "New Video Update (Plugin) - EsplineV2 - Làm animation dễ hơn",
+            "duration": "21 phút"
+          },
+          {
+            "id": "elite_l_6_5",
+            "title": "New Video Update (Plugin) - ClipBoom - Tối ưu thao tác Copy & Paste",
+            "duration": "3 phút"
           }
         ]
       }

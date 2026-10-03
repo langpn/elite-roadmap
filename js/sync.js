@@ -127,13 +127,15 @@ function applyCloudPayload(payload, showToastNotification) {
 
   const sender = payload.sender;
 
-  // Handle Presence Heartbeat Event
+  // Handle Presence Heartbeat Event (Only update presence pill, DO NOT re-render entire DOM!)
   if (payload.type === "presence") {
     presenceState[sender] = {
       online: payload.status === "online",
       lastSeen: payload.timestamp || Date.now()
     };
-    if (onSyncUpdateCallback) onSyncUpdateCallback();
+    if (window.renderPresenceIndicators) {
+      window.renderPresenceIndicators();
+    }
     return;
   }
 

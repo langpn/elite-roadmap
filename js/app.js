@@ -317,16 +317,57 @@ function updatePredictiveEngine() {
 // -------------------------------------------------------------------------
 // SPRINT FILTERING & UI RENDERING
 // -------------------------------------------------------------------------
+// -------------------------------------------------------------------------
+// PERSISTENT ACCORDION COLLAPSE STATE (FIX LỖI TỰ MỞ KHI SYNC / HEARTBEAT)
+// -------------------------------------------------------------------------
+const COLLAPSE_KEY = "elite_collapse_state_map_v2";
+let collapseMap = {};
+try {
+  const s = localStorage.getItem(COLLAPSE_KEY);
+  if (s) collapseMap = JSON.parse(s);
+} catch (e) {}
+
+export function isCollapsed(id) {
+  return !!collapseMap[id];
+}
+
+export function toggleSprintCollapse(sprintId, e) {
+  if (e) e.stopPropagation();
+  collapseMap[sprintId] = !collapseMap[sprintId];
+  localStorage.setItem(COLLAPSE_KEY, JSON.stringify(collapseMap));
+
+  const isClosed = collapseMap[sprintId];
+  const bodyEl = document.getElementById("body-" + sprintId);
+  const arrowEl = document.getElementById("arrow-" + sprintId);
+  if (bodyEl) {
+    bodyEl.style.display = isClosed ? "none" : "flex";
+  }
+  if (arrowEl) {
+    arrowEl.innerText = isClosed ? "▶" : "▼";
+  }
+}
+window.toggleSprintCollapse = toggleSprintCollapse;
+
+export function toggleChapterCollapse(chapId, e) {
+  if (e) e.stopPropagation();
+  collapseMap[chapId] = !collapseMap[chapId];
+  localStorage.setItem(COLLAPSE_KEY, JSON.stringify(collapseMap));
+
+  const isClosed = collapseMap[chapId];
+  const bodyEl = document.getElementById("body-" + chapId);
+  const arrowEl = document.getElementById("arrow-" + chapId);
+  if (bodyEl) {
+    bodyEl.style.display = isClosed ? "none" : "flex";
+  }
+  if (arrowEl) {
+    arrowEl.innerText = isClosed ? "▶" : "▼";
+  }
+}
+window.toggleChapterCollapse = toggleChapterCollapse;
+
 export function filterSprint(sprintId) {
   currentSprintFilter = sprintId;
   renderUI();
-}
-
-export function toggleSprintBody(headerEl) {
-  const body = headerEl.nextElementSibling;
-  if (body) {
-    body.style.display = body.style.display === "none" ? "flex" : "none";
-  }
 }
 
 function renderSprintNavTabs(effectiveFilter, activeSprintId) {
@@ -416,19 +457,24 @@ export function renderCourseSyllabusUI() {
     const chapLessons = chap.lessons;
     const langChapDone = chapLessons.filter(l => duoState.lang && duoState.lang[l.id]).length;
     const diemChapDone = chapLessons.filter(l => duoState.diem && duoState.diem[l.id]).length;
+    const isClosed = isCollapsed(chap.id);
 
     return `
       <div class="syllabus-chapter-card">
-        <div class="syllabus-chapter-header" onclick="toggleChapterSyllabus(this)">
+        <div class="syllabus-chapter-header" onclick="toggleChapterCollapse('${chap.id}', event)">
           <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="color: ${activeCourse.color}; font-weight: 800;">Chương ${cIdx + 1}:</span>
-            <span>${chap.title}</span>
+            <span style="color: ${activeCourse.color}; font-weight: 800;">${chap.title}</span>
           </div>
-          <div style="font-size: 11.5px; font-family: 'JetBrains Mono', monospace; color: var(--text-dim);">
-            L: ${langChapDone}/${chapLessons.length} • D: ${diemChapDone}/${chapLessons.length} ▼
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 11.5px; font-family: 'JetBrains Mono', monospace; color: var(--text-dim);">
+              L: ${langChapDone}/${chapLessons.length} • D: ${diemChapDone}/${chapLessons.length}
+            </span>
+            <span id="arrow-${chap.id}" style="font-size: 12px; color: var(--text-dim); transition: transform 0.2s;">
+              ${isClosed ? '▶' : '▼'}
+            </span>
           </div>
         </div>
-        <div class="syllabus-body">
+        <div class="syllabus-body" id="body-${chap.id}" style="${isClosed ? 'display: none;' : ''}">
           ${chapLessons.map(lesson => {
             const langDone = !!(duoState.lang && duoState.lang[lesson.id]);
             const diemDone = !!(duoState.diem && duoState.diem[lesson.id]);
@@ -516,8 +562,10 @@ export function renderUI() {
 
     const sprintTotalHours = sprint.tasks.reduce((s, t) => s + t.effortHours, 0);
 
+    const isClosed = isCollapsed(sprint.id);
+
     card.innerHTML = `
-      <div class="sprint-header" onclick="toggleSprintBody(this)">
+      <div class="sprint-header" onclick="toggleSprintCollapse('${sprint.id}', event)">
         <div class="sprint-title-wrap">
           <span class="sprint-pill" style="background: ${sprint.color}15; color: ${sprint.color}; border: 1px solid ${sprint.color}35;">
             ${sprint.pill}
@@ -537,11 +585,11 @@ export function renderUI() {
           <button class="pin-btn ${isPinned ? 'is-pinned' : ''}" onclick="togglePinSprint('${sprint.id}', event)" title="${isPinned ? 'Bỏ ghim Sprint' : 'Ghim Sprint này làm trọng tâm hàng đầu'}">
             📌 ${isPinned ? 'Đang Ghim' : 'Ghim'}
           </button>
-          <div style="font-size: 18px; color: var(--text-dim);">▼</div>
+          <div id="arrow-${sprint.id}" style="font-size: 16px; color: var(--text-dim); transition: transform 0.2s;">${isClosed ? '▶' : '▼'}</div>
         </div>
       </div>
 
-      <div class="sprint-body">
+      <div class="sprint-body" id="body-${sprint.id}" style="${isClosed ? 'display: none;' : ''}">
         ${sprint.tasks.map(task => {
           const langDone = !!(duoState.lang && duoState.lang[task.id]);
           const diemDone = !!(duoState.diem && duoState.diem[task.id]);
