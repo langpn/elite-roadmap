@@ -1,5 +1,5 @@
 // =========================================================================
-// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (WITH CAPCUT)
+// FULL CURRICULUM SYLLABUS DATABASE FOR ALL SEAN KANG COURSES (WITH FUSION 101 VERIFIED)
 // =========================================================================
 
 export const ALL_COURSES_DATA = [
@@ -2438,88 +2438,88 @@ export const ALL_COURSES_DATA = [
     "totalLessons": 16,
     "chapters": [
       {
-        "id": "fusion_101_ch_1",
-        "title": "Nội Dung Cơ Bản",
+        "id": "fusion_ch_1",
+        "title": "Fusion Cẩm Nang Sinh Tồn 101",
         "lessons": [
           {
-            "id": "fusion_101_l_1",
-            "title": "Fusion Cẩm Nang Sinh Tồn 101 Khoá hoc Fusion sinh tôn 101",
+            "id": "fusion_l_1",
+            "title": "Khoá học Fusion sinh tồn 101",
             "duration": "2 phút"
           },
           {
-            "id": "fusion_101_l_2",
+            "id": "fusion_l_2",
             "title": "Mở đầu khoá học Fusion sinh tồn 101",
             "duration": "1 phút"
           },
           {
-            "id": "fusion_101_l_3",
+            "id": "fusion_l_3",
             "title": "Những định nghĩa cơ bản trước khi bắt đầu",
             "duration": "3 phút"
           },
           {
-            "id": "fusion_101_l_4",
+            "id": "fusion_l_4",
             "title": "Tip 1 - Fusion Composition nằm ở đâu?",
             "duration": "5 phút"
           },
           {
-            "id": "fusion_101_l_5",
+            "id": "fusion_l_5",
             "title": "Tip 2 - Màu đầu vào của các Node",
             "duration": "3 phút"
           },
           {
-            "id": "fusion_101_l_6",
-            "title": "Tip 3 - phần loại các dạng Node",
+            "id": "fusion_l_6",
+            "title": "Tip 3 - Phân loại các dạng Node",
             "duration": "16 phút"
           },
           {
-            "id": "fusion_101_l_7",
+            "id": "fusion_l_7",
             "title": "Tip 3.1 - Sử dụng Shift + Kéo thả",
             "duration": "2 phút"
           },
           {
-            "id": "fusion_101_l_8",
+            "id": "fusion_l_8",
             "title": "Tip 4 - Bảng tìm kiếm node (Select Tool)",
             "duration": "2 phút"
           },
           {
-            "id": "fusion_101_l_9",
+            "id": "fusion_l_9",
             "title": "Tip 5 - Sử dụng Merge Node để Resize",
             "duration": "3 phút"
           },
           {
-            "id": "fusion_101_l_10",
+            "id": "fusion_l_10",
             "title": "Tip 6 - Tối ưu sử dụng màn hình Preview",
             "duration": "4 phút"
           },
           {
-            "id": "fusion_101_l_11",
+            "id": "fusion_l_11",
             "title": "Tip 7 - Xử lý Stretch - Kéo dãn",
             "duration": "3 phút"
           },
           {
-            "id": "fusion_101_l_12",
+            "id": "fusion_l_12",
             "title": "Tip 8 - Cách cắt media trong fusion",
             "duration": "3 phút"
           },
           {
-            "id": "fusion_101_l_13",
+            "id": "fusion_l_13",
             "title": "Tip 9 - Ease (Kiểm soát chuyển động của Keyframe)",
             "duration": "6 phút"
           },
           {
-            "id": "fusion_101_l_14",
+            "id": "fusion_l_14",
             "title": "Tip 10 - Luôn sắp xếp Node Trees",
             "duration": "8 phút"
           },
           {
-            "id": "fusion_101_l_15",
+            "id": "fusion_l_15",
             "title": "Kết thúc - Khoá học Fusion Sinh Tồn 101",
             "duration": "1 phút"
           },
           {
-            "id": "fusion_101_l_16",
+            "id": "fusion_l_16",
             "title": "Giảm trực tiếp 500K cho khoá học đồng hành Elite Pro",
-            "duration": "Video"
+            "duration": "Bài đọc"
           }
         ]
       }
