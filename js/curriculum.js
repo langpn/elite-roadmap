@@ -187,12 +187,13 @@ export const ROADMAP_SPRINTS = [
         solution: {
           steps: [
             "Kiểm tra lại toàn bộ: A-Roll liền mạch không vấp, lọc ồn -6dB sạch sẽ, phụ đề khớp 100% với lời nói.",
+            "Áp dụng chuẩn Level 1 Sean Kang: Sub gọn gàng clean, cắt thô không cụt không thừa âm đuôi, Hook 3s mở đầu chiếm 50% thành bại.",
             "Chuyển sang trang <strong>Deliver</strong> (icon tên lửa): Format <code>MP4</code>, Codec <code>H.264</code>, Resolution <code>1080 x 1920</code>.",
             "Mục Quality: Chọn <em>Restrict to</em> <strong>15,000 Kb/s</strong> (file sắc nét mà dung lượng nhẹ chỉ ~20-30MB).",
             "Bấm <code>Add to Render Queue</code> -> <code>Render All</code> -> Lưu file vào <code>~/studio/Reels_Export/Reel_01_Matthiew_Basic.mp4</code>.",
-            "Airdrop qua điện thoại xem lại thực tế để kiểm tra bố cục."
+            "Airdrop qua điện thoại xem lại thực tế để kiểm tra bố cục Safe Zone."
           ],
-          tip: "Đây là sản phẩm đầu tiên của bạn. Hãy gửi cho Diễm xem và nhận xét chéo để chỉnh chu ngay từ video số 1!"
+          tip: "Chuẩn nghiệm thu Reel 1: Âm thanh -6dB, cắt thô dứt khoát không phạm âm đuôi, sub clean không lỗi chính tả, hoàn thành timeline dưới 30 phút!"
         },
         mapping: {
           troubleshoot: "Kẹt render? Xem: <strong>Baby Resolve C10-B01 & B02 (Deliver MP4 chuẩn)</strong>",
