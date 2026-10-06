@@ -120,12 +120,12 @@ export const ROADMAP_SPRINTS = [
         isOutput: false,
         solution: {
           steps: [
-            "Bấm <code>Command + N</code> tạo Timeline mới -> Bỏ tích <em>Use Project Settings</em> -> Tab Format: Tích chọn <strong>Use Vertical Resolution</strong> (1080 x 1920) và đặt <strong>Timeline Frame Rate: 30 fps</strong> (chuẩn mạng xã hội, mượt mà, đồng bộ với camera iPhone).",
-            "Kéo footage thô của Matthiew Adams vào Timeline (nếu DaVinci hỏi Change Frame Rate thì chọn <strong>Don't Change</strong> để giữ vững 30fps).",
-            "Đặt ngón tay trái lên cụm <kbd class='solution-kbd'>Q-W-E-S-D</kbd>. Vừa nghe vừa cắt: đoạn ừ à bấm <kbd class='solution-kbd'>Q</kbd> gọt đầu, bấm <kbd class='solution-kbd'>W</kbd> gọt đuôi.",
-            "Rút gọn toàn bộ video thô từ 2 phút xuống còn đúng 30-45 giây súc tích nhất."
+            "<strong>B1 (Tạo Project & 3 Bins chuẩn):</strong> Bấm <code>Shift + 1</code> tạo New Project <code>Reel_01_Sprint1_Master</code> -> Vào Edit Page (<code>Shift + 4</code>) -> Chuột phải bảng Media Pool tạo 3 Bins: <code>RAWs</code>, <code>Timelines</code>, <code>Audio_SFX</code>.",
+            "<strong>B2 (Import RAW & Tạo Timeline 9:16 30fps):</strong> Mở bin <code>RAWs</code> bấm <code>Cmd + I</code> chọn <code>RAW.mov</code> (Matthiew Adams) thả vào (chọn <em>Don't Change</em> frame rate) -> Bấm vào bin <code>Timelines</code> bấm <code>Cmd + N</code> -> Bỏ tích <em>Use Project Settings</em> -> Format: Tích chọn <strong>Use Vertical Resolution</strong> (1080 x 1920) & <strong>Timeline Frame Rate: 30 fps</strong> -> Kéo RAW xuống Timeline.",
+            "<strong>B3 (Tư thế tay trái & Phóng to sóng âm):</strong> Chuyển bộ gõ macOS sang <strong>English (ABC)</strong> -> Bấm <code>Shift + W</code> (hoặc <code>Cmd + =</code>) phóng to sóng âm thanh màu xanh lá cây -> Đặt 4 ngón tay: Ngón áp út đè <kbd class='solution-kbd'>Q</kbd> (gọt đầu), ngón giữa đè <kbd class='solution-kbd'>W</kbd> (cắt đôi) / <kbd class='solution-kbd'>S</kbd> (xóa), ngón trỏ đè <kbd class='solution-kbd'>E</kbd> (gọt đuôi), ngón cái đè <code>Spacebar</code>.",
+            "<strong>B4 (Cắt thô không cụt - không thừa):</strong> Nhìn sóng âm phồng to là có tiếng, phẳng lì là ừ à. Dứt câu bấm dừng -> Kéo kim qua đoạn ừ à đến đầu câu sau -> Bấm nhẹ <kbd class='solution-kbd'>Q</kbd> để gọt sạch khoảng lặng -> Chừa lại <strong>2 frame đệm</strong> tránh chém cụt âm đuôi (-s, -ed, -t) -> Rút gọn từ 2 phút xuống còn đúng <strong>30–45 giây</strong>."
           ],
-          tip: "Quy tắc cốt lõi: Timeline luôn để 30fps. B-roll 60fps kéo vào có thể giảm speed xuống 50% để làm Slow-motion mượt như nhung!"
+          tip: "Bí quyết Master 1 lần: Xem video 'Elite C1.1 Bài 03 (Marcus)' chia 4 chặng: 0-6p (Setup Bins/Timeline), 6-22p (Cắt A-Roll Q-W-E), 22-35p (Âm thanh -6dB), 35-48p (Xuất file). Xem đến đâu bấm Pause làm theo đến đó!"
         },
         mapping: {
           troubleshoot: "Kẹt cắt nhịp? Xem: <strong>Baby Resolve C6-B01 (Giao diện Edit) & Phím Q-W-E-S-D</strong>",
