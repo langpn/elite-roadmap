@@ -120,12 +120,12 @@ export const ROADMAP_SPRINTS = [
         isOutput: false,
         solution: {
           steps: [
-            "Bấm <code>Command + N</code> tạo Timeline mới -> Bỏ tích <em>Use Project Settings</em> -> Tab Format: Tích chọn <strong>Use Vertical Resolution</strong> (1080 x 1920).",
-            "Kéo footage thô của Matthiew Adams vào Timeline.",
+            "Bấm <code>Command + N</code> tạo Timeline mới -> Bỏ tích <em>Use Project Settings</em> -> Tab Format: Tích chọn <strong>Use Vertical Resolution</strong> (1080 x 1920) và đặt <strong>Timeline Frame Rate: 30 fps</strong> (chuẩn mạng xã hội, mượt mà, đồng bộ với camera iPhone).",
+            "Kéo footage thô của Matthiew Adams vào Timeline (nếu DaVinci hỏi Change Frame Rate thì chọn <strong>Don't Change</strong> để giữ vững 30fps).",
             "Đặt ngón tay trái lên cụm <kbd class='solution-kbd'>Q-W-E-S-D</kbd>. Vừa nghe vừa cắt: đoạn ừ à bấm <kbd class='solution-kbd'>Q</kbd> gọt đầu, bấm <kbd class='solution-kbd'>W</kbd> gọt đuôi.",
             "Rút gọn toàn bộ video thô từ 2 phút xuống còn đúng 30-45 giây súc tích nhất."
           ],
-          tip: "Tuyệt đối không dùng chuột để kéo mép clip! Cắt thuần túy bằng phím Q và W giúp bạn hoàn thành cắt thô trong dưới 20 phút."
+          tip: "Quy tắc cốt lõi: Timeline luôn để 30fps. B-roll 60fps kéo vào có thể giảm speed xuống 50% để làm Slow-motion mượt như nhung!"
         },
         mapping: {
           troubleshoot: "Kẹt cắt nhịp? Xem: <strong>Baby Resolve C6-B01 (Giao diện Edit) & Phím Q-W-E-S-D</strong>",
