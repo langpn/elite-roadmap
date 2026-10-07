@@ -44,6 +44,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 1.5,
         output: "Giải nén file RAW (Matthiew Adams 50MB) vào ~/studio",
         isOutput: false,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 0.2: Khởi Đầu & RAW Thực Hành",
+            title: "Bài 01 - Nguồn tìm RAWs để thực hành (kèm kho tài nguyên chung)",
+            duration: "3 phút",
+            focus: "Biết chỗ lấy kho RAW chính thức của Sean Kang và link Google Drive bộ SFX/Font/Overlay dùng chung."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa Baby Resolve",
+            chapter: "Chương 3: Media Storage & Bins",
+            title: "Bài 06 - Cách lưu trữ Power Bins vĩnh viễn dùng cho mọi dự án",
+            duration: "8 phút",
+            focus: "Kéo thả kho SFX vào Power Bins trên Mac để dự án nào cũng tự động có sẵn âm thanh mà không phải import lại."
+          }
+        ],
+        watchStrategy: "Chỉ cần xem lướt Bài 01 Chương 0.2 trong 3 phút để lấy link Drive -> Giải nén thẳng vào <code>~/studio/Projects/Reel_01_Matthiew/RAW/</code> -> Xem nhanh bài Power Bins trong Baby Resolve để gom SFX vào Master.",
         solution: {
           steps: [
             "Vào thư mục: <code>~/Documents/edit-courses/resources/Tài nguyên khoá học/RAW (Footages thô thực hành)/RAW Talking Head Video (từ gói Elite trở lên)/RAW thực tế của khách hàng (dạng dọc)/</code>.",
@@ -65,6 +84,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 0.5,
         output: "Cụm tay trái Q-W-E-S-D phản xạ không độ trễ, chống mất file",
         isOutput: false,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 0.1 & 0.2",
+            title: "Bài: Hướng Dẫn Tổng Quan Gói Elite & Lưu ý trước khi thực hành",
+            duration: "6 phút",
+            focus: "Triết lý dùng phím tắt độc quyền của Sean Kang để giải phóng hoàn toàn bàn tay phải và chuột."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa Baby Resolve",
+            chapter: "Chương 1 & Chương 2",
+            title: "Bài 04.2 (Import Keyboard Presets) & Bài 02 (Live Save & Project Backups)",
+            duration: "10 phút",
+            focus: "Cài preset phím tắt và bật Live Save trong Preferences để DaVinci tự động lưu từng mili-giây, không sợ crash."
+          }
+        ],
+        watchStrategy: "Mở DaVinci Resolve song song -> Bấm phím tắt Option + Cmd + K làm theo đúng 3 phút -> Đặt tay thử lên 4 phím Q-W-E-Spacebar để tạo phản xạ cơ bắp.",
         solution: {
           steps: [
             "Mở DaVinci Resolve -> Menu góc trái chọn <code>DaVinci Resolve -> Keyboard Customization</code> (hoặc bấm <code>Option + Command + K</code>).",
@@ -87,6 +125,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 1.0,
         output: "Thuộc lòng: Edit đẹp < View & Doanh thu; 3-5 giây đầu là sinh tử",
         isOutput: false,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 1.2: Cập Nhật Mới Nhất",
+            title: "P1 - Thị Trường (Toàn cảnh giá cả, khách hàng & tư duy video ngắn)",
+            duration: "31 phút",
+            focus: "Hiểu vì sao khách hàng quốc tế trả $35-$60/video ngắn, họ cần tốc độ 24-48h và âm thanh sạch hơn là kỹ xảo màu mè."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 0.2",
+            title: "Bài 03 - LIVE tìm RAW phần 2 (Bóc tách cấu trúc video creator lớn)",
+            duration: "12 phút",
+            focus: "Xem cách Sean Kang bóc tách 3 giây đầu tiên (Hook Retention) của các kênh triệu view."
+          }
+        ],
+        watchStrategy: "Bật video <strong>P1 - Thị Trường (Chương 1.2)</strong> với tốc độ 1.25x và bật phụ đề tiếng Việt <code>P1 - Thị Trường.srt</code> đã được kiểm định sạch để ngấm tư duy làm giàu từ video ngắn.",
         solution: {
           steps: [
             "Ghi nhớ quy luật sinh tử: Khán giả quyết định xem tiếp hay lướt đi trong <strong>3 giây đầu tiên (Hook Retention)</strong>.",
@@ -118,6 +175,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 2.5,
         output: "Timeline 1080x1920 sạch bóng câu vấp & khoảng lặng bằng phím Q-W-E-S-D",
         isOutput: false,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 1.2: Cập Nhật Mới Nhất",
+            title: "P3 - Thông số Timeline & FPS (12:03) & P4 - Cắt RAW và lưu ý khi cắt RAW (14:17)",
+            duration: "26 phút",
+            focus: "Thiết lập Timeline 1080x1920 30fps. Quy tắc vàng: Khẩu hình đi trước âm thanh 2-3 frames, không chém cụt âm đuôi (s, t, k, d), thao tác Q-W-E dứt khoát."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 1.1: Level 1 Cơ Bản",
+            title: "Bài 03 - Thực hành video cho khách hàng Marcus (Xem chặng 06:00 - 22:00)",
+            duration: "16 phút",
+            focus: "Xem Sean Kang trực tiếp cắt thô A-Roll trên footage khách hàng quốc tế thật bằng cụm phím công thái học Q-W-E."
+          }
+        ],
+        watchStrategy: "Đọc trước cẩm nang <code>chuong-1.2/TIMELINE_CHI_TIET.md</code> -> Mở video P3 & P4 trên IINA xem ở tốc độ 1.25x -> Mở DaVinci thực hành cắt ngay file RAW Matthiew Adams.",
         solution: {
           steps: [
             "<strong>B1 (Tạo Project & 3 Bins chuẩn):</strong> Bấm <code>Shift + 1</code> tạo New Project <code>Reel_01_Sprint1_Master</code> -> Vào Edit Page (<code>Shift + 4</code>) -> Chuột phải bảng Media Pool tạo 3 Bins: <code>RAWs</code>, <code>Timelines</code>, <code>Audio_SFX</code>.",
@@ -140,6 +216,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 1.5,
         output: "Giọng nói nét căng, không tiếng quạt ồn, mức chuẩn -6dB",
         isOutput: false,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 1.2: Cập Nhật Mới Nhất",
+            title: "P5 - Bố cục & Âm thanh (08:25)",
+            duration: "8 phút",
+            focus: "Quy tắc khoảng cách đỉnh đầu (Headroom 10-15%), Safe Zone 9:16 và chuẩn âm lượng giọng nói True Peak -6dB đến -3dB."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa Baby Resolve",
+            chapter: "Chương 9: Trang Fairlight Thực Chiến",
+            title: "Bài 03 (Voice Isolation) & Bài 05 (Normalize Audio Levels)",
+            duration: "12 phút",
+            focus: "Cách bật Voice Isolation khử tiếng ồn môi trường và Normalize -6.0 dBFS tự động cho toàn bộ clip thoại."
+          }
+        ],
+        watchStrategy: "Video P5 rất súc tích (8 phút), xem 1 lần duy nhất trên IINA -> Chuyển sang DaVinci áp dụng ngay Voice Isolation (75-80%) và Normalize -6dB lên audio track của Matthiew.",
         solution: {
           steps: [
             "Chọn toàn bộ track audio A1 trên Timeline.",
@@ -162,6 +257,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 3.5,
         output: "Subtitles nhảy từng từ, font dày, đổi màu vàng/xanh ở từ khóa chính",
         isOutput: false,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 1.2: Cập Nhật Mới Nhất",
+            title: "P6 - Chạy sub & chỉnh sub (32:26) & P7 - Chỉnh sửa sub (61:22)",
+            duration: "1h 33p",
+            focus: "Kỹ thuật ngắt cụm sub 2-5 từ theo nhịp thở, chuyển subtitle sang Text+, đổi màu từ khóa Vàng neon / Đỏ cam, thêm viền Stroke đen 10px."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 1.1: Level 1 Cơ Bản",
+            title: "Bài 02 (Cài đặt Snap Caption) & Bài 2.1 (Lỗi thường gặp với Snap Caption)",
+            duration: "4 phút",
+            focus: "Hiểu bản chất cách Snap Caption chuyển đổi subtitle thành Text+ tự động mà không bị đè track."
+          }
+        ],
+        watchStrategy: "Xem P6 để nắm nhịp ngắt câu -> Tua nhanh P7 đến phút 15:00 xem cách tạo style chữ Text+ và đổi màu từ khóa -> Cài đặt template Snap Caption trong folder resources.",
         solution: {
           steps: [
             "Vào menu <code>Timeline -> Create Subtitles from Audio</code> (chọn Language: English, Max characters: 12-14 từ).",
@@ -184,6 +298,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 3.0,
         output: "XUẤT XƯỞNG FILE MP4 REEL 1 CẦM TAY TRONG MÁY",
         isOutput: true,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 1.2: Cập Nhật Mới Nhất",
+            title: "P8.1 - Hoàn thiện Reel 1 Level 1 (Khách hàng Matthiew Adams)",
+            duration: "25 phút",
+            focus: "Thực hành dựng hoàn chỉnh file RAW Matthiew Adams từ A-Z: Cắt thô 18.6s, sub clean, chèn ảnh B-roll icon tiền và góc làm việc, xử lý bẫy viền Fusion bằng Compound Clip."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa Baby Resolve",
+            chapter: "Chương 10: Trang Deliver Xuất File",
+            title: "Bài 01 & 02: Thiết lập render MP4 H.264 chuẩn mạng xã hội",
+            duration: "10 phút",
+            focus: "Thông số Render MP4 1080x1920 30fps, bitrate 15,000 Kbps sắc nét mà nhẹ máy."
+          }
+        ],
+        watchStrategy: "Mở cẩm nang <code>~/studio/Projects/Reel_01_Matthiew/HUONG_DAN_THUC_HANH_REEL_01.md</code> -> Bật video P8.1 -> Vừa xem vừa dựng hoàn thiện Reel 1 và xuất file ngay vào máy.",
         solution: {
           steps: [
             "Kiểm tra lại toàn bộ: A-Roll liền mạch không vấp, lọc ồn -6dB sạch sẽ, phụ đề khớp 100% với lời nói.",
@@ -208,6 +341,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 3.0,
         output: "XUẤT XƯỞNG FILE MP4 REEL 2 DẪN MẮT NGƯỜI XEM",
         isOutput: true,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 1.2: Cập Nhật Mới Nhất",
+            title: "P8.2 - Hoàn thiện Reel 2 Level 1 (30:56)",
+            duration: "31 phút",
+            focus: "Nghệ thuật Typography: Sắp xếp vị trí chữ dẫn dắt mắt nhìn, Emojis 3D minh họa, chèn SFX Pop/Click đúng mili-giây chữ nảy."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 1.1: Level 1 Cơ Bản",
+            title: "Bài 07 - Bản chất các loại Text, Subtitles (10:00)",
+            duration: "10 phút",
+            focus: "Hiểu sâu sự khác biệt giữa Text thường, Text+ và Subtitle Track để không bị vỡ bố cục khi re-scale."
+          }
+        ],
+        watchStrategy: "Xem P8.2 trên IINA -> Nhân bản Timeline Reel 1 -> Tinh chỉnh vị trí chữ và thêm 4-5 icon Emojis từ kho tài nguyên <code>resources/Icons-Emojies/</code> -> Render Reel 2.",
         solution: {
           steps: [
             "Nhân bản Timeline Reel 1 (<code>Command + D</code>) -> Đổi tên thành <code>Reel_02_Typography</code>.",
@@ -231,6 +383,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 4.0,
         output: "XUẤT XƯỞNG FILE MP4 REEL 3 CÓ CHUYỂN ĐỘNG NẢY",
         isOutput: true,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 1.2: Cập Nhật Mới Nhất",
+            title: "P8.3 - Hoàn thiện Reel 3 Level 1 (44:26)",
+            duration: "44 phút",
+            focus: "Kỹ thuật Punch-in Zoom (1.15x) mỗi khi chuyển ý, tạo chuyển động nảy cho cụm từ khóa (Pop-up scale keyframe), rải SFX Swoosh mượt mà."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa Keyframe Animation",
+            chapter: "Nguyên Lý Chuyển Động",
+            title: "Bài 01 - 03: Bản chất Keyframe, Spline và Easing curves",
+            duration: "15 phút",
+            focus: "Làm chủ đồ thị Spline để chuyển động zoom và nảy chữ mượt mà tự nhiên, không bị giật khựng."
+          }
+        ],
+        watchStrategy: "Xem P8.3 tập trung vào kỹ thuật cắt chia clip đổi góc máy -> Áp dụng trực tiếp vào dự án -> Render xuất file Reel 3.",
         solution: {
           steps: [
             "Nhân bản Timeline Reel 2 -> Đặt tên <code>Reel_03_DynamicZoom</code>.",
@@ -254,6 +425,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 5.0,
         output: "XUẤT XƯỞNG FILE MP4 REEL 4 ĐẠT CHUẨN THƯƠNG MẠI",
         isOutput: true,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 1.2: Cập Nhật Mới Nhất",
+            title: "P8.4 - Hoàn thiện Reel 4 Level 1 (80:58)",
+            duration: "1h 21p",
+            focus: "Dự án Master Level 1 tổng hợp: Chèn B-roll cảnh phim/stock, hòa trộn âm thanh Voice -6dB / Nhạc đệm -22dB / SFX -12dB, hoàn thiện sản phẩm thương mại cao cấp."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 1.1: Level 1 Cơ Bản",
+            title: "Bài 04 - Thực hành video Style Alex Hormozi (45:00)",
+            duration: "45 phút",
+            focus: "Tham khảo phong cách dựng video triệu view của Alex Hormozi để tăng tính giải trí và giữ chân khán giả."
+          }
+        ],
+        watchStrategy: "Đây là bài giảng Master tổng hợp của Level 1. Hãy xem từng chặng 20 phút -> Dừng lại thao tác trực tiếp trên DaVinci -> Xuất bản phẩm Master hoàn hảo nhất để đưa lên đầu Portfolio.",
         solution: {
           steps: [
             "Nhân bản Timeline -> Đặt tên <code>Reel_04_Commercial_Showcase</code>.",
@@ -287,6 +477,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 3.5,
         output: "Hook 3 giây đầu giật gân, nhịp dồn dập đập vào mắt người xem",
         isOutput: false,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 2.1: Level 2 & Level 3",
+            title: "David Goggins Part 1 (Chọn RAW & Cắt thô), Part 2 (Ý tưởng Edit), Part 3 (Làm Hook Intro)",
+            duration: "37 phút",
+            focus: "Chọn câu nói đanh thép nhất đưa lên 3 giây đầu, kỹ thuật Speed Ramp 350% -> 100% kèm Whoosh, Camera Shake nhẹ tạo năng lượng dồn dập."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa Speed Ramp",
+            chapter: "Chương 1: Speed Ramp Cơ Bản",
+            title: "Speed Ramp kịch tính trên Edit page (Curve Ramping)",
+            duration: "15 phút",
+            focus: "Uốn cong đường cong tốc độ bằng Retime Curve để đoạn tăng tốc chuyển mượt sang slow-mo."
+          }
+        ],
+        watchStrategy: "Xem Part 1 & Part 3 của Goggins trên IINA -> Mở DaVinci thực hành cắt đúng 3 giây đầu tiên cho clip động lực để tạo cảm giác bùng nổ ngay từ frame đầu.",
         solution: {
           steps: [
             "Mở folder tài nguyên David Goggins trong kho <code>resources</code>.",
@@ -309,6 +518,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 4.5,
         output: "XUẤT XƯỞNG FILE MP4 REEL DAVID GOGGINS CỰC CHÁY",
         isOutput: true,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 2.1: Level 2 & Level 3",
+            title: "David Goggins Part 4 (Animation 1 & 2), Part 6 (Cắt đôi chữ Refuse), Part 7 & Part 8 (SFX & Nhạc)",
+            duration: "40 phút",
+            focus: "Kỹ thuật Polygon Mask cắt đôi chữ 'Refuse' trượt sang hai bên, phủ lớp Film Grain / Dust Overlay bụi bặm, Color Grading tương phản cao chất điện ảnh gai góc."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 5: Hiệu Ứng Thường Sử Dụng",
+            title: "Effect 06 (Tạo Background) & Effect 15 (Animation Xé/Gấp giấy của Ali Abdaal)",
+            duration: "13 phút",
+            focus: "Thủ thuật tạo background tối kết hợp lớp xé giấy để làm nổi bật thông điệp."
+          }
+        ],
+        watchStrategy: "Xem kỹ Part 6 về hiệu ứng cắt đôi chữ trong Fusion -> Làm theo từng thao tác -> Xuất file <code>Reel_David_Goggins_Hardcore.mp4</code>.",
         solution: {
           steps: [
             "Mở Fusion Page: Dùng Polygon Mask tạo hiệu ứng chữ xé đôi (Split Text Refuse) tách sang 2 bên.",
@@ -331,6 +559,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 5.0,
         output: "XUẤT XƯỞNG FILE MP4 REEL TÀI CHÍNH (LOGO AMAZON & BEVEL CHỮ)",
         isOutput: true,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 2.1: Level 2 & Level 3",
+            title: "Daniel Iles: Hook Amazon, Animation Icon (2 bài), Animation Amazon 2, Bevel chữ Alcoholics, Hook Harvard",
+            duration: "1h 17p",
+            focus: "Hiệu ứng nổi khối chữ Bevel Emboss, số tiền nhảy tự động bằng Modifier Text+ Counter, xoay logo 3D DVE, nhắm trúng tệp khách hàng Tài chính / Fintech trả $50-$70/video."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa Fusion 101",
+            chapter: "Chương 1: Nền Tảng Node Trong Fusion",
+            title: "Bài 01 - 05: Merge Node, Transform, Background, DVE xoay 3D",
+            duration: "20 phút",
+            focus: "Nắm vững nguyên lý kết nối các Node trong Fusion để không bị rối dây hay mất hình."
+          }
+        ],
+        watchStrategy: "Xem bài Bevel chữ và bài Animation Amazon -> Thực hành tạo bộ đếm số tiền từ 0 lên $10,000 -> Ghép âm thanh Cash Register -> Xuất file <code>Reel_Daniel_Iles_Finance.mp4</code>.",
         solution: {
           steps: [
             "Trong Fusion: Tạo mock-up thẻ ngân hàng và logo Amazon xoay 3D (DVE Node).",
@@ -354,6 +601,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 6.0,
         output: "XUẤT XƯỞNG FILE MP4 PHONG CÁCH CINEMATIC STORYTELLING",
         isOutput: true,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 2.1: Level 2 & Level 3",
+            title: "Jvevermind Part 1 - 5 (Cắt thô, Ý tưởng, B-roll, Animation chữ, Tracking intro) & Bài 25 - Khoai Lang Thang Xếp chữ",
+            duration: "1h 53p",
+            focus: "Nhịp thở Pacing chậm rãi cho video tâm sự/du lịch, kỹ thuật xếp chữ theo bố cục nghệ thuật, thiết kế âm thanh đa tầng (Soundscape), Color Space Transform (CST) Rec.709."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 2.1",
+            title: "Tổng kết Part 2 (Cách tìm ý tưởng Edit cho mọi công việc) & Part 3 (Cách tính giá video)",
+            duration: "25 phút",
+            focus: "Tư duy bóc tách ý tưởng của Sean Kang để gặp bất kỳ loại video nào cũng biết cách dựng và báo giá."
+          }
+        ],
+        watchStrategy: "Tập trung xem Bài 25 Khoai Lang Thang và Jvevermind Part 4 & 5 -> Thực hành xếp chữ theo nhịp acoustic -> Xuất file <code>Reel_Cinematic_Storytelling.mp4</code>.",
         solution: {
           steps: [
             "Làm chủ nhịp thở Pacing: Kéo dài các khoảng ngắt nghỉ có chủ đích cho video tâm sự / du lịch.",
@@ -386,6 +652,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 3.0,
         output: "Link Portfolio chuyên nghiệp có 4-5 video hoàn chỉnh đỉnh nhất",
         isOutput: false,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa Freelance MVP",
+            chapter: "Chương 4: Mindset & Thiết Lập Portfolio",
+            title: "Bài đọc: Thiết lập Portfolio đẹp - FREE & Chương 3 Phần 6: Thiết lập Website Portfolio cho riêng bạn",
+            duration: "20 phút",
+            focus: "Cấu trúc 3 folder Google Drive (Talking Head / Motivation / Finance), chọn 2 video đẹp nhất lên đầu trang, đặt tên file chuẩn."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa Elite Pro",
+            chapter: "Phần 5: Review Profile & Portfolio",
+            title: "Review Profile / Tối ưu Portfolio thành viên trong khóa (Bóc tách lỗi sai khiến khách lướt qua)",
+            duration: "25 phút",
+            focus: "Tránh các lỗi portfolio phổ biến: Link bị khóa quyền truy cập, video quá dài, không ghi rõ vai trò editor."
+          }
+        ],
+        watchStrategy: "Đọc Chương 4 Freelance MVP -> Tạo ngay folder Google Drive public -> Xem Phần 5 Elite Pro để checklist lại các lỗi trước khi gửi link cho khách.",
         solution: {
           steps: [
             "Tạo 1 folder Google Drive công khai: <code>[Your Name] - High Retention Short-Form Portfolio</code>.",
@@ -408,6 +693,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 2.5,
         output: "Gig Fiverr 'High Retention TikTok/Reels Video Editor' lên sóng",
         isOutput: false,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa Freelance MVP",
+            chapter: "Chương 1: Fiverr từ A - Z",
+            title: "Phần 1 - 5: Tổng quan, Lập Gigs & Tối ưu Gigs, Thực hành lập Gig thực tế, Cách để thuật toán Fiverr đánh giá cao",
+            duration: "45 phút",
+            focus: "Tiêu đề Gig SEO 'I will edit engaging tiktok reels alex hormozi style with high retention', thiết kế thumbnail Before/After 1280x769px, tải Reel 4 làm Gig Preview Video."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa Freelance MVP",
+            chapter: "Chương 5: Khách Hàng / Giao Tiếp",
+            title: "Phần 4: Tính giá Công việc ($25 - $65 - $120)",
+            duration: "15 phút",
+            focus: "Chiến lược đặt 3 gói giá Basic / Standard / Premium để kích thích khách bấm đặt hàng nhanh."
+          }
+        ],
+        watchStrategy: "Xem Phần 2 & 3 của Chương 1 trên IINA -> Mở trình duyệt làm theo từng trường form của Fiverr -> Upload video Reel 4 lên làm preview.",
         solution: {
           steps: [
             "Đặt tiêu đề Gig chuẩn SEO: <em>'I will edit engaging tiktok reels alex hormozi style with high retention'</em>.",
@@ -430,6 +734,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 4.0,
         output: "Gửi 10 - 20 Proposal đầu tiên đến các Job Short Form trên Upwork",
         isOutput: false,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa Upwork MVP",
+            chapter: "Chương 2: Thực Hành từ A-Z & Kiếm Tiền",
+            title: "Phần 4 (Thiết lập & Tối ưu profile), Phần 14 (Cách Viết Proposal/CV Ứng Tuyển), Phần 15 (Thực Hành Tìm Job - Nộp Proposal - Chốt Đơn)",
+            duration: "50 phút",
+            focus: "Công thức viết Proposal 3 phần dưới 5 dòng của Sean Kang: Nêu vấn đề tụt view -> Đính kèm 1 link video khớp nhất -> Đề xuất làm bài test ngắn 15s."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa Freelance MVP",
+            chapter: "Chương 2: Upwork",
+            title: "Phần 4 (Lọc danh sách công việc), Phần 5 (Đánh giá công việc ngon), Phần 8 (Lưu ý khi viết Proposal)",
+            duration: "30 phút",
+            focus: "Cách soi Payment Verified, Hire Rate > 60%, tránh job lừa đảo hoặc ép giá."
+          }
+        ],
+        watchStrategy: "Xem kỹ Phần 14 & 15 của Upwork MVP -> Viết nháp 1 mẫu Proposal theo công thức Sean Kang -> Bắt đầu gửi 3-5 proposal mỗi tối vào khung giờ vàng 20h - 23h.",
         solution: {
           steps: [
             "Đặt tiêu đề Profile Upwork: <em>Short-Form Video Editor | Alex Hormozi Style | TikTok & Reels Retention Specialist</em>.",
@@ -451,6 +774,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 10.0,
         output: "Nhận thanh toán đầu tiên qua Upwork / Fiverr / Ngân hàng",
         isOutput: true,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa Upwork MVP",
+            chapter: "Chương 2: Thực Hành & Kiếm Tiền",
+            title: "Phần 17 (Nhắn Tin/Giao Tiếp Chuyên Nghiệp Với Khách Hàng) & Phần 18 ('Đọc Khách Như Một Cuốn Sách')",
+            duration: "35 phút",
+            focus: "Cách rep tin nhắn trong 5 phút, đàm phán hợp đồng Fixed-Price đầu tiên $30-$50, giao bài sớm trước deadline 6-12 tiếng để nhận review 5 sao tuyệt đối."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 2.1: Level 2 & Level 3",
+            title: "Tổng kết part 3 - Cách tính giá video (08:00)",
+            duration: "8 phút",
+            focus: "Biết cách tính giá theo phút/video để không bị hớ và tạo sự tự tin khi nói chuyện với khách ngoại quốc."
+          }
+        ],
+        watchStrategy: "Xem Phần 17 & 18 trên Upwork MVP để chuẩn bị sẵn kịch bản trả lời tin nhắn khi có thông báo -> Khi khách ping, áp dụng ngay kịch bản để chốt đơn.",
         solution: {
           steps: [
             "Khi khách nhắn tin: Phản hồi ngay trong vòng 5 phút (cài app Upwork trên điện thoại).",
@@ -483,6 +825,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 15.0,
         output: "Có 1 - 2 khách ruột đặt hàng cố định hàng tuần (12-20 video/tháng)",
         isOutput: false,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa Freelance MVP",
+            chapter: "Chương 5: Khách Hàng / Giao Tiếp",
+            title: "Phần 1 (Các loại công việc), Phần 2 (Job Ngon & Không Ngon), Phần 5 (Cách làm việc với khách), Phần 6 (Giao tiếp hiệu quả)",
+            duration: "40 phút",
+            focus: "Chiến lược upsell từ 2 video lẻ thành hợp đồng Retainer 16 video/tháng ($600/tháng), thống nhất lịch nộp RAW thứ 2 - trả bài thứ 5."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa Elite Pro",
+            chapter: "Phần 4: Họp & Làm Việc Thực Tế",
+            title: "Ghi lại Meeting hàng tuần (Cách Sean Kang làm việc và giữ chân khách hàng ruột nhiều năm)",
+            duration: "30 phút",
+            focus: "Tác phong chuyên nghiệp, cách nhận feedback và biến khách hàng thành đối tác lâu năm."
+          }
+        ],
+        watchStrategy: "Sau khi giao bài Reel 2 hoặc 3 được khách khen -> Xem Phần 6 Chương 5 Freelance MVP -> Gửi tin nhắn đề xuất gói Retainer theo mẫu.",
         solution: {
           steps: [
             "Sau khi làm tốt 2-3 video lẻ, nhắn tin đề xuất: <em>'Để kênh của bạn nhất quán và tối ưu chi phí, tôi đề xuất gói 16 video/tháng với giá $600/tháng'</em>.",
@@ -504,6 +865,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 20.0,
         output: "Bảo vệ thành công đồ án, giải phóng 100% nghĩa vụ học hành",
         isOutput: false,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Chiến Lược Cá Nhân & Kỷ Luật",
+            chapter: "La Bàn Sinh Tồn 2026 - 2027",
+            title: "Khung giờ vàng Deep Work: 13:30 - 15:30 mỗi ngày (Tập trung 100% làm đồ án tốt nghiệp)",
+            duration: "2 giờ / ngày",
+            focus: "Ứng dụng AI tổng hợp tài liệu học thuật và viết báo cáo, bám sát giảng viên hướng dẫn để chỉnh sửa sớm."
+          },
+          {
+            isPrimary: false,
+            course: "Hệ thống Quản Trị Habits",
+            chapter: "Habits 2-Mode System",
+            title: "Duy trì kỷ luật nhị phân: Hoàn thành mục tiêu đồ án mỗi ngày trước khi mở máy edit video",
+            duration: "Hàng ngày",
+            focus: "Giải phóng hoàn toàn nghĩa vụ học vấn để ăn Tết trọn vẹn và tự do làm việc 100% cho tương lai."
+          }
+        ],
+        watchStrategy: "Cài đặt báo thức 13:30 mỗi ngày -> Tắt thông báo MXH -> Làm liên tục 2 tiếng đồ án -> Tích xanh trên hệ thống Habits.",
         solution: {
           steps: [
             "Thiết lập khung giờ vàng: 13:30 - 15:30 mỗi ngày chỉ dành riêng cho đồ án, tắt điện thoại.",
@@ -525,6 +905,25 @@ export const ROADMAP_SPRINTS = [
         effortHours: 5.0,
         output: "Độc lập tài chính, có nghề kiếm tiền bền vững, tương lai rộng mở",
         isOutput: true,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa Upwork MVP",
+            chapter: "Chương 2 & Chương 3",
+            title: "Chương 2 Phần 10: Cách Rút Tiền Thu Nhập Từ Upwork Về Ngân Hàng Việt Nam & Chương 3: Cách để trở thành một freelancer bền vững",
+            duration: "20 phút",
+            focus: "Cài đặt tài khoản ngân hàng nhận tiền USD về VNĐ tỷ giá tốt nhất, rút tiền trước ngày 25 Tết."
+          },
+          {
+            isPrimary: false,
+            course: "Lộ Trình Đường Dài",
+            chapter: "Career Longevity Track",
+            title: "Level 2 & Level 3: Mở rộng sang Long Form YouTube & Vibe Coding Tech Creator trong năm 2027",
+            duration: "Đường dài",
+            focus: "Tự thưởng cho bản thân và gia đình, ăn mừng thành quả cùng Diễm, sẵn sàng bứt phá năm 2027."
+          }
+        ],
+        watchStrategy: "Xem Phần 10 Upwork MVP để chuẩn bị tài khoản rút tiền -> Xem lại toàn bộ thành quả 4 Sprints -> Tận hưởng một cái Tết Đinh Mùi rực rỡ và đàng hoàng!",
         solution: {
           steps: [
             "Rút tiền từ Upwork về tài khoản ngân hàng trước ngày 25 Tết.",

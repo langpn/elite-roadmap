@@ -696,6 +696,40 @@ export function renderUI() {
                 <div class="output-text">🚀 Đích đến: ${task.output}</div>
 
                 <!-- Actionable Solution & Execution Guide -->
+                ${task.recommendedLessons && task.recommendedLessons.length > 0 ? `
+                  <div class="recommended-lessons-box">
+                    <div class="recommended-header-bar">
+                      <span style="display: flex; align-items: center; gap: 6px;">
+                        <span>🎬</span> Video Bài Giảng Cần Xem Để Hoàn Thành Task
+                      </span>
+                      <span style="font-size: 10.5px; opacity: 0.85; font-family: 'JetBrains Mono', monospace; color: #10b981;">
+                        Must Watch
+                      </span>
+                    </div>
+                    <div class="recommended-lessons-list">
+                      ${task.recommendedLessons.map((item, rIdx) => `
+                        <div class="recommended-lesson-item ${item.isPrimary ? 'is-primary' : 'is-secondary'}">
+                          <div class="rec-lesson-top">
+                            <span class="rec-badge ${item.isPrimary ? 'primary-badge' : 'secondary-badge'}">
+                              ${item.isPrimary ? '🔴 BẮT BUỘC XEM' : '💡 BỔ TRỢ / CỨU NGUY'}
+                            </span>
+                            <span class="rec-course-tag">${item.course}</span>
+                            <span class="rec-duration">⏱️ ${item.duration}</span>
+                          </div>
+                          <div class="rec-lesson-title"><strong>${item.chapter}:</strong> ${item.title}</div>
+                          ${item.focus ? `<div class="rec-lesson-focus">🎯 <em>Trọng tâm:</em> ${item.focus}</div>` : ''}
+                        </div>
+                      `).join("")}
+                    </div>
+                    ${task.watchStrategy ? `
+                      <div class="watch-strategy-tip">
+                        <strong>⚡ Chiến lược xem thông minh:</strong> ${task.watchStrategy}
+                      </div>
+                    ` : ''}
+                  </div>
+                ` : ''}
+
+                <!-- Actionable Solution & Execution Guide -->
                 ${task.solution ? `
                   <div class="task-solution-box">
                     <div class="solution-header-bar">
