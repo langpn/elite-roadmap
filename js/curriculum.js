@@ -245,7 +245,7 @@ export const ROADMAP_SPRINTS = [
           tip: "Âm thanh dở là người xem tắt video ngay giây đầu tiên. Luôn giữ giọng nói ổn định ở mức -6dB, và nhạc nền ở mức -18dB đến -22dB."
         },
         mapping: {
-          troubleshoot: "Kẹt lọc ồn? Xem: <strong>Baby Resolve C9-B03 (Voice Isolation) & C9-B05 (Normalize)</strong>",
+          troubleshoot: "Kẹt lọc ồn / cân bằng âm lượng? Mở Main Zettel: <strong>chuan-hoa-bo-cuc-reframe-va-audio-leveling-truoc-khi-edit.md</strong>",
           levelUp: "Xem cách rải âm thanh: <strong>Baby Resolve C14-B03 (LIVE thêm Sound Effect)</strong>",
           monetize: "Âm thanh dở người xem tắt video ngay giây đầu tiên dù hình có đẹp đến mấy."
         }
