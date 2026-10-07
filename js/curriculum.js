@@ -204,7 +204,7 @@ export const ROADMAP_SPRINTS = [
           tip: "Bí quyết Master 1 lần: Xem video 'Elite C1.1 Bài 03 (Marcus)' chia 4 chặng: 0-6p (Setup Bins/Timeline), 6-22p (Cắt A-Roll Q-W-E), 22-35p (Âm thanh -6dB), 35-48p (Xuất file). Xem đến đâu bấm Pause làm theo đến đó!"
         },
         mapping: {
-          troubleshoot: "Kẹt cắt nhịp? Xem: <strong>Baby Resolve C6-B01 (Giao diện Edit) & Phím Q-W-E-S-D</strong>",
+          troubleshoot: "Kẹt nhịp cắt / băn khoăn khi nào xóa - khi nào chia? Mở Main Zettel: <strong>nghe-thuat-rough-cut-a-roll-va-tu-duy-hai-vong-cat.md</strong>",
           levelUp: "Xem thêm bản gốc: <strong>Elite Chương 1.1 Bài 03 (Marcus) & Bài 06 (Khách Úc)</strong>",
           monetize: "Kỹ năng Rough Cut sắc bén là nền tảng số 1 của mọi video ngắn triệu view."
         }
@@ -330,7 +330,7 @@ export const ROADMAP_SPRINTS = [
         },
         mapping: {
           troubleshoot: "Kẹt render? Xem: <strong>Baby Resolve C10-B01 & B02 (Deliver MP4 chuẩn)</strong>",
-          levelUp: "Xem phân tích lỗi: <strong>Elite Chương 1.1 (Những lỗi thường gặp và lời khuyên)</strong>",
+          levelUp: "Nắm trọn nguyên lý 2 vòng cắt A-Roll: Mở Main Zettel <strong>nghe-thuat-rough-cut-a-roll-va-tu-duy-hai-vong-cat.md</strong>",
           monetize: "🎯 Đây là video đầu tiên bỏ vào Portfolio để gửi chào hàng!"
         }
       },
