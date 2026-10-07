@@ -286,7 +286,7 @@ export const ROADMAP_SPRINTS = [
           tip: "Không để quá 3 dòng chữ xuất hiện cùng lúc. Tốt nhất là 1-3 từ nhảy nhịp nhàng theo đúng tốc độ nói của nhân vật."
         },
         mapping: {
-          troubleshoot: "Kẹt làm sub? Xem: <strong>Baby Resolve C12-B07 (AI Subtitle) & C6-B14 (Text Inspector)</strong>",
+          troubleshoot: "Kẹt tạo style sub / ngắt nhịp? Mở Main Zettel: <strong>quy-chuan-phu-de-va-kinetic-typography-alex-hormozi.md</strong>",
           levelUp: "Dùng Preset có sẵn: <strong>resources/Snap Captions Template_V1.02.zip</strong>",
           monetize: "70% người dùng lướt video tắt tiếng. Phụ đề bắt mắt giữ chân 80% người xem."
         }
