@@ -42,7 +42,7 @@ export const ROADMAP_SPRINTS = [
         title: "Trích xuất RAW bài tập & Kho Sound Effects chung",
         duration: "Bài đọc",
         effortHours: 1.5,
-        output: "Giải nén file RAW (Matthiew Adams 50MB) vào ~/studio",
+        output: "Chuẩn bị sẵn 4 RAW thực chiến (Matthiew, Sean, Lâm Trần, Josh) trong ~/workspace/studio",
         isOutput: false,
         recommendedLessons: [
           {
@@ -62,18 +62,18 @@ export const ROADMAP_SPRINTS = [
             focus: "Kéo thả kho SFX vào Power Bins trên Mac để dự án nào cũng tự động có sẵn âm thanh mà không phải import lại."
           }
         ],
-        watchStrategy: "Chỉ cần xem lướt Bài 01 Chương 0.2 trong 3 phút để lấy link Drive -> Giải nén thẳng vào <code>~/studio/Projects/Reel_01_Matthiew/RAW/</code> -> Xem nhanh bài Power Bins trong Baby Resolve để gom SFX vào Master.",
+        watchStrategy: "Đọc trước cẩm nang <code>chuong-1.2/TIMELINE_CHI_TIET.md</code> -> Mở video P3 & P4 trên IINA xem ở tốc độ 1.25x -> Kiểm tra sẵn 4 RAW thực chiến trong kho tài nguyên.",
         solution: {
           steps: [
-            "Vào thư mục: <code>~/Documents/edit-courses/resources/Tài nguyên khoá học/RAW (Footages thô thực hành)/RAW Talking Head Video (từ gói Elite trở lên)/RAW thực tế của khách hàng (dạng dọc)/</code>.",
-            "Giải nén file <code>(Marketing) Matthiew Adams.zip</code> và đưa toàn bộ video thô vào <code>~/studio/Projects/Reel_01_Matthiew/RAW/</code>.",
-            "Mở DaVinci Resolve -> Media Storage -> Kéo toàn bộ folder Sound Effects vào <strong>Master -> Power Bins</strong> để dự án nào cũng tự động có sẵn âm thanh."
+            "Vào thư mục: <code>resources/Tài nguyên khoá học/RAW (Footages thô thực hành)/RAW Talking Head Video (từ gói Elite trở lên)/RAW thực tế của khách hàng (dạng dọc)/</code>.",
+            "Chuẩn bị sẵn 4 file RAW thực chiến: <code>(Marketing) Matthiew Adams</code>, <code>Sean Kang/RAW Sean 2</code>, <code>(Real Estate) Lâm Trần/Video #9</code>, và <code>(Fitness) Josh William</code>.",
+            "Mở DaVinci Resolve -> View -> Show Power Bins -> Kéo toàn bộ folder Sound Effects vào <strong>Master -> Power Bins</strong> để dự án nào cũng tự động có sẵn âm thanh."
           ],
           tip: "Power Bins lưu vĩnh viễn trên máy Mac của bạn. Hãy gom sẵn SFX thành các nhóm: Whoosh, Pop, Click, Riser, Impact để lấy ngay chỉ trong 1 giây."
         },
         mapping: {
           troubleshoot: "Kẹt giải nén/tổ chức? Xem: <strong>Baby Resolve C2-B01 (Database) & C3-B06 (Lưu Power Bins)</strong>",
-          levelUp: "Muốn kho xịn hơn? Lấy trong: <strong>~/Documents/edit-courses/resources/ (SFX, Font, Emojis)</strong>",
+          levelUp: "Muốn kho xịn hơn? Lấy trong: <strong>~/workspace/studio/resources/ (SFX, Font, Emojis)</strong>",
           monetize: "Tư duy: Người thợ giỏi không tìm đồ mỗi ngày, hãy gom sẵn thư viện dùng chung!"
         }
       },
@@ -120,8 +120,8 @@ export const ROADMAP_SPRINTS = [
       },
       {
         id: "s0_t3",
-        title: "Tư duy cốt lõi trước khi thực hành (Chương 0)",
-        duration: "4 phút",
+        title: "Tư duy cốt lõi trước khi thực hành (Chương 0 & C1.2 P1)",
+        duration: "35 phút",
         effortHours: 1.0,
         output: "Thuộc lòng: Edit đẹp < View & Doanh thu; 3-5 giây đầu là sinh tử",
         isOutput: false,
@@ -129,7 +129,7 @@ export const ROADMAP_SPRINTS = [
           {
             isPrimary: true,
             course: "Khóa DaVinci Elite",
-            chapter: "Chương 1.2: Cập Nhật Mới Nhất",
+            chapter: "Chương 1.2: Cập Nhật Mới Nhất (30/09/2026)",
             title: "P1 - Thị Trường (Toàn cảnh giá cả, khách hàng & tư duy video ngắn)",
             duration: "31 phút",
             focus: "Hiểu vì sao khách hàng quốc tế trả $35-$60/video ngắn, họ cần tốc độ 24-48h và âm thanh sạch hơn là kỹ xảo màu mè."
@@ -143,12 +143,12 @@ export const ROADMAP_SPRINTS = [
             focus: "Xem cách Sean Kang bóc tách 3 giây đầu tiên (Hook Retention) của các kênh triệu view."
           }
         ],
-        watchStrategy: "Bật video <strong>P1 - Thị Trường (Chương 1.2)</strong> với tốc độ 1.25x và bật phụ đề tiếng Việt <code>P1 - Thị Trường.srt</code> đã được kiểm định sạch để ngấm tư duy làm giàu từ video ngắn.",
+        watchStrategy: "Mở IINA nghe P1 với tốc độ 1.25x -> Ghi nhớ 3 sự thật: Khách không mua kỹ xảo, khách mua Retention và sự tin cậy.",
         solution: {
           steps: [
-            "Ghi nhớ quy luật sinh tử: Khán giả quyết định xem tiếp hay lướt đi trong <strong>3 giây đầu tiên (Hook Retention)</strong>.",
-            "Mở video thô của Matthiew Adams, nghe lướt toàn bộ nội dung với tốc độ 1.5x (nhấn phím <kbd class='solution-kbd'>L</kbd> 2 lần).",
-            "Dùng phím <kbd class='solution-kbd'>M</kbd> (Marker) để ghim sẵn: Câu nói sốc/kịch tính nhất để cắt đưa lên đầu làm Hook, và các đoạn ừ à cần loại bỏ."
+            "Nghe kỹ Phần 1 Chương 1.2: Khách hàng chi trả cho cảm giác yên tâm và nhịp cắt dồn dập, không mua kỹ xảo quá đà.",
+            "Nắm vững 3 chỉ số vàng: Hook Retention (3s đầu > 65%), Average View Duration (> 70%), CTA chuyển đổi.",
+            "Tập trung toàn bộ năng lượng vào 4 sản phẩm Portfolio thực chiến để đi săn job."
           ],
           tip: "Đừng vội thêm màu mè. Một video triệu view bắt đầu từ việc cắt nhịp A-Roll dồn dập, gãy gọn, không có khoảng thở thừa."
         },
@@ -170,19 +170,19 @@ export const ROADMAP_SPRINTS = [
     tasks: [
       {
         id: "s1_t1",
-        title: "Chương 1.2 - Phần 3 & 4: Timeline 9:16 & Cắt thô A-Roll",
+        title: "Chương 1.2 - Phần 3 & 4: Timeline 9:16 & Cắt thô A-Roll (AI Augmented)",
         duration: "26 phút",
-        effortHours: 2.5,
-        output: "Timeline 1080x1920 sạch bóng câu vấp & khoảng lặng bằng phím Q-W-E-S-D",
+        effortHours: 2.0,
+        output: "Timeline 1080x1920 sạch bóng câu vấp & khoảng lặng bằng Q-W-E + Script AI",
         isOutput: false,
         recommendedLessons: [
           {
             isPrimary: true,
             course: "Khóa DaVinci Elite",
-            chapter: "Chương 1.2: Cập Nhật Mới Nhất",
+            chapter: "Chương 1.2: Cập Nhật Mới Nhất (30/09/2026)",
             title: "P3 - Thông số Timeline & FPS (12:03) & P4 - Cắt RAW và lưu ý khi cắt RAW (14:17)",
             duration: "26 phút",
-            focus: "Thiết lập Timeline 1080x1920 30fps. Quy tắc vàng: Khẩu hình đi trước âm thanh 2-3 frames, không chém cụt âm đuôi (s, t, k, d), thao tác Q-W-E dứt khoát."
+            focus: "Thiết lập Timeline 1080x1920 30fps. Quy tắc vàng: Khẩu hình đi trước âm thanh 2-3 frames, không chém cụt âm đuôi (s, t, k, d), thao tác Q-W-E dứt khoát kết hợp auto_roughcut.py."
           },
           {
             isPrimary: false,
@@ -193,19 +193,19 @@ export const ROADMAP_SPRINTS = [
             focus: "Xem Sean Kang trực tiếp cắt thô A-Roll trên footage khách hàng quốc tế thật bằng cụm phím công thái học Q-W-E."
           }
         ],
-        watchStrategy: "Đọc trước cẩm nang <code>chuong-1.2/TIMELINE_CHI_TIET.md</code> -> Mở video P3 & P4 trên IINA xem ở tốc độ 1.25x -> Mở DaVinci thực hành cắt ngay file RAW Matthiew Adams.",
+        watchStrategy: "Xem video P3 & P4 trên IINA ở tốc độ 1.25x -> Nắm chắc quy tắc 'Đủ âm đuôi & đủ khẩu hình miệng mở' -> Chạy tool auto_roughcut.py để sinh FCPXML nạp vào Resolve rồi dùng phím T/Q/W tinh chỉnh trong 3 phút.",
         solution: {
           steps: [
-            "<strong>B1 (Tạo Project & 3 Bins chuẩn):</strong> Bấm <code>Shift + 1</code> tạo New Project <code>Reel_01_Sprint1_Master</code> -> Vào Edit Page (<code>Shift + 4</code>) -> Chuột phải bảng Media Pool tạo 3 Bins: <code>RAWs</code>, <code>Timelines</code>, <code>Audio_SFX</code>.",
-            "<strong>B2 (Import RAW & Tạo Timeline 9:16 30fps):</strong> Mở bin <code>RAWs</code> bấm <code>Cmd + I</code> chọn <code>RAW.mov</code> (Matthiew Adams) thả vào (chọn <em>Don't Change</em> frame rate) -> Bấm vào bin <code>Timelines</code> bấm <code>Cmd + N</code> -> Bỏ tích <em>Use Project Settings</em> -> Format: Tích chọn <strong>Use Vertical Resolution</strong> (1080 x 1920) & <strong>Timeline Frame Rate: 30 fps</strong> -> Kéo RAW xuống Timeline.",
-            "<strong>B3 (Tư thế tay trái & Phóng to sóng âm):</strong> Chuyển bộ gõ macOS sang <strong>English (ABC)</strong> -> Bấm <code>Shift + W</code> (hoặc <code>Cmd + =</code>) phóng to sóng âm thanh màu xanh lá cây -> Đặt 4 ngón tay: Ngón áp út đè <kbd class='solution-kbd'>Q</kbd> (gọt đầu), ngón giữa đè <kbd class='solution-kbd'>W</kbd> (cắt đôi) / <kbd class='solution-kbd'>S</kbd> (xóa), ngón trỏ đè <kbd class='solution-kbd'>E</kbd> (gọt đuôi), ngón cái đè <code>Spacebar</code>.",
-            "<strong>B4 (Cắt thô không cụt - không thừa):</strong> Nhìn sóng âm phồng to là có tiếng, phẳng lì là ừ à. Dứt câu bấm dừng -> Kéo kim qua đoạn ừ à đến đầu câu sau -> Bấm nhẹ <kbd class='solution-kbd'>Q</kbd> để gọt sạch khoảng lặng -> Chừa lại <strong>2 frame đệm</strong> tránh chém cụt âm đuôi (-s, -ed, -t) -> Rút gọn từ 2 phút xuống còn đúng <strong>30–45 giây</strong>."
+            "<strong>B1 (Tự động hóa 80% bằng Tool):</strong> Chạy lệnh <code>python3 studio/scripts/auto_roughcut.py [path_raw] --mode fast</code> -> Nhận ngay file <code>.fcpxml</code> sạch 100% khoảng lặng chỉ trong 3 giây.",
+            "<strong>B2 (Nạp FCPXML vào Resolve):</strong> Vào File -> Import -> Timeline -> Chọn file <code>.fcpxml</code> vừa sinh -> Toàn bộ các nhát cắt ripple-cut tự động nằm ngay ngắn trên timeline 1080x1920 30fps.",
+            "<strong>B3 (Tinh chỉnh cơ bắp 20% còn lại):</strong> Nhấn phím <kbd class='solution-kbd'>T</kbd> (Trim Edit Mode) hoặc dùng cụm <kbd class='solution-kbd'>Q - W - E</kbd> lướt qua các mối nối -> Kiểm tra quy tắc Sean Kang: Chừa đệm mở môi (+70ms) và đệm nhả âm (+100ms) để câu nói tròn vành rõ chữ.",
+            "<strong>B4 (Kiểm duyệt dứt khoát):</strong> Loại bỏ các câu nói vấp lặp lại. Rút gọn file thô từ 2-3 phút xuống còn đúng <strong>45–60 giây</strong> cô đọng."
           ],
-          tip: "Bí quyết Master 1 lần: Xem video 'Elite C1.1 Bài 03 (Marcus)' chia 4 chặng: 0-6p (Setup Bins/Timeline), 6-22p (Cắt A-Roll Q-W-E), 22-35p (Âm thanh -6dB), 35-48p (Xuất file). Xem đến đâu bấm Pause làm theo đến đó!"
+          tip: "Kỷ luật thép: Không dùng chuột bấm vào icon dao lam. Tay trái khóa cứng trên cụm Q-W-E để đạt tốc độ cắt thô dưới 10 phút/video!"
         },
         mapping: {
-          troubleshoot: "Kẹt nhịp cắt / băn khoăn khi nào xóa - khi nào chia? Mở Main Zettel: <strong>nghe-thuat-rough-cut-a-roll-va-tu-duy-hai-vong-cat.md</strong>",
-          levelUp: "Xem thêm bản gốc: <strong>Elite Chương 1.1 Bài 03 (Marcus) & Bài 06 (Khách Úc)</strong>",
+          troubleshoot: "Kẹt nhịp cắt / lệch khẩu hình? Mở Main Zettel: <strong>nghe-thuat-rough-cut-a-roll-va-tu-duy-hai-vong-cat.md</strong>",
+          levelUp: "Sử dụng script: <strong>studio/scripts/auto_roughcut.py</strong> với cờ --noise-db và --head-margin",
           monetize: "Kỹ năng Rough Cut sắc bén là nền tảng số 1 của mọi video ngắn triệu view."
         }
       },
@@ -252,10 +252,10 @@ export const ROADMAP_SPRINTS = [
       },
       {
         id: "s1_t3",
-        title: "Chương 1.2 - Phần 6 & 7: Phụ đề & Style chữ Alex Hormozi",
+        title: "Chương 1.2 - Phần 6 & 7: Phụ đề & Style chữ 1 Dòng Đổ Bóng",
         duration: "1h 33p",
-        effortHours: 3.5,
-        output: "Subtitles nhảy từng từ, font dày, đổi màu vàng/xanh ở từ khóa chính",
+        effortHours: 3.0,
+        output: "Subtitles 1 dòng không hộp, ngắt nhịp 3-5 từ, đổ bóng atmospheric depth",
         isOutput: false,
         recommendedLessons: [
           {
@@ -264,7 +264,7 @@ export const ROADMAP_SPRINTS = [
             chapter: "Chương 1.2: Cập Nhật Mới Nhất",
             title: "P6 - Chạy sub & chỉnh sub (32:26) & P7 - Chỉnh sửa sub (61:22)",
             duration: "1h 33p",
-            focus: "Kỹ thuật ngắt cụm sub 2-5 từ theo nhịp thở, chuyển subtitle sang Text+, đổi màu từ khóa Vàng neon / Đỏ cam, thêm viền Stroke đen 10px."
+            focus: "Kỹ thuật ngắt cụm sub 3-5 từ theo nhịp thở (0.8s-1.4s), đổi sang Text+ 1 dòng không viền hộp đen, text-shadow đổ bóng sâu, highlight từ khóa Vàng hổ phách #F59E0B."
           },
           {
             isPrimary: false,
@@ -278,25 +278,26 @@ export const ROADMAP_SPRINTS = [
         watchStrategy: "Xem P6 để nắm nhịp ngắt câu -> Tua nhanh P7 đến phút 15:00 xem cách tạo style chữ Text+ và đổi màu từ khóa -> Cài đặt template Snap Caption trong folder resources.",
         solution: {
           steps: [
-            "Vào menu <code>Timeline -> Create Subtitles from Audio</code> (chọn Language: English, Max characters: 12-14 từ).",
-            "Chọn track Subtitle -> Inspector -> Tab Style: Đổi font sang <strong>The Bold Font</strong> hoặc <strong>Montserrat Black</strong>, Size: 85, Stroke viền đen: 12px.",
-            "Chuyển subtitle sang Text+ để custom: Màu chữ nền trắng, các từ khóa tiền bạc/hành động đổi màu Vàng (<code>#FFD700</code>) hoặc Xanh lá (<code>#22C55E</code>).",
-            "Áp dụng Template <code>Snap Captions Template</code> trong thư mục <code>resources</code> để chữ tự động nảy nhẹ từng từ."
+            "Chạy script auto_roughcut.py tự sinh file <code>.srt</code> đã sửa chính tả tiếng Việt hoặc vào menu <code>Timeline -> Create Subtitles from Audio</code>.",
+            "Chọn track Subtitle -> Inspector -> Tích chọn <strong>Use Track Style</strong>.",
+            "Style chuẩn điện ảnh 2026: Font <strong>Inter</strong> hoặc <strong>Montserrat Black</strong>, Size: 65–75, Màu chữ: Trắng kem <code>#FAF7F2</code>, Highlight từ khóa: Vàng hổ phách <code>#F59E0B</code>.",
+            "Bỏ hoàn toàn background container box. Thêm Drop Shadow đa tầng (Opacity 85%, Blur 10, Distance 4) để chữ nổi bật trên mọi nền sáng tối.",
+            "Vị trí Y: Kéo thanh trượt Y về mức <strong>-0.75 đến -0.80</strong> (rơi đúng Super Safe Zone, không bị che bởi caption TikTok/Reels)."
           ],
-          tip: "Không để quá 3 dòng chữ xuất hiện cùng lúc. Tốt nhất là 1-3 từ nhảy nhịp nhàng theo đúng tốc độ nói của nhân vật."
+          tip: "Tuyệt đối không dùng khung hộp đen 2-3 dòng nặng nề. Dùng caption 1 dòng dứt khoát 3-5 từ/nhịp thở!"
         },
         mapping: {
           troubleshoot: "Kẹt tạo style sub / ngắt nhịp? Mở Main Zettel: <strong>quy-chuan-phu-de-va-kinetic-typography-alex-hormozi.md</strong>",
-          levelUp: "Dùng Preset có sẵn: <strong>resources/Snap Captions Template_V1.02.zip</strong>",
+          levelUp: "Dùng Preset có sẵn: <strong>resources/Presets_Templates/Snap Captions Template/</strong>",
           monetize: "70% người dùng lướt video tắt tiếng. Phụ đề bắt mắt giữ chân 80% người xem."
         }
       },
       {
         id: "s1_t4",
-        title: "Chương 1.2 - Phần 8.1: 🎯 XUẤT XƯỞNG REEL 1 (Cơ bản nhất)",
+        title: "Chương 1.2 - Phần 8.1: 🎯 XUẤT XƯỞNG REEL 1 (Matthiew Adams)",
         duration: "25 phút",
         effortHours: 3.0,
-        output: "XUẤT XƯỞNG FILE MP4 REEL 1 CẦM TAY TRONG MÁY",
+        output: "XUẤT XƯỞNG FILE MP4 REEL 1 (PORTFOLIO_01_Matthiew_Marketing.mp4)",
         isOutput: true,
         recommendedLessons: [
           {
@@ -316,14 +317,14 @@ export const ROADMAP_SPRINTS = [
             focus: "Thông số Render MP4 1080x1920 30fps, bitrate 15,000 Kbps sắc nét mà nhẹ máy."
           }
         ],
-        watchStrategy: "Mở cẩm nang <code>~/studio/Projects/Reel_01_Matthiew/HUONG_DAN_THUC_HANH_REEL_01.md</code> -> Bật video P8.1 -> Vừa xem vừa dựng hoàn thiện Reel 1 và xuất file ngay vào máy.",
+        watchStrategy: "Mở project <code>Reel_01_Learning_4-Reels</code> -> Xem video P8.1 -> Vừa xem vừa dựng hoàn thiện Reel 1 và xuất file ngay vào máy.",
         solution: {
           steps: [
             "Kiểm tra lại toàn bộ: A-Roll liền mạch không vấp, lọc ồn -6dB sạch sẽ, phụ đề khớp 100% với lời nói.",
             "Áp dụng chuẩn Level 1 Sean Kang: Sub gọn gàng clean, cắt thô không cụt không thừa âm đuôi, Hook 3s mở đầu chiếm 50% thành bại.",
             "Chuyển sang trang <strong>Deliver</strong> (icon tên lửa): Format <code>MP4</code>, Codec <code>H.264</code>, Resolution <code>1080 x 1920</code>.",
             "Mục Quality: Chọn <em>Restrict to</em> <strong>15,000 Kb/s</strong> (file sắc nét mà dung lượng nhẹ chỉ ~20-30MB).",
-            "Bấm <code>Add to Render Queue</code> -> <code>Render All</code> -> Lưu file vào <code>~/studio/Reels_Export/Reel_01_Matthiew_Basic.mp4</code>.",
+            "Bấm <code>Add to Render Queue</code> -> <code>Render All</code> -> Lưu file vào <code>Reel_01_Learning_4-Reels/05_EXPORTS/PORTFOLIO_01_Matthiew_Marketing.mp4</code>.",
             "Airdrop qua điện thoại xem lại thực tế để kiểm tra bố cục Safe Zone."
           ],
           tip: "Chuẩn nghiệm thu Reel 1: Âm thanh -6dB, cắt thô dứt khoát không phạm âm đuôi, sub clean không lỗi chính tả, hoàn thành timeline dưới 30 phút!"
@@ -336,10 +337,10 @@ export const ROADMAP_SPRINTS = [
       },
       {
         id: "s1_t5",
-        title: "Chương 1.2 - Phần 8.2: 🎯 XUẤT XƯỞNG REEL 2 (Bố cục & Sắp xếp chữ)",
+        title: "Chương 1.2 - Phần 8.2: 🎯 XUẤT XƯỞNG REEL 2 (Sean Kang Upwork 99%)",
         duration: "31 phút",
-        effortHours: 3.0,
-        output: "XUẤT XƯỞNG FILE MP4 REEL 2 DẪN MẮT NGƯỜI XEM",
+        effortHours: 3.5,
+        output: "XUẤT XƯỞNG FILE MP4 REEL 2 (PORTFOLIO_02_SeanKang_UpworkMaster.mp4)",
         isOutput: true,
         recommendedLessons: [
           {
@@ -348,40 +349,39 @@ export const ROADMAP_SPRINTS = [
             chapter: "Chương 1.2: Cập Nhật Mới Nhất",
             title: "P8.2 - Hoàn thiện Reel 2 Level 1 (30:56)",
             duration: "31 phút",
-            focus: "Nghệ thuật Typography: Sắp xếp vị trí chữ dẫn dắt mắt nhìn, Emojis 3D minh họa, chèn SFX Pop/Click đúng mili-giây chữ nảy."
+            focus: "Thực hành video Sean Kang Upwork: Thay thế toàn bộ graphic che đầu bằng 5 cảnh B-Roll Full Cutaway 1080x1920 (Stress, Gõ phím, Tăng trưởng, Làm việc, Đếm tiền)."
           },
           {
             isPrimary: false,
-            course: "Khóa DaVinci Elite",
-            chapter: "Chương 1.1: Level 1 Cơ Bản",
+            course: "Khóa Baby Resolve",
+            chapter: "Chương 6: Edit Page",
             title: "Bài 07 - Bản chất các loại Text, Subtitles (10:00)",
             duration: "10 phút",
-            focus: "Hiểu sâu sự khác biệt giữa Text thường, Text+ và Subtitle Track để không bị vỡ bố cục khi re-scale."
+            focus: "Phân biệt Subtitle Track vs Text+ Title trên Video Track, quản lý layer V1 (A-Roll) và V2 (B-Roll)."
           }
         ],
-        watchStrategy: "Xem P8.2 trên IINA -> Nhân bản Timeline Reel 1 -> Tinh chỉnh vị trí chữ và thêm 4-5 icon Emojis từ kho tài nguyên <code>resources/Icons-Emojies/</code> -> Render Reel 2.",
+        watchStrategy: "Mở project <code>Sean_Kang_Reel02_Upwork_HyperFrames</code> đối chiếu timeline DaVinci Resolve -> Hoàn thiện màu sắc và nhạc nền Lofi Affogato -> Xuất file Master.",
         solution: {
           steps: [
-            "Nhân bản Timeline Reel 1 (<code>Command + D</code>) -> Đổi tên thành <code>Reel_02_Typography</code>.",
-            "Căn chỉnh vị trí chữ theo Safe Zone 9:16: Đặt cụm chữ ở 1/3 phía trên (tầm mắt nhìn tự nhiên, tránh bị giao diện TikTok che).",
-            "Chèn các Emojis 3D và icon PNG minh họa ngay cạnh từ khóa nổi bật.",
-            "Rải âm thanh SFX <kbd class='solution-kbd'>Pop.wav</kbd> hoặc <kbd class='solution-kbd'>Click.wav</kbd> đúng frame icon và từ khóa xuất hiện.",
-            "Render xuất file <code>Reel_02_Matthiew_Typography.mp4</code>."
+            "Track V1: A-Roll Sean Kang 28.20s gọt sạch bằng tool auto-cut.",
+            "Track V2: 5 B-roll Full Cutaway chuyển cảnh dứt khoát tại các mốc: 2.8s (Stress), 5.5s (18M tài khoản), 11.2s (+6M tăng trưởng), 17.5s (10% hoạt động), 20.2s (5% kiếm > $1).",
+            "Track A1/A2/A3: Giọng nói -6dB, Nhạc nền Lofi Affogato -16dB, 8 điểm Whoosh + tiếng Coin keng 20.2s + Click 26.2s.",
+            "Render xuất file Master: <code>PORTFOLIO_02_SeanKang_UpworkMaster.mp4</code>."
           ],
-          tip: "Quy tắc vàng: Mỗi khi một chi tiết đồ họa hoặc từ khóa quan trọng xuất hiện, bắt buộc phải có 1 tiếng SFX tinh tế đi kèm."
+          tip: "B-roll Full Cutaway giúp loại bỏ hoàn toàn cảm giác ngột ngạt khi nhìn mãi một khuôn mặt nói chuyện, tăng retention lên gấp đôi."
         },
         mapping: {
-          troubleshoot: "Kẹt căn chỉnh chữ? Xem: <strong>Baby Resolve C6-B14 (Text Formatting)</strong>",
-          levelUp: "Nâng cao: <strong>Elite Pro Phần 2 (Neo Caption Pack V1 Text Animation)</strong>",
-          monetize: "Bố cục chữ chỉn chu chứng minh bạn là editor có gu thẩm mỹ cao."
+          troubleshoot: "Kẹt layer B-roll che sub? Xem Main Zettel: <strong>b-roll-full-cutaway-va-ky-thuat-depth-sandwich.md</strong>",
+          levelUp: "Tham khảo dự án mẫu: <strong>Projects/Code_Video_Lab/Sean_Kang_Reel02_Upwork_HyperFrames/</strong>",
+          monetize: "Video phong cách Sabba OpenEdit / Cố vấn chuyên gia được định giá $50-$80/Reel trên Upwork."
         }
       },
       {
         id: "s1_t6",
-        title: "Chương 1.2 - Phần 8.3: 🎯 XUẤT XƯỞNG REEL 3 (Animation chữ & Zoom)",
+        title: "Chương 1.2 - Phần 8.3 & Real Estate: 🎯 XUẤT XƯỞNG REEL 3 (Lâm Trần #9)",
         duration: "44 phút",
-        effortHours: 4.0,
-        output: "XUẤT XƯỞNG FILE MP4 REEL 3 CÓ CHUYỂN ĐỘNG NẢY",
+        effortHours: 3.5,
+        output: "XUẤT XƯỞNG FILE MP4 REEL 3 (PORTFOLIO_03_LamTran_RealEstate.mp4)",
         isOutput: true,
         recommendedLessons: [
           {
@@ -390,267 +390,223 @@ export const ROADMAP_SPRINTS = [
             chapter: "Chương 1.2: Cập Nhật Mới Nhất",
             title: "P8.3 - Hoàn thiện Reel 3 Level 1 (44:26)",
             duration: "44 phút",
-            focus: "Kỹ thuật Punch-in Zoom (1.15x) mỗi khi chuyển ý, tạo chuyển động nảy cho cụm từ khóa (Pop-up scale keyframe), rải SFX Swoosh mượt mà."
+            focus: "Thực hành dựng video khách hàng Bất Động Sản Lâm Trần (Video #9 Cash Flow vs Appreciation): Gọt 40 khoảng lặng, cắt nhịp dồn dập, đồng bộ phụ đề chính xác số liệu tiền tệ."
           },
           {
             isPrimary: false,
-            course: "Khóa Keyframe Animation",
-            chapter: "Nguyên Lý Chuyển Động",
-            title: "Bài 01 - 03: Bản chất Keyframe, Spline và Easing curves",
-            duration: "15 phút",
-            focus: "Làm chủ đồ thị Spline để chuyển động zoom và nảy chữ mượt mà tự nhiên, không bị giật khựng."
+            course: "Khóa Baby Resolve",
+            chapter: "Chương 6: Edit Page",
+            title: "Bài 09 - Dynamic Zoom (Tính năng quan trọng)",
+            duration: "4 phút",
+            focus: "Tạo chuyển động đẩy máy nhẹ (Slow Push-in) trên A-roll giúp cảnh quay tĩnh có chiều sâu điện ảnh."
           }
         ],
-        watchStrategy: "Xem P8.3 tập trung vào kỹ thuật cắt chia clip đổi góc máy -> Áp dụng trực tiếp vào dự án -> Render xuất file Reel 3.",
+        watchStrategy: "Mở project <code>LamTran_Video9_RoughCut</code> -> Sử dụng file FCPXML và SRT đã kiểm duyệt -> Thêm Dynamic Zoom nhẹ và render xuất file.",
         solution: {
           steps: [
-            "Nhân bản Timeline Reel 2 -> Đặt tên <code>Reel_03_DynamicZoom</code>.",
-            "Cứ mỗi 3-5 giây (hoặc mỗi khi đổi ý), thực hiện 1 cú <strong>Punch-in Zoom</strong>: Cắt clip bằng phím <kbd class='solution-kbd'>E</kbd>, phóng to đoạn sau lên <code>Scale 1.15</code>.",
-            "Áp dụng hiệu ứng <em>Dynamic Zoom</em> (chọn chế độ Slow Ease) ở các đoạn kể chuyện cao trào.",
-            "Tạo hiệu ứng nảy cho chữ: Keyframe Size từ 1.2 co về 1.0 trong 4 frames.",
-            "Render xuất file <code>Reel_03_Matthiew_Motion.mp4</code>."
+            "Mở timeline từ file <code>LamTran_Video9_RoughCut.fcpxml</code> (đã gọt sạch 40 khoảng lặng, rút từ 106s xuống 90s).",
+            "Bật Dynamic Zoom (Ease In) với độ phóng đại nhẹ 1.05x để hình ảnh Lâm Trần chuyển động mượt mà hướng về người xem.",
+            "Track Subtitle: Áp dụng Track Style font Inter 70px, màu kem ấm, highlight các số liệu: 1.000 đô, 12.000 đô, 600.000 đô, 40.000 đô.",
+            "Render xuất file hoàn chỉnh: <code>PORTFOLIO_03_LamTran_RealEstate.mp4</code>."
           ],
-          tip: "Thay đổi góc máy liên tục bằng Punch-in Zoom là vũ khí số 1 để giữ khán giả không bao giờ thấy nhàm chán."
+          tip: "Ngách Bất Động Sản (Real Estate) tại Mỹ và Úc trả giá cao nhất trên Upwork ($50 - $100/Reel). Đây là 'vũ khí sát thủ' trong Portfolio của bạn!"
         },
         mapping: {
-          troubleshoot: "Kẹt zoom? Xem: <strong>Baby Resolve C6-B09 (Dynamic Zoom) & C11-B05 (Animation Chữ)</strong>",
-          levelUp: "Bản chất chuyển động: Xem <strong>~/Documents/edit-courses/keyframe-animation/</strong>",
-          monetize: "Mỗi cú zoom cut chuyển ý giúp xóa bỏ cảm giác nhàm chán của video 1 góc máy."
+          troubleshoot: "Kẹt Dynamic Zoom? Xem: <strong>Baby Resolve C6-B09 (Dynamic Zoom)</strong>",
+          levelUp: "Tham khảo file dự án: <strong>Projects/DaVinci_Reels/LamTran_Video9_RoughCut/</strong>",
+          monetize: "Khách hàng Bất Động Sản luôn ký hợp đồng dài hạn (Retainer 8-12 video/tháng)."
         }
       },
       {
         id: "s1_t7",
-        title: "Chương 1.2 - Phần 8.4: 🎯 XUẤT XƯỞNG REEL 4 (Mức độ 1.5 nâng cao)",
+        title: "Chương 1.2 - Phần 8.4: 🎯 XUẤT XƯỞNG REEL 4 (Josh William Gym)",
         duration: "1h 21p",
-        effortHours: 5.0,
-        output: "XUẤT XƯỞNG FILE MP4 REEL 4 ĐẠT CHUẨN THƯƠNG MẠI",
+        effortHours: 4.0,
+        output: "XUẤT XƯỞNG FILE MP4 REEL 4 (PORTFOLIO_04_JoshWilliam_Fitness.mp4)",
         isOutput: true,
         recommendedLessons: [
           {
             isPrimary: true,
             course: "Khóa DaVinci Elite",
             chapter: "Chương 1.2: Cập Nhật Mới Nhất",
-            title: "P8.4 - Hoàn thiện Reel 4 Level 1 (80:58)",
+            title: "P8.4 - Hoàn thiện Reel 4 Level 1.5 nâng cao (1h 21p)",
             duration: "1h 21p",
-            focus: "Dự án Master Level 1 tổng hợp: Chèn B-roll cảnh phim/stock, hòa trộn âm thanh Voice -6dB / Nhạc đệm -22dB / SFX -12dB, hoàn thiện sản phẩm thương mại cao cấp."
+            focus: "Dựng video Gym Josh William: Xử lý file RAW đã cắt sẵn, tạo nhịp cắt chuyển động cơ bắp, chèn B-roll tập gym, đẩy năng lượng âm thanh lên mức cực đại."
           },
           {
             isPrimary: false,
             course: "Khóa DaVinci Elite",
-            chapter: "Chương 1.1: Level 1 Cơ Bản",
-            title: "Bài 04 - Thực hành video Style Alex Hormozi (45:00)",
-            duration: "45 phút",
-            focus: "Tham khảo phong cách dựng video triệu view của Alex Hormozi để tăng tính giải trí và giữ chân khán giả."
+            chapter: "Chương 2.1: Level 2",
+            title: "Bài 01 - 03: David Goggins Cắt thô & Hook Intro",
+            duration: "37 phút",
+            focus: "Học cách tạo nhịp điệu dồn dập cho các video thể hình và phát triển bản thân."
           }
         ],
-        watchStrategy: "Đây là bài giảng Master tổng hợp của Level 1. Hãy xem từng chặng 20 phút -> Dừng lại thao tác trực tiếp trên DaVinci -> Xuất bản phẩm Master hoàn hảo nhất để đưa lên đầu Portfolio.",
+        watchStrategy: "Mở project <code>Reel_03_Learning_4-Reels</code> hoặc <code>Code_Video_Lab/Josh_William_Fitness</code> -> Dựng theo P8.4 -> Xuất file hoàn thiện.",
         solution: {
           steps: [
-            "Nhân bản Timeline -> Đặt tên <code>Reel_04_Commercial_Showcase</code>.",
-            "Chèn B-Roll thực tế (footage stock trong kho <code>resources</code>) đè lên track V2 mỗi khi nhân vật mô tả một hành động.",
-            "Thêm nhạc nền Lo-fi/Upbeat -> Kích hoạt <strong>Auto Ducking</strong> (hoặc hạ volume nhạc xuống -20dB khi có giọng nói).",
-            "Áp dụng hiệu ứng chuyển cảnh Whoosh Transitions mượt mà giữa các cảnh quay.",
-            "Render xuất file Master chất lượng cao nhất: <code>Reel_04_Commercial_Showcase.mp4</code>."
+            "Kiểm soát A-roll: Cắt lại các điểm neo để subtitle không bị thòi thụt (bài học P4).",
+            "Chèn B-roll tập tạ, uống whey xen kẽ nhịp nhàng theo câu nói của Josh.",
+            "Sound Design: Sử dụng âm thanh va đập mạnh (Heavy Hits & Impacts) ở 3 giây đầu.",
+            "Render xuất file hoàn chỉnh: <code>PORTFOLIO_04_JoshWilliam_Fitness.mp4</code>."
           ],
-          tip: "Đây chính là video danh thiếp bỏ đầu tiên vào Portfolio. Khách hàng xem xong video này là muốn ký hợp đồng ngay!"
+          tip: "Reel thể hình cần năng lượng cao và nhịp thở dồn dập. Đảm bảo âm thanh nhạc nền và SFX hỗ trợ tối đa cho giọng nói."
         },
         mapping: {
-          troubleshoot: "Kẹt hòa trộn B-Roll? Xem: <strong>Baby Resolve C6-B10 (Composite Blend) & C9-B04 (Ducker)</strong>",
-          levelUp: "Xem thêm: <strong>Elite Chương 1.1 Bài 04 (Thực hành video Style Alex Hormozi)</strong>",
-          monetize: "Reel 4 là tấm danh thiếp hoàn hảo để chốt các hợp đồng $30 - $50/video!"
+          troubleshoot: "Kẹt nhịp cắt nhanh? Xem: <strong>Elite C1.2 P8.4 (Mức độ 1.5 nâng cao)</strong>",
+          levelUp: "Nâng cấp lên Level 2: Áp dụng hiệu ứng cắt đôi chữ Refuse của David Goggins",
+          monetize: "Niche Fitness/Gym luôn có nhu cầu dựng video hàng ngày cực kỳ lớn trên mạng xã hội."
         }
       }
     ]
   },
   {
     id: "s2",
-    title: "SPRINT 2: CHỮ KÝ TRIỆU VIEW (DAVID GOGGINS, DANIEL ILES & PRO BREAKDOWN)",
-    desc: "Thực hành Chương 2: Làm chủ Hook Intro 3s, B-Roll chuyển động, Animation tài chính",
-    pill: "Nâng Tầm",
+    title: "SPRINT 2: CHỮ KÝ TRIỆU VIEW & ĐỘT PHÁ LEVEL 2 (GOGGINS, DANIEL ILES & HOOK AI)",
+    desc: "Nâng cấp từ thợ cắt sub lên Editor giá cao: Làm chủ Hook 3s, Icon Animation và B-roll Staging 2026",
+    pill: "Đột Phá Kỹ Xảo",
     color: "#f59e0b",
-    targetWeek: 5,
+    targetWeek: 3,
     tasks: [
       {
         id: "s2_t1",
-        title: "Case Study 1: David Goggins (P1 - P3) - Cắt thô & Hook Intro 3 giây",
-        duration: "37 phút",
+        title: "Case Study David Goggins: Hook 3s Sát Thủ & Cắt Đôi Chữ (Level 2)",
+        duration: "41 phút",
         effortHours: 3.5,
-        output: "Hook 3 giây đầu giật gân, nhịp dồn dập đập vào mắt người xem",
+        output: "Hook 3 giây mở màn giật nhịp kịch tính kết hợp hiệu ứng chữ nổ tung",
         isOutput: false,
         recommendedLessons: [
           {
             isPrimary: true,
             course: "Khóa DaVinci Elite",
-            chapter: "Chương 2.1: Level 2 & Level 3",
-            title: "David Goggins Part 1 (Chọn RAW & Cắt thô), Part 2 (Ý tưởng Edit), Part 3 (Làm Hook Intro)",
-            duration: "37 phút",
-            focus: "Chọn câu nói đanh thép nhất đưa lên 3 giây đầu, kỹ thuật Speed Ramp 350% -> 100% kèm Whoosh, Camera Shake nhẹ tạo năng lượng dồn dập."
+            chapter: "Chương 2.1: Level 2 Mức Độ Trung Cấp",
+            title: "Bài 03 (Làm Hook Intro - 28p), Bài 06 (Hiệu ứng cắt đôi chữ Refuse - 7p), Bài 08 (SFX & Nhạc nền - 6p)",
+            duration: "41 phút",
+            focus: "Công thức giữ chân người xem 3s đầu: Polygon Mask cắt đôi chữ 'Refuse' trượt sang hai bên, Speed Ramp giật tốc độ, âm thanh Impact nổ tung."
           },
           {
             isPrimary: false,
-            course: "Khóa Speed Ramp",
-            chapter: "Chương 1: Speed Ramp Cơ Bản",
-            title: "Speed Ramp kịch tính trên Edit page (Curve Ramping)",
-            duration: "15 phút",
-            focus: "Uốn cong đường cong tốc độ bằng Retime Curve để đoạn tăng tốc chuyển mượt sang slow-mo."
+            course: "Khóa DaVinci Elite",
+            chapter: "Chương 2.2: Level 2 Cập Nhật Mới (14/04/2026)",
+            title: "Bước 3.1 (Tạo câu Hook bằng AI - 10p) & Bước 3.2 (Animation Hook Main Point - 50p)",
+            duration: "1h 00p",
+            focus: "Quy trình mới nhất của Sean Kang: Dùng AI gợi ý ý tưởng Hook kịch tính và tạo animation cho luận điểm chính."
           }
         ],
-        watchStrategy: "Xem Part 1 & Part 3 của Goggins trên IINA -> Mở DaVinci thực hành cắt đúng 3 giây đầu tiên cho clip động lực để tạo cảm giác bùng nổ ngay từ frame đầu.",
+        watchStrategy: "Xem kỹ Bài 03 và Bài 06 của Chương 2.1 trên IINA -> Mở DaVinci thực hành ngay hiệu ứng Split Text trong Fusion -> Áp dụng thử vào 3s đầu của Reel Josh William.",
         solution: {
           steps: [
-            "Mở folder tài nguyên David Goggins trong kho <code>resources</code>.",
-            "Chọn câu nói đanh thép nhất cắt đưa lên 3 giây đầu làm Hook mở màn.",
-            "Tạo hiệu ứng Speed Ramp: Cắt clip làm 3 đoạn -> Đoạn giữa tăng tốc 350% -> Đoạn cuối trả về 100% kèm âm thanh Whoosh.",
-            "Tô chữ Hook sang màu Đỏ rực kết hợp hiệu ứng rung màn hình (Camera Shake nhẹ trong DaVinci)."
+            "Mở Fusion Page trên đoạn Hook 3 giây đầu: Dùng Text+ kết hợp node <code>Polygon</code> để tạo mask chia đôi chữ.",
+            "Keyframe chuyển động: Nửa trên chữ trượt lên trên góc trái, nửa dưới trượt xuống dưới góc phải kèm Motion Blur (độ mờ chuyển động).",
+            "Trang Edit: Đặt âm thanh <code>Heavy_Whoosh.wav</code> đúng frame chữ bắt đầu tách đôi, kết thúc bằng tiếng <code>Impact_Thud.wav</code> khi câu thoại chốt vang lên.",
+            "Tạo hiệu ứng giật khung hình nhẹ (Camera Shake / Flash White 2 frames) tạo cảm giác bùng nổ năng lượng."
           ],
-          tip: "Trong 3 giây đầu, không để sót 1 mili-giây khoảng trống nào. Cả hình ảnh, âm thanh và phụ đề phải dồn dập đập thẳng vào mắt người xem."
+          tip: "3 giây đầu quyết định 80% thành bại của video. Nếu người xem không dừng lại ở 3 giây đầu, 57 giây phía sau coi như vứt đi!"
         },
         mapping: {
-          troubleshoot: "Kẹt làm chậm/nhanh? Xem: <strong>Baby Resolve C6-B06 (Speed Ramp kịch tính)</strong>",
-          levelUp: "Chuyên sâu speed ramp: Xem <strong>~/Documents/edit-courses/speed-ramp/</strong>",
-          monetize: "Hook 3s quyết định 80% việc video có được thuật toán đẩy lên triệu view hay không."
+          troubleshoot: "Kẹt node Fusion? Xem: <strong>Fusion 101 - Bài 01 (Cơ bản về Merge và Mask)</strong>",
+          levelUp: "Xem thêm bản cập nhật: <strong>Elite C2.2 Bước 3.2 (Tạo animation Hook - 50p)</strong>",
+          monetize: "Khách hàng sẵn sàng trả thêm $30-$50 cho video có Hook mở màn sáng tạo và giữ chân người xem."
         }
       },
       {
         id: "s2_t2",
-        title: "Case Study 1: David Goggins (P4 - P8) - 🎯 REEL DAVID GOGGINS HOÀN CHỈNH",
-        duration: "40 phút",
-        effortHours: 4.5,
-        output: "XUẤT XƯỞNG FILE MP4 REEL DAVID GOGGINS CỰC CHÁY",
-        isOutput: true,
+        title: "Case Study Daniel Iles: Motion Graphic Icon & Viền Chữ Bevel Nổi Khối",
+        duration: "51 phút",
+        effortHours: 4.0,
+        output: "Popup biểu tượng chuyển động 3D DVE và chữ nổi khối kim loại sang trọng",
+        isOutput: false,
         recommendedLessons: [
           {
             isPrimary: true,
             course: "Khóa DaVinci Elite",
-            chapter: "Chương 2.1: Level 2 & Level 3",
-            title: "David Goggins Part 4 (Animation 1 & 2), Part 6 (Cắt đôi chữ Refuse), Part 7 & Part 8 (SFX & Nhạc)",
-            duration: "40 phút",
-            focus: "Kỹ thuật Polygon Mask cắt đôi chữ 'Refuse' trượt sang hai bên, phủ lớp Film Grain / Dust Overlay bụi bặm, Color Grading tương phản cao chất điện ảnh gai góc."
+            chapter: "Chương 2.1: Level 2 Mức Độ Trung Cấp",
+            title: "Bài 14, 15, 16 (Animation Icon & Logo Amazon - 45p) & Bài 18 (Viền chữ Bevel đẹp - 15p)",
+            duration: "1h 00p",
+            focus: "Kỹ thuật biến các icon tĩnh thành chuyển động sống động (Scale nảy nhẹ, DVE xoay 3D), viền chữ Bevel nổi khối vàng kim loại phong cách tài chính."
           },
           {
             isPrimary: false,
             course: "Khóa DaVinci Elite",
-            chapter: "Chương 5: Hiệu Ứng Thường Sử Dụng",
-            title: "Effect 06 (Tạo Background) & Effect 15 (Animation Xé/Gấp giấy của Ali Abdaal)",
-            duration: "13 phút",
-            focus: "Thủ thuật tạo background tối kết hợp lớp xé giấy để làm nổi bật thông điệp."
+            chapter: "Chương 2.2: Level 2 Cập Nhật Mới (14/04/2026)",
+            title: "Bước 4.1 (Ý tưởng Animation 3D) & Bước 4.4 (Animation Logo)",
+            duration: "24 phút",
+            focus: "Cách đặt các yếu tố đồ họa vào không gian 3D của Fusion để minh họa cho số liệu tài chính."
           }
         ],
-        watchStrategy: "Xem kỹ Part 6 về hiệu ứng cắt đôi chữ trong Fusion -> Làm theo từng thao tác -> Xuất file <code>Reel_David_Goggins_Hardcore.mp4</code>.",
+        watchStrategy: "Xem Bài 15 & 18 của Chương 2.1 -> Thực hành tạo 1 preset Text+ Bevel màu vàng kim loại -> Lưu vào Power Bins dùng trọn đời.",
         solution: {
           steps: [
-            "Mở Fusion Page: Dùng Polygon Mask tạo hiệu ứng chữ xé đôi (Split Text Refuse) tách sang 2 bên.",
-            "Thêm lớp phủ bụi điện ảnh (Film Grain / Dust Overlay) và hiệu ứng Glow viền đỏ.",
-            "Trang Color: Đẩy Contrast cao, giảm bão hòa các gam màu ấm, tăng tông lạnh tạo chất điện ảnh cơ bắp, gai góc.",
-            "Render xuất file hoàn chỉnh: <code>Reel_David_Goggins_Hardcore.mp4</code>."
+            "Vào Text+ -> Tab Shading: Bật Element 2 (Redline/Viền ngoài), chọn Shading Type: <em>Bevel Emboss</em>.",
+            "Chỉnh Light Angle và Softness để chữ có độ dày nổi khối như đúc bằng vàng hoặc kim loại cao cấp.",
+            "Tạo hiệu ứng Icon nảy: Kéo icon PNG từ kho <code>resources/Icons-Emojies</code> vào Timeline -> Bật Keyframe Size: Frame 0 (0%), Frame 6 (115%), Frame 10 (100%) tạo độ nảy đàn hồi (Overshoot bounce).",
+            "Thêm tiếng <code>pop.wav</code> hoặc <code>click.wav</code> vào đúng frame icon bung ra."
           ],
-          tip: "Niche Động lực thể hình (Gym & Mindset) là ngách có lượng khách hàng chi trả rất hào phóng trên Upwork."
+          tip: "Đây là phong cách làm nên thương hiệu của Daniel Iles (kênh tài chính 3 triệu followers). Các kênh tài chính và crypto cực kỳ chuộng style này!"
         },
         mapping: {
-          troubleshoot: "Kẹt nhạc đè giọng? Xem: <strong>Baby Resolve C9-B04 (Ducker Audio)</strong>",
-          levelUp: "Hiệu ứng chữ xé đôi: Xem bài 06 (Hiệu ứng cắt đôi chữ Refuse)",
-          monetize: "Thể loại động lực/thể hình có lượng khách hàng cực kỳ dồi dào trên Upwork."
+          troubleshoot: "Kẹt thông số Bevel? Xem kỹ: <strong>Elite C2.1 Bài 18 (Làm hiệu ứng Bevel chữ Alcoholics)</strong>",
+          levelUp: "Preset có sẵn: Sử dụng các template trong <strong>resources/Text Presets/</strong>",
+          monetize: "Niche Tài chính/Đầu tư (Finance & Real Estate) trả mức giá cao nhất thị trường ($70-$120/video)."
         }
       },
       {
         id: "s2_t3",
-        title: "Case Study 2: Daniel Iles (Bài 14 - 20) - 🎯 REEL TÀI CHÍNH DANIEL ILES",
-        duration: "1h 17p",
-        effortHours: 5.0,
-        output: "XUẤT XƯỞNG FILE MP4 REEL TÀI CHÍNH (LOGO AMAZON & BEVEL CHỮ)",
-        isOutput: true,
+        title: "Quy Trình Level 2 Mới (Chương 2.2): B-Roll Staging & Hoàn Thiện Timeline",
+        duration: "1h 15p",
+        effortHours: 3.5,
+        output: "Dây chuyền sản xuất video Level 2 hoàn chỉnh không che mặt diễn giả",
+        isOutput: false,
         recommendedLessons: [
           {
             isPrimary: true,
             course: "Khóa DaVinci Elite",
-            chapter: "Chương 2.1: Level 2 & Level 3",
-            title: "Daniel Iles: Hook Amazon, Animation Icon (2 bài), Animation Amazon 2, Bevel chữ Alcoholics, Hook Harvard",
-            duration: "1h 17p",
-            focus: "Hiệu ứng nổi khối chữ Bevel Emboss, số tiền nhảy tự động bằng Modifier Text+ Counter, xoay logo 3D DVE, nhắm trúng tệp khách hàng Tài chính / Fintech trả $50-$70/video."
-          },
-          {
-            isPrimary: false,
-            course: "Khóa Fusion 101",
-            chapter: "Chương 1: Nền Tảng Node Trong Fusion",
-            title: "Bài 01 - 05: Merge Node, Transform, Background, DVE xoay 3D",
-            duration: "20 phút",
-            focus: "Nắm vững nguyên lý kết nối các Node trong Fusion để không bị rối dây hay mất hình."
-          }
-        ],
-        watchStrategy: "Xem bài Bevel chữ và bài Animation Amazon -> Thực hành tạo bộ đếm số tiền từ 0 lên $10,000 -> Ghép âm thanh Cash Register -> Xuất file <code>Reel_Daniel_Iles_Finance.mp4</code>.",
-        solution: {
-          steps: [
-            "Trong Fusion: Tạo mock-up thẻ ngân hàng và logo Amazon xoay 3D (DVE Node).",
-            "Tạo hiệu ứng nổi khối chữ (Bevel Emboss) và hiệu ứng kính lúp phóng to số liệu.",
-            "Tạo bộ đếm tiền tự động: Thêm Modifier <em>Text+ -> Counter</em> để số tiền nhảy từ 0 lên $10,000.",
-            "Rải SFX tiếng tiền xu rơi (<kbd class='solution-kbd'>Cash_Register.wav</kbd>, <kbd class='solution-kbd'>Coin_Drop.wav</kbd>).",
-            "Render xuất file <code>Reel_Daniel_Iles_Finance.mp4</code>."
-          ],
-          tip: "Niche Tài chính & Công nghệ (Fintech) sẵn sàng trả mức giá gấp đôi ($40 - $70/video) so với các kênh thông thường."
-        },
-        mapping: {
-          troubleshoot: "Kẹt Node Fusion? Xem: <strong>fusion-101/ (Tip 1-5: Merge Node, Resize, Select Tool)</strong>",
-          levelUp: "Học hiệu ứng Kallaway: Xem <strong>Elite Pro Phần 3 Video 6 & 7 (Phân tích Kallaway)</strong>",
-          monetize: "Niche Tài chính / Công nghệ trả mức thù lao cao gấp đôi so với các ngách thông thường."
-        }
-      },
-      {
-        id: "s2_t4",
-        title: "Case Study 3: Jvevermind & Khoai Lang Thang - 🎯 REEL KỂ CHUYỆN XẾP CHỮ",
-        duration: "1h 53p",
-        effortHours: 6.0,
-        output: "XUẤT XƯỞNG FILE MP4 PHONG CÁCH CINEMATIC STORYTELLING",
-        isOutput: true,
-        recommendedLessons: [
-          {
-            isPrimary: true,
-            course: "Khóa DaVinci Elite",
-            chapter: "Chương 2.1: Level 2 & Level 3",
-            title: "Jvevermind Part 1 - 5 (Cắt thô, Ý tưởng, B-roll, Animation chữ, Tracking intro) & Bài 25 - Khoai Lang Thang Xếp chữ",
-            duration: "1h 53p",
-            focus: "Nhịp thở Pacing chậm rãi cho video tâm sự/du lịch, kỹ thuật xếp chữ theo bố cục nghệ thuật, thiết kế âm thanh đa tầng (Soundscape), Color Space Transform (CST) Rec.709."
+            chapter: "Chương 2.2: Level 2 Cập Nhật Mới Nhất (14/04/2026)",
+            title: "Bước 4.2 (Khung tăng lượng), Bước 4.3 (Ý tưởng thêm B-roll - 16p), Bước 5 (Chọn nhạc nền & trau chuốt - 9p)",
+            duration: "49 phút",
+            focus: "Tư duy B-roll Staging hiện đại: Thay thế hoàn toàn sticker hoạt hình bằng Full Cutaway có gắn tag ngữ cảnh, cân bằng dải tần nhạc nền và hiệu ứng âm thanh."
           },
           {
             isPrimary: false,
             course: "Khóa DaVinci Elite",
-            chapter: "Chương 2.1",
-            title: "Tổng kết Part 2 (Cách tìm ý tưởng Edit cho mọi công việc) & Part 3 (Cách tính giá video)",
-            duration: "25 phút",
-            focus: "Tư duy bóc tách ý tưởng của Sean Kang để gặp bất kỳ loại video nào cũng biết cách dựng và báo giá."
+            chapter: "Chương 2.1: Level 2",
+            title: "Bài 21 - 24: Sean Kang Video P1 - P4 (Tư duy Flow chung & Thêm B-roll)",
+            duration: "36 phút",
+            focus: "Quan sát trực tiếp Sean Kang dựng từ đầu đến cuối 1 video thực tế theo phong cách Level 2."
           }
         ],
-        watchStrategy: "Tập trung xem Bài 25 Khoai Lang Thang và Jvevermind Part 4 & 5 -> Thực hành xếp chữ theo nhịp acoustic -> Xuất file <code>Reel_Cinematic_Storytelling.mp4</code>.",
+        watchStrategy: "Xem Bước 4.3 và Bước 5 của Chương 2.2 -> Đối chiếu với dự án Reel 02 Sean Kang chúng ta đã dựng thành công -> Đúc kết thành phản xạ.",
         solution: {
           steps: [
-            "Làm chủ nhịp thở Pacing: Kéo dài các khoảng ngắt nghỉ có chủ đích cho video tâm sự / du lịch.",
-            "Chuyển đổi màu Log sang Rec.709 chuẩn điện ảnh bằng Color Space Transform (CST Node).",
-            "Thiết kế soundscape đa tầng: Tiếng bước chân, tiếng chim hót, tiếng gió hòa cùng nhạc acoustic êm dịu.",
-            "Render xuất file <code>Reel_Cinematic_Storytelling.mp4</code>."
+            "Quét transcript tìm các điểm rơi đắt giá: Số liệu thống kê, nỗi đau khách hàng, thành quả.",
+            "Tại các điểm này: Chuyển cảnh Full màn hình sang video B-roll 1080x1920 (Track V2) đè lên diễn giả.",
+            "Đặt Kicker Tag (ví dụ: <code>#THỐNG KÊ 2024</code>) ở góc trên để định hướng não bộ người xem.",
+            "Track Audio: Áp dụng Auto-Ducking hạ nhạc nền -16dB khi có giọng nói, giữ tiếng Whoosh nổi bật ở -4dB."
           ],
-          tip: "Kỹ năng kể chuyện cảm xúc chính là chìa khóa mở cánh cửa làm YouTube Long-Form chất lượng cao sau này."
+          tip: "Một video đạt chuẩn Level 2 phải có sự kết hợp hài hòa giữa nhịp cắt A-roll nhanh, B-roll đắt giá và âm thanh sống động."
         },
         mapping: {
-          troubleshoot: "Kẹt chỉnh màu? Xem: <strong>Baby Resolve C8-B15 (Node Tree Workflow chuẩn)</strong>",
-          levelUp: "Hiệu ứng Iman Gadzhi: Xem <strong>Elite Pro Phần 3 Video 19 (Animation Iman Gadzhi 1h04p)</strong>",
-          monetize: "Phong cách Cinematic giúp bạn tiếp cận các kênh YouTube lớn làm video dài chất lượng."
+          troubleshoot: "Kẹt tìm B-roll? Quét kho: <strong>~/workspace/studio/resources/Broll/</strong>",
+          levelUp: "Học tư duy flow: Xem <strong>Elite C2.1 Bài 22 (Tư duy Flow chung)</strong>",
+          monetize: "Sở hữu kỹ năng Level 2 giúp bạn tự tin nhận các hợp đồng $500 - $1,500/tháng."
         }
       }
     ]
   },
   {
     id: "s3",
-    title: "SPRINT 3: TỔNG TẤN CÔNG THỊ TRƯỜNG & SĂN JOB (FREELANCE & UPWORK MVP)",
-    desc: "Đóng gói Portfolio chuẩn quốc tế, lập Gig Fiverr, gửi Proposal Upwork có khách ngay",
-    pill: "Kiếm Tiền",
-    color: "#c084fc",
-    targetWeek: 8,
+    title: "SPRINT 3: TỔNG TẤN CÔNG THỊ TRƯỜNG & SĂN JOB (UPWORK MVP & PROPOSAL 15S)",
+    desc: "Đóng gói Portfolio 4 REEL, tối ưu Profile chuẩn SEO và gửi 20 Proposal sát thủ kèm Free 15s Sample",
+    pill: "Săn Job Thực Chiến",
+    color: "#ec4899",
+    targetWeek: 4,
     tasks: [
       {
         id: "s3_t1",
-        title: "Đóng gói Portfolio 4 REEL vào Google Drive / Trang Web cá nhân",
+        title: "Đóng gói 'Bộ Tứ Sát Thủ' Portfolio vào Google Drive & Web",
         duration: "1 buổi",
         effortHours: 3.0,
-        output: "Link Portfolio chuyên nghiệp có 4-5 video hoàn chỉnh đỉnh nhất",
+        output: "Link Portfolio chuyên nghiệp chứa 4 video đỉnh nhất (Real Estate, Business, Fitness, Finance)",
         isOutput: false,
         recommendedLessons: [
           {
@@ -659,7 +615,7 @@ export const ROADMAP_SPRINTS = [
             chapter: "Chương 4: Mindset & Thiết Lập Portfolio",
             title: "Bài đọc: Thiết lập Portfolio đẹp - FREE & Chương 3 Phần 6: Thiết lập Website Portfolio cho riêng bạn",
             duration: "20 phút",
-            focus: "Cấu trúc 3 folder Google Drive (Talking Head / Motivation / Finance), chọn 2 video đẹp nhất lên đầu trang, đặt tên file chuẩn."
+            focus: "Cấu trúc 4 video đại diện cho 4 ngách màu mỡ nhất: Real Estate (Lâm Trần), B2B Business (Sean Reel 2), Fitness (Josh), Finance (Daniel Iles)."
           },
           {
             isPrimary: false,
@@ -670,78 +626,81 @@ export const ROADMAP_SPRINTS = [
             focus: "Tránh các lỗi portfolio phổ biến: Link bị khóa quyền truy cập, video quá dài, không ghi rõ vai trò editor."
           }
         ],
-        watchStrategy: "Đọc Chương 4 Freelance MVP -> Tạo ngay folder Google Drive public -> Xem Phần 5 Elite Pro để checklist lại các lỗi trước khi gửi link cho khách.",
+        watchStrategy: "Đọc Chương 4 Freelance MVP -> Tạo ngay folder Google Drive public -> Đặt tên file chuẩn mực: [Niche] - [Title] by LangPN.mp4.",
         solution: {
           steps: [
-            "Tạo 1 folder Google Drive công khai: <code>[Your Name] - High Retention Short-Form Portfolio</code>.",
-            "Chia 3 folder con: <code>01_Business_Talking_Head</code> (Reel 1 & 4), <code>02_High_Energy_Motivation</code> (David Goggins), <code>03_Finance_Motion</code> (Daniel Iles).",
-            "Mở quyền truy cập: <em>Bất kỳ ai có liên kết đều có thể xem</em>.",
-            "Tạo 1 trang web Notion hoặc GitHub Pages đơn giản nhúng link xem trực tiếp."
+            "Tạo 1 folder Google Drive công khai: <code>Lang Pham Ngoc - High-Retention Short-Form Video Portfolio</code>.",
+            "Tải lên 4 video hoàn chỉnh đã xuất xưởng ở Sprint 1 & 2:",
+            "  1. <code>01_Real_Estate_CashFlow_LamTran.mp4</code> (Bất Động Sản)",
+            "  2. <code>02_B2B_Consulting_Upwork_SeanKang.mp4</code> (Kinh Doanh / Cố Vấn)",
+            "  3. <code>03_High_Energy_Fitness_JoshWilliam.mp4</code> (Thể Hình / Động Lực)",
+            "  4. <code>04_Finance_Crypto_DanielIles.mp4</code> (Tài Chính / Icon Motion)",
+            "Mở quyền truy cập: <em>Bất kỳ ai có liên kết đều có thể xem (Anyone with the link can view)</em>."
           ],
-          tip: "Khách hàng bận rộn chỉ dành 30 giây để lướt portfolio. Hãy đặt 2 video đẹp nhất lên ngay hàng đầu!"
+          tip: "Khách hàng bận rộn chỉ dành 30 giây để lướt portfolio. Hãy đặt 2 video đẹp nhất (Lâm Trần & Sean Kang) lên ngay hàng đầu!"
         },
         mapping: {
           troubleshoot: "Tối ưu Profile: Xem <strong>Elite Pro Phần 5 (Review Profile/Tối ưu Portfolio thành viên)</strong>",
-          levelUp: "Vibe Code trang web cá nhân: Dùng OpenCode build 1 trang web dark mode gắn link video!",
+          levelUp: "Dùng trang web portfolio cá nhân nhúng link Google Drive",
           monetize: "Portfolio đẹp + xem nhanh trên điện thoại = 90% cơ hội được khách bấm rep tin nhắn."
         }
       },
       {
         id: "s3_t2",
-        title: "Lập Gig Fiverr theo chuẩn SEO (Freelance MVP Chương 1)",
-        duration: "Phần 1 - 5",
-        effortHours: 2.5,
-        output: "Gig Fiverr 'High Retention TikTok/Reels Video Editor' lên sóng",
-        isOutput: false,
-        recommendedLessons: [
-          {
-            isPrimary: true,
-            course: "Khóa Freelance MVP",
-            chapter: "Chương 1: Fiverr từ A - Z",
-            title: "Phần 1 - 5: Tổng quan, Lập Gigs & Tối ưu Gigs, Thực hành lập Gig thực tế, Cách để thuật toán Fiverr đánh giá cao",
-            duration: "45 phút",
-            focus: "Tiêu đề Gig SEO 'I will edit engaging tiktok reels alex hormozi style with high retention', thiết kế thumbnail Before/After 1280x769px, tải Reel 4 làm Gig Preview Video."
-          },
-          {
-            isPrimary: false,
-            course: "Khóa Freelance MVP",
-            chapter: "Chương 5: Khách Hàng / Giao Tiếp",
-            title: "Phần 4: Tính giá Công việc ($25 - $65 - $120)",
-            duration: "15 phút",
-            focus: "Chiến lược đặt 3 gói giá Basic / Standard / Premium để kích thích khách bấm đặt hàng nhanh."
-          }
-        ],
-        watchStrategy: "Xem Phần 2 & 3 của Chương 1 trên IINA -> Mở trình duyệt làm theo từng trường form của Fiverr -> Upload video Reel 4 lên làm preview.",
-        solution: {
-          steps: [
-            "Đặt tiêu đề Gig chuẩn SEO: <em>'I will edit engaging tiktok reels alex hormozi style with high retention'</em>.",
-            "Thiết kế thumbnail kích thước 1280x769px dạng so sánh Before/After kèm chữ 'High Retention Editor'.",
-            "Tải video Reel 4 lên làm Gig Preview Video (tăng 200% tỷ lệ click).",
-            "Đặt 3 gói giá hợp lý: Basic ($25 - 1 video), Standard ($65 - 3 video), Premium ($120 - 6 video)."
-          ],
-          tip: "Ở giai đoạn đầu, hãy để giá khởi điểm $20-$25 để gom 3 đánh giá 5 sao đầu tiên thật nhanh."
-        },
-        mapping: {
-          troubleshoot: "Xem chi tiết: <strong>freelance-mvp/curriculum.md (Chương 1: Fiverr từ A-Z)</strong>",
-          levelUp: "Mẹo lên Top: Phần 4 (Cách để được thuật toán Fiverr đánh giá cao)",
-          monetize: "Fiverr là nguồn kéo khách inbound thụ động cực tốt khi gig đã lên rank."
-        }
-      },
-      {
-        id: "s3_t3",
-        title: "Tạo Profile Upwork & Viết Proposal 'đánh trúng tim đen' khách",
+        title: "Tối Ưu Profile Upwork Đạt Chuẩn 100% & Lấy Tick Xanh (Upwork MVP)",
         duration: "Chương 2",
-        effortHours: 4.0,
-        output: "Gửi 10 - 20 Proposal đầu tiên đến các Job Short Form trên Upwork",
+        effortHours: 3.5,
+        output: "Profile Upwork hoàn chỉnh 100%, có Tick Xanh xác thực và danh mục Portfolio nhúng",
         isOutput: false,
         recommendedLessons: [
           {
             isPrimary: true,
             course: "Khóa Upwork MVP",
-            chapter: "Chương 2: Thực Hành từ A-Z & Kiếm Tiền",
-            title: "Phần 4 (Thiết lập & Tối ưu profile), Phần 14 (Cách Viết Proposal/CV Ứng Tuyển), Phần 15 (Thực Hành Tìm Job - Nộp Proposal - Chốt Đơn)",
-            duration: "50 phút",
-            focus: "Công thức viết Proposal 3 phần dưới 5 dòng của Sean Kang: Nêu vấn đề tụt view -> Đính kèm 1 link video khớp nhất -> Đề xuất làm bài test ngắn 15s."
+            chapter: "Chương 2: Thực Hành Từ A-Z & Kiếm Tiền Trên Tài Khoản Mới",
+            title: "Phần 4 (Thiết lập và tối ưu profile - 15p), Phần 5 (Cách để có Tick Xanh Upwork - 8p), Phần 6 (Thiết Lập Dự Án Project Catalog - 12p)",
+            duration: "35 phút",
+            focus: "Công thức đặt Title chuẩn SEO Upwork, viết Bio tập trung vào chỉ số giữ chân (Retention Rate), tải video trực tiếp lên mục Portfolio của Upwork."
+          },
+          {
+            isPrimary: false,
+            course: "Khóa Freelance MVP",
+            chapter: "Chương 2: Upwork",
+            title: "Phần 2 & 3: Cách SEO Profile Upwork & Thực hành tối ưu",
+            duration: "25 phút",
+            focus: "Cách cài đặt từ khóa Tag kỹ năng: DaVinci Resolve, Short-Form Video, TikTok Video Editing, Alex Hormozi Style."
+          }
+        ],
+        watchStrategy: "Xem Phần 4 & 5 của Upwork MVP trên IINA -> Mở trình duyệt làm theo từng bước: Xác thực CCCD lấy Tick Xanh -> Điền Bio theo mẫu.",
+        solution: {
+          steps: [
+            "<strong>Tiêu đề Profile (Title):</strong> <em>Short-Form Video Editor | High-Retention Reels & Shorts for Real Estate & B2B Creators (Alex Hormozi & Sabba Style)</em>.",
+            "<strong>Mô tả Bio:</strong> Đi thẳng vào vấn đề: 'I help Coaches, Real Estate Agents, and B2B Creators turn raw talking-head footage into high-retention Reels/Shorts with seamless pacing, 1-line aesthetic captions, and cinematic B-roll.'",
+            "<strong>Kỹ năng (Skills):</strong> Chọn đúng 10 tags: DaVinci Resolve, Video Editing, Short-Form Video, TikTok, Instagram Reels, YouTube Shorts, Color Grading, Audio Editing, Subtitles, Motion Graphics.",
+            "<strong>Xác thực danh tính (ID Verification):</strong> Tải CCCD lên để lấy huy hiệu Tick Xanh (tăng 300% độ uy tín với khách hàng US/UK)."
+          ],
+          tip: "Tuyệt đối không viết Bio như một lá thư xin việc sinh viên. Hãy viết như một đối tác tăng trưởng giải quyết bài toán giữ chân người xem!"
+        },
+        mapping: {
+          troubleshoot: "Kẹt xác thực Tick Xanh? Xem: <strong>Upwork MVP Chương 2 Bài 05</strong>",
+          levelUp: "Tạo thêm Project Catalog: Xem <strong>Upwork MVP Chương 2 Bài 06</strong>",
+          monetize: "Profile chuẩn SEO giúp thuật toán Upwork tự động đẩy bạn vào tầm ngắm của khách hàng."
+        }
+      },
+      {
+        id: "s3_t3",
+        title: "Chiến Dịch Gửi Proposal 'Vũ Khí 15s Sample' (Upwork MVP Chương 2)",
+        duration: "Chương 2",
+        effortHours: 6.0,
+        output: "Gửi 15 - 20 Proposal chất lượng cao, đạt tỷ lệ phản hồi > 30%",
+        isOutput: false,
+        recommendedLessons: [
+          {
+            isPrimary: true,
+            course: "Khóa Upwork MVP",
+            chapter: "Chương 2: Thực Hành Từ A-Z & Kiếm Tiền",
+            title: "Phần 13 (Cách Tìm Job Phù Hợp), Phần 14 (Cách Viết Proposal Đánh Trúng Tim Đen), Phần 15 (Thực Hành Tìm Job & Chốt Đơn)",
+            duration: "55 phút",
+            focus: "Công thức viết Proposal 3 phần dưới 5 dòng của Sean Kang: Nêu vấn đề tụt view -> Đính kèm 1 link video khớp nhất -> Đề xuất làm bài test ngắn 15s miễn phí."
           },
           {
             isPrimary: false,
@@ -749,30 +708,34 @@ export const ROADMAP_SPRINTS = [
             chapter: "Chương 2: Upwork",
             title: "Phần 4 (Lọc danh sách công việc), Phần 5 (Đánh giá công việc ngon), Phần 8 (Lưu ý khi viết Proposal)",
             duration: "30 phút",
-            focus: "Cách soi Payment Verified, Hire Rate > 60%, tránh job lừa đảo hoặc ép giá."
+            focus: "Cách lọc Job: Payment Verified, Khách đã chi tiêu > $500, Hire Rate > 60%, tránh xa các job lừa đảo hoặc ép giá $5."
           }
         ],
-        watchStrategy: "Xem kỹ Phần 14 & 15 của Upwork MVP -> Viết nháp 1 mẫu Proposal theo công thức Sean Kang -> Bắt đầu gửi 3-5 proposal mỗi tối vào khung giờ vàng 20h - 23h.",
+        watchStrategy: "Xem kỹ Phần 14 & 15 của Upwork MVP -> Bắt đầu chiến dịch nộp 2-3 proposal mỗi tối vào khung giờ vàng 20h - 23h (giờ sáng nước Mỹ).",
         solution: {
           steps: [
-            "Đặt tiêu đề Profile Upwork: <em>Short-Form Video Editor | Alex Hormozi Style | TikTok & Reels Retention Specialist</em>.",
-            "Viết Proposal theo công thức 3 phần của Sean Kang: Dòng 1 chỉ ra vấn đề tụt view của khách; Dòng 2 đính kèm link 1 video phù hợp nhất trong Portfolio; Dòng 3 đề xuất làm bài test 15s.",
-            "Gửi đều đặn 3 - 5 Proposals mỗi ngày vào khung giờ 20h - 23h (giờ sáng làm việc của khách hàng US/UK)."
+            "<strong>Bộ lọc tìm việc:</strong> Keyword <code>Reels editor</code>, <code>Short form video</code>, <code>TikTok editor</code>, <code>Talking head</code>. Lọc: Payment Verified, Client Spent > $500, Rating 4.8+.",
+            "<strong>Vũ khí tối thượng - Chiến thuật 'Free 15-Second Sample':</strong> Khi thấy job có file RAW đính kèm: Tải ngay 30s đầu về -> Chạy lệnh <code>python3 studio/scripts/auto_roughcut.py [raw]</code> -> Kéo vào DaVinci lắp 1 dòng sub xịn và 1 B-roll trong 5 phút -> Xuất file 15s gửi kèm Proposal!",
+            "<strong>Mẫu Proposal 3 phần thần thánh:</strong>",
+            "  - Dòng 1: 'Hi [Client Name], I noticed your raw footage has great energy but could hook viewers 2x faster with tighter pacing in the first 3 seconds.'",
+            "  - Dòng 2: 'Here is a 15-second sample I cut directly from your raw file: [Link Loom / Google Drive]'",
+            "  - Dòng 3: 'And here is my full portfolio with similar real estate/business videos: [Link Portfolio]. If you like this pacing, let's connect!'",
+            "Gửi đều đặn 2–3 Proposals mỗi ngày, kiên trì liên tục trong 7 ngày."
           ],
-          tip: "Tuyệt đối không copy-paste văn mẫu dài dòng. Viết ngắn dưới 5 dòng và gọi tên khách hàng nếu biết."
+          tip: "Khách hàng nhận được 50 proposals toàn chữ. Người duy nhất tải file của họ về và edit sẵn 15s xem thử CHẮC CHẮN sẽ là người được gọi phỏng vấn!"
         },
         mapping: {
-          troubleshoot: "Xem chi tiết: <strong>upwork-mvp/curriculum.md (Chương 2: Thử thách kiếm tiền tài khoản mới)</strong>",
-          levelUp: "Công thức viết Proposal Sean Kang: Nhấn mạnh vào Retention Rate & Tăng view cho kênh.",
-          monetize: "Chỉ cần 1 hợp đồng đầu tiên 5 sao, cánh cửa Upwork sẽ mở toang cho bạn!"
+          troubleshoot: "Cách lọc job ngon: Xem <strong>Freelance MVP Chương 2 Bài 04 & 05</strong>",
+          levelUp: "Sử dụng script auto_roughcut.py để tạo sample 15s trong 5 phút!",
+          monetize: "Tỷ lệ chốt đơn của chiến thuật 15s Sample lên tới 60–80% đối với tài khoản mới."
         }
       },
       {
         id: "s3_t4",
-        title: "🎯 CHỐT ĐƯỢC HỢP ĐỒNG / KHÁCH HÀNG TRẢ TIỀN ĐẦU TIÊN",
+        title: "🎯 CHỐT HỢP ĐỒNG ĐẦU TIÊN & NHẬN THANH TOÁN (VICTORY MILESTONE)",
         duration: "Cột mốc",
-        effortHours: 10.0,
-        output: "Nhận thanh toán đầu tiên qua Upwork / Fiverr / Ngân hàng",
+        effortHours: 7.0,
+        output: "KÝ HỢP ĐỒNG UPWORK ĐẦU TIÊN & NHẬN LƯƠNG TRƯỚC TẾT 2027",
         isOutput: true,
         recommendedLessons: [
           {
@@ -781,31 +744,32 @@ export const ROADMAP_SPRINTS = [
             chapter: "Chương 2: Thực Hành & Kiếm Tiền",
             title: "Phần 17 (Nhắn Tin/Giao Tiếp Chuyên Nghiệp Với Khách Hàng) & Phần 18 ('Đọc Khách Như Một Cuốn Sách')",
             duration: "35 phút",
-            focus: "Cách rep tin nhắn trong 5 phút, đàm phán hợp đồng Fixed-Price đầu tiên $30-$50, giao bài sớm trước deadline 6-12 tiếng để nhận review 5 sao tuyệt đối."
+            focus: "Cách rep tin nhắn trong 5 phút, đàm phán hợp đồng Fixed-Price đầu tiên $35-$50/video, giao bài sớm trước deadline 6-12 tiếng để nhận review 5 sao tuyệt đối."
           },
           {
             isPrimary: false,
-            course: "Khóa DaVinci Elite",
-            chapter: "Chương 2.1: Level 2 & Level 3",
-            title: "Tổng kết part 3 - Cách tính giá video (08:00)",
-            duration: "8 phút",
-            focus: "Biết cách tính giá theo phút/video để không bị hớ và tạo sự tự tin khi nói chuyện với khách ngoại quốc."
+            course: "Khóa Upwork MVP",
+            chapter: "Chương 2",
+            title: "Phần 10: Cách Rút Tiền Thu Nhập Từ Upwork Về Ngân Hàng Việt Nam",
+            duration: "10 phút",
+            focus: "Thiết lập tài khoản ngân hàng nhận tiền USD qua chuyển khoản Wire/Payoneer/Direct to Local Bank an toàn."
           }
         ],
-        watchStrategy: "Xem Phần 17 & 18 trên Upwork MVP để chuẩn bị sẵn kịch bản trả lời tin nhắn khi có thông báo -> Khi khách ping, áp dụng ngay kịch bản để chốt đơn.",
+        watchStrategy: "Khi có thông báo tin nhắn từ Upwork: Mở ứng dụng Upwork trên điện thoại rep ngay -> Giữ phong thái chuyên nghiệp, điềm tĩnh, tập trung vào giải pháp.",
         solution: {
           steps: [
-            "Khi khách nhắn tin: Phản hồi ngay trong vòng 5 phút (cài app Upwork trên điện thoại).",
-            "Đề xuất làm 1 video đầu tiên dạng Fixed-Price $30 - $50.",
-            "Giao bài sớm hơn deadline 6-12 tiếng để tạo bất ngờ.",
-            "Sửa bài nhanh gọn trong 1 lần duy nhất, sau đó xin đánh giá 5 sao kèm lời khen uy tín."
+            "Khi khách nhắn tin: Phản hồi ngay trong vòng 5 phút (tốc độ rep quyết định 70% việc khách có thuê bạn hay chuyển sang người khác).",
+            "Đàm phán hợp đồng đầu tiên: Đừng kỳ vọng giá $100 ngay lập tức. Hãy chốt mức giá hợp lý $35 – $50 cho video đầu tiên để lấy hợp đồng và **Review 5 sao**.",
+            "Giao sản phẩm đầu tiên: Dựng chuẩn chỉ, sạch sẽ, xuất file 1080x1920 sắc nét, bàn giao sớm trước thời hạn 6 tiếng.",
+            "Sau khi khách hài lòng và duyệt thanh toán: Lịch sự đề nghị khách để lại 1 đánh giá 5 sao chân thành trên trang cá nhân.",
+            "Đề xuất hợp đồng tháng (Monthly Retainer): 'I can deliver 8-12 videos like this every month for $400 - $600. Would you be interested?'"
           ],
-          tip: "Hợp đồng đầu tiên là bước ngoặt lớn nhất. Có 1 review 5 sao thì các job tiếp theo sẽ đến rất tự nhiên."
+          tip: "Hợp đồng đầu tiên là chiếc chìa khóa vàng mở toang toàn bộ cánh cửa tự do tài chính. Hãy bảo vệ nó bằng sự tận tâm 100%!"
         },
         mapping: {
-          troubleshoot: "Cách đàm phán & tính giá: Xem <strong>Elite Chương 2.1 (Tổng kết Phần 3: Cách tính giá video)</strong>",
-          levelUp: "Học cách làm bài test: <strong>Elite Pro Phần 2 (Quá trình mình làm test Job thật 1h46p)</strong>",
-          monetize: "🎉 Xin chúc mừng! Bạn chính thức bước vào hàng ngũ Editor kiếm tiền độc lập!"
+          troubleshoot: "Cách nhắn tin chuyên nghiệp: Xem <strong>Upwork MVP Chương 2 Bài 17 & 18</strong>",
+          levelUp: "Cách rút tiền về ngân hàng: Xem <strong>Upwork MVP Chương 2 Bài 10</strong>",
+          monetize: "🎉 CỘT MỐC SINH TỬ ĐÃ HOÀN THÀNH: BẠN CHÍNH THỨC TRỞ THÀNH FREELANCER QUỐC TẾ CÓ THU NHẬP USD!"
         }
       }
     ]
@@ -813,129 +777,81 @@ export const ROADMAP_SPRINTS = [
   {
     id: "s4",
     title: "SPRINT 4: CHỐT MONTHLY RETAINER & TỐT NGHIỆP AN TOÀN (TẾT 2027)",
-    desc: "Chuyển khách lẻ thành khách ký hợp đồng tháng $500 - $1,000, hoàn tất nghĩa vụ học tập",
-    pill: "Về Đích",
-    color: "#f43f5e",
-    targetWeek: 12,
+    desc: "Nâng cấp lên hợp đồng tháng $500 - $1,500/tháng, bảo lưu/hoàn thành việc học và ăn Tết trọn vẹn",
+    pill: "Tự Do Tài Chính",
+    color: "#6366f1",
+    targetWeek: 5,
     tasks: [
       {
         id: "s4_t1",
-        title: "Chuyển khách hàng thành Monthly Retainer ($500 - $1,000/tháng)",
+        title: "Đàm phán Hợp đồng Retainer cố định ($500 - $1,000 / tháng)",
         duration: "Chiến lược",
         effortHours: 15.0,
-        output: "Có 1 - 2 khách ruột đặt hàng cố định hàng tuần (12-20 video/tháng)",
-        isOutput: false,
+        output: "Có ít nhất 1-2 khách hàng quen đặt lịch dựng video hàng tuần",
+        isOutput: true,
         recommendedLessons: [
           {
             isPrimary: true,
             course: "Khóa Freelance MVP",
             chapter: "Chương 5: Khách Hàng / Giao Tiếp",
-            title: "Phần 1 (Các loại công việc), Phần 2 (Job Ngon & Không Ngon), Phần 5 (Cách làm việc với khách), Phần 6 (Giao tiếp hiệu quả)",
-            duration: "40 phút",
-            focus: "Chiến lược upsell từ 2 video lẻ thành hợp đồng Retainer 16 video/tháng ($600/tháng), thống nhất lịch nộp RAW thứ 2 - trả bài thứ 5."
+            title: "Phần 1 - 5: Cách giữ chân khách hàng dài hạn, upsell gói dịch vụ và biến khách lẻ thành hợp đồng tháng",
+            duration: "30 phút",
+            focus: "Chiến lược chuyển đổi từ làm việc theo từng video lẻ (Per-video) sang gói đối tác cố định (Monthly Retainer)."
           },
           {
             isPrimary: false,
-            course: "Khóa Elite Pro",
-            chapter: "Phần 4: Họp & Làm Việc Thực Tế",
-            title: "Ghi lại Meeting hàng tuần (Cách Sean Kang làm việc và giữ chân khách hàng ruột nhiều năm)",
-            duration: "30 phút",
-            focus: "Tác phong chuyên nghiệp, cách nhận feedback và biến khách hàng thành đối tác lâu năm."
+            course: "Khóa Upwork MVP",
+            chapter: "Chương 3: Tổng Kết",
+            title: "Cách để trở thành một freelancer bền vững",
+            duration: "15 phút",
+            focus: "Tư duy xây dựng thương hiệu cá nhân bền vững, quản trị thời gian và mở rộng quy mô thu nhập."
           }
         ],
-        watchStrategy: "Sau khi giao bài Reel 2 hoặc 3 được khách khen -> Xem Phần 6 Chương 5 Freelance MVP -> Gửi tin nhắn đề xuất gói Retainer theo mẫu.",
+        watchStrategy: "Xem kỹ Chương 5 của Freelance MVP -> Áp dụng ngay khi khách hàng đầu tiên khen ngợi sản phẩm của bạn.",
         solution: {
           steps: [
-            "Sau khi làm tốt 2-3 video lẻ, nhắn tin đề xuất: <em>'Để kênh của bạn nhất quán và tối ưu chi phí, tôi đề xuất gói 16 video/tháng với giá $600/tháng'</em>.",
-            "Thống nhất quy trình giao nhận: Khách nộp RAW thứ 2, bạn trả bài thứ 5.",
-            "Yêu cầu tạo Milestone thanh toán trước 50% hoặc thanh toán vào đầu tháng."
+            "Sau khi hoàn thành xuất sắc video đầu tiên, chủ động đề xuất gói tháng: 'I have 2 open slots for long-term clients this month. I can handle 8 videos for $400/mo or 12 videos for $550/mo with 24h turnaround.'",
+            "Ký hợp đồng Milestone trên Upwork theo từng tuần hoặc từng tháng.",
+            "Duy trì quy trình làm việc chuẩn mực: Nhận RAW thứ 2 -> Giao bài thứ 4 -> Không bao giờ trễ hẹn."
           ],
-          tip: "Chỉ cần 2 khách hàng Retainer $600/tháng là bạn đã có dòng tiền đều đặn ~30 triệu VNĐ/tháng."
+          tip: "Doanh thu ổn định đến từ Retainer. Chỉ cần 2 khách hàng $500/tháng, bạn đã có thu nhập 25–30 triệu VNĐ/tháng ngay tại nhà!"
         },
         mapping: {
-          troubleshoot: "Học kinh nghiệm xử lý khách: <strong>Elite Pro Phần 4 (Ghi lại Meeting hàng tuần)</strong>",
-          levelUp: "Học cách quản lý nhiều dự án: Áp dụng triệt để GTD trong Doom Emacs / Obsidian.",
-          monetize: "Monthly Retainer mang lại dòng tiền ổn định, xóa tan nỗi lo bấp bênh của Freelancer."
+          troubleshoot: "Kẹt đàm phán giá? Xem: <strong>Freelance MVP Chương 5</strong>",
+          levelUp: "Mở rộng sang dịch vụ trọn gói (Script + B-roll + Edit)",
+          monetize: "Tự do tài chính: Thu nhập cố định bằng USD trước Tết Nguyên Đán 2027!"
         }
       },
       {
         id: "s4_t2",
-        title: "Hoàn thành đồ án & Tốt nghiệp trường Đại học đúng hạn",
-        duration: "Học vấn",
-        effortHours: 20.0,
-        output: "Bảo vệ thành công đồ án, giải phóng 100% nghĩa vụ học hành",
-        isOutput: false,
-        recommendedLessons: [
-          {
-            isPrimary: true,
-            course: "Chiến Lược Cá Nhân & Kỷ Luật",
-            chapter: "La Bàn Sinh Tồn 2026 - 2027",
-            title: "Khung giờ vàng Deep Work: 13:30 - 15:30 mỗi ngày (Tập trung 100% làm đồ án tốt nghiệp)",
-            duration: "2 giờ / ngày",
-            focus: "Ứng dụng AI tổng hợp tài liệu học thuật và viết báo cáo, bám sát giảng viên hướng dẫn để chỉnh sửa sớm."
-          },
-          {
-            isPrimary: false,
-            course: "Hệ thống Quản Trị Habits",
-            chapter: "Habits 2-Mode System",
-            title: "Duy trì kỷ luật nhị phân: Hoàn thành mục tiêu đồ án mỗi ngày trước khi mở máy edit video",
-            duration: "Hàng ngày",
-            focus: "Giải phóng hoàn toàn nghĩa vụ học vấn để ăn Tết trọn vẹn và tự do làm việc 100% cho tương lai."
-          }
-        ],
-        watchStrategy: "Cài đặt báo thức 13:30 mỗi ngày -> Tắt thông báo MXH -> Làm liên tục 2 tiếng đồ án -> Tích xanh trên hệ thống Habits.",
-        solution: {
-          steps: [
-            "Thiết lập khung giờ vàng: 13:30 - 15:30 mỗi ngày chỉ dành riêng cho đồ án, tắt điện thoại.",
-            "Ứng dụng AI để lập dàn ý, tổng hợp tài liệu học thuật và viết báo cáo nhanh gấp 3 lần.",
-            "Bám sát giảng viên hướng dẫn để chỉnh sửa sớm, bảo vệ đồ án tự tin điểm cao."
-          ],
-          tip: "Hoàn tất tốt nghiệp đúng hạn giúp bạn giải phóng 100% tâm trí để bước ra biển lớn và ăn Tết trọn vẹn niềm vui."
-        },
-        mapping: {
-          troubleshoot: "Khung giờ vàng: 13:30 - 15:30 mỗi ngày (theo La Bàn Sinh Tồn 2027)",
-          levelUp: "Tận dụng AI giải phóng thời gian viết lách tài liệu học tập.",
-          monetize: "Cầm tấm bằng tốt nghiệp trong tay ➔ Hoàn toàn tự do bước ra biển lớn!"
-        }
-      },
-      {
-        id: "s4_t3",
-        title: "🎯 ĂN TẾT NGUYÊN ĐÁN 2027 VỚI VỊ THẾ CHIẾN THẮNG",
-        duration: "Vinh quang",
-        effortHours: 5.0,
-        output: "Độc lập tài chính, có nghề kiếm tiền bền vững, tương lai rộng mở",
+        title: "Giải phóng áp lực học vấn & Tận hưởng thành quả trước Tết",
+        duration: "Cột mốc",
+        effortHours: 25.0,
+        output: "Hoàn tất thủ tục bảo lưu/thi cử IUH, tài khoản ting ting lương USD trước Tết Đinh Mùi",
         isOutput: true,
         recommendedLessons: [
           {
             isPrimary: true,
             course: "Khóa Upwork MVP",
-            chapter: "Chương 2 & Chương 3",
-            title: "Chương 2 Phần 10: Cách Rút Tiền Thu Nhập Từ Upwork Về Ngân Hàng Việt Nam & Chương 3: Cách để trở thành một freelancer bền vững",
-            duration: "20 phút",
-            focus: "Cài đặt tài khoản ngân hàng nhận tiền USD về VNĐ tỷ giá tốt nhất, rút tiền trước ngày 25 Tết."
-          },
-          {
-            isPrimary: false,
-            course: "Lộ Trình Đường Dài",
-            chapter: "Career Longevity Track",
-            title: "Level 2 & Level 3: Mở rộng sang Long Form YouTube & Vibe Coding Tech Creator trong năm 2027",
-            duration: "Đường dài",
-            focus: "Tự thưởng cho bản thân và gia đình, ăn mừng thành quả cùng Diễm, sẵn sàng bứt phá năm 2027."
+            chapter: "Chương 2",
+            title: "Phần 20: Hoàn Thành Thử Thách Kiếm Tiền Từ Tài Khoản Upwork Mới",
+            duration: "12 phút",
+            focus: "Tổng kết toàn bộ hành trình từ con số 0 đến khi nhận tiền thực tế trong tài khoản."
           }
         ],
-        watchStrategy: "Xem Phần 10 Upwork MVP để chuẩn bị tài khoản rút tiền -> Xem lại toàn bộ thành quả 4 Sprints -> Tận hưởng một cái Tết Đinh Mùi rực rỡ và đàng hoàng!",
+        watchStrategy: "Tự thưởng cho bản thân một buổi nghỉ ngơi trọn vẹn cùng Diễm sau khi hoàn thành mục tiêu dòng tiền!",
         solution: {
           steps: [
-            "Rút tiền từ Upwork về tài khoản ngân hàng trước ngày 25 Tết.",
-            "Tự thưởng cho bản thân và sắm Tết chu đáo cho gia đình bằng tiền kiếm được từ nghề dựng phim.",
-            "Review lại hành trình 4 Sprints cùng Diễm và chuẩn bị kế hoạch phát triển dài hạn cho năm 2027."
+            "Hoàn tất các bài thi/đồ án học kỳ tại trường IUH hoặc nộp đơn bảo lưu để dồn 100% thời gian cho công việc dựng phim thực chiến.",
+            "Rút toàn bộ thu nhập USD từ Upwork về tài khoản ngân hàng Techcombank/MBBank trước ngày 25 Tết.",
+            "Ăn Tết Đinh Mùi 2027 trong sự tự hào, tự chủ tài chính và bước vào năm mới với vị thế của một AI Video Specialist chuyên nghiệp!"
           ],
-          tip: "Bạn đã vượt qua bài test sinh tồn khắc nghiệt nhất. Bạn đã có nghề, có khách, có tương lai hoàn toàn chủ động!"
+          tip: "Do you want a brilliant future, or a life of poverty and humiliation? Bạn đã chọn một tương lai rực rỡ và đã biến nó thành hiện thực!"
         },
         mapping: {
-          troubleshoot: "Nhìn lại hành trình: Mở la bàn <strong>the-personal-compass-of-lang.md</strong>",
-          levelUp: "Chuẩn bị cho năm 2027: Mở rộng sang Long Form YouTube & Vibe Coding Tech Creator!",
-          monetize: "Bạn đã vượt qua bài test sinh tồn khắc nghiệt nhất một cách xuất sắc!"
+          troubleshoot: "Chúc mừng Thuyền trưởng Lang & Diễm đã về đích xuất sắc!",
+          levelUp: "Tiến lên nấc thang tiếp theo: AI Captain & Automation Specialist 2027",
+          monetize: "🏆 SỨ MỆNH HOÀN THÀNH: TỰ DO TÀI CHÍNH TRƯỚC TẾT NGUYÊN ĐÁN 2027!"
         }
       }
     ]
