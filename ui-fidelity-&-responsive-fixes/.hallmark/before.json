@@ -1,0 +1,35 @@
+{
+ "v": 1,
+ "at": "2026-10-28T11:18:41.969Z",
+ "scope": "app",
+ "summary": {
+  "fails": 0,
+  "reflex": 0,
+  "warns": 0
+ },
+ "files": {
+  "index.html": {
+   "handlers": [],
+   "links": [],
+   "fields": [],
+   "hooks": [],
+   "ids": [
+    "root"
+   ],
+   "scripts": [
+    "/src/main.tsx"
+   ]
+  }
+ },
+ "wiring": {
+  "handlers": [],
+  "links": [],
+  "fields": [],
+  "hooks": [],
+  "ids": [
+   "root"
+  ]
+ },
+ "scripts": {},
+ "pages": {}
+}

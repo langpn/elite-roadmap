@@ -1,0 +1,140 @@
+/* Hallmark · v2.0 · redesign: full · scope: app · genre: modern-minimal · theme: cobalt · shape: next-action workbench · signature: 4-reel rack */
+@import "tailwindcss";
+
+:root {
+  /* Cobalt theme palette in OKLCH */
+  --color-paper: oklch(98.6% 0.005 250);
+  --color-paper-2: oklch(96.2% 0.008 252);
+  --color-paper-3: oklch(93% 0.011 252);
+  --color-ink: oklch(21% 0.028 262);
+  --color-ink-2: oklch(36% 0.022 260);
+  --color-muted: oklch(50% 0.018 258);
+  --color-dim: oklch(65% 0.015 256);
+  --color-rule: oklch(90% 0.009 252);
+  --color-rule-2: oklch(83% 0.012 252);
+  --color-accent: oklch(52% 0.19 258);
+  --color-accent-hover: oklch(45% 0.2 260);
+  --color-accent-wash: oklch(96% 0.028 256);
+  --color-accent-ink: oklch(98.6% 0.005 250);
+  --color-emerald: oklch(65% 0.18 155);
+  --color-emerald-wash: oklch(96% 0.04 155);
+  --color-overlay: oklch(21% 0.028 262 / 0.35);
+  --color-selection: oklch(52% 0.19 258 / 0.18);
+  --color-darkroom: oklch(14% 0.02 260);
+  --color-coral: oklch(62% 0.22 25);
+
+  --shadow-focus: 0 4px 20px -2px oklch(21% 0.028 262 / 0.06), 0 2px 6px -1px oklch(21% 0.028 262 / 0.04);
+  --shadow-dot: 0 0 0 3px oklch(65% 0.18 155 / 0.15);
+
+  /* Mandatory semantic aliases used by legacy inline renderers & UI components */
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-2);
+  --text-muted: var(--color-muted);
+  --text-dim: var(--color-dim);
+
+  /* Light airy workspace surface tokens */
+  --bg-canvas: var(--color-paper);
+  --bg-surface: oklch(100% 0 0);
+  --bg-elevated: oklch(100% 0 0);
+  --bg-panel: oklch(100% 0 0);
+  --bg-sidebar: oklch(100% 0 0);
+  --border-hairline: var(--color-rule);
+  --border-active: var(--color-accent);
+  --accent-primary: var(--color-accent);
+  --accent-primary-hover: var(--color-accent-hover);
+  --accent-primary-wash: var(--color-accent-wash);
+  --accent-amber: var(--color-accent);
+  --accent-coral: var(--color-coral);
+  --accent-emerald: var(--color-emerald);
+  --accent-emerald-wash: var(--color-emerald-wash);
+  --bg-darkroom: var(--color-darkroom);
+
+  /* Font stacks */
+  --font-display: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Be Vietnam Pro', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+html,
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+  overflow-wrap: break-word;
+  scrollbar-color: var(--color-rule) var(--color-paper);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--color-selection);
+  color: var(--text-primary);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--border-active);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans-body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.next-action-focus {
+  background: var(--bg-surface) !important;
+  border-color: var(--color-rule-2) !important;
+  box-shadow: var(--shadow-focus);
+}
+
+.preview-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--accent-emerald);
+  box-shadow: var(--shadow-dot);
+}
+
+.drawer-overlay {
+  background-color: var(--color-overlay);
+}

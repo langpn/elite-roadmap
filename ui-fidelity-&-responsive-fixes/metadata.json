@@ -1,0 +1,6 @@
+{
+  "name": "Elite Roadmap — DaVinci Resolve Commercial Console",
+  "description": "Lộ trình thực chiến 4 Reel DaVinci Resolve trước Tết 2027, theo dõi artifact MP4 và bằng chứng kiểm duyệt.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
